@@ -13,8 +13,33 @@
 </figure>
 
 <figure markdown="1">
-![Sleep screen](../assets/images/sleep.png){ .app-screenshot }
-<figcaption>Sleep screen</figcaption>
+![Activity entry options](../assets/images/activity-entry.png){ .app-screenshot }
+<figcaption>Activity entry</figcaption>
+</figure>
+
+<figure markdown="1">
+![Metric entry grid](../assets/images/metric-entry-grid.png){ .app-screenshot }
+<figcaption>Metric entry grid</figcaption>
+</figure>
+
+<figure markdown="1">
+![Activities list](../assets/images/activities.png){ .app-screenshot }
+<figcaption>Activities</figcaption>
+</figure>
+
+<figure markdown="1">
+![Recovery dashboard](../assets/images/recovery.png){ .app-screenshot }
+<figcaption>Recovery</figcaption>
+</figure>
+
+<figure markdown="1">
+![Hydration entry](../assets/images/hydration-entry.png){ .app-screenshot }
+<figcaption>Hydration entry</figcaption>
+</figure>
+
+<figure markdown="1">
+![Mindfulness entry](../assets/images/mindfulness-entry.png){ .app-screenshot }
+<figcaption>Mindfulness entry</figcaption>
 </figure>
 
 </div>
