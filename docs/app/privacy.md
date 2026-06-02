@@ -1,6 +1,6 @@
 # Privacy
 
-OpenVitals is designed as a local-first app.
+OpenVitals is designed as a local-first app. The local Android app is intentionally separate from the future connected app.
 
 The main Android app:
 
@@ -8,9 +8,29 @@ The main Android app:
 - does not create cloud accounts
 - does not upload health data to an OpenVitals server
 - does not include ads
-- reads and writes supported records through Health Connect
+- does not include an analytics SDK
+- reads supported records through Health Connect
+- writes supported records only after an explicit save action
 
 Local app preferences may include onboarding state, acknowledged permission prompts, unit settings, widget order, timer/background-sound settings, hydration reminders, and cycle-tracking opt-in.
+
+## Health Records
+
+Health Connect is the source of truth. OpenVitals reads Health Connect records to show dashboard summaries and detail screens.
+
+Manual entries are saved back to Health Connect only when the user chooses to save them. OpenVitals-created records can be edited later; records created by other apps remain read-only.
+
+## Sensitive Data
+
+Cycle tracking is off by default and requires explicit opt-in.
+
+Workout route previews require manual Health Connect approval. GPS recording requires location permission because OpenVitals needs location points to build the route.
+
+## Permission Details
+
+See [Permissions](permissions.md) for the current permission list and why each group is requested.
+
+See [Local And Connected Editions](editions.md) for the boundary between the local app and the planned connected app.
 
 For full details, see the Android app repository privacy file:
 

@@ -1,0 +1,41 @@
+.home-screenshot {
+  display: block;
+  max-width: min(100%, 420px);
+  height: auto;
+  margin: 1.25rem auto;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 8px;
+  box-shadow: var(--md-shadow-z2);
+}
+
+.screenshot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.screenshot-grid figure {
+  margin: 0;
+  text-align: center;
+}
+
+.screenshot-grid p {
+  margin: 0;
+}
+
+.screenshot-grid figcaption {
+  margin-top: 0.5rem;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.8rem;
+}
+
+.app-screenshot {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin: 0 auto;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 8px;
+  box-shadow: var(--md-shadow-z1);
+}

@@ -1,0 +1,77 @@
+# Changelog
+
+This page summarizes the English release notes for the local Android app.
+
+For full localized notes, see the Android app repository changelog.
+
+## 1.1.1 - 2026-06-01
+
+- Show sleep score and its rating directly in the dashboard sleep widget.
+- Fix achievements history loading by allowing step-only history and chunking long activity-history reads.
+- Keep average pace and average speed visible after GPS recording ends.
+- Use moving time for activity pace and speed when pause segments are available.
+
+## 1.1.0 - 2026-06-01
+
+- Add achievement badges for activity history.
+- Add opt-in hydration reminders with active hours, interval scheduling, notification permission handling, boot rescheduling, and automatic pause after the daily goal is reached.
+- Add an Activities setting for fixed Monday-Sunday weeks or rolling last 7 days.
+- Add one-tap onboarding for requestable read, write, and additional Health Connect permissions.
+- Keep cycle tracking explicitly opt-in and workout route access manual.
+
+## 1.0.0 - 2026-05-31
+
+- Revamp the dashboard with a denser widget grid, editable widget ordering, and clearer summary cards.
+- Add recovery views with sleep score, sleep efficiency, trend detail screens, confidence notes, and localized explanations.
+- Add an Activities overview with cardio load, weekly progress, route-aware activity summaries, and a cardio load detail screen.
+- Open saved GPS routes in external map apps.
+- Import GPX, KML, and KMZ route files and export activity routes as GPX or KMZ.
+- Add high and low heart-rate threshold checks with adjustable settings.
+- Improve Health Connect query performance and test coverage.
+
+## 0.7.1 - 2026-05-28
+
+- Edit OpenVitals-created hydration, activity, mindfulness, body measurement, and vitals entries from detail and browse lists.
+- Keep records from other apps read-only.
+- Verify Health Connect ownership before every update.
+- Prefill edit screens with existing values and save changes back to the original Health Connect record.
+- Add localized release notes and Play Store changelogs.
+
+## 0.7.0 - 2026-05-27
+
+- Add Activity entry support for Health Connect exercise sessions with optional route, distance, elevation gain, active calories, and total calories records.
+- Import GPX, KML, and KMZ routes with preview and review before saving.
+- Record GPS activities in OpenVitals with pause, resume, discard, route preview, distance, elevation gain, moving time, and a persistent recording notification.
+- Estimate active and total calories for imported routes and recorded activities.
+- Update release flow for beta publishing and production promotion.
+
+## 0.6.1 - 2026-05-26
+
+- Refresh the app shell with Material 3 adaptive navigation, updated theming, clearer dashboard cards, and scroll-aware detail screens.
+- Move Add entry into a contextual create action.
+- Improve manual-entry UX and accessibility.
+- Update mindfulness entry with bell previews, looping background sounds, circular timer, and simplified minutes input.
+- Add new Play screenshots.
+
+## 0.6.0 - 2026-05-25
+
+- Add a dedicated Add entry area.
+- Keep the dashboard read-only while manual entries save directly to Health Connect.
+- Add hydration entries with drink and serving choices.
+- Add manual entries for weight, height, body fat, blood pressure, blood oxygen, respiratory rate, and body temperature.
+- Add mindfulness timer and manual minute entry.
+- Modernize app architecture with Hilt, shared period queries, cached Health Connect reads, and CI/release improvements.
+
+## 0.5.2 - 2026-05-24
+
+- Show timeframe-scoped entry lists across metric detail screens.
+- Let week and month charts reveal a tapped day's entries.
+- Simplify the dashboard workout widget.
+- Improve dashboard edit mode and carousel reordering.
+
+## 0.5.1 - 2026-05-24
+
+- Refresh OpenVitals branding with the new logo and launcher icons.
+- Use distinct launcher icons for production and debug builds.
+- Show the new logo during onboarding.
+- Update README screenshots and project branding.

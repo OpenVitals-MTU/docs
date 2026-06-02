@@ -1,13 +1,20 @@
 # Screenshots
 
-## Dashboard
+<div class="screenshot-grid" markdown="1">
 
-![Dashboard](../assets/images/dashboard.png)
+<figure markdown="1">
+![OpenVitals dashboard](../assets/images/dashboard.png){ .app-screenshot }
+<figcaption>Dashboard</figcaption>
+</figure>
 
-## Steps
+<figure markdown="1">
+![Steps weekly view](../assets/images/steps-week.png){ .app-screenshot }
+<figcaption>Steps weekly view</figcaption>
+</figure>
 
-![Steps weekly view](../assets/images/steps-week.png)
+<figure markdown="1">
+![Sleep screen](../assets/images/sleep.png){ .app-screenshot }
+<figcaption>Sleep screen</figcaption>
+</figure>
 
-## Sleep
-
-![Sleep screen](../assets/images/sleep.png)
+</div>

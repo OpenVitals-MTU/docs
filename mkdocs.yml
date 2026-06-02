@@ -35,11 +35,20 @@ theme:
 nav:
   - Home: index.md
   - App:
+      - Install: app/install.md
+      - Getting Started: app/getting-started.md
       - Features: app/features.md
       - Screenshots: app/screenshots.md
+      - Health Connect: app/health-connect.md
+      - Permissions: app/permissions.md
       - Privacy: app/privacy.md
+      - Local And Connected Editions: app/editions.md
+      - FAQ: app/faq.md
+  - Releases:
+      - Changelog: releases/changelog.md
   - Developers:
       - Build From Source: developers/build.md
+      - Contributing: developers/contributing.md
 
 markdown_extensions:
   - admonition
@@ -52,3 +61,6 @@ markdown_extensions:
 
 plugins:
   - search
+
+extra_css:
+  - stylesheets/extra.css

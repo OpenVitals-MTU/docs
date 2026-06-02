@@ -4,7 +4,11 @@ OpenVitals is a local-first Android app for viewing health and fitness data from
 
 It is designed for people who want a clear daily dashboard and focused metric detail screens without creating an account, uploading health data, or depending on an online service.
 
-![OpenVitals dashboard](assets/images/dashboard.png)
+[Install](app/install.md){ .md-button .md-button--primary }
+[Getting Started](app/getting-started.md){ .md-button }
+[Permissions](app/permissions.md){ .md-button }
+
+![OpenVitals dashboard](assets/images/dashboard.png){ .home-screenshot }
 
 ## What It Does
 
@@ -22,3 +26,4 @@ The main OpenVitals app does not request internet access and does not include ac
 
 - Android app: [codeberg.org/OpenVitals/android-app](https://codeberg.org/OpenVitals/android-app)
 - Connected app scaffold: [codeberg.org/OpenVitals/android-app-connected](https://codeberg.org/OpenVitals/android-app-connected)
+- Website: [codeberg.org/OpenVitals/website](https://codeberg.org/OpenVitals/website)
