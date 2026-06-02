@@ -1,6 +1,6 @@
 .home-screenshot {
   display: block;
-  max-width: min(100%, 420px);
+  max-width: min(100%, 280px);
   height: auto;
   margin: 1.25rem auto;
   border: 1px solid var(--md-default-fg-color--lightest);
