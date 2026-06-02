@@ -1,0 +1,54 @@
+site_name: OpenVitals
+site_description: Local-first Android health dashboard powered by Health Connect.
+site_url: https://openvitals.codeberg.page/website/
+repo_url: https://codeberg.org/OpenVitals/website
+repo_name: OpenVitals/website
+
+theme:
+  name: material
+  logo: assets/images/openvitals-logo.png
+  favicon: assets/images/openvitals-logo.png
+  language: en
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.footer
+    - navigation.top
+    - content.code.copy
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: orange
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+nav:
+  - Home: index.md
+  - App:
+      - Features: app/features.md
+      - Screenshots: app/screenshots.md
+      - Privacy: app/privacy.md
+  - Developers:
+      - Build From Source: developers/build.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+
+plugins:
+  - search
