@@ -4,6 +4,12 @@ This page summarizes the English release notes for the local Android app.
 
 For full localized notes, see the Android app repository changelog.
 
+## 1.2.1 - 2026-06-06
+
+- Remember the latest recorded activity type and preselect it for future activity entries.
+- Add a Settings option to choose a favorite activity type that overrides the latest recorded activity default.
+- Return to the dashboard after saving a new activity so users do not land back on the activity-entry screen.
+
 ## 1.2.0 - 2026-06-06
 
 - Add System, Light, Dark, and AMOLED theme options, with AMOLED keeping Material You accent colors and pure black backgrounds.

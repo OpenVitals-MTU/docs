@@ -1,6 +1,6 @@
 # Features
 
-This inventory reflects the current Android app source, the changelog through 1.2.0, release notes, and recent feature commits.
+This inventory reflects the current Android app source, the changelog through 1.2.1, release notes, and recent feature commits.
 
 ## Local-First App
 
@@ -58,9 +58,11 @@ This inventory reflects the current Android app source, the changelog through 1.
 - Manual activity entry saved to Health Connect.
 - GPX, KML, and KMZ route import with preview and review before saving.
 - Inference of route time, title, notes, type, distance, elevation gain, moving time, average pace, and average speed where possible.
+- Activity entries preselect the latest recorded activity type unless a favorite activity is configured.
 - GPS activity recording from OpenVitals with start, pause, resume, finish, discard, route preview, moving time, distance, elevation gain, and point count.
 - Finished GPS activity drafts remain recoverable while the app process stays open.
 - Recording starts from the already locked GPS fix when one is available.
+- Saving a new activity returns to the dashboard after the Health Connect write completes.
 - Persistent recording notification while GPS recording is active.
 - Active and total calorie estimates for imported and recorded activities.
 
@@ -121,6 +123,7 @@ This inventory reflects the current Android app source, the changelog through 1.
 - Language preference: system, English, Spanish, or German.
 - Metric and imperial unit systems.
 - Activity week mode.
+- Favorite activity type override for activity entry defaults.
 - Sleep range mode.
 - App theme mode: system, light, dark, or AMOLED.
 - Cycle tracking opt-in.
