@@ -35,7 +35,7 @@ Supported entries:
 - Weight, height, and body fat.
 - Blood pressure, SpO2, respiratory rate, and body temperature.
 
-OpenVitals-created entries can be edited later. Records created by other apps stay read-only.
+OpenVitals-created entries can be edited or deleted later. Records created by other apps stay read-only.
 
 ## Importing Or Recording Activities
 

@@ -4,6 +4,15 @@ This page summarizes the English release notes for the local Android app.
 
 For full localized notes, see the Android app repository changelog.
 
+## 1.2.0 - 2026-06-06
+
+- Add System, Light, Dark, and AMOLED theme options, with AMOLED keeping Material You accent colors and pure black backgrounds.
+- Add swipe-to-delete for OpenVitals-owned hydration, activity, mindfulness, body measurement, and vitals entries while keeping records from other apps read-only.
+- Let users edit the default hydration container size so quick hydration logging can match their real bottle or glass.
+- Add configurable mindfulness reminders alongside the existing hydration reminder support.
+- Improve GPS activity recording by using the already locked GPS fix, keeping finished recordings recoverable after navigating back, and renaming the final action to Save activity.
+- Compact the dashboard sleep widget and improve its contrast.
+
 ## 1.1.1 - 2026-06-01
 
 - Show sleep score and its rating directly in the dashboard sleep widget.

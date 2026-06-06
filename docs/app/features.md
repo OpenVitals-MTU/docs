@@ -1,6 +1,6 @@
 # Features
 
-This inventory reflects the current Android app source, the changelog through 1.1.1, release notes, and recent feature commits.
+This inventory reflects the current Android app source, the changelog through 1.2.0, release notes, and recent feature commits.
 
 ## Local-First App
 
@@ -28,7 +28,7 @@ This inventory reflects the current Android app source, the changelog through 1.
 - Editable dashboard widget ordering.
 - Visible-widget-aware loading so hidden widgets do not trigger unnecessary Health Connect reads.
 - Dashboard widgets for steps, distance, calories out, active calories, floors, elevation, workout, sleep, hydration, calories in, macros, body measurements, heart data, vitals, weekly cardio load, mindfulness, and cycle data.
-- Sleep widget can show sleep score and rating.
+- Sleep widget shows a compact duration and rating summary.
 - Weekly cardio widget summarizes progress toward the weekly activity load target.
 
 ## Detail Screens
@@ -59,6 +59,8 @@ This inventory reflects the current Android app source, the changelog through 1.
 - GPX, KML, and KMZ route import with preview and review before saving.
 - Inference of route time, title, notes, type, distance, elevation gain, moving time, average pace, and average speed where possible.
 - GPS activity recording from OpenVitals with start, pause, resume, finish, discard, route preview, moving time, distance, elevation gain, and point count.
+- Finished GPS activity drafts remain recoverable while the app process stays open.
+- Recording starts from the already locked GPS fix when one is available.
 - Persistent recording notification while GPS recording is active.
 - Active and total calorie estimates for imported and recorded activities.
 
@@ -84,11 +86,13 @@ This inventory reflects the current Android app source, the changelog through 1.
 
 - Hydration totals by day and period.
 - Drink and serving choices for hydration entries.
+- Configurable default hydration container size for quick logging.
 - Optional hydration reminders with active hours, interval scheduling, notification permission handling, boot rescheduling, and pause after the daily goal is reached.
 - Nutrition views for calories in, meals, protein, carbs, fat, fiber, and sugar where Health Connect provides them.
 - Mindfulness session lists and totals when the Health Connect provider supports mindfulness sessions.
 - Mindfulness manual minute logging.
 - Meditation timer with bell previews, interval bells, optional looping background sounds, save, and discard controls.
+- Optional mindfulness reminders with configurable timing.
 
 ## Manual Entries
 
@@ -96,9 +100,9 @@ This inventory reflects the current Android app source, the changelog through 1.
 - Configurable Add entry widgets.
 - Manual entries for hydration, activities, mindfulness, weight, height, body fat, blood pressure, SpO2, respiratory rate, and body temperature.
 - Write-permission requests are scoped to the entry workflow that needs them.
-- OpenVitals-created entries can be edited later.
+- OpenVitals-created entries can be edited or deleted later.
 - Records from other apps remain read-only.
-- Ownership is checked before updating Health Connect records.
+- Ownership is checked before updating or deleting Health Connect records.
 
 ## Cycle Tracking
 
@@ -118,8 +122,10 @@ This inventory reflects the current Android app source, the changelog through 1.
 - Metric and imperial unit systems.
 - Activity week mode.
 - Sleep range mode.
+- App theme mode: system, light, dark, or AMOLED.
 - Cycle tracking opt-in.
 - Hydration reminder configuration.
+- Mindfulness reminder configuration.
 - Health Connect status and permission management.
 - App version and privacy summary.
 
@@ -129,6 +135,6 @@ Checked sources:
 
 - `README.md`
 - `CHANGELOG.md`
-- `docs/releases/1.1.1.md`, `1.1.0.md`, `1.0.0.md`, `0.7.0.md`, `0.6.1.md`, and `0.6.0.md`
+- `docs/releases/changelog.md`
 - Current navigation, dashboard metric, manual entry, Health Connect model, settings, achievement, and insight source files
 - Recent feature commits through the current `android-app` main branch
