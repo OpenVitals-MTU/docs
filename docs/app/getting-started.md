@@ -42,7 +42,11 @@ OpenVitals-created entries can be edited or deleted later. Records created by ot
 Activity entry supports three workflows:
 
 - Create a manual activity.
-- Import GPX, KML, or KMZ route files and review the detected details before saving.
+- Import GPX, KML, KMZ, or FIT route files and review the detected details before saving.
 - Record a GPS activity from OpenVitals, then review and save it to Health Connect.
 
 GPS recording needs precise location permission. Finished GPS drafts can be discarded before saving. Recording notifications and hydration reminders need notification permission on Android versions that require it.
+
+## Importing Apple Health Exports
+
+Settings includes a Data Import section for supported Apple Health `export.xml` or `export.zip` records. Imported records are written into Health Connect after the required write permissions are granted.

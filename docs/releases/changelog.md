@@ -4,6 +4,15 @@ This page summarizes the English release notes for the local Android app.
 
 For full localized notes, see the Android app repository changelog.
 
+## 1.3.0 - 2026-06-09
+
+- Add Apple Health export import from Settings for supported activity, heart, body, hydration, and vitals records.
+- Add FIT route file import alongside GPX/KML/KMZ, with parser tests and clearer route metadata handling.
+- Add wheelchair activity support, wheelchair push summaries, charts, dashboard widgets, and Health Connect permission coverage.
+- Expand Heart & Vitals with a combined overview screen, stronger charts, and high/low heart-rate check summaries.
+- Unify Body and Nutrition detail screens with richer period overviews, body composition coverage, and meal/macro chart improvements.
+- Rework Settings into grouped sections with data import permissions, clearer controls, and improved unit and chart formatting.
+
 ## 1.2.3 - 2026-06-09
 
 - Add a Calories detail screen with period statistics, total and active calorie trends, BMR context, and day-level breakdown rows.

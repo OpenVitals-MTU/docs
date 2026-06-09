@@ -10,7 +10,7 @@ The main Android app:
 - does not include ads
 - does not include an analytics SDK
 - reads supported records through Health Connect
-- writes supported records only after an explicit save action
+- writes supported records only after an explicit save or import action
 
 Local app preferences may include onboarding state, acknowledged permission prompts, unit settings, widget order, timer/background-sound settings, hydration reminders, and cycle-tracking opt-in.
 
@@ -18,7 +18,7 @@ Local app preferences may include onboarding state, acknowledged permission prom
 
 Health Connect is the source of truth. OpenVitals reads Health Connect records to show dashboard summaries and detail screens.
 
-Manual entries are saved back to Health Connect only when the user chooses to save them. OpenVitals-created records can be edited later; records created by other apps remain read-only.
+Manual entries are saved back to Health Connect only when the user chooses to save them. Supported Apple Health export records are written to Health Connect only when the user imports an export file from Settings. OpenVitals-created records can be edited later; records created by other apps remain read-only.
 
 ## Sensitive Data
 

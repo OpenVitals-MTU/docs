@@ -1,6 +1,6 @@
 # Features
 
-This inventory reflects the current Android app source, the changelog through 1.2.3, release notes, and recent feature commits.
+This inventory reflects the current Android app source, the changelog through 1.3.0, release notes, and recent feature commits.
 
 ## Local-First App
 
@@ -9,7 +9,7 @@ This inventory reflects the current Android app source, the changelog through 1.
 - No app-level internet permission in the current local app.
 - Health Connect remains the source of truth for health records.
 - Dashboard and detail views are read-only by default.
-- Writes happen only when the user explicitly saves an entry back to Health Connect.
+- Writes happen only when the user explicitly saves an entry or imports supported records back to Health Connect.
 - Cycle tracking is disabled by default and must be explicitly enabled.
 
 ## App Shell And Onboarding
@@ -28,7 +28,7 @@ This inventory reflects the current Android app source, the changelog through 1.
 - Daily Summary dashboard grouped by activity, recovery, intake, body, heart, vitals, mindfulness, and optional cycle data.
 - Editable dashboard widget ordering.
 - Visible-widget-aware loading so hidden widgets do not trigger unnecessary Health Connect reads.
-- Dashboard widgets for steps, distance, total calories, active calories, floors, elevation, workout, sleep, hydration, calories in, macros, body measurements, heart data, vitals, weekly cardio load, mindfulness, and cycle data.
+- Dashboard widgets for steps, distance, total calories, active calories, floors, elevation, wheelchair pushes, workout, sleep, hydration, calories in, macros, body measurements, heart data, vitals, weekly cardio load, mindfulness, and cycle data.
 - Sleep widget shows a compact duration and rating summary.
 - Weekly cardio widget summarizes progress toward the weekly activity load target.
 
@@ -46,7 +46,7 @@ This inventory reflects the current Android app source, the changelog through 1.
 
 ## Activity And Workouts
 
-- Steps, distance, total calories, active calories, floors climbed, elevation gain, workout sessions, and cardio load.
+- Steps, distance, total calories, active calories, floors climbed, elevation gain, wheelchair pushes, workout sessions, and cardio load.
 - Activities detail screen with an integrated period overview, key metric cards, recent workout list, and direct links to steps, distance, total calories, HRV, and cardio load.
 - Calories detail screen with period stats, total and active calorie charts, BMR context, and day-level breakdown rows.
 - Configurable week mode for Activities and weekly cardio load: fixed Monday-Sunday or rolling last 7 days.
@@ -60,7 +60,7 @@ This inventory reflects the current Android app source, the changelog through 1.
 ## Activity Logging
 
 - Manual activity entry saved to Health Connect.
-- GPX, KML, and KMZ route import with preview and review before saving.
+- GPX, KML, KMZ, and FIT route import with preview and review before saving.
 - Inference of route time, title, notes, type, distance, elevation gain, moving time, average pace, and average speed where possible.
 - Activity entries preselect the latest recorded activity type unless a favorite activity is configured.
 - GPS activity recording from OpenVitals with start, pause, resume, finish, discard, route preview, moving time, distance, elevation gain, and point count.
@@ -87,7 +87,7 @@ This inventory reflects the current Android app source, the changelog through 1.
 - Resting heart rate and HRV.
 - High and low heart-rate threshold checks with adjustable settings.
 - Blood pressure, SpO2, respiratory rate, body temperature, and VO2 max.
-- Weight, height, BMI, body fat, lean mass, basal metabolic rate, and bone mass.
+- Weight, height, BMI, body fat, lean mass, basal metabolic rate, bone mass, and body water mass.
 - BMI, blood pressure, oxygen saturation, respiratory rate, body temperature, resting heart rate, macro split, workout guideline, and sleep-target interpretation cards where data is available.
 
 ## Hydration, Nutrition, And Mindfulness
@@ -126,6 +126,7 @@ This inventory reflects the current Android app source, the changelog through 1.
 ## Settings And Preferences
 
 - Language preference: system, English, Spanish, or German.
+- Data Import for supported Apple Health `export.xml` or `export.zip` records.
 - Metric and imperial unit systems.
 - Activity week mode.
 - Favorite activity type override for activity entry defaults.

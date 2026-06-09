@@ -20,10 +20,17 @@ Used to show records in the dashboard and detail screens:
 - `android.permission.health.READ_LEAN_BODY_MASS`
 - `android.permission.health.READ_BASAL_METABOLIC_RATE`
 - `android.permission.health.READ_BONE_MASS`
+- `android.permission.health.READ_BODY_WATER_MASS`
 - `android.permission.health.READ_FLOORS_CLIMBED`
 - `android.permission.health.READ_ACTIVE_CALORIES_BURNED`
 - `android.permission.health.READ_ELEVATION_GAINED`
+- `android.permission.health.READ_WHEELCHAIR_PUSHES`
 - `android.permission.health.READ_TOTAL_CALORIES_BURNED`
+- `android.permission.health.READ_SPEED`
+- `android.permission.health.READ_POWER`
+- `android.permission.health.READ_STEPS_CADENCE`
+- `android.permission.health.READ_CYCLING_PEDALING_CADENCE`
+- `android.permission.health.READ_PLANNED_EXERCISE`
 - `android.permission.health.READ_HYDRATION`
 - `android.permission.health.READ_NUTRITION`
 - `android.permission.health.READ_MINDFULNESS`
@@ -32,6 +39,8 @@ Used to show records in the dashboard and detail screens:
 - `android.permission.health.READ_RESPIRATORY_RATE`
 - `android.permission.health.READ_BODY_TEMPERATURE`
 - `android.permission.health.READ_VO2_MAX`
+- `android.permission.health.READ_BLOOD_GLUCOSE`
+- `android.permission.health.READ_SKIN_TEMPERATURE`
 
 ## Cycle Tracking Permissions
 
@@ -41,20 +50,29 @@ Cycle tracking is off by default. These are requested only after explicit opt-in
 - `android.permission.health.READ_OVULATION_TEST`
 - `android.permission.health.READ_CERVICAL_MUCUS`
 - `android.permission.health.READ_BASAL_BODY_TEMPERATURE`
+- `android.permission.health.READ_INTERMENSTRUAL_BLEEDING`
+- `android.permission.health.READ_SEXUAL_ACTIVITY`
 
 ## Health Connect Write Permissions
 
-Used only when you explicitly save an entry:
+Used only when you explicitly save an entry or import supported Apple Health export records:
 
+- `android.permission.health.WRITE_STEPS`
 - `android.permission.health.WRITE_EXERCISE`
 - `android.permission.health.WRITE_EXERCISE_ROUTE`
 - `android.permission.health.WRITE_DISTANCE`
 - `android.permission.health.WRITE_ELEVATION_GAINED`
 - `android.permission.health.WRITE_ACTIVE_CALORIES_BURNED`
 - `android.permission.health.WRITE_TOTAL_CALORIES_BURNED`
+- `android.permission.health.WRITE_HEART_RATE`
+- `android.permission.health.WRITE_RESTING_HEART_RATE`
 - `android.permission.health.WRITE_WEIGHT`
 - `android.permission.health.WRITE_HEIGHT`
 - `android.permission.health.WRITE_BODY_FAT`
+- `android.permission.health.WRITE_LEAN_BODY_MASS`
+- `android.permission.health.WRITE_BONE_MASS`
+- `android.permission.health.WRITE_BODY_WATER_MASS`
+- `android.permission.health.WRITE_FLOORS_CLIMBED`
 - `android.permission.health.WRITE_HYDRATION`
 - `android.permission.health.WRITE_MINDFULNESS`
 - `android.permission.health.WRITE_BLOOD_PRESSURE`
@@ -78,6 +96,6 @@ Used only when you explicitly save an entry:
 
 ## File And Route Intents
 
-OpenVitals can receive GPX, KML, and KMZ files through Android open/share intents so imported activities can be reviewed and saved to Health Connect.
+OpenVitals can receive GPX, KML, KMZ, and FIT files through Android open/share intents so imported activities can be reviewed and saved to Health Connect.
 
 The app also uses a local file provider to export route files, such as GPX or KMZ, to other apps.
