@@ -14,6 +14,7 @@ steps:
       - python -m pip install --upgrade pip
       - python -m pip install -r requirements.txt
       - mkdocs build --strict
+      - printf "openvitals.health\nwww.openvitals.health\n" > site/.domains
       - git diff --check
 
   - name: deploy-pages
@@ -28,4 +29,3 @@ steps:
     when:
       - event: push
         branch: main
-

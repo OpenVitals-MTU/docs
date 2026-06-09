@@ -8,10 +8,10 @@ Repository:
 https://codeberg.org/OpenVitals/website
 ```
 
-Expected Codeberg Pages URL:
+Expected website URL:
 
 ```text
-https://openvitals.codeberg.page/website/
+https://openvitals.health/
 ```
 
 ## Local Preview
@@ -29,7 +29,7 @@ mkdocs build --strict
 
 ## Codeberg Pages
 
-The Woodpecker pipeline builds the MkDocs site and deploys the generated `site/` directory to the `pages` branch using `codeberg.org/sugar700/plugin-codeberg-pages-deploy:1`.
+The Woodpecker pipeline builds the MkDocs site, writes `site/.domains` for the custom domain, and deploys the generated `site/` directory to the `pages` branch using `codeberg.org/sugar700/plugin-codeberg-pages-deploy:1`.
 
 Required setup:
 
@@ -39,5 +39,8 @@ Required setup:
 4. Add a Forgejo webhook in the repository settings:
    - Target URL: `https://openvitals.codeberg.page/website/`
    - Branch filter: `pages`
+5. Point DNS for `openvitals.health` and `www.openvitals.health` to the `OpenVitals/website` Pages target.
 
-Codeberg Pages will serve the `pages` branch as the project website.
+Keep the webhook target on the Codeberg Pages URL. The custom domain is declared through `site/.domains` and the DNS records.
+
+Codeberg Pages will serve the `pages` branch as the project website, with `https://openvitals.health/` as the canonical custom domain.

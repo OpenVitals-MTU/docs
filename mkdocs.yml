@@ -1,6 +1,6 @@
 site_name: OpenVitals
 site_description: Local-first Android health dashboard powered by Health Connect.
-site_url: https://openvitals.codeberg.page/website/
+site_url: https://openvitals.health/
 repo_url: https://codeberg.org/OpenVitals/website
 repo_name: OpenVitals/website
 
