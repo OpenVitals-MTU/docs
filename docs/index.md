@@ -12,7 +12,7 @@ It is designed for people who want a clear daily dashboard and focused metric de
 
 ## What It Does
 
-- Shows a dashboard-first view of activity, sleep, heart, body, hydration, nutrition, mindfulness, cycle, and vital metrics.
+- Shows a Summary-first view of activity, sleep, heart, body, hydration, nutrition, mindfulness, cycle, and vital metrics.
 - Reads from Health Connect as the source of truth.
 - Supports period-based detail screens for day, week, month, and year views.
 - Allows explicit Health Connect logging for supported manual entries.

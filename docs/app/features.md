@@ -1,6 +1,6 @@
 # Features
 
-This inventory reflects the current Android app source, the changelog through 1.2.1, release notes, and recent feature commits.
+This inventory reflects the current Android app source, the changelog through 1.2.2, release notes, and recent feature commits.
 
 ## Local-First App
 
@@ -15,7 +15,8 @@ This inventory reflects the current Android app source, the changelog through 1.
 ## App Shell And Onboarding
 
 - Material 3 Android app shell with adaptive navigation.
-- Main destinations for Summary, Activities, Sleep, and Add entry.
+- Summary-first navigation with dashboard quick actions for Log and Start.
+- Activities, Sleep, and other metric screens open from dashboard cards and section links.
 - Settings access from the app bar.
 - First-run Health Connect onboarding with clear permission categories.
 - One-tap setup for requestable Health Connect permissions.
@@ -24,10 +25,10 @@ This inventory reflects the current Android app source, the changelog through 1.
 
 ## Dashboard
 
-- Daily dashboard grouped by activity, recovery, intake, body, heart, vitals, mindfulness, and optional cycle data.
+- Daily Summary dashboard grouped by activity, recovery, intake, body, heart, vitals, mindfulness, and optional cycle data.
 - Editable dashboard widget ordering.
 - Visible-widget-aware loading so hidden widgets do not trigger unnecessary Health Connect reads.
-- Dashboard widgets for steps, distance, calories out, active calories, floors, elevation, workout, sleep, hydration, calories in, macros, body measurements, heart data, vitals, weekly cardio load, mindfulness, and cycle data.
+- Dashboard widgets for steps, distance, total calories, active calories, floors, elevation, workout, sleep, hydration, calories in, macros, body measurements, heart data, vitals, weekly cardio load, mindfulness, and cycle data.
 - Sleep widget shows a compact duration and rating summary.
 - Weekly cardio widget summarizes progress toward the weekly activity load target.
 
@@ -46,7 +47,9 @@ This inventory reflects the current Android app source, the changelog through 1.
 ## Activity And Workouts
 
 - Steps, distance, total calories, active calories, floors climbed, elevation gain, workout sessions, and cardio load.
-- Activities overview with weekly progress and a configurable week mode: fixed Monday-Sunday or rolling last 7 days.
+- Activities detail screen with an integrated period overview, key metric cards, recent workout list, and direct links to steps, distance, total calories, HRV, and cardio load.
+- Configurable week mode for Activities and weekly cardio load: fixed Monday-Sunday or rolling last 7 days.
+- Optional OpenVitals total-calorie estimates can fill missing Health Connect totals from active calories plus BMR.
 - Workout detail screens with metadata, source information, segments, laps, routes, moving time, average pace, and average speed when available.
 - Cardio load detail screen using heart-rate-based TRIMP when possible, with movement fallback when heart-rate coverage is limited.
 - Route previews when Health Connect route permission is granted.
@@ -61,6 +64,7 @@ This inventory reflects the current Android app source, the changelog through 1.
 - Activity entries preselect the latest recorded activity type unless a favorite activity is configured.
 - GPS activity recording from OpenVitals with start, pause, resume, finish, discard, route preview, moving time, distance, elevation gain, and point count.
 - Finished GPS activity drafts remain recoverable while the app process stays open.
+- Finished GPS activity drafts can be discarded before saving.
 - Recording starts from the already locked GPS fix when one is available.
 - Saving a new activity returns to the dashboard after the Health Connect write completes.
 - Persistent recording notification while GPS recording is active.
@@ -69,7 +73,8 @@ This inventory reflects the current Android app source, the changelog through 1.
 ## Sleep And Recovery
 
 - Sleep sessions and sleep-stage breakdowns.
-- Sleep detail screens and session detail views.
+- Sleep detail screen with integrated overview cards for score, duration, schedule, REM, deep sleep, and efficiency.
+- Sleep session detail views.
 - Configurable sleep range assignment: rolling 24 hours, noon, or 18:00 boundary.
 - Sleep score based on duration, efficiency, continuity, and regularity.
 - Sleep efficiency detail with confidence notes.
@@ -87,8 +92,7 @@ This inventory reflects the current Android app source, the changelog through 1.
 ## Hydration, Nutrition, And Mindfulness
 
 - Hydration totals by day and period.
-- Drink and serving choices for hydration entries.
-- Configurable default hydration container size for quick logging.
+- Drink choices and editable per-container serving sizes for hydration entries.
 - Optional hydration reminders with active hours, interval scheduling, notification permission handling, boot rescheduling, and pause after the daily goal is reached.
 - Nutrition views for calories in, meals, protein, carbs, fat, fiber, and sugar where Health Connect provides them.
 - Mindfulness session lists and totals when the Health Connect provider supports mindfulness sessions.
@@ -124,6 +128,7 @@ This inventory reflects the current Android app source, the changelog through 1.
 - Metric and imperial unit systems.
 - Activity week mode.
 - Favorite activity type override for activity entry defaults.
+- Total-calorie data mode: Health Connect totals only, or optional OpenVitals estimates from active calories plus BMR.
 - Sleep range mode.
 - App theme mode: system, light, dark, or AMOLED.
 - Cycle tracking opt-in.

@@ -4,6 +4,14 @@ This page summarizes the English release notes for the local Android app.
 
 For full localized notes, see the Android app repository changelog.
 
+## 1.2.2 - 2026-06-09
+
+- Move the app toward a Summary-first flow by folding the old Activities and Sleep tab content into richer metric detail screens with overview cards and direct metric links.
+- Add a total-calories preference that keeps Health Connect totals as the default and can optionally fill missing totals from active calories plus BMR.
+- Make weekly cardio load respect the Activity week setting, so Last 7 days uses a rolling selected-date window while Mon-Sun remains fixed.
+- Persist edited hydration container sizes per preset and add a discard action for unfinished GPS recording drafts.
+- Polish dashboard, activity, and sleep UI with clearer colors, denser widgets, and better text fitting.
+
 ## 1.2.1 - 2026-06-06
 
 - Remember the latest recorded activity type and preselect it for future activity entries.

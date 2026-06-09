@@ -25,7 +25,7 @@ The dashboard can work with partial permissions. Grant Activity and Sleep first 
 
 ## Adding Entries
 
-The dashboard is read-only. Use Add entry when you want to save a new record to Health Connect.
+The Summary dashboard is read-only. Use Log or Add entry when you want to save a new record to Health Connect.
 
 Supported entries:
 
@@ -45,4 +45,4 @@ Activity entry supports three workflows:
 - Import GPX, KML, or KMZ route files and review the detected details before saving.
 - Record a GPS activity from OpenVitals, then review and save it to Health Connect.
 
-GPS recording needs precise location permission. Recording notifications and hydration reminders need notification permission on Android versions that require it.
+GPS recording needs precise location permission. Finished GPS drafts can be discarded before saving. Recording notifications and hydration reminders need notification permission on Android versions that require it.
