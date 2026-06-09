@@ -1,6 +1,6 @@
 # Features
 
-This inventory reflects the current Android app source, the changelog through 1.2.2, release notes, and recent feature commits.
+This inventory reflects the current Android app source, the changelog through 1.2.3, release notes, and recent feature commits.
 
 ## Local-First App
 
@@ -48,6 +48,7 @@ This inventory reflects the current Android app source, the changelog through 1.
 
 - Steps, distance, total calories, active calories, floors climbed, elevation gain, workout sessions, and cardio load.
 - Activities detail screen with an integrated period overview, key metric cards, recent workout list, and direct links to steps, distance, total calories, HRV, and cardio load.
+- Calories detail screen with period stats, total and active calorie charts, BMR context, and day-level breakdown rows.
 - Configurable week mode for Activities and weekly cardio load: fixed Monday-Sunday or rolling last 7 days.
 - Optional OpenVitals total-calorie estimates can fill missing Health Connect totals from active calories plus BMR.
 - Workout detail screens with metadata, source information, segments, laps, routes, moving time, average pace, and average speed when available.

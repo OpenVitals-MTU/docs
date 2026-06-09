@@ -4,6 +4,15 @@ This page summarizes the English release notes for the local Android app.
 
 For full localized notes, see the Android app repository changelog.
 
+## 1.2.3 - 2026-06-09
+
+- Add a Calories detail screen with period statistics, total and active calorie trends, BMR context, and day-level breakdown rows.
+- Link dashboard and Activities calorie cards to the new Calories screen so calorie data has a full drill-down path.
+- Clarify dashboard messaging for missing Health Connect total-calorie records and OpenVitals active calories plus BMR estimates.
+- Improve hydration entry cup-size controls with better alignment and more readable saved values.
+- Add auto-resizing text to compact dashboard, metric, and chart cards.
+- Fix Activities today handling and update CI/build tooling for Android SDK 37, AGP 9.1.1, and the newer Material 3 library.
+
 ## 1.2.2 - 2026-06-09
 
 - Move the app toward a Summary-first flow by folding the old Activities and Sleep tab content into richer metric detail screens with overview cards and direct metric links.
