@@ -30,6 +30,8 @@ OpenVitals writes to Health Connect only from explicit entry or import workflows
 - Weight, height, and body fat.
 - Blood pressure, SpO2, respiratory rate, and body temperature.
 
+Large Apple Health imports run as explicit user-started background jobs with progress notifications while records are scanned and written.
+
 ## History And Background Access
 
 Health Connect may limit how much historical data an app can read unless Health history access is granted.

@@ -49,4 +49,4 @@ GPS recording needs precise location permission. Finished GPS drafts can be disc
 
 ## Importing Apple Health Exports
 
-Settings includes a Data Import section for supported Apple Health `export.xml` or `export.zip` records. Imported records are written into Health Connect after the required write permissions are granted.
+Settings includes a Data Import section for supported Apple Health `export.xml` or `export.zip` records. Imported records are written into Health Connect after the required write permissions are granted. Large imports can continue in the background and show progress while OpenVitals scans and writes records.

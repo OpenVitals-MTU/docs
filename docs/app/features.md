@@ -1,6 +1,6 @@
 # Features
 
-This inventory reflects the current Android app source, the changelog through 1.3.1, release notes, and recent feature commits.
+This inventory reflects the current Android app source, the changelog through 1.3.2, release notes, and recent feature commits.
 
 ## Local-First App
 
@@ -128,7 +128,7 @@ This inventory reflects the current Android app source, the changelog through 1.
 ## Settings And Preferences
 
 - Language preference: system, English, Spanish, or German.
-- Data Import for supported Apple Health `export.xml` or `export.zip` records.
+- Data Import for supported Apple Health `export.xml` or `export.zip` records, with live progress and background continuation for large imports.
 - Metric and imperial unit systems.
 - Activity week mode.
 - Favorite activity type override for activity entry defaults.

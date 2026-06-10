@@ -4,6 +4,13 @@ This page summarizes the English release notes for the local Android app.
 
 For full localized notes, see the Android app repository changelog.
 
+## 1.3.2 - 2026-06-10
+
+- Move Apple Health export imports to a WorkManager-backed background job so large `export.xml` or `export.zip` imports can continue after leaving Settings.
+- Add live import progress, foreground notification text, and clearer parsed, imported, duplicate, unsupported, skipped, and failed result counts.
+- Stream Apple Health parsing and record writing to reduce memory pressure on large exports while preserving diagnostics and per-type summaries.
+- Declare the data-sync foreground service path needed for reliable long-running Apple Health imports on newer Android versions.
+
 ## 1.3.1 - 2026-06-10
 
 - Update AndroidX Health Connect to 1.2.0-alpha04 and align activity recording with newer activity-recognition, health foreground-service, and high-sampling sensor permissions.
