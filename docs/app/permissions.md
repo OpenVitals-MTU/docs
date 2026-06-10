@@ -55,10 +55,11 @@ Cycle tracking is off by default. These are requested only after explicit opt-in
 
 ## Health Connect Write Permissions
 
-Used only when you explicitly save an entry or import supported Apple Health export records:
+Declared for explicit save and supported Apple Health import workflows; requested only when a workflow needs them:
 
 - `android.permission.health.WRITE_STEPS`
 - `android.permission.health.WRITE_EXERCISE`
+- `android.permission.health.WRITE_SLEEP`
 - `android.permission.health.WRITE_EXERCISE_ROUTE`
 - `android.permission.health.WRITE_DISTANCE`
 - `android.permission.health.WRITE_ELEVATION_GAINED`
@@ -66,19 +67,31 @@ Used only when you explicitly save an entry or import supported Apple Health exp
 - `android.permission.health.WRITE_TOTAL_CALORIES_BURNED`
 - `android.permission.health.WRITE_HEART_RATE`
 - `android.permission.health.WRITE_RESTING_HEART_RATE`
+- `android.permission.health.WRITE_HEART_RATE_VARIABILITY`
 - `android.permission.health.WRITE_WEIGHT`
 - `android.permission.health.WRITE_HEIGHT`
 - `android.permission.health.WRITE_BODY_FAT`
 - `android.permission.health.WRITE_LEAN_BODY_MASS`
+- `android.permission.health.WRITE_BASAL_METABOLIC_RATE`
 - `android.permission.health.WRITE_BONE_MASS`
 - `android.permission.health.WRITE_BODY_WATER_MASS`
 - `android.permission.health.WRITE_FLOORS_CLIMBED`
+- `android.permission.health.WRITE_WHEELCHAIR_PUSHES`
 - `android.permission.health.WRITE_HYDRATION`
+- `android.permission.health.WRITE_NUTRITION`
 - `android.permission.health.WRITE_MINDFULNESS`
 - `android.permission.health.WRITE_BLOOD_PRESSURE`
 - `android.permission.health.WRITE_OXYGEN_SATURATION`
 - `android.permission.health.WRITE_RESPIRATORY_RATE`
 - `android.permission.health.WRITE_BODY_TEMPERATURE`
+- `android.permission.health.WRITE_VO2_MAX`
+- `android.permission.health.WRITE_BLOOD_GLUCOSE`
+- `android.permission.health.WRITE_MENSTRUATION`
+- `android.permission.health.WRITE_OVULATION_TEST`
+- `android.permission.health.WRITE_CERVICAL_MUCUS`
+- `android.permission.health.WRITE_BASAL_BODY_TEMPERATURE`
+- `android.permission.health.WRITE_INTERMENSTRUAL_BLEEDING`
+- `android.permission.health.WRITE_SEXUAL_ACTIVITY`
 
 ## Health Connect Access Modes
 
@@ -89,8 +102,11 @@ Used only when you explicitly save an entry or import supported Apple Health exp
 
 - `android.permission.ACCESS_FINE_LOCATION`: required for reliable GPS activity recording.
 - `android.permission.ACCESS_COARSE_LOCATION`: declared with location access for Android permission compatibility.
+- `android.permission.ACTIVITY_RECOGNITION`: used where Android requires activity-recognition access for recorded activity workflows.
 - `android.permission.FOREGROUND_SERVICE`: used for the activity recording foreground service.
 - `android.permission.FOREGROUND_SERVICE_LOCATION`: marks the recording service as location-based.
+- `android.permission.FOREGROUND_SERVICE_HEALTH`: marks the recording service as health-related where Android supports it.
+- `android.permission.HIGH_SAMPLING_RATE_SENSORS`: supports higher-rate sensor access for activity recording on devices that expose it.
 - `android.permission.POST_NOTIFICATIONS`: used for activity recording and hydration reminder notifications.
 - `android.permission.RECEIVE_BOOT_COMPLETED`: used to reschedule hydration reminders after reboot or app update.
 

@@ -18,6 +18,7 @@ It is designed for people who want a clear daily dashboard and focused metric de
 - Breaks down total, active, and BMR calorie context in a dedicated Calories detail screen.
 - Imports GPX, KML, KMZ, and FIT activity route files for review before saving.
 - Imports supported Apple Health export records into Health Connect.
+- Uses current Health Connect client coverage for newer activity records and recording permissions.
 - Allows explicit Health Connect logging for supported manual entries.
 - Keeps app preferences local on the device.
 

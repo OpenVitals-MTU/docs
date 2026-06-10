@@ -4,6 +4,14 @@ This page summarizes the English release notes for the local Android app.
 
 For full localized notes, see the Android app repository changelog.
 
+## 1.3.1 - 2026-06-10
+
+- Update AndroidX Health Connect to 1.2.0-alpha04 and align activity recording with newer activity-recognition, health foreground-service, and high-sampling sensor permissions.
+- Expand recorded activity support with newer exercise types and repetition-set details where Health Connect provides them.
+- Redesign the Apple Health import implementation into a dedicated importer package with clearer parser/converter tests and broader write-permission handling for supported records.
+- Split dashboard, settings, manual entry, activity recording, route import, period helpers, and metric sections into smaller feature-owned files.
+- Move app-local models, insights, and preferences into domain packages while keeping HealthRepository focused on availability, permissions, and dashboard aggregation.
+
 ## 1.3.0 - 2026-06-09
 
 - Add Apple Health export import from Settings for supported activity, heart, body, hydration, and vitals records.

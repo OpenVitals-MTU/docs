@@ -1,6 +1,6 @@
 # Features
 
-This inventory reflects the current Android app source, the changelog through 1.3.0, release notes, and recent feature commits.
+This inventory reflects the current Android app source, the changelog through 1.3.1, release notes, and recent feature commits.
 
 ## Local-First App
 
@@ -22,6 +22,7 @@ This inventory reflects the current Android app source, the changelog through 1.
 - One-tap setup for requestable Health Connect permissions.
 - Separate handling for manual permissions such as workout route access.
 - Health Connect availability checks for unsupported devices, missing providers, provider updates, and work-profile limitations.
+- AndroidX Health Connect 1.2.0-alpha04 support for newer activity records, mindfulness, and aggregation behavior.
 
 ## Dashboard
 
@@ -63,6 +64,7 @@ This inventory reflects the current Android app source, the changelog through 1.
 - GPX, KML, KMZ, and FIT route import with preview and review before saving.
 - Inference of route time, title, notes, type, distance, elevation gain, moving time, average pace, and average speed where possible.
 - Activity entries preselect the latest recorded activity type unless a favorite activity is configured.
+- Recorded activities support newer Health Connect exercise types and repetition-set details where available.
 - GPS activity recording from OpenVitals with start, pause, resume, finish, discard, route preview, moving time, distance, elevation gain, and point count.
 - Finished GPS activity drafts remain recoverable while the app process stays open.
 - Finished GPS activity drafts can be discarded before saving.
