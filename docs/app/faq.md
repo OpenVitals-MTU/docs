@@ -8,7 +8,7 @@ Health data is read from Health Connect on your device. Entries you explicitly s
 
 ## Why Does OpenVitals Ask For Many Health Connect Permissions?
 
-OpenVitals has dashboard and detail screens for many health areas: activity, sleep, heart, body, hydration, nutrition, mindfulness, vitals, and optional cycle tracking.
+OpenVitals has dashboard and detail screens for many health areas: activity, sleep, heart, body, hydration, nutrition, mindfulness, vitals, and cycle tracking.
 
 You do not need to grant everything. The dashboard can work with partial permissions, and cycle tracking remains off until explicitly enabled.
 

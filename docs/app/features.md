@@ -1,152 +1,368 @@
 # Features
 
-This inventory reflects the current Android app source, the changelog through 1.3.2, release notes, and recent feature commits.
+This document is a functional inventory of the OpenVitals Android app. It is organized by what the user can view, what the user can insert/update/delete, and which settings are available.
 
-## Local-First App
+## View Data
 
-- No account required.
-- No ads, analytics SDK, or OpenVitals cloud health-data sync.
-- No app-level internet permission in the current local app.
-- Health Connect remains the source of truth for health records.
-- Dashboard and detail views are read-only by default.
-- Writes happen only when the user explicitly saves an entry or imports supported records back to Health Connect.
-- Cycle tracking is disabled by default and must be explicitly enabled.
+### Shared Metric Views
 
-## App Shell And Onboarding
+- View most metrics by day, week, month, or year.
+- Move to previous and next periods.
+- Pick a specific date from the calendar.
+- Pull to refresh data from Health Connect.
+- See period-aware charts:
+  - Day and week views use daily or intraday chart values where available.
+  - Month and year views use longer-range history/heatmap style summaries where available.
+- See selected-day entry lists from charts where supported.
+- See data confidence cards with coverage, sample counts, and source information.
+- See period statistics, previous-period comparisons, and personal baseline insights where supported.
+- See empty, permission, and error states when data is unavailable.
 
-- Material 3 Android app shell with adaptive navigation.
-- Summary-first navigation with dashboard quick actions for Log and Start.
-- Activities, Sleep, and other metric screens open from dashboard cards and section links.
-- Settings access from the app bar.
-- First-run Health Connect onboarding with clear permission categories.
-- One-tap setup for requestable Health Connect permissions.
-- Separate handling for manual permissions such as workout route access.
-- Health Connect availability checks for unsupported devices, missing providers, provider updates, and work-profile limitations.
-- AndroidX Health Connect 1.2.0-alpha04 support for newer activity records, mindfulness, and aggregation behavior.
+### Dashboard
 
-## Dashboard
+- View configurable summary widgets for the main health categories.
+- View activity widgets for steps, distance, calories out, active calories, floors, elevation, wheelchair pushes, and workouts.
+- View sleep, hydration, nutrition, body, vitals, mindfulness, cycle, and cardio load widgets.
+- Reorder or remove dashboard widgets through the dashboard customization flow.
+- Open the relevant metric detail screen from supported widgets.
 
-- Daily Summary dashboard grouped by activity, recovery, intake, body, heart, vitals, mindfulness, and optional cycle data.
-- Editable dashboard widget ordering.
-- Visible-widget-aware loading so hidden widgets do not trigger unnecessary Health Connect reads.
-- Dashboard widgets for steps, distance, total calories, active calories, floors, elevation, wheelchair pushes, workout, sleep, hydration, calories in, macros, body measurements, heart data, vitals, weekly cardio load, mindfulness, and cycle data.
-- Sleep widget shows a compact duration and rating summary.
-- Weekly cardio widget summarizes progress toward the weekly activity load target.
+### Achievements
 
-## Detail Screens
+- View unlocked and locked achievement progress.
+- Filter achievements by category.
+- View summary progress, tracked days, best daily steps, total distance, best daily floors, and total floors.
+- View badge progress toward daily steps, lifetime distance, daily floors, and lifetime floors targets.
 
-- Period navigation for day, week, month, and year views.
-- Pull-to-refresh and calendar date picking.
-- Timeframe-scoped record lists with pagination.
-- Week and month charts that can reveal records for a selected day.
-- Period totals, averages, best-day stats, tracked-day counts, streaks, goal progress, and previous-period comparison where supported.
-- Calendar and heatmap-style history views for longer ranges.
-- Personal baseline, source consistency, and data-confidence context in metric views.
-- Metric interpretation cards for selected health signals.
-- Cross-metric insights for sleep vs HRV, workouts vs resting heart rate, hydration vs weight fluctuation, and mindfulness vs sleep.
+### Hydration
 
-## Activity And Workouts
+- View total hydration for the selected period.
+- View hydration history charts by day, week, month, and year.
+- View selected-day hydration entries.
+- View each entry's amount, date/time, and source.
+- View daily goal progress, goal streaks, goals met, longest streak, success rate, average daily intake, total intake, best day, previous-period comparison, and personal baseline.
+- View hydration reminders and daily goal configuration from the hydration detail screen.
+- View a cross-metric insight comparing hydration with weight fluctuation.
+- Distinguish OpenVitals-created entries from read-only entries created by other sources.
 
-- Steps, distance, total calories, active calories, floors climbed, elevation gain, wheelchair pushes, workout sessions, and cardio load.
-- Activities detail screen with an integrated period overview, key metric cards, recent workout list, and direct links to steps, distance, total calories, HRV, and cardio load.
-- Calories detail screen with period stats, total and active calorie charts, BMR context, and day-level breakdown rows.
-- Configurable week mode for Activities and weekly cardio load: fixed Monday-Sunday or rolling last 7 days.
-- Optional OpenVitals total-calorie estimates can fill missing Health Connect totals from active calories plus BMR.
-- Workout detail screens with metadata, source information, segments, laps, routes, moving time, average pace, and average speed when available.
-- Cardio load detail screen using heart-rate-based TRIMP when possible, with movement fallback when heart-rate coverage is limited.
-- Route previews when Health Connect route permission is granted.
-- Open saved routes in external map apps.
-- Export activity routes as GPX or KMZ.
+### Activity Metrics
 
-## Activity Logging
+- View steps.
+- View distance.
+- View calories out.
+- View active calories.
+- View floors climbed.
+- View elevation gained.
+- View wheelchair pushes.
+- View each metric across day, week, month, and year ranges.
+- View intraday charts for steps, calories, and active calories where data exists.
+- View daily entries and aggregated daily totals.
+- View daily goal progress for supported activity metrics.
+- View total, daily average, best day, active days, previous-period comparison, and personal baseline.
 
-- Manual activity entry saved to Health Connect.
-- GPX, KML, KMZ, and FIT route import with preview and review before saving.
-- Inference of route time, title, notes, type, distance, elevation gain, moving time, average pace, and average speed where possible.
-- Activity entries preselect the latest recorded activity type unless a favorite activity is configured.
-- Recorded activities support newer Health Connect exercise types and repetition-set details where available.
-- GPS activity recording from OpenVitals with start, pause, resume, finish, discard, route preview, moving time, distance, elevation gain, and point count.
-- Finished GPS activity drafts remain recoverable while the app process stays open.
-- Finished GPS activity drafts can be discarded before saving.
-- Recording starts from the already locked GPS fix when one is available.
-- Saving a new activity returns to the dashboard after the Health Connect write completes.
-- Persistent recording notification while GPS recording is active.
-- Active and total calorie estimates for imported and recorded activities.
+### Workouts And Activities
 
-## Sleep And Recovery
+- View workout/activity sessions for the selected period.
+- View planned workouts when Health Connect provides them.
+- View workout history charts and selected-day workout lists.
+- View data confidence and manual-entry counts.
+- View workout goal progress in minutes.
+- View total workout duration, activity count, average duration, longest workout, previous-period comparison, and personal baseline.
+- View guideline/context cards for activity volume.
+- View cross-metric insight comparing workouts with resting heart rate.
+- View activity details including title, type, start/end time, duration, moving time, source, notes, time zones, recording method, device, record IDs, client record IDs, client record version, planned session ID, and last modified time.
+- View activity metrics including steps, distance, pace, speed, recorded speed, power, cadence, calories, wheelchair pushes, floors, and elevation.
+- View route previews, route point counts, start/end route points, map opening, and GPX/KMZ export when route data is available.
+- View activity segments, laps, repetitions, and set information where available.
 
-- Sleep sessions and sleep-stage breakdowns.
-- Sleep detail screen with integrated overview cards for score, duration, schedule, REM, deep sleep, and efficiency.
-- Sleep session detail views.
-- Configurable sleep range assignment: rolling 24 hours, noon, or 18:00 boundary.
-- Sleep score based on duration, efficiency, continuity, and regularity.
-- Sleep efficiency detail with confidence notes.
-- Recovery explanations are framed as wellness context, not diagnosis.
+### Cardio Load
 
-## Heart, Vitals, And Body
+- View daily cardio load and weekly cardio load dashboard/detail values.
+- View calculation details for the selected day.
+- View TRIMP score, calculation method, heart-rate coverage, expected coverage, resting heart rate, max heart rate, heart-rate sample count, activity windows, activity minutes, and confidence/method labels.
+- View explanatory context and references for the cardio load calculation.
 
-- Heart rate samples and daily summaries.
-- Resting heart rate and HRV.
-- High and low heart-rate threshold checks with adjustable settings.
-- Blood pressure, SpO2, respiratory rate, body temperature, and VO2 max.
-- Weight, height, BMI, body fat, lean mass, basal metabolic rate, bone mass, and body water mass.
-- BMI, blood pressure, oxygen saturation, respiratory rate, body temperature, resting heart rate, macro split, workout guideline, and sleep-target interpretation cards where data is available.
+### Sleep
 
-## Hydration, Nutrition, And Mindfulness
+- View sleep duration by day, week, month, and year.
+- View sleep sessions in the selected period.
+- View selected-day sleep session timelines.
+- View sleep stages including asleep/sleeping, light, deep, REM, awake, awake in bed, and out of bed when available.
+- View data confidence, sleep goal progress, total sleep, daily average, longest sleep, nights logged, previous-period comparison, and personal baseline.
+- View sleep target/context cards.
+- View cross-metric insight comparing sleep with HRV.
+- View sleep session details including title, notes, source, recording method, device, IDs, start/end time, duration, and stage event list.
 
-- Hydration totals by day and period.
-- Drink choices and editable per-container serving sizes for hydration entries.
-- Optional hydration reminders with active hours, interval scheduling, notification permission handling, boot rescheduling, and pause after the daily goal is reached.
-- Nutrition views for calories in, meals, protein, carbs, fat, fiber, and sugar where Health Connect provides them.
-- Mindfulness session lists and totals when the Health Connect provider supports mindfulness sessions.
-- Mindfulness manual minute logging.
-- Meditation timer with bell previews, interval bells, optional looping background sounds, save, and discard controls.
-- Optional mindfulness reminders with configurable timing.
+### Sleep Score And Recovery
 
-## Manual Entries
+- View recent sleep score and sleep efficiency details.
+- View confidence and non-diagnostic context.
+- View expandable formula/calculation details.
+- View component values such as duration, efficiency, continuity, regularity, and total sleep.
+- View references used by the scoring/explanation screens.
 
-- Add entry area separate from the read-only dashboard.
-- Configurable Add entry widgets.
-- Manual entries for hydration, activities, mindfulness, weight, height, body fat, blood pressure, SpO2, respiratory rate, and body temperature.
-- Write-permission requests are scoped to the entry workflow that needs them.
-- OpenVitals-created entries can be edited or deleted later.
-- Records from other apps remain read-only.
-- Ownership is checked before updating or deleting Health Connect records.
+### Nutrition
 
-## Cycle Tracking
+- View calories in.
+- View protein.
+- View total carbohydrate.
+- View total fat.
+- View additional nutrient totals when present, including fiber, sugar, energy from fat, mono/poly/saturated/trans/unsaturated fat, cholesterol, vitamins, minerals, and caffeine.
+- View nutrition trends by day, week, month, and year.
+- View selected-day nutrition entries.
+- View meals with meal type, name, date/time, calories, macros, fiber, sugar, and source.
+- View macro split context.
+- View data confidence and metric statistics including total, daily average, best day, logged days, previous-period comparison, and personal baseline.
 
-- Optional cycle tracking, off by default.
-- Period days, menstruation flow, ovulation tests, cervical mucus observations, and basal body temperature.
-- Cycle permissions are requested only after explicit opt-in during onboarding or in Settings.
+### Calories
 
-## Achievements
+- View calories out.
+- View active calories.
+- View BMR.
+- View total calories, active calories, and BMR trends.
+- View daily calorie breakdown rows.
+- View calculated total calories when the app is configured to combine active calories and BMR if Health Connect totals are missing.
+- View daily averages and BMR reading counts.
 
-- Achievement screen with progress summary, filters, tracked-day stats, best steps, total distance, best floors, and total floors.
-- Source-confirmed badge categories for daily steps, lifetime distance, daily floors, and lifetime floors.
-- Long activity-history reads are chunked so achievement history can load more reliably from Health Connect.
+### Body
 
-## Settings And Preferences
+- View weight.
+- View height.
+- View BMI.
+- View body fat percentage.
+- View lean body mass.
+- View BMR.
+- View bone mass.
+- View body water mass.
+- View body metrics across day, week, month, and year ranges.
+- View history charts and entry rows with value, source, and time.
+- View latest, average, lowest, highest, reading counts, previous-period comparison, and personal baseline where applicable.
+- View BMI interpretation/context.
+- Distinguish editable OpenVitals weight/height/body-fat entries from read-only external entries.
 
-- Language preference: system, English, Spanish, or German.
-- Data Import for supported Apple Health `export.xml` or `export.zip` records, with live progress and background continuation for large imports.
-- Metric and imperial unit systems.
-- Activity week mode.
-- Favorite activity type override for activity entry defaults.
-- Total-calorie data mode: Health Connect totals only, or optional OpenVitals estimates from active calories plus BMR.
-- Sleep range mode.
-- App theme mode: system, light, dark, or AMOLED.
-- Cycle tracking opt-in.
-- Hydration reminder configuration.
-- Mindfulness reminder configuration.
-- Health Connect status and permission management.
-- App version and privacy summary.
+### Heart And Vitals
 
-## Source Audit
+- View average heart rate.
+- View resting heart rate.
+- View HRV.
+- View blood pressure.
+- View SpO2.
+- View VO2 max.
+- View respiratory rate.
+- View body temperature.
+- View blood glucose.
+- View skin temperature.
+- View heart/vitals metrics across day, week, month, and year ranges.
+- View history charts and entry rows with value, source, and time.
+- View data confidence for aggregate and raw data.
+- View latest, average, lowest, highest, readings/logged days, previous-period comparison, and personal baseline where applicable.
+- View blood pressure latest, average, highest, readings, previous-period comparison, and personal baseline.
+- View context cards for blood pressure categories, resting heart rate, oxygen saturation, respiratory rate, and body temperature.
+- Distinguish editable OpenVitals vitals entries from read-only external entries.
 
-Checked sources:
+### Mindfulness
 
-- `README.md`
-- `CHANGELOG.md`
-- `docs/releases/changelog.md`
-- Current navigation, dashboard metric, manual entry, Health Connect model, settings, achievement, and insight source files
-- Recent feature commits through the current `android-app` main branch
+- View mindfulness session totals and session counts for the selected period.
+- View mindfulness history charts by day, week, month, and year.
+- View selected-day mindfulness sessions.
+- View each session's title, date/time, duration, and source.
+- View data confidence.
+- View daily goal progress, goal statistics, total duration, session count, average duration, longest session, previous-period comparison, and personal baseline.
+- View mindfulness reminder status and reminder time.
+- View cross-metric insight comparing mindfulness with sleep duration.
+- Distinguish editable OpenVitals mindfulness sessions from read-only external sessions.
+
+### Cycle Tracking
+
+- View cycle data when Health Connect permissions are granted.
+- View menstruation flow entries.
+- View menstruation period intervals.
+- View ovulation tests.
+- View cervical mucus observations.
+- View basal body temperature.
+- View intermenstrual bleeding.
+- View sexual activity entries.
+- View cycle data across day, week, month, and year ranges.
+- View cycle summary cards for period days, ovulation tests, and latest basal body temperature.
+- View a cycle calendar with period, ovulation test, and basal temperature markers.
+- View basal body temperature trend charts.
+- View observation rows with date/time, value, and source.
+- View data confidence and statistics for period days, ovulation tests, basal body temperature readings, and total entries.
+
+### Health Connect And Sources
+
+- View data from Health Connect-compatible sources.
+- View source labels on entries where available.
+- View missing-permission callouts and request relevant permissions from metric screens.
+- View records imported from Apple Health once written to Health Connect.
+
+## Insert / Update / Delete Data
+
+### General Rules
+
+- Manual data changes are written to Health Connect, not to a separate OpenVitals cloud account.
+- Write permissions are requested only for data types that support manual entry.
+- Entries created by other apps are read-only in OpenVitals.
+- OpenVitals-created entries can be edited or deleted when the app has the required Health Connect write permission.
+- Some data types can be inserted through Apple Health import even when there is no manual entry screen.
+
+### Manual Entry Screen
+
+- Open a centralized manual entry area with configurable entry widgets.
+- Show entry widgets for hydration, activity, mindfulness, weight, height, body fat, blood pressure, SpO2, respiratory rate, and body temperature.
+- Reorder, remove, and manage manual entry widgets.
+
+### Hydration
+
+- Add hydration entries.
+- Select beverage type: water, coffee, tea, soft drink, energy drink, sports drink, oral rehydration solution, milk, or fruit juice.
+- Select container sizes such as coffee cup, tea cup, small cup, medium glass, large glass, water bottle, and large bottle.
+- Use beverage hydration multipliers for effective hydration amount.
+- Add custom container sizes.
+- View today's intake against the daily goal while adding an entry.
+- Update OpenVitals-created hydration entries.
+- Delete OpenVitals-created hydration entries.
+- Request Health Connect hydration write permission from the entry flow.
+
+### Activity And Workouts
+
+- Add workout/activity sessions manually.
+- Update OpenVitals-created workout/activity sessions.
+- Delete OpenVitals-created workout/activity sessions.
+- Choose activity type, start date, start time, duration, distance, elevation, active calories, total calories, repetitions, title, and notes.
+- Enter repetition-based workouts using total repetitions or sets with repetitions and rest minutes.
+- Import route/activity files in GPX, KML, KMZ, or FIT formats.
+- Preview imported routes and inferred activity details before saving.
+- Save imported route data with inferred type, title, notes, distance, elevation, time range, and calorie estimates where available.
+- Record route-based activities with GPS.
+- Start, pause, resume, finish, or discard a recording.
+- Save recorded route points, pause intervals, distance, and elevation.
+- Use sensor-assisted repetition flows for supported activities such as treadmill steps, push-ups, pull-ups, rope skipping, and trampoline jumping.
+- Request Health Connect activity write permissions from the entry flow.
+
+### Mindfulness
+
+- Add mindfulness sessions with a timer.
+- Configure timer duration.
+- Configure interval bells.
+- Select bell sounds: struck, rubbed, bright, temple, or harmony.
+- Select background sounds: none, bowl, meditation, chimes, or dreamscape.
+- Start, stop, resume, discard, and save timer sessions.
+- Add manual mindfulness minutes.
+- Update OpenVitals-created mindfulness sessions.
+- Delete OpenVitals-created mindfulness sessions.
+- Request Health Connect mindfulness write permission from the entry flow.
+
+### Body
+
+- Add weight measurements.
+- Add height measurements.
+- Add body fat percentage measurements.
+- Update OpenVitals-created weight, height, and body-fat entries.
+- Delete OpenVitals-created weight, height, and body-fat entries.
+- Request Health Connect body write permissions from the entry flow.
+- BMI is calculated from available weight and height data and is not manually inserted.
+- Lean body mass, BMR, bone mass, and body water mass are view-only in the manual UI.
+
+### Vitals
+
+- Add blood pressure measurements with systolic and diastolic values.
+- Add SpO2 measurements.
+- Add respiratory rate measurements.
+- Add body temperature measurements.
+- Update OpenVitals-created blood pressure, SpO2, respiratory rate, and body temperature entries.
+- Delete OpenVitals-created blood pressure, SpO2, respiratory rate, and body temperature entries.
+- Request Health Connect vitals write permissions from the entry flow.
+- Average heart rate, resting heart rate, HRV, VO2 max, blood glucose, and skin temperature are view-only in the manual UI.
+
+### Apple Health Import
+
+- Import Apple Health `export.xml` or `export.zip` files.
+- Request the Health Connect permissions needed for the selected import data.
+- Track import phases including queued, parsing, writing, finishing, and complete.
+- Continue import work in the background.
+- Show import result summaries, unsupported records, skipped records, failures, and copy/saveable reports.
+- Deduplicate imported records using stable client record IDs.
+- Insert supported Apple Health activity records including steps, distance, active calories, basal energy/BMR, floors, elevation, wheelchair pushes, and workouts.
+- Insert supported Apple Health heart and vitals records including heart rate, resting heart rate, oxygen saturation, respiratory rate, body temperature, blood glucose, VO2 max, and blood pressure.
+- Insert supported Apple Health body records including weight, height, body fat, lean body mass, bone mass, and body water mass.
+- Insert supported Apple Health hydration records.
+- Insert supported Apple Health sleep records and stages.
+- Insert supported Apple Health mindfulness sessions.
+- Insert supported Apple Health nutrition records grouped into Health Connect nutrition records.
+- Insert supported Apple Health cycle records when Health Connect write permissions are granted.
+- Skip HRV SDNN import because the current Health Connect mapping is incompatible with that Apple Health record type.
+- No rollback/delete flow is provided for an Apple Health import after records are written.
+
+### View-Only Or External-Only Data
+
+- Sleep sessions are view-only in the app.
+- Nutrition and meal entries are view-only in the manual UI.
+- Cycle tracking observations are view-only in the app.
+- Heart rate, resting heart rate, HRV, VO2 max, blood glucose, and skin temperature are view-only in the manual UI.
+- Lean body mass, BMR, bone mass, body water mass, and BMI are view-only in the manual UI.
+- Planned workouts are view-only.
+- Achievements are computed from activity data and are not manually edited.
+
+## Settings
+
+### Display Settings
+
+- Change language: system default, English, Spanish, or German.
+- Change unit system: metric or imperial.
+- Change theme: system, light, dark, or AMOLED.
+
+### Activity Settings
+
+- Change activity week mode: Monday-to-Sunday or last 7 days.
+- Choose the favorite/default activity behavior used by activity entry.
+- Use the latest activity or a route-capable default activity type as the favorite activity source.
+
+### Calories Settings
+
+- Choose calorie data mode.
+- Use Health Connect calorie totals only.
+- Or allow OpenVitals to calculate total calories from active calories plus BMR when Health Connect totals are missing.
+
+### Sleep Settings
+
+- Change sleep range mode.
+- Supported sleep range modes include rolling 24 hours, noon boundary, and evening 18:00 boundary.
+
+### Cycle Tracking Settings
+
+- Request cycle tracking permissions from the cycle settings area.
+- View cycle data access alongside other Health Connect permissions.
+
+### Data Import Settings
+
+- Open Apple Health import.
+- Grant import permissions.
+- Select Apple Health export files.
+- Monitor import progress and read import reports.
+
+### Permission Settings
+
+- View Health Connect permission categories.
+- Grant missing requestable permissions from inside the app.
+- Open Health Connect when permissions must be granted manually.
+- See the all-requestable-permissions-granted state.
+
+### Dashboard And Manual Entry Customization
+
+- Configure dashboard widget order and visibility.
+- Configure manual entry widget order and visibility.
+- Restore or maintain the default widget sets through stored preferences.
+
+### Goals And Reminders
+
+- Configure daily goals for supported metrics, including hydration, activity metrics, workout minutes, sleep, nutrition metrics, and mindfulness.
+- Configure hydration reminders, reminder interval, and active reminder window.
+- Configure mindfulness reminders and reminder time.
+- Store custom hydration container sizes.
+
+### Privacy And App Information
+
+- View privacy notes explaining that OpenVitals uses no account, no cloud sync, no analytics, and no ads.
+- View that health data is read from and written to Health Connect on device.
+- View the read-only dashboard/privacy positioning and health disclaimer.
+- View app version information.

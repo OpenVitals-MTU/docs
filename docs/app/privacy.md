@@ -12,7 +12,7 @@ The main Android app:
 - reads supported records through Health Connect
 - writes supported records only after an explicit save or import action
 
-Local app preferences may include onboarding state, acknowledged permission prompts, unit settings, widget order, timer/background-sound settings, hydration reminders, and cycle-tracking opt-in.
+Local app preferences may include onboarding state, acknowledged permission prompts, unit settings, widget order, timer/background-sound settings, and hydration reminders.
 
 ## Health Records
 

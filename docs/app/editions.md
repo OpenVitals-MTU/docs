@@ -13,7 +13,7 @@ The local app is the Health Connect-only app.
 - No app-level internet permission.
 - Reads Health Connect records on device.
 - Writes only entries the user explicitly saves.
-- Keeps local preferences such as units, language, widget order, hydration reminders, and cycle opt-in.
+- Keeps local preferences such as units, language, widget order, and hydration reminders.
 
 This is the app documented on this website unless a page explicitly says otherwise.
 
