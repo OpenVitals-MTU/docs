@@ -15,7 +15,7 @@ OpenVitals can show these Health Connect areas when permission and data are avai
 - Hydration and nutrition: hydration totals, calories in, meals, and macros.
 - Mindfulness: mindfulness sessions when the installed Health Connect provider supports them.
 - Vitals: blood pressure, SpO2, respiratory rate, body temperature, and VO2 max.
-- Cycle: menstruation, ovulation tests, cervical mucus, and basal body temperature after explicit opt-in.
+- Cycle: menstruation, ovulation tests, cervical mucus, basal body temperature, intermenstrual bleeding, and sexual activity when cycle permissions are granted.
 
 ## Write Coverage
 

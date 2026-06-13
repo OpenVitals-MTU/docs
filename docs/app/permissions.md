@@ -44,7 +44,7 @@ Used to show records in the dashboard and detail screens:
 
 ## Cycle Tracking Permissions
 
-Cycle tracking is off by default. These are requested only after explicit opt-in:
+Cycle data is sensitive. These permissions are grouped separately in onboarding and Settings so you can skip or grant them explicitly:
 
 - `android.permission.health.READ_MENSTRUATION`
 - `android.permission.health.READ_OVULATION_TEST`

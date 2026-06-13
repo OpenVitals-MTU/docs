@@ -22,7 +22,7 @@ Manual entries are saved back to Health Connect only when the user chooses to sa
 
 ## Sensitive Data
 
-Cycle tracking is off by default and requires explicit opt-in.
+Cycle tracking uses sensitive Health Connect records and is shown only after cycle permissions are granted explicitly.
 
 Workout route previews require manual Health Connect approval. GPS recording requires location permission because OpenVitals needs location points to build the route.
 

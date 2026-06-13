@@ -10,11 +10,11 @@ Health data is read from Health Connect on your device. Entries you explicitly s
 
 OpenVitals has dashboard and detail screens for many health areas: activity, sleep, heart, body, hydration, nutrition, mindfulness, vitals, and cycle tracking.
 
-You do not need to grant everything. The dashboard can work with partial permissions, and cycle tracking remains off until explicitly enabled.
+You do not need to grant everything. The dashboard can work with partial permissions, and cycle tracking is grouped separately so you can grant or skip it explicitly.
 
-## Why Is Cycle Tracking Opt-In?
+## Why Is Cycle Tracking Separate?
 
-Cycle data is sensitive. OpenVitals keeps cycle tracking disabled by default and asks for cycle permissions only after you enable that area.
+Cycle data is sensitive. OpenVitals requests cycle permissions as their own Health Connect category in onboarding and Settings, so those records are only shown after you grant that category.
 
 ## Why Can I Not See Old Data?
 

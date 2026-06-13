@@ -4,6 +4,15 @@ This page summarizes the English release notes for the local Android app.
 
 For full localized notes, see the Android app repository changelog.
 
+## 1.4.0 - 2026-06-13
+
+- Add Daily Readiness with local Body Energy, Training Readiness, HRV status, intensity minutes, physiological stress, adaptive goals, and explanation screens.
+- Improve hydration logging so tapping a container size can save immediately, with container controls shown before beverage type and better today progress feedback.
+- Refresh hydration details with a wavy day trend, clearer week charts, and corrected totals based on the rounded values shown in the app.
+- Let day-based detail screens move between days by swiping the date header, and refresh the dashboard automatically after saving manual entries.
+- Move cycle tracking into explicit Health Connect permission categories in onboarding and Settings.
+- Fix the monochrome launcher icon and keep release CI publishing Codeberg artifacts while automated Google Play uploads/promotions remain disabled.
+
 ## 1.3.2 - 2026-06-10
 
 - Move Apple Health export imports to a WorkManager-backed background job so large `export.xml` or `export.zip` imports can continue after leaving Settings.

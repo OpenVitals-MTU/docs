@@ -30,5 +30,5 @@ Health Connect is not supported in Android work profiles, so OpenVitals cannot r
 1. Open OpenVitals.
 2. Complete onboarding.
 3. Grant the Health Connect permissions you want OpenVitals to read.
-4. Keep cycle tracking disabled unless you explicitly want period, ovulation, cervical mucus, and basal temperature data shown.
+4. Grant cycle permissions only if you explicitly want period, ovulation, cervical mucus, basal temperature, intermenstrual bleeding, and sexual activity data shown.
 5. Use Add entry only when you want OpenVitals to write a record back to Health Connect.
