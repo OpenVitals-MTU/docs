@@ -4,6 +4,13 @@ This page summarizes the English release notes for the local Android app.
 
 For full localized notes, see the Android app repository changelog.
 
+## 1.4.1 - 2026-06-13
+
+- Fix metric hydration totals so small entries such as 150 ml display as `0.15 L` instead of rounding to `0.2 L`.
+- Keep hydration preset taps writing the exact tapped container volume, with regression coverage for the 150 ml tea cup preset.
+- Remove the selected highlight from hydration container presets in normal add mode because tapping a preset now saves immediately.
+- Remove the redundant Today label above the hydration goal progress wave.
+
 ## 1.4.0 - 2026-06-13
 
 - Add Daily Readiness with local Body Energy, Training Readiness, HRV status, intensity minutes, physiological stress, adaptive goals, and explanation screens.
