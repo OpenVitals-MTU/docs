@@ -47,6 +47,10 @@ Activity entry supports three workflows:
 
 GPS recording needs precise location permission. Finished GPS drafts can be discarded before saving. Recording notifications and hydration reminders need notification permission on Android versions that require it.
 
+## Home Screen Widgets
+
+After setup, long-press the Android home screen and add an OpenVitals widget for a selected metric, Daily Readiness, Body Energy, or Today Vitals. Widgets use the same on-device Health Connect data as the app.
+
 ## Importing Apple Health Exports
 
 Settings includes a Data Import section for supported Apple Health `export.xml` or `export.zip` records. Imported records are written into Health Connect after the required write permissions are granted. Large imports can continue in the background and show progress while OpenVitals scans and writes records.

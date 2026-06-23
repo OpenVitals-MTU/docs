@@ -26,6 +26,13 @@ This document is a functional inventory of the OpenVitals Android app. It is org
 - Reorder or remove dashboard widgets through the dashboard customization flow.
 - Open the relevant metric detail screen from supported widgets.
 
+### Android Home Screen Widgets
+
+- Add OpenVitals widgets to the Android launcher home screen.
+- Configure a metric summary widget for a selected metric.
+- View Daily Readiness, Body Energy, and Today Vitals widgets outside the app.
+- Tap supported widgets to open the relevant OpenVitals screen.
+
 ### Achievements
 
 - View unlocked and locked achievement progress.
