@@ -4,6 +4,14 @@ This page summarizes the English release notes for the local Android app.
 
 For full localized notes, see the Android app repository changelog.
 
+## 1.5.1 - 2026-06-24
+
+- Add persistent derived metric storage for dashboard and home widget summaries so calculated metrics can be reused across refreshes.
+- Fix Daily Readiness and metric home widgets so cached and freshly calculated values load more reliably.
+- Let OpenVitals-owned activities be deleted directly from the activity summary flow with swipe-to-delete handling.
+- Improve activity entry and recording flows with safer training-plan updates, corrected planned start times, clearer repetition stats, and a fix for repetitive activity recording crashes.
+- Persist the last custom hydration amount more reliably and keep release automation aligned with the restored direct Google Play production upload path.
+
 ## 1.5.0 - 2026-06-24
 
 - Add configurable Android home screen widgets for Daily Readiness, Body Energy, Today Vitals, and selected metric summaries.
@@ -12,7 +20,7 @@ For full localized notes, see the Android app repository changelog.
 - Let OpenVitals-owned hydration, body, vitals, and mindfulness entries edit their date and time as well as values.
 - Add a cached metric summary layer and background warmup to make dashboard and period detail loads faster.
 - Make large Apple Health imports safer with streaming conversions, narrower import repository boundaries, and clearer worker dependency handling.
-- Restore Google Play internal testing uploads on tag builds and production promotion from the approved Woodpecker deployment.
+- Restore direct Google Play production uploads from the approved Woodpecker deployment.
 - Refresh Health Connect permission guidance, remember the last custom hydration amount, update runtime/test dependencies with Gradle locks, add `Gemfile.lock`, and split large feature files.
 
 ## 1.4.1 - 2026-06-13
