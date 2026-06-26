@@ -44,8 +44,9 @@ Activity entry supports three workflows:
 - Create a manual activity.
 - Import GPX, KML, KMZ, or FIT route files and review the detected details before saving.
 - Record a GPS activity from OpenVitals, then review and save it to Health Connect.
+- Connect experimental Bluetooth LE sensors while recording activities.
 
-GPS recording needs precise location permission. Finished GPS drafts can be discarded before saving. Recording notifications and hydration reminders need notification permission on Android versions that require it.
+GPS recording needs precise location permission. Bluetooth LE sensor recording needs nearby-device Bluetooth permission on Android versions that require it. Finished GPS drafts can be discarded before saving. Recording notifications and hydration reminders need notification permission on Android versions that require it.
 
 ## Home Screen Widgets
 

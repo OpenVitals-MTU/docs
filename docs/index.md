@@ -15,9 +15,12 @@ It is designed for people who want a clear daily dashboard and focused metric de
 - Shows a Summary-first view of activity, sleep, heart, body, hydration, nutrition, mindfulness, cycle, and vital metrics.
 - Reads from Health Connect as the source of truth.
 - Supports period-based detail screens for day, week, month, and year views.
+- Uses a refreshed UI/UX with clearer Summary-first navigation, metric screens, and entry flows.
 - Adds Daily Readiness with Body Energy, Training Readiness, physiological stress, HRV status, intensity minutes, and local explanation screens.
+- Shows Fat-Free Mass Index (FFMI) when the required body composition data is available.
 - Breaks down total, active, and BMR calorie context in a dedicated Calories detail screen.
 - Imports GPX, KML, KMZ, and FIT activity route files for review before saving.
+- Supports experimental Bluetooth LE sensors during activity recording.
 - Imports supported Apple Health export records into Health Connect, with background progress for large exports.
 - Uses current Health Connect client coverage for newer activity records and recording permissions.
 - Allows explicit Health Connect logging for supported manual entries.

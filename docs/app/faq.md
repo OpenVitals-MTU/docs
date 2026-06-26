@@ -36,6 +36,10 @@ Workout route data is treated as sensitive Health Connect data. Some route acces
 
 OpenVitals needs precise location to record route-backed activities. Without it, the app cannot record reliable GPS tracks.
 
+## Why Does BLE Sensor Recording Need Bluetooth Permission?
+
+OpenVitals uses nearby-device Bluetooth permissions to connect to paired Bluetooth LE sensors during experimental activity recording. This does not add internet access.
+
 ## Why Does OpenVitals Need Notification Permission?
 
 Notification permission is used for:

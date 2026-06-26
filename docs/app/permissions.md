@@ -103,10 +103,13 @@ Declared for explicit save and supported Apple Health import workflows; requeste
 - `android.permission.ACCESS_FINE_LOCATION`: required for reliable GPS activity recording.
 - `android.permission.ACCESS_COARSE_LOCATION`: declared with location access for Android permission compatibility.
 - `android.permission.ACTIVITY_RECOGNITION`: used where Android requires activity-recognition access for recorded activity workflows.
+- `android.permission.BLUETOOTH_SCAN`: used to find paired Bluetooth LE sensors for experimental activity recording.
+- `android.permission.BLUETOOTH_CONNECT`: used to connect to paired Bluetooth LE sensors for experimental activity recording.
 - `android.permission.FOREGROUND_SERVICE`: used for activity recording and user-started Apple Health import foreground services.
 - `android.permission.FOREGROUND_SERVICE_DATA_SYNC`: marks long-running Apple Health imports as user-started data sync work.
 - `android.permission.FOREGROUND_SERVICE_LOCATION`: marks the recording service as location-based.
 - `android.permission.FOREGROUND_SERVICE_HEALTH`: marks the recording service as health-related where Android supports it.
+- `android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE`: marks recording with connected Bluetooth LE devices where Android supports it.
 - `android.permission.HIGH_SAMPLING_RATE_SENSORS`: supports higher-rate sensor access for activity recording on devices that expose it.
 - `android.permission.POST_NOTIFICATIONS`: used for activity recording, Apple Health import progress, and reminder notifications.
 - `android.permission.RECEIVE_BOOT_COMPLETED`: used to reschedule hydration reminders after reboot or app update.

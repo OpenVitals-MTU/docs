@@ -4,6 +4,14 @@ This page summarizes the English release notes for the local Android app.
 
 For full localized notes, see the Android app repository changelog.
 
+## 1.6.0 - 2026-06-27
+
+- Add a dedicated debug version that can be installed alongside production builds for safer troubleshooting.
+- Automatically hide hydration reminder notifications after a hydration entry is saved.
+- Add Fat-Free Mass Index (FFMI) to body composition insights when weight, height, and body fat data are available.
+- Add experimental Bluetooth LE sensor integration for activity recording.
+- Implement a refreshed UI/UX across the app with clearer navigation, metric screens, and entry flows.
+
 ## 1.5.1 - 2026-06-24
 
 - Add persistent derived metric storage for dashboard and home widget summaries so calculated metrics can be reused across refreshes.

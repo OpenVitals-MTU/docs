@@ -6,6 +6,7 @@ This document is a functional inventory of the OpenVitals Android app. It is org
 
 ### Shared Metric Views
 
+- Use refreshed Summary-first navigation, metric screens, and entry flows.
 - View most metrics by day, week, month, or year.
 - Move to previous and next periods.
 - Pick a specific date from the calendar.
@@ -81,6 +82,7 @@ This document is a functional inventory of the OpenVitals Android app. It is org
 - View activity metrics including steps, distance, pace, speed, recorded speed, power, cadence, calories, wheelchair pushes, floors, and elevation.
 - View route previews, route point counts, start/end route points, map opening, and GPX/KMZ export when route data is available.
 - View activity segments, laps, repetitions, and set information where available.
+- View experimental Bluetooth LE sensor metrics during activity recording where connected devices provide them.
 
 ### Cardio Load
 
@@ -147,6 +149,7 @@ This document is a functional inventory of the OpenVitals Android app. It is org
 - View BMI.
 - View body fat percentage.
 - View lean body mass.
+- View Fat-Free Mass Index (FFMI) when weight, height, and body fat data are available.
 - View BMR.
 - View bone mass.
 - View body water mass.
@@ -254,6 +257,7 @@ This document is a functional inventory of the OpenVitals Android app. It is org
 - Record route-based activities with GPS.
 - Start, pause, resume, finish, or discard a recording.
 - Save recorded route points, pause intervals, distance, and elevation.
+- Connect paired experimental Bluetooth LE heart-rate, cycling cadence, cycling power, and footpod devices during recording.
 - Use sensor-assisted repetition flows for supported activities such as treadmill steps, push-ups, pull-ups, rope skipping, and trampoline jumping.
 - Request Health Connect activity write permissions from the entry flow.
 
@@ -279,7 +283,7 @@ This document is a functional inventory of the OpenVitals Android app. It is org
 - Delete OpenVitals-created weight, height, and body-fat entries.
 - Request Health Connect body write permissions from the entry flow.
 - BMI is calculated from available weight and height data and is not manually inserted.
-- Lean body mass, BMR, bone mass, and body water mass are view-only in the manual UI.
+- Lean body mass, FFMI, BMR, bone mass, and body water mass are view-only in the manual UI.
 
 ### Vitals
 
@@ -317,7 +321,7 @@ This document is a functional inventory of the OpenVitals Android app. It is org
 - Nutrition and meal entries are view-only in the manual UI.
 - Cycle tracking observations are view-only in the app.
 - Heart rate, resting heart rate, HRV, VO2 max, blood glucose, and skin temperature are view-only in the manual UI.
-- Lean body mass, BMR, bone mass, body water mass, and BMI are view-only in the manual UI.
+- Lean body mass, FFMI, BMR, bone mass, body water mass, and BMI are view-only in the manual UI.
 - Planned workouts are view-only.
 - Achievements are computed from activity data and are not manually edited.
 
@@ -375,6 +379,7 @@ This document is a functional inventory of the OpenVitals Android app. It is org
 
 - Configure daily goals for supported metrics, including hydration, activity metrics, workout minutes, sleep, nutrition metrics, and mindfulness.
 - Configure hydration reminders, reminder interval, and active reminder window.
+- Hydration reminder notifications hide automatically after a hydration entry is saved.
 - Configure mindfulness reminders and reminder time.
 - Store custom hydration container sizes.
 
@@ -384,3 +389,4 @@ This document is a functional inventory of the OpenVitals Android app. It is org
 - View that health data is read from and written to Health Connect on device.
 - View the read-only dashboard/privacy positioning and health disclaimer.
 - View app version information.
+- View debug diagnostics in debug builds.
