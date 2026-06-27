@@ -83,6 +83,7 @@ This document is a functional inventory of the OpenVitals Android app. It is org
 - View route previews, route point counts, start/end route points, map opening, and GPX/KMZ export when route data is available.
 - View activity segments, laps, repetitions, and set information where available.
 - View experimental Bluetooth LE sensor metrics during activity recording where connected devices provide them.
+- Configure the activity recording dashboard, use Focus mode, keep the screen awake while recording, and monitor heart rate for supported strength and repetition training recordings.
 
 ### Cardio Load
 
@@ -257,6 +258,8 @@ This document is a functional inventory of the OpenVitals Android app. It is org
 - Record route-based activities with GPS.
 - Start, pause, resume, finish, or discard a recording.
 - Save recorded route points, pause intervals, distance, and elevation.
+- Configure the activity recording dashboard, use Focus mode, and keep the screen awake during recording.
+- Record strength training with heart-rate monitoring and richer repetition stats where sensor data is available.
 - Connect paired experimental Bluetooth LE heart-rate, cycling cadence, cycling power, and footpod devices during recording.
 - Use sensor-assisted repetition flows for supported activities such as treadmill steps, push-ups, pull-ups, rope skipping, and trampoline jumping.
 - Request Health Connect activity write permissions from the entry flow.
@@ -329,7 +332,7 @@ This document is a functional inventory of the OpenVitals Android app. It is org
 
 ### Display Settings
 
-- Change language: system default, English, Spanish, or German.
+- Change language: system default, English, Spanish, German, or Italian.
 - Change unit system: metric or imperial.
 - Change theme: system, light, dark, or AMOLED.
 

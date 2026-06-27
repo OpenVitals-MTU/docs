@@ -47,6 +47,6 @@ mkdocs build --strict
 
 ## Translation Notes
 
-The Android app currently supports English, Spanish, and German language preferences.
+The Android app currently supports English, Spanish, German, and Italian language preferences.
 
 When changing user-facing app copy, keep translations in sync or call out the missing translation work clearly in the issue or pull request.

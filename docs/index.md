@@ -20,7 +20,7 @@ It is designed for people who want a clear daily dashboard and focused metric de
 - Shows Fat-Free Mass Index (FFMI) when the required body composition data is available.
 - Breaks down total, active, and BMR calorie context in a dedicated Calories detail screen.
 - Imports GPX, KML, KMZ, and FIT activity route files for review before saving.
-- Supports experimental Bluetooth LE sensors during activity recording.
+- Supports a configurable activity recording dashboard with Focus mode, keep-screen-on support, strength training heart-rate monitoring, and experimental Bluetooth LE sensors.
 - Imports supported Apple Health export records into Health Connect, with background progress for large exports.
 - Uses current Health Connect client coverage for newer activity records and recording permissions.
 - Allows explicit Health Connect logging for supported manual entries.

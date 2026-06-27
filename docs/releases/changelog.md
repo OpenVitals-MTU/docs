@@ -4,6 +4,15 @@ This page summarizes the English release notes for the local Android app.
 
 For full localized notes, see the Android app repository changelog.
 
+## 1.6.2 - 2026-06-27
+
+- Add a configurable activity recording dashboard with Focus mode for a cleaner in-recording view.
+- Add strength training recording with heart-rate monitoring and richer repetition training heart-rate stats.
+- Keep the screen awake during activity recording when enabled and make recording setup and review flows cleaner.
+- Improve Bluetooth LE sensor timeout handling so stale sensor values drop out more reliably.
+- Fix daily HRV loading and defer heavier dashboard widget reads to improve dashboard responsiveness.
+- Fix release automation so the signed Android App Bundle is found reliably during publishing.
+
 ## 1.6.1 - 2026-06-27
 
 - Fix activity tracking notifications so tapping the notification reopens the active recording screen.
