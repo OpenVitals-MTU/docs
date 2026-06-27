@@ -4,6 +4,12 @@ This page summarizes the English release notes for the local Android app.
 
 For full localized notes, see the Android app repository changelog.
 
+## 1.6.1 - 2026-06-27
+
+- Fix activity tracking notifications so tapping the notification reopens the active recording screen.
+- Improve dashboard and background metric loading performance, including coalesced refreshes and more efficient summary reads.
+- Add Italian translations and make Italian available in the in-app language selector.
+
 ## 1.6.0 - 2026-06-27
 
 - Add a dedicated debug version that can be installed alongside production builds for safer troubleshooting.
