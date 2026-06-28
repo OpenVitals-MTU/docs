@@ -116,6 +116,6 @@ Declared for explicit save and supported Apple Health import workflows; requeste
 
 ## File And Route Intents
 
-OpenVitals can receive GPX, KML, KMZ, and FIT files through Android open/share intents so imported activities can be reviewed and saved to Health Connect.
+OpenVitals can receive GPX, KML, KMZ, and FIT files through Android open/share intents so imported activities can be reviewed and saved to Health Connect. It can also import PMTiles and Mapsforge map packs from Settings for offline activity maps.
 
 The app also uses a local file provider to export route files, such as GPX or KMZ, to other apps.

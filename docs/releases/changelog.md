@@ -4,6 +4,12 @@ This page summarizes the English release notes for the local Android app.
 
 For full localized notes, see the Android app repository changelog.
 
+## 1.6.3 - 2026-06-28
+
+- Add a manual carbohydrate entry flow that writes total-carbohydrate NutritionRecords to Health Connect.
+- Add offline activity maps by importing PMTiles or Mapsforge map packs from Settings.
+- Show imported offline maps while recording activities and previewing saved or imported routes, with map recentering and background import progress.
+
 ## 1.6.2 - 2026-06-27
 
 - Add a configurable activity recording dashboard with Focus mode for a cleaner in-recording view.

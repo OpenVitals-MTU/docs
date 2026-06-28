@@ -30,6 +30,7 @@ The Summary dashboard is read-only. Use Log or Add entry when you want to save a
 Supported entries:
 
 - Hydration.
+- Carbohydrates.
 - Activity sessions.
 - Mindfulness sessions.
 - Weight, height, and body fat.
@@ -44,6 +45,7 @@ Activity entry supports three workflows:
 - Create a manual activity.
 - Import GPX, KML, KMZ, or FIT route files and review the detected details before saving.
 - Record a GPS activity from OpenVitals, then review and save it to Health Connect.
+- Import PMTiles or Mapsforge map packs from Settings for offline route maps.
 - Configure the recording dashboard, use Focus mode, keep the screen awake, and connect experimental Bluetooth LE sensors while recording activities.
 
 GPS recording needs precise location permission. Bluetooth LE sensor recording needs nearby-device Bluetooth permission on Android versions that require it. Finished GPS drafts can be discarded before saving. Recording notifications and hydration reminders need notification permission on Android versions that require it.

@@ -22,6 +22,7 @@ OpenVitals can show these Health Connect areas when permission and data are avai
 OpenVitals writes to Health Connect only from explicit entry or import workflows:
 
 - Hydration.
+- Nutrition records for explicitly saved carbohydrate totals.
 - Sleep sessions from supported imports.
 - Exercise sessions and optional route, distance, elevation gain, active calories, and total calories records.
 - Heart rate and resting heart rate from supported imports.
@@ -42,7 +43,7 @@ OpenVitals can request Health history and background-read access where Android a
 
 Workout routes are sensitive Health Connect data. Route previews require manual approval from Health Connect settings.
 
-OpenVitals can import route files into activity entries, record GPS routes, open saved routes in map apps, and export routes as GPX or KMZ when the required data is available.
+OpenVitals can import route files into activity entries, import PMTiles or Mapsforge map packs for offline route previews, record GPS routes, open saved routes in map apps, and export routes as GPX or KMZ when the required data is available.
 
 ## Platform Notes
 
