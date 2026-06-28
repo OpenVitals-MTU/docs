@@ -18,21 +18,6 @@ You can import multiple packs, but OpenVitals renders **one format at a time**. 
 !!! tip "Start small"
     Regional map files are much easier to manage than a full-world download. Aim for the area where you record or preview activities.
 
-## Complete Walkthrough: Mapsforge `.map` Files
-
-If you want a prebuilt offline map without using a computer, follow these steps from download to import:
-
-1. Open **[https://download.mapsforge.org/maps/v5/](https://download.mapsforge.org/maps/v5/)** in your browser.
-2. Open the folder for your region (for example `europe/` or `north-america/`).
-3. Open country or sub-region folders until you see a `.map` file that covers your area.
-4. Download the `.map` file and wait until it finishes.
-5. Open **OpenVitals → Settings → Activities → Offline maps**.
-6. Tap **Import offline map**.
-7. Select the downloaded `.map` file from your file picker (often in **Downloads**).
-8. Wait for the import to complete. Large maps may continue importing in the background.
-9. Under **Render format**, choose **Mapsforge** if you also imported PMTiles files.
-10. Start or preview an activity — the map renders automatically when your route is inside the downloaded area.
-
 ## Option A: Download PMTiles
 
 PMTiles is a single-file archive format. OpenVitals uses a Protomaps-style basemap renderer, so use PMTiles built from the [Protomaps Basemap](https://protomaps.com/) or another Protomaps-compatible source.
@@ -74,6 +59,11 @@ pmtiles extract https://build.protomaps.com/20260518.pmtiles my_area.pmtiles --b
 Each extra zoom level can roughly double file size. Zoom 14 is often enough for running and cycling routes; zoom 15 adds more street-level detail.
 
 5. Copy the finished `my_area.pmtiles` file to your phone.
+6. Open **OpenVitals → Settings → Activities → Offline maps**.
+7. Tap **Import offline map** and select your `.pmtiles` file.
+8. Wait for the import to finish. Large files may continue importing in the background.
+
+When import completes, the map appears in your offline map list with its file name, format, and size.
 
 **3. Other PMTiles sources**
 
@@ -83,13 +73,11 @@ You may also find Protomaps-compatible `.pmtiles` files from map communities, se
 
 Protomaps basemaps are derived from OpenStreetMap. Respect the license terms of the map you download and keep attribution in mind when sharing screenshots or exports.
 
-## Option B: Download Mapsforge `.map` Files
+## Option B: Download And Import Mapsforge `.map` Files
 
 Mapsforge maps use a single `.map` or `.maps` file per region. They work well for outdoor activities and include roads, paths, and land-cover detail from OpenStreetMap.
 
-### Step-by-step: download from the Mapsforge server
-
-Use the official prebuilt map library:
+Download prebuilt maps from the official server, then import them into OpenVitals:
 
 **[https://download.mapsforge.org/maps/v5/](https://download.mapsforge.org/maps/v5/)**
 
@@ -107,19 +95,16 @@ Use the official prebuilt map library:
 3. Open subfolders until you reach your country or regional map file. For example:
    - `north-america/` → `us/` or files like `us-west.map`
    - `europe/` → country folders such as `germany/`, `france/`, or `netherlands/`
-4. Tap or click the `.map` file you want to download.
-5. Wait for the download to finish. Map files are often hundreds of megabytes to a few gigabytes.
-6. If you downloaded on a computer, copy the `.map` file to your phone (USB, cloud storage, Syncthing, or similar).
-7. If you downloaded on your phone, note where the file was saved — usually **Downloads**.
+4. Download the `.map` file and wait until it finishes. Files are often hundreds of megabytes to a few gigabytes.
+5. If you downloaded on a computer, copy the file to your phone (USB, cloud storage, Syncthing, or similar). On your phone, downloads usually land in **Downloads**.
+6. Open **OpenVitals → Settings → Activities → Offline maps**.
+7. Tap **Import offline map** and select your `.map` file.
+8. Wait for the import to finish. Large maps may continue importing in the background.
+9. Under **Render format**, choose **Mapsforge** if you also imported PMTiles files.
+10. Start or preview an activity — the map renders automatically when your route is inside the downloaded area.
 
 !!! tip "Pick the smallest region you need"
     Prefer a country or regional `.map` file over a very large multi-region file. Smaller maps import faster and use less storage.
-
-### What you should have before import
-
-- A file ending in `.map` or `.maps`
-- A completed download (not a partial or still-downloading file)
-- The file stored somewhere Android can open from the file picker
 
 Maps on this server are © [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors, licensed under ODbL.
 
@@ -130,33 +115,7 @@ If you need a different style or more outdoor detail, these community sources al
 - [OpenAndroMaps](https://www.openandromaps.org/en/downloads) — hiking-focused maps, often packaged in `.zip` archives
 - [Freemap Slovakia](https://www.freemap.sk/pages/download-mapsforge/) — detailed maps for Slovakia
 
-Extract any `.zip` archive first, then import the `.map` file inside.
-
-## Copy The Map File To Your Phone
-
-You need the finished map file in a place Android can open from the file picker. Common options:
-
-1. **Download directly on the phone** using your browser or the provider's app.
-2. **Transfer from a computer** with USB, Syncthing, Google Drive, Nextcloud, or any file-sync method you already use.
-3. **Move the file into Downloads** or another folder you can easily find during import.
-
-Remember the file name and folder location — you will select it in the next step.
-
-## Import The Map Into OpenVitals
-
-Follow these steps after your `.pmtiles`, `.map`, or `.maps` file is on your phone:
-
-1. Open **OpenVitals**.
-2. Go to **Settings**.
-3. Open **Activities**.
-4. Scroll to **Offline maps**.
-5. Tap **Import offline map**.
-6. In the file picker, browse to your downloaded map file and select it.
-7. Wait for the import to finish.
-
-Large files may take several minutes. OpenVitals can continue copying the map in the background, and you may see a progress notification while the import runs.
-
-When import completes, the map appears in your offline map list with its file name, format, and size.
+Extract any `.zip` archive first, then import the `.map` file using steps 6–8 above.
 
 ## Choose Which Format To Render
 
