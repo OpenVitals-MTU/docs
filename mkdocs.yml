@@ -44,6 +44,9 @@ nav:
       - Privacy: app/privacy.md
       - Local And Connected Editions: app/editions.md
       - FAQ: app/faq.md
+  - How-to's:
+      - Overview: how-to/index.md
+      - Add Offline Maps: how-to/offline-maps.md
   - Features:
       - Overview: features/index.md
       - Health Connect Metrics Dashboard: features/health-connect-metrics-dashboard.md
