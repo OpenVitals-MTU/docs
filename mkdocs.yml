@@ -37,13 +37,28 @@ nav:
   - App:
       - Install: app/install.md
       - Getting Started: app/getting-started.md
-      - Features: app/features.md
+      - Feature Inventory: app/features.md
       - Screenshots: app/screenshots.md
       - Health Connect: app/health-connect.md
       - Permissions: app/permissions.md
       - Privacy: app/privacy.md
       - Local And Connected Editions: app/editions.md
       - FAQ: app/faq.md
+  - Features:
+      - Overview: features/index.md
+      - Health Connect Metrics Dashboard: features/health-connect-metrics-dashboard.md
+      - Non Health Connect Metrics Dashboard: features/non-health-connect-metrics-dashboard.md
+      - Manual Entry Of Metrics: features/manual-entry-metrics.md
+      - Recording Of Activity: features/activity-recording.md
+      - Offline Maps Support: features/offline-maps-support.md
+      - Apple Health Import: features/apple-health-import.md
+      - FIT Files Import: features/fit-files-import.md
+      - Activity And Training Plans: features/activity-training-plans.md
+      - GPX/KML/KMZ/FIT Import: features/route-file-import.md
+      - Daily Readiness: features/daily-readiness.md
+      - Achievements: features/achievements.md
+      - Reminders: features/reminders.md
+      - Statistics: features/statistics.md
   - Releases:
       - Changelog: releases/changelog.md
   - Developers:
