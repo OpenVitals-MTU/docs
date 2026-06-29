@@ -4,6 +4,14 @@ This page summarizes the English release notes for the local Android app.
 
 For full localized notes, see the Android app repository changelog.
 
+## 1.7.0 - 2026-06-29
+
+- Add controls for reordering metric detail sections so charts, statistics, entries, and guidance can match your workflow.
+- Add a high-contrast outdoor recording theme and improve widget-edit scrolling while recording.
+- Add post-activity speed and cadence charts, and trim duplicated heart-rate sensor samples during recording.
+- Make Apple Health imports safer for large exports with targeted lookups and time-window chunking.
+- Fix Health Connect permission handling and reduce oversized heart/chart reads that could trigger CursorWindow errors.
+
 ## 1.6.3 - 2026-06-28
 
 - Add a manual carbohydrate entry flow that writes total-carbohydrate NutritionRecords to Health Connect.

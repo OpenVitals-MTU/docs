@@ -11,6 +11,7 @@ This document is a functional inventory of the OpenVitals Android app. It is org
 - Move to previous and next periods.
 - Pick a specific date from the calendar.
 - Pull to refresh data from Health Connect.
+- Reorder metric detail sections so frequently used charts, statistics, entries, and guidance can stay near the top.
 - See period-aware charts:
   - Day and week views use daily or intraday chart values where available.
   - Month and year views use longer-range history/heatmap style summaries where available.
@@ -83,7 +84,8 @@ This document is a functional inventory of the OpenVitals Android app. It is org
 - View route previews, route point counts, start/end route points, offline maps from imported PMTiles or Mapsforge packs, map opening, and GPX/KMZ export when route data is available.
 - View activity segments, laps, repetitions, and set information where available.
 - View experimental Bluetooth LE sensor metrics during activity recording where connected devices provide them.
-- Configure the activity recording dashboard, use Focus mode, keep the screen awake while recording, and monitor heart rate for supported strength and repetition training recordings.
+- Configure the activity recording dashboard, use Focus mode, high-contrast outdoor mode, keep the screen awake while recording, and monitor heart rate for supported strength and repetition training recordings.
+- View post-activity speed and cadence charts when compatible samples are available.
 
 ### Cardio Load
 
