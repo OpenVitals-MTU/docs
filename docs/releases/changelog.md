@@ -4,6 +4,14 @@ This page summarizes the English release notes for the local Android app.
 
 For full localized notes, see the Android app repository changelog.
 
+## 1.7.2 - 2026-06-30
+
+- Add a sleep-stage time graph so overnight sessions are easier to scan by time of night.
+- Improve drag-and-drop mechanics for reorderable dashboard widgets and metric detail sections.
+- Fix dashboard carousel behavior after widget and layout changes.
+- Fix weekly activity visuals when a day has no activity.
+- Expand connected-flow and visual-regression coverage for dashboard, hydration, manual entry, settings, and shared Material components.
+
 ## 1.7.1 - 2026-06-30
 
 - Extend reorderable metric detail sections across activities, calories, hydration, nutrition, heart/vitals, sleep, and body screens.

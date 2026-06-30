@@ -98,7 +98,7 @@ This document is a functional inventory of the OpenVitals Android app. It is org
 
 - View sleep duration by day, week, month, and year.
 - View sleep sessions in the selected period.
-- View selected-day sleep session timelines.
+- View selected-day sleep session timelines and sleep-stage time graphs.
 - View sleep stages including asleep/sleeping, light, deep, REM, awake, awake in bed, and out of bed when available.
 - View data confidence, sleep goal progress, total sleep, daily average, longest sleep, nights logged, previous-period comparison, and personal baseline.
 - View sleep target/context cards.
