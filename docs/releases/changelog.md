@@ -4,6 +4,14 @@ This page summarizes the English release notes for the local Android app.
 
 For full localized notes, see the Android app repository changelog.
 
+## 1.7.1 - 2026-06-30
+
+- Extend reorderable metric detail sections across activities, calories, hydration, nutrition, heart/vitals, sleep, and body screens.
+- Improve Apple Health import diagnostics with clearer error/report copy actions and more detailed import logging.
+- Fix heart data loading for days with more than 1,000 samples by paging reads before chart aggregation.
+- Refine dashboard and metric internals with feature-owned repositories, presentation mappers, and smaller screen components for steadier refreshes.
+- Stabilize release/debug build signing and add coverage for weekly sleep and hydration layouts.
+
 ## 1.7.0 - 2026-06-29
 
 - Add controls for reordering metric detail sections so charts, statistics, entries, and guidance can match your workflow.
