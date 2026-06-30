@@ -4,6 +4,14 @@ This page summarizes the English release notes for the local Android app.
 
 For full localized notes, see the Android app repository changelog.
 
+## 1.7.3 - 2026-06-30
+
+- Remove the local dashboard summary cache and related warmup controls so metric refreshes read directly from Health Connect with less stale state.
+- Simplify dashboard refresh loading and repository queries after cache removal.
+- Improve sleep handling by merging overlapping sessions and surfacing sleep summary data more consistently.
+- Fix weekly activity progress markers so past days without activity are not drawn as completed.
+- Fix data source attribution text fitting for long provider and app names, with regression coverage.
+
 ## 1.7.2 - 2026-06-30
 
 - Add a sleep-stage time graph so overnight sessions are easier to scan by time of night.
