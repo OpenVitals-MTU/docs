@@ -4,6 +4,14 @@ This page summarizes the English release notes for the local Android app.
 
 For full localized notes, see the Android app repository changelog.
 
+## 1.7.4 - 2026-07-02
+
+- Add a dedicated Body Energy detail flow with calibration controls, timeline loading, dashboard support, and widget data.
+- Show saved Bluetooth LE sensor connection status and battery levels in dashboard and recording surfaces.
+- Add a rest-timer bell for repetition activity recordings.
+- Use fuller raw samples in day metric views so same-day charts and detail data stay more accurate.
+- Keep the local app internet-free by removing inherited network access, while improving diagnostics, Apple Health import logging, and release automation.
+
 ## 1.7.3 - 2026-06-30
 
 - Remove the local dashboard summary cache and related warmup controls so metric refreshes read directly from Health Connect with less stale state.
