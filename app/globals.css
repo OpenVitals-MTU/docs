@@ -1,0 +1,73 @@
+@import '../docs/stylesheets/extra.css';
+
+:root {
+  --md-default-bg-color: #ffffff;
+  --md-default-fg-color--light: #5a6872;
+  --md-default-fg-color--lightest: #d7dee2;
+  --md-shadow-z1: 0 1px 2px rgb(15 23 42 / 8%), 0 1px 3px rgb(15 23 42 / 8%);
+  --md-shadow-z2: 0 6px 14px rgb(15 23 42 / 12%);
+}
+
+.dark {
+  --md-default-bg-color: #11181c;
+  --md-default-fg-color--light: #a8b4bc;
+  --md-default-fg-color--lightest: #33434b;
+  --md-shadow-z1: 0 1px 2px rgb(0 0 0 / 22%), 0 1px 3px rgb(0 0 0 / 18%);
+  --md-shadow-z2: 0 8px 18px rgb(0 0 0 / 28%);
+}
+
+.openvitals-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.openvitals-brand img {
+  display: block;
+  border-radius: 6px;
+}
+
+.md-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.35rem;
+  margin: 0.25rem 0.35rem 0.25rem 0;
+  padding: 0.45rem 0.85rem;
+  border: 1px solid color-mix(in oklab, currentColor 28%, transparent);
+  border-radius: 6px;
+  color: inherit;
+  font-weight: 650;
+  line-height: 1.2;
+  text-decoration: none;
+  transition:
+    background-color 140ms ease,
+    border-color 140ms ease,
+    color 140ms ease;
+}
+
+.md-button:hover {
+  border-color: color-mix(in oklab, currentColor 48%, transparent);
+  background: color-mix(in oklab, currentColor 8%, transparent);
+  text-decoration: none;
+}
+
+.md-button--primary {
+  border-color: #0f766e;
+  background: #0f766e;
+  color: #ffffff;
+}
+
+.md-button--primary:hover {
+  border-color: #115e59;
+  background: #115e59;
+  color: #ffffff;
+}
+
+.liberapay-widget {
+  margin-top: 1rem;
+}
+
+.liberapay-widget iframe {
+  color-scheme: light;
+}

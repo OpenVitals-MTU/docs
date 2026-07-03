@@ -1,0 +1,13 @@
+.git
+.github
+.woodpecker
+.venv
+.cache
+.next
+node_modules
+site
+out
+public/_pagefind
+npm-debug.log*
+.DS_Store
+Thumbs.db

@@ -1,0 +1,51 @@
+export default {
+  index: 'Feature Overview',
+  '---dashboard-app': {
+    type: 'separator',
+    title: 'Dashboard & App'
+  },
+  'health-connect-metrics-dashboard': 'Health Connect Metrics Dashboard',
+  'non-health-connect-metrics-dashboard': 'Non Health Connect Metrics Dashboard',
+  'metric-detail-customization': 'Metric Detail Customization',
+  'home-widgets': 'Home Screen Widgets',
+  'onboarding-and-permissions': 'Onboarding And Permissions',
+  'settings-and-preferences': 'Settings And Preferences',
+  achievements: 'Achievements',
+  '---health-metrics': {
+    type: 'separator',
+    title: 'Health Metrics'
+  },
+  'activity-metrics': 'Activity Metrics',
+  'sleep-tracking': 'Sleep Tracking',
+  'sleep-score-and-recovery': 'Sleep Score And Recovery',
+  'daily-readiness': 'Daily Readiness',
+  'body-energy': 'Body Energy',
+  'heart-and-vitals': 'Heart And Vitals',
+  'body-metrics': 'Body Metrics',
+  nutrition: 'Nutrition',
+  hydration: 'Hydration',
+  mindfulness: 'Mindfulness',
+  'cycle-tracking': 'Cycle Tracking',
+  statistics: 'Statistics',
+  '---log-import-record': {
+    type: 'separator',
+    title: 'Log, Import & Record'
+  },
+  'manual-entry-metrics': 'Manual Entry Of Metrics',
+  'beverage-logging-and-caffeine': 'Beverage Logging And Caffeine',
+  'activity-recording': 'Recording Of Activity',
+  'activity-training-plans': 'Activity And Training Plans',
+  'ble-sensors': 'Bluetooth LE Sensors',
+  'route-file-import': 'GPX/KML/KMZ/FIT Import',
+  'fit-files-import': 'FIT Files Import',
+  'offline-maps-support': 'Offline Maps Support',
+  'apple-health-import': 'Apple Health Import',
+  'preloaded-beverage-nutrition': 'Preloaded Beverage Nutrition Reference',
+  reminders: 'Reminders',
+  '---privacy-developers': {
+    type: 'separator',
+    title: 'Privacy & Developers'
+  },
+  'privacy-support-diagnostics': 'Privacy, Support, And Diagnostics',
+  'feature-map': 'Feature Map'
+}

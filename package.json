@@ -1,0 +1,30 @@
+{
+  "name": "@openvitals/docs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "OpenVitals documentation site.",
+  "homepage": "https://openvitals.health/",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@codeberg.org/OpenVitals/docs.git"
+  },
+  "scripts": {
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
+    "postbuild": "pagefind --site .next/server/app --output-path public/_pagefind",
+    "postinstall": "node scripts/patch-nextra-theme-docs.mjs",
+    "start": "HOSTNAME=0.0.0.0 node .next/standalone/server.js"
+  },
+  "dependencies": {
+    "mdast-util-from-markdown": "2.0.3",
+    "next": "16.2.10",
+    "nextra": "4.6.1",
+    "nextra-theme-docs": "4.6.1",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
+    "sharp": "0.35.3"
+  },
+  "devDependencies": {
+    "pagefind": "1.5.2"
+  }
+}

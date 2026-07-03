@@ -2,6 +2,12 @@
 .cache/
 site/
 __pycache__/
+node_modules/
+.next/
+out/
+public/_pagefind/
+npm-debug.log*
+.env*.local
 
 .DS_Store
 Thumbs.db

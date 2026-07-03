@@ -1,11 +1,11 @@
-# OpenVitals Website
+# OpenVitals Docs
 
-MkDocs Material website for OpenVitals.
+Nextra documentation site for OpenVitals.
 
 Repository:
 
 ```text
-https://codeberg.org/OpenVitals/website
+https://codeberg.org/OpenVitals/docs
 ```
 
 Expected website URL:
@@ -17,30 +17,46 @@ https://openvitals.health/
 ## Local Preview
 
 ```bash
-python -m pip install -r requirements.txt
-mkdocs serve
+npm install
+npm run dev
 ```
 
 ## Build
 
 ```bash
-mkdocs build --strict
+npm run build
 ```
 
-## Codeberg Pages
+## Repository Rename
 
-The Woodpecker pipeline builds the MkDocs site, writes `site/.domains` for the custom domain, and deploys the generated `site/` directory to the `pages` branch using `codeberg.org/sugar700/plugin-codeberg-pages-deploy:1`.
+This repository is expected to live at:
 
-Required setup:
+```text
+ssh://git@codeberg.org/OpenVitals/docs.git
+```
 
-1. Create the Codeberg repository `OpenVitals/website`.
-2. Add a deploy key with write access to the repository.
-3. Store the matching private key in Woodpecker as `CODEBERG_PAGES_SSH_KEY`.
-4. Add a Forgejo webhook in the repository settings:
-   - Target URL: `https://openvitals.codeberg.page/website/`
-   - Branch filter: `pages`
-5. Point DNS for `openvitals.health` and `www.openvitals.health` to the `OpenVitals/website` Pages target.
+If a local checkout still points to the previous repository slug, update it with:
 
-Keep the webhook target on the Codeberg Pages URL. The custom domain is declared through `site/.domains` and the DNS records.
+```bash
+git remote set-url origin ssh://git@codeberg.org/OpenVitals/docs.git
+```
 
-Codeberg Pages will serve the `pages` branch as the project website, with `https://openvitals.health/` as the canonical custom domain.
+## Fly.io
+
+The Woodpecker pipeline builds the Nextra site and deploys the container to Fly.io app `openvitals-docs`.
+
+One-time setup:
+
+```bash
+fly apps create openvitals-docs --yes
+fly tokens create deploy -a openvitals-docs -x 8760h -n woodpecker-openvitals-docs
+```
+
+Store the full token in Woodpecker as `FLY_API_TOKEN`.
+
+Add Fly certificates for `openvitals.health` and `www.openvitals.health`, then point DNS to the records shown by Fly:
+
+```bash
+fly certs add openvitals.health -a openvitals-docs
+fly certs add www.openvitals.health -a openvitals-docs
+```

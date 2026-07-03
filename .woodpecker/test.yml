@@ -1,31 +1,28 @@
 when:
   - event: pull_request
   - event: push
-    branch: main
 
 steps:
   - name: build
-    image: python:3.12-slim
+    image: node:26-bookworm-slim
     commands:
       - set -eu
       - apt-get update
       - apt-get install -y --no-install-recommends git
       - rm -rf /var/lib/apt/lists/*
-      - python -m pip install --upgrade pip
-      - python -m pip install -r requirements.txt
-      - mkdocs build --strict
-      - printf "openvitals.health\nwww.openvitals.health\n" > site/.domains
+      - npm ci
+      - npm run build
       - git diff --check
 
-  - name: deploy-pages
-    image: codeberg.org/sugar700/plugin-codeberg-pages-deploy:1
+  - name: deploy-fly
+    image: flyio/flyctl:latest
     depends_on:
       - build
-    settings:
-      folder: site
-      branch: pages
-      ssh_key:
-        from_secret: CODEBERG_PAGES_SSH_KEY
+    environment:
+      FLY_API_TOKEN:
+        from_secret: FLY_API_TOKEN
+    commands:
+      - flyctl deploy --remote-only --config fly.toml --app openvitals-docs --yes
     when:
       - event: push
         branch: main
