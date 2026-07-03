@@ -15,14 +15,17 @@ steps:
       - git diff --check
 
   - name: deploy-fly
-    image: flyio/flyctl:latest
+    image: alpine:3.22
     depends_on:
       - build
     environment:
       FLY_API_TOKEN:
         from_secret: FLY_API_TOKEN
     commands:
-      - flyctl deploy --remote-only --config fly.toml --app openvitals-docs --yes
+      - set -eu
+      - apk add --no-cache curl ca-certificates
+      - curl -L https://fly.io/install.sh | sh
+      - /root/.fly/bin/flyctl deploy --remote-only --config fly.toml --app openvitals-docs --yes
     when:
       - event: push
         branch: main
