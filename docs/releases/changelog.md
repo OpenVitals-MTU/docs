@@ -4,6 +4,14 @@ This page summarizes the English release notes for the local Android app.
 
 For full localized notes, see the Android app repository changelog.
 
+## 1.7.5 - 2026-07-03
+
+- Add a dedicated Caffeine detail flow with active-caffeine modeling, source and time-of-day insights, bedtime guidance, dashboard support, and configurable sensitivity and limits.
+- Expand beverage logging with a Room-backed drink catalog, 215 preset drinks, editable categories, custom drinks, and nutrition defaults while keeping Health Connect records as the source of truth.
+- Save richer beverage entries by pairing effective hydration with caffeine and nutrition values, and preserve custom drink ordering and categories across app launches.
+- Backfill activity detail data from related Health Connect records so historical workouts can show more complete sessions and metrics.
+- Improve support and release stability with crash-report email drafts, database migration coverage, Zulip links, and cleaner Gradle/Woodpecker release steps.
+
 ## 1.7.4 - 2026-07-02
 
 - Add a dedicated Body Energy detail flow with calibration controls, timeline loading, dashboard support, and widget data.

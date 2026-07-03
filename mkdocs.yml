@@ -34,6 +34,7 @@ theme:
 
 nav:
   - Home: index.md
+  - Support: support.md
   - App:
       - Install: app/install.md
       - Getting Started: app/getting-started.md

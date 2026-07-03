@@ -4,7 +4,7 @@ OpenVitals is a local-first Android app for Health Connect data, activity loggin
 
 - [Health Connect metrics dashboard](health-connect-metrics-dashboard.md): read Health Connect records into a configurable dashboard and period detail screens. Steps are the simplest example: OpenVitals reads step totals, shows charts, and links into richer statistics without storing a second health database.
 - [Non Health Connect metrics dashboard](non-health-connect-metrics-dashboard.md): show local derived metrics that are calculated from Health Connect data. Cardio load is the main example, using available heart-rate and activity signals to estimate training strain.
-- [Manual entry of metrics](manual-entry-metrics.md): save explicit user-entered records back to Health Connect. Weight is one of the core flows, alongside hydration, carbohydrates, body measurements, vitals, mindfulness, and activity entries.
+- [Manual entry of metrics](manual-entry-metrics.md): save explicit user-entered records back to Health Connect. Weight is one of the core flows, alongside beverage/hydration entries with caffeine and nutrition defaults, carbohydrates, body measurements, vitals, mindfulness, and activity entries.
 - [Recording of activity](activity-recording.md): record activities in OpenVitals before saving them to Health Connect. This includes GPS activity recording and repetition-oriented activity flows.
 - [Offline maps support](offline-maps-support.md): import PMTiles or Mapsforge packs for local activity maps that can be used without app-level internet access.
 - [Apple Health import](apple-health-import.md): import supported Apple Health export records into Health Connect with background progress.
