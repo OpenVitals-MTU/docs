@@ -41,7 +41,6 @@ It is for people who want a clear daily dashboard, focused metric detail screens
 
 - [Privacy](app/privacy.md)
 - [Permissions](app/permissions.md)
-- [Local and connected editions](app/editions.md)
 - [Privacy, support, and diagnostics](features/privacy-support-diagnostics.md)
 </div>
 
@@ -91,5 +90,4 @@ The local OpenVitals app does not ship app-level internet permission. It reads s
 [Build From Source](developers/build.md){ .md-button }
 
 - Android app: [codeberg.org/OpenVitals/android-app](https://codeberg.org/OpenVitals/android-app)
-- Connected app scaffold: [codeberg.org/OpenVitals/android-app-connected](https://codeberg.org/OpenVitals/android-app-connected)
-- Website: [codeberg.org/OpenVitals/website](https://codeberg.org/OpenVitals/website)
+- Documentation: [codeberg.org/OpenVitals/docs](https://codeberg.org/OpenVitals/docs)

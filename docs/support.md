@@ -22,7 +22,6 @@ If you need help using the app, start with the user docs below. If OpenVitals is
 
 - [FAQ](app/faq.md)
 - [Privacy](app/privacy.md)
-- [Local and connected editions](app/editions.md)
 - [Privacy, support, and diagnostics](features/privacy-support-diagnostics.md)
 </div>
 
@@ -32,7 +31,7 @@ If you need help using the app, start with the user docs below. If OpenVitals is
 - [Contributing](developers/contributing.md)
 - [Build from source](developers/build.md)
 - [Changelog](releases/changelog.md)
-- [Website issues](https://codeberg.org/OpenVitals/website/issues)
+- [Documentation issues](https://codeberg.org/OpenVitals/docs/issues)
 </div>
 
 </div>

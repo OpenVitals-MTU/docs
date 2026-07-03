@@ -1,6 +1,6 @@
 # Privacy
 
-OpenVitals is designed as a local-first app. The local Android app is intentionally separate from any connected app work.
+OpenVitals is designed as a local-first Android app.
 
 The local app:
 
@@ -29,5 +29,3 @@ Workout route previews require manual Health Connect approval in some cases. GPS
 ## Permission Details
 
 See [Permissions](permissions.md) for the current permission list and why each group is requested.
-
-See [Local And Connected Editions](editions.md) for the boundary between the local app and planned connected work.

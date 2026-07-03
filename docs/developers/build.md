@@ -12,23 +12,13 @@ cd android-app
 
 The local app is the Health Connect-only app and should stay internet-free.
 
-## Connected App
+## Documentation Site
 
-Clone the connected app repository:
-
-```bash
-git clone https://codeberg.org/OpenVitals/android-app-connected.git
-cd android-app-connected
-./gradlew :app:assembleDebug
-```
-
-## Website
-
-Clone this website repository:
+Clone this documentation repository:
 
 ```bash
-git clone https://codeberg.org/OpenVitals/website.git
-cd website
-python -m pip install -r requirements.txt
-mkdocs serve
+git clone https://codeberg.org/OpenVitals/docs.git
+cd docs
+npm install
+npm run dev
 ```

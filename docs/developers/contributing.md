@@ -21,9 +21,13 @@ Use the Android app repository for app bugs:
 
 [codeberg.org/OpenVitals/android-app/issues](https://codeberg.org/OpenVitals/android-app/issues)
 
-Use the website repository for documentation or website issues:
+Use the documentation repository for documentation or website issues:
 
-[codeberg.org/OpenVitals/website/issues](https://codeberg.org/OpenVitals/website/issues)
+[codeberg.org/OpenVitals/docs/issues](https://codeberg.org/OpenVitals/docs/issues)
+
+For contributor discussion, join the OpenVitals Zulip:
+
+[openvitals.zulipchat.com](https://openvitals.zulipchat.com/)
 
 ## Development Workflow
 
@@ -35,14 +39,16 @@ Use the website repository for documentation or website issues:
 
 ## Documentation Workflow
 
-1. Clone the website repository.
-2. Install MkDocs dependencies.
-3. Run `mkdocs serve` for local preview.
-4. Run `mkdocs build --strict` before opening a pull request.
+1. Clone the documentation repository.
+2. Install npm dependencies.
+3. Run `npm run dev` for local preview.
+4. Run `npm run build` before opening a pull request.
 
 ```bash
-python -m pip install -r requirements.txt
-mkdocs build --strict
+git clone https://codeberg.org/OpenVitals/docs.git
+cd docs
+npm install
+npm run build
 ```
 
 ## Translation Notes

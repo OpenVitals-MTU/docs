@@ -8,6 +8,5 @@ export default {
   'health-connect': 'Health Connect',
   permissions: 'Permissions',
   privacy: 'Privacy',
-  editions: 'Local And Connected Editions',
   support: 'Support Guide'
 }
