@@ -1,15 +1,24 @@
 # Achievements
 
+> **Status:** Current implemented behavior.
+> **Audience:** Users and contributors.
+> **Implementation:** `features/achievements`.
+> **Navigation:** `Screen.Achievements`.
+> **Related:** [Feature map](feature-map.md), [Dashboard](health-connect-metrics-dashboard.md).
+
 Achievements turn long-term activity and wellness patterns into local badge progress.
 
 ## What Can Be Tracked
 
-Achievement categories include:
+Implemented achievement categories include:
 
 - Daily steps.
 - Lifetime distance.
 - Daily floors.
 - Lifetime floors.
+
+Planned categories include:
+
 - Workouts.
 - Hydration.
 - Sleep.
@@ -17,7 +26,7 @@ Achievement categories include:
 
 ## Views
 
-The achievement screen shows unlocked and locked badges, category filters, progress values, tracked days, best daily values, and lifetime totals where available.
+The achievement screen shows unlocked and locked badges, category filters, progress values, tracked days, best daily values, and lifetime totals where available for implemented categories.
 
 ## Data Model
 

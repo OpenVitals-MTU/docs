@@ -1,10 +1,12 @@
 # Permissions
 
-OpenVitals asks for permissions by purpose. The local app does not request Android `INTERNET` permission.
+OpenVitals asks for permissions by purpose. The local app removes inherited network permissions during manifest merge and should not ship app-level `INTERNET`, network-state, or Wi-Fi-state permissions.
+
+This page mirrors the current permission surface declared in `app/src/main/AndroidManifest.xml`.
 
 ## Health Connect Read Permissions
 
-Used to show records in the dashboard and detail screens:
+Used to show records in the dashboard, metric detail screens, readiness, statistics, achievements, and insights:
 
 - `android.permission.health.READ_STEPS`
 - `android.permission.health.READ_DISTANCE`
@@ -42,9 +44,9 @@ Used to show records in the dashboard and detail screens:
 - `android.permission.health.READ_BLOOD_GLUCOSE`
 - `android.permission.health.READ_SKIN_TEMPERATURE`
 
-## Cycle Tracking Permissions
+## Cycle Tracking Read Permissions
 
-Cycle data is sensitive. These permissions are grouped separately in onboarding and Settings so you can skip or grant them explicitly:
+Cycle data is sensitive. These permissions are grouped separately in onboarding and Settings so users can grant or skip them explicitly:
 
 - `android.permission.health.READ_MENSTRUATION`
 - `android.permission.health.READ_OVULATION_TEST`
@@ -55,7 +57,7 @@ Cycle data is sensitive. These permissions are grouped separately in onboarding 
 
 ## Health Connect Write Permissions
 
-Declared for explicit save and supported Apple Health import workflows; requested only when a workflow needs them:
+Declared for explicit save, edit/delete, recording, and supported import workflows. Write permissions should be requested only when a workflow needs them:
 
 - `android.permission.health.WRITE_STEPS`
 - `android.permission.health.WRITE_EXERCISE`
@@ -77,6 +79,11 @@ Declared for explicit save and supported Apple Health import workflows; requeste
 - `android.permission.health.WRITE_BODY_WATER_MASS`
 - `android.permission.health.WRITE_FLOORS_CLIMBED`
 - `android.permission.health.WRITE_WHEELCHAIR_PUSHES`
+- `android.permission.health.WRITE_SPEED`
+- `android.permission.health.WRITE_POWER`
+- `android.permission.health.WRITE_STEPS_CADENCE`
+- `android.permission.health.WRITE_CYCLING_PEDALING_CADENCE`
+- `android.permission.health.WRITE_PLANNED_EXERCISE`
 - `android.permission.health.WRITE_HYDRATION`
 - `android.permission.health.WRITE_NUTRITION`
 - `android.permission.health.WRITE_MINDFULNESS`
@@ -95,7 +102,7 @@ Declared for explicit save and supported Apple Health import workflows; requeste
 
 ## Health Connect Access Modes
 
-- `android.permission.health.READ_HEALTH_DATA_HISTORY`: used when you grant access to older records.
+- `android.permission.health.READ_HEALTH_DATA_HISTORY`: used when the user grants access to older records.
 - `android.permission.health.READ_HEALTH_DATA_IN_BACKGROUND`: used where supported for background Health Connect reads.
 
 ## Android Runtime Permissions
@@ -105,17 +112,27 @@ Declared for explicit save and supported Apple Health import workflows; requeste
 - `android.permission.ACTIVITY_RECOGNITION`: used where Android requires activity-recognition access for recorded activity workflows.
 - `android.permission.BLUETOOTH_SCAN`: used to find paired Bluetooth LE sensors for experimental activity recording.
 - `android.permission.BLUETOOTH_CONNECT`: used to connect to paired Bluetooth LE sensors for experimental activity recording.
-- `android.permission.FOREGROUND_SERVICE`: used for activity recording and user-started Apple Health import foreground services.
+- `android.permission.FOREGROUND_SERVICE`: used for foreground activity recording and user-started import work.
 - `android.permission.FOREGROUND_SERVICE_DATA_SYNC`: marks long-running Apple Health imports as user-started data sync work.
 - `android.permission.FOREGROUND_SERVICE_LOCATION`: marks the recording service as location-based.
 - `android.permission.FOREGROUND_SERVICE_HEALTH`: marks the recording service as health-related where Android supports it.
 - `android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE`: marks recording with connected Bluetooth LE devices where Android supports it.
 - `android.permission.HIGH_SAMPLING_RATE_SENSORS`: supports higher-rate sensor access for activity recording on devices that expose it.
 - `android.permission.POST_NOTIFICATIONS`: used for activity recording, Apple Health import progress, and reminder notifications.
-- `android.permission.RECEIVE_BOOT_COMPLETED`: used to reschedule hydration reminders after reboot or app update.
+- `android.permission.RECEIVE_BOOT_COMPLETED`: used to reschedule reminders after reboot or app update.
+
+## Removed Network Permissions
+
+The manifest explicitly removes inherited network permissions from dependencies:
+
+- `android.permission.INTERNET`
+- `android.permission.ACCESS_NETWORK_STATE`
+- `android.permission.ACCESS_WIFI_STATE`
+
+These removals preserve the local app's internet-free boundary.
 
 ## File And Route Intents
 
 OpenVitals can receive GPX, KML, KMZ, and FIT files through Android open/share intents so imported activities can be reviewed and saved to Health Connect. It can also import PMTiles and Mapsforge map packs from Settings for offline activity maps.
 
-The app also uses a local file provider to export route files, such as GPX or KMZ, to other apps.
+The app uses a local file provider to export route files, such as GPX or KMZ, to other apps.

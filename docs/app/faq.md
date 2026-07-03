@@ -2,23 +2,23 @@
 
 ## Does OpenVitals Upload My Health Data?
 
-The local OpenVitals app does not request internet access and does not upload health data to an OpenVitals server.
+No. The local OpenVitals app does not ship app-level internet permission and does not upload health data to an OpenVitals server.
 
-Health data is read from Health Connect on your device. Entries you explicitly save are written back to Health Connect.
+Health data is read from Health Connect on device. Entries explicitly saved by the user are written back to Health Connect.
 
 ## Why Does OpenVitals Ask For Many Health Connect Permissions?
 
 OpenVitals has dashboard and detail screens for many health areas: activity, sleep, heart, body, hydration, nutrition, mindfulness, vitals, and cycle tracking.
 
-You do not need to grant everything. The dashboard can work with partial permissions, and cycle tracking is grouped separately so you can grant or skip it explicitly.
+Users do not need to grant everything. The dashboard can work with partial permissions, and cycle tracking is grouped separately so it can be granted or skipped explicitly.
 
 ## Why Is Cycle Tracking Separate?
 
-Cycle data is sensitive. OpenVitals requests cycle permissions as their own Health Connect category in onboarding and Settings, so those records are only shown after you grant that category.
+Cycle data is sensitive. OpenVitals requests cycle permissions as their own Health Connect category in onboarding and Settings, so those records are shown only after the user grants that category.
 
 ## Why Can I Not See Old Data?
 
-Health Connect restricts access to older records unless Health history access is granted. Open Health Connect permissions and grant history access if you want older data included.
+Health Connect restricts access to older records unless Health history access is granted. Open Health Connect permissions and grant history access if older data should be included.
 
 Long reads can also hit Health Connect rate limits. When that happens, wait and try again later.
 
@@ -45,19 +45,20 @@ OpenVitals uses nearby-device Bluetooth permissions to connect to paired Bluetoo
 Notification permission is used for:
 
 - Persistent activity recording notifications.
-- Optional hydration reminders.
+- User-started Apple Health import progress.
+- Optional hydration and mindfulness reminders.
 
-Hydration reminders are off by default.
+Reminders are local and optional.
 
 ## Is OpenVitals A Medical App?
 
-No. OpenVitals shows wellness context from Health Connect records. Sleep score, cardio load, vital context, and metric interpretation cards are not medical diagnosis or treatment advice.
+No. OpenVitals shows wellness context from Health Connect records. Sleep score, cardio load, vital context, Body Energy, readiness, and metric interpretation cards are not medical diagnosis or treatment advice.
 
 ## Does OpenVitals Work Without Google Play Services?
 
-OpenVitals does not depend on Google Play Services for core app functionality.
+OpenVitals does not depend on Google Play Services for core app logic.
 
-Health Connect availability depends on Android version and device setup. On Android 14 and newer, Health Connect is part of the system. On Android 13 and older, the separate Health Connect app is normally installed from Google Play.
+Health Connect availability depends on Android version and device setup. Android 14 and newer include Health Connect as part of the system. Android 13 and older normally use the separate Health Connect app.
 
 ## What Is The Connected App?
 

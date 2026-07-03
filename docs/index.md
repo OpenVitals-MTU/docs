@@ -1,44 +1,94 @@
 # OpenVitals
 
-OpenVitals is a local-first Android app for viewing health and fitness data from Health Connect.
+OpenVitals is a local-first Android app for viewing, logging, importing, and understanding health data from Health Connect.
 
-It is designed for people who want a clear daily dashboard and focused metric detail screens without creating an account, uploading health data, or depending on an online service.
+It is for people who want a clear daily dashboard, focused metric detail screens, and explicit write/import flows without creating an account, uploading health data, or depending on an online service.
 
 [Install](app/install.md){ .md-button .md-button--primary }
 [Getting Started](app/getting-started.md){ .md-button }
-[Permissions](app/permissions.md){ .md-button }
+[Features](features/index.md){ .md-button }
 [Support](support.md){ .md-button }
 
+<div class="home-visual" markdown="1">
 ![OpenVitals dashboard](assets/images/dashboard.png){ .home-screenshot }
+![OpenVitals sleep detail](assets/images/sleep.png){ .home-screenshot .home-screenshot-secondary }
+</div>
 
-## What It Does
+## Find What You Need
 
-- Shows a Summary-first view of activity, sleep, heart, body, beverages, hydration, caffeine, nutrition, mindfulness, cycle, and vital metrics.
-- Reads from Health Connect as the source of truth.
-- Supports period-based detail screens for day, week, month, and year views, with reorderable metric sections.
-- Uses a refreshed UI/UX with clearer Summary-first navigation, metric screens, and entry flows.
-- Adds Daily Readiness with Body Energy, Training Readiness, physiological stress, HRV status, intensity minutes, and local explanation screens.
-- Shows Fat-Free Mass Index (FFMI) when the required body composition data is available.
-- Breaks down total, active, and BMR calorie context in a dedicated Calories detail screen.
-- Imports GPX, KML, KMZ, and FIT activity route files for review before saving.
-- Supports offline activity maps from imported PMTiles or Mapsforge packs.
-- Supports a configurable activity recording dashboard with Focus mode, high-contrast outdoor mode, keep-screen-on support, strength training heart-rate monitoring, and experimental Bluetooth LE sensors.
-- Imports supported Apple Health export records into Health Connect, with background progress and chunked processing for large exports.
-- Uses current Health Connect client coverage for newer activity records and recording permissions.
-- Allows explicit Health Connect logging for supported manual entries, including beverages with hydration, caffeine, and selected nutrition defaults.
-- Keeps app preferences local on the device.
+<div class="quick-grid" markdown="1">
+
+<div markdown="1">
+### Start
+
+- [Install](app/install.md)
+- [Getting started](app/getting-started.md)
+- [Health Connect setup](app/health-connect.md)
+- [FAQ](app/faq.md)
+</div>
+
+<div markdown="1">
+### Browse
+
+- [Feature overview](features/index.md)
+- [Dashboard and widgets](features/health-connect-metrics-dashboard.md)
+- [Metric detail customization](features/metric-detail-customization.md)
+- [Screenshots](app/screenshots.md)
+</div>
+
+<div markdown="1">
+### Understand Access
+
+- [Privacy](app/privacy.md)
+- [Permissions](app/permissions.md)
+- [Local and connected editions](app/editions.md)
+- [Privacy, support, and diagnostics](features/privacy-support-diagnostics.md)
+</div>
+
+<div markdown="1">
+### Do More
+
+- [Manual entry](features/manual-entry-metrics.md)
+- [Beverage logging and caffeine](features/beverage-logging-and-caffeine.md)
+- [Activity recording](features/activity-recording.md)
+- [Apple Health import](features/apple-health-import.md)
+</div>
+
+</div>
+
+## Main Feature Areas
+
+<div class="feature-grid" markdown="1">
+
+<div markdown="1">
+### Dashboard & App
+
+[Summary widgets](features/health-connect-metrics-dashboard.md), [local derived metrics](features/non-health-connect-metrics-dashboard.md), [home screen widgets](features/home-widgets.md), [onboarding](features/onboarding-and-permissions.md), [settings](features/settings-and-preferences.md), and [achievements](features/achievements.md).
+</div>
+
+<div markdown="1">
+### Health Metrics
+
+[Activity](features/activity-metrics.md), [sleep](features/sleep-tracking.md), [readiness](features/daily-readiness.md), [Body Energy](features/body-energy.md), [heart and vitals](features/heart-and-vitals.md), [body](features/body-metrics.md), [nutrition](features/nutrition.md), [hydration](features/hydration.md), [mindfulness](features/mindfulness.md), and [cycle tracking](features/cycle-tracking.md).
+</div>
+
+<div markdown="1">
+### Log, Import & Record
+
+[Manual entries](features/manual-entry-metrics.md), [drink logging](features/beverage-logging-and-caffeine.md), [GPS and repetition activity recording](features/activity-recording.md), [Bluetooth LE sensors](features/ble-sensors.md), [route/FIT imports](features/route-file-import.md), [offline maps](features/offline-maps-support.md), and [Apple Health imports](features/apple-health-import.md).
+</div>
+
+</div>
 
 ## Local First
 
-The main OpenVitals app does not request internet access and does not include accounts, ads, or cloud sync.
+The local OpenVitals app does not ship app-level internet permission. It reads supported records from Health Connect, writes only when you explicitly save, import, record, edit, or delete data, and keeps app preferences on the device.
 
-## Support
-
-OpenVitals is developed as an independent open-source project. If it is useful to you, you can help fund ongoing work through Liberapay.
+## Support And Code
 
 [Support OpenVitals](support.md){ .md-button .md-button--primary }
-
-## Get The Code
+[Changelog](releases/changelog.md){ .md-button }
+[Build From Source](developers/build.md){ .md-button }
 
 - Android app: [codeberg.org/OpenVitals/android-app](https://codeberg.org/OpenVitals/android-app)
 - Connected app scaffold: [codeberg.org/OpenVitals/android-app-connected](https://codeberg.org/OpenVitals/android-app-connected)

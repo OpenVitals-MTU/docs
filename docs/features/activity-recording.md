@@ -1,5 +1,11 @@
 # Recording Of Activity
 
+> **Status:** Current implemented behavior.
+> **Audience:** Users and contributors.
+> **Implementation:** `features/manualentry/activity`, `features/manualentry/activity/recording`, `features/activity`.
+> **Navigation:** `Screen.ActivityEntry`, `Screen.ActivityEntryEdit`, `ManualEntryWidgetId.ACTIVITY`.
+> **Related:** [Feature map](feature-map.md), [Activity and training plans](activity-training-plans.md), [Bluetooth LE sensors](ble-sensors.md).
+
 OpenVitals can record activities locally, review the result, and then save the activity to Health Connect.
 
 ## GPS Activity
@@ -12,7 +18,7 @@ The recording flow supports:
 - A persistent recording notification.
 - A configurable recording dashboard.
 - Focus mode for a cleaner in-recording view.
-- High-contrast outdoor mode for better readability in bright conditions.
+- A high-contrast outdoor mode for better readability in bright conditions.
 - Keep-screen-on support when enabled.
 - Offline route maps when map packs have been imported.
 - Post-activity speed and cadence charts when compatible samples are available.

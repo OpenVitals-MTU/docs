@@ -1,6 +1,43 @@
 # Support OpenVitals
 
-OpenVitals is an independent open-source project focused on local-first health data tools for Android. Support helps fund development, testing, and maintenance without adding accounts, ads, analytics, or cloud sync to the app.
+OpenVitals is an independent open-source project focused on local-first health data tools for Android.
+
+If you need help using the app, start with the user docs below. If OpenVitals is useful to you, financial support helps fund development, testing, documentation, and maintenance without adding accounts, ads, analytics, or cloud sync to the local app.
+
+## Help With The App
+
+<div class="quick-grid" markdown="1">
+
+<div markdown="1">
+### Setup
+
+- [Install](app/install.md)
+- [Getting started](app/getting-started.md)
+- [Health Connect](app/health-connect.md)
+- [Permissions](app/permissions.md)
+</div>
+
+<div markdown="1">
+### Common Questions
+
+- [FAQ](app/faq.md)
+- [Privacy](app/privacy.md)
+- [Local and connected editions](app/editions.md)
+- [Privacy, support, and diagnostics](features/privacy-support-diagnostics.md)
+</div>
+
+<div markdown="1">
+### Report Issues
+
+- [Contributing](developers/contributing.md)
+- [Build from source](developers/build.md)
+- [Changelog](releases/changelog.md)
+- [Website issues](https://codeberg.org/OpenVitals/website/issues)
+</div>
+
+</div>
+
+## Fund Development
 
 <div class="liberapay-widget">
 <script src="https://liberapay.com/manuel.mmarca.tech/widgets/button.js"></script>

@@ -1,11 +1,56 @@
+.home-visual {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1.5rem auto 2rem;
+}
+
 .home-screenshot {
   display: block;
-  max-width: min(100%, 280px);
+  max-width: min(100%, 260px);
   height: auto;
-  margin: 1.25rem auto;
+  margin: 0;
   border: 1px solid var(--md-default-fg-color--lightest);
   border-radius: 8px;
   box-shadow: var(--md-shadow-z2);
+}
+
+.home-screenshot-secondary {
+  display: none;
+}
+
+.quick-grid,
+.feature-grid {
+  display: grid;
+  gap: 1rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.quick-grid {
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+
+.feature-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.quick-grid > div,
+.feature-grid > div {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  background: var(--md-default-bg-color);
+  box-shadow: var(--md-shadow-z1);
+}
+
+.quick-grid h3,
+.feature-grid h3 {
+  margin-top: 0;
+}
+
+.quick-grid ul {
+  margin-bottom: 0;
 }
 
 .screenshot-grid {
@@ -38,4 +83,10 @@
   border: 1px solid var(--md-default-fg-color--lightest);
   border-radius: 8px;
   box-shadow: var(--md-shadow-z1);
+}
+
+@media screen and (min-width: 48rem) {
+  .home-screenshot-secondary {
+    display: block;
+  }
 }

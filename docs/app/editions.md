@@ -1,33 +1,29 @@
 # Local And Connected Editions
 
-OpenVitals is being split into two clearly different Android apps.
+OpenVitals keeps the local Health Connect app separate from connected or online app work.
 
 ## Local App
 
-Repository: [OpenVitals/android-app](https://codeberg.org/OpenVitals/android-app)
+The local app is this repository's Health Connect app.
 
-The local app is the Health Connect-only app.
-
-- No account.
-- No OpenVitals server.
+- No OpenVitals account.
+- No OpenVitals server dependency.
 - No app-level internet permission.
 - Reads Health Connect records on device.
-- Writes only entries the user explicitly saves.
-- Keeps local preferences such as units, language, widget order, and hydration reminders.
+- Writes only records the user explicitly saves, imports, records, edits, or deletes.
+- Keeps local preferences such as units, language, theme, widget order, goals, calibration, and reminders.
 
-This is the app documented on this website unless a page explicitly says otherwise.
+This repository should preserve that boundary for the local app.
 
 ## Connected App
 
-Repository: [OpenVitals/android-app-connected](https://codeberg.org/OpenVitals/android-app-connected)
+Connected features should live in a separate app and repository.
 
-The connected app is planned as a separate app and repository for online features.
-
-Possible connected features include accounts, activity sharing, and Fitpub-like social workflows. Those features should not be mixed into the local app.
+Possible connected features include accounts, sharing, and social workflows. Those features should not be mixed into the local app's Health Connect-only runtime.
 
 ## Why Separate Them?
 
-The split keeps the local app easy to reason about:
+The split keeps the local app easier to reason about:
 
 - Users can verify that the local app has no internet access.
 - Health Connect data does not silently cross into account or sharing code.

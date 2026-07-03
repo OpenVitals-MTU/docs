@@ -1,5 +1,5 @@
-# How-to's
+# How-to Guides
 
-Step-by-step guides for tasks that go beyond the in-app feature overview.
+These guides explain concrete user workflows that need more detail than a short feature page.
 
-- [Add offline maps](offline-maps.md): download PMTiles or Mapsforge map packs, find reliable sources, and import them into OpenVitals.
+- [Add offline maps](offline-maps.md): download PMTiles or Mapsforge map packs, import them into OpenVitals, choose the active render format, and troubleshoot common issues.

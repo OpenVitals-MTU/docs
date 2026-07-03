@@ -1,17 +1,45 @@
 # Features
 
-OpenVitals is a local-first Android app for Health Connect data, activity logging, imports, and simple on-device insights. This guide is a short map of the major feature areas. The [feature inventory](../app/features.md) remains the detailed checklist.
+OpenVitals is a local-first Android app for Health Connect data, activity logging, imports, and simple on-device insights. This index points to current implemented behavior.
 
-- [Health Connect metrics dashboard](health-connect-metrics-dashboard.md): read Health Connect records into a configurable dashboard and period detail screens. Steps are the simplest example: OpenVitals reads step totals, shows charts, and links into richer statistics without storing a second health database.
-- [Non Health Connect metrics dashboard](non-health-connect-metrics-dashboard.md): show local derived metrics that are calculated from Health Connect data. Cardio load is the main example, using available heart-rate and activity signals to estimate training strain.
-- [Manual entry of metrics](manual-entry-metrics.md): save explicit user-entered records back to Health Connect. Weight is one of the core flows, alongside beverage/hydration entries with caffeine and nutrition defaults, carbohydrates, body measurements, vitals, mindfulness, and activity entries.
-- [Recording of activity](activity-recording.md): record activities in OpenVitals before saving them to Health Connect. This includes GPS activity recording and repetition-oriented activity flows.
-- [Offline maps support](offline-maps-support.md): import PMTiles or Mapsforge packs for local activity maps that can be used without app-level internet access.
-- [Apple Health import](apple-health-import.md): import supported Apple Health export records into Health Connect with background progress.
-- [FIT files import](fit-files-import.md): import FIT activity files, review detected details, and save supported workout data.
-- [Activity and training plans](activity-training-plans.md): view planned workouts from Health Connect and use activity setup defaults, favorite activities, repetitions, sets, and review flows.
-- [GPX/KML/KMZ/FIT import](route-file-import.md): import route and activity files for review before saving route-backed activities.
-- [Daily readiness](daily-readiness.md): calculate a local readiness view with Body Energy, Training Readiness, HRV status, stress context, and adaptive guidance.
-- [Achievements](achievements.md): track local badge progress for activity, distance, floors, workouts, hydration, sleep, and mindfulness.
-- [Reminders](reminders.md): configure local hydration and mindfulness reminders with Android notification handling.
-- [Statistics](statistics.md): use day/week/month/year ranges, comparisons, baselines, confidence, and trends across metric detail screens.
+Use the [feature map](feature-map.md) when you need the route/widget/package mapping.
+
+## Dashboard And App Experience
+
+- [Health Connect metrics dashboard](health-connect-metrics-dashboard.md): summary widgets and focused metric detail entry points.
+- [Non Health Connect metrics dashboard](non-health-connect-metrics-dashboard.md): local derived views such as cardio load, readiness, Body Energy, and sleep recovery context.
+- [Metric detail customization](metric-detail-customization.md): reorder dashboard widgets, manual entry widgets, and metric detail sections.
+- [Home screen widgets](home-widgets.md): Android launcher widgets for metric summaries, readiness, Body Energy, Today Vitals, and quick beverage logging.
+- [Onboarding and permissions](onboarding-and-permissions.md): first-run Health Connect setup, permission categories, and privacy expectations.
+- [Settings and preferences](settings-and-preferences.md): language, units, theme, goals, reminders, Health Connect access, imports, sensors, and diagnostics.
+- [Privacy, support, and diagnostics](privacy-support-diagnostics.md): local-first privacy model, diagnostics surfaces, support links, and health disclaimer.
+- [Achievements](achievements.md): local badge progress for supported wellness categories.
+
+## Health Metrics
+
+- [Activity metrics](activity-metrics.md): steps, distance, calories, active calories, floors, elevation, wheelchair pushes, workouts, and cardio-load context.
+- [Sleep tracking](sleep-tracking.md): sleep period overview and sleep-session detail flow.
+- [Sleep score and recovery](sleep-score-and-recovery.md): sleep score, sleep efficiency, recovery details, and confidence.
+- [Daily readiness](daily-readiness.md): Body Energy, Training Readiness, HRV status, stress context, and adaptive guidance.
+- [Body Energy](body-energy.md): selected-day energy timeline, calibration, confidence, dashboard support, and widgets.
+- [Heart and vitals](heart-and-vitals.md): heart rate, resting heart rate, HRV, blood pressure, SpO2, VO2 max, respiratory rate, body temperature, blood glucose, skin temperature, and Today Vitals.
+- [Body metrics](body-metrics.md): weight, height, BMI, body fat, lean mass, BMR, bone mass, body water mass, and FFMI context.
+- [Nutrition](nutrition.md): calories in, protein, carbohydrates, fat, and selected nutrient totals.
+- [Hydration](hydration.md): hydration period detail, entry history, goals, and reminder controls.
+- [Mindfulness](mindfulness.md): mindfulness period detail, session history, goals, reminders, and manual-entry relationship.
+- [Cycle tracking](cycle-tracking.md): supported Health Connect cycle records in dashboard and period detail views.
+- [Statistics](statistics.md): period ranges, comparisons, baselines, confidence, and trends across detail screens.
+
+## Logging, Import, And Recording
+
+- [Manual entry of metrics](manual-entry-metrics.md): explicit user-entered records written back to Health Connect.
+- [Beverage logging and caffeine](beverage-logging-and-caffeine.md): drink logging with hydration, caffeine, presets, custom catalog choices, and selected nutrition defaults.
+- [Recording of activity](activity-recording.md): GPS and repetition-oriented activity recording before saving to Health Connect.
+- [Activity and training plans](activity-training-plans.md): planned workouts, activity setup defaults, favorite activities, repetitions, sets, and review flows.
+- [Bluetooth LE sensors](ble-sensors.md): supported heart-rate, cadence, power, and footpod sensors during activity recording.
+- [GPX/KML/KMZ/FIT import](route-file-import.md): route and activity file import for review before saving.
+- [FIT files import](fit-files-import.md): FIT activity import support and detected details.
+- [Offline maps support](offline-maps-support.md): PMTiles or Mapsforge packs for local activity maps.
+- [Apple Health import](apple-health-import.md): supported Apple Health export records written into Health Connect.
+- [Preloaded beverage nutrition reference](preloaded-beverage-nutrition.md): imported caffeine beverage presets, nutrition families, common serving values, and source links.
+- [Reminders](reminders.md): local hydration and mindfulness reminders with Android notification handling.
