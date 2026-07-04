@@ -18,7 +18,7 @@ Local app preferences may include onboarding state, acknowledged permission prom
 
 Health Connect is the source of truth. OpenVitals reads Health Connect records to show dashboard summaries, detail screens, readiness, statistics, achievements, and insights.
 
-Manual entries are saved back to Health Connect only when the user chooses to save them. Supported Apple Health export records are written to Health Connect only when the user imports an export file from Settings. OpenVitals-created records can be edited later; records created by other apps remain read-only.
+Manual entries are saved back to Health Connect only when the user chooses to save them. Supported Apple Health export records and FIT imports are written to Health Connect only after the user starts an import from Settings, Data Importers, reviews supported details where needed, and saves. OpenVitals-created records can be edited later; records created by other apps remain read-only.
 
 ## Sensitive Data
 

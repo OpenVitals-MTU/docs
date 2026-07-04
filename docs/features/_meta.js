@@ -36,7 +36,7 @@ export default {
   'activity-recording': 'Recording Of Activity',
   'activity-training-plans': 'Activity And Training Plans',
   'ble-sensors': 'Bluetooth LE Sensors',
-  'route-file-import': 'GPX/KML/KMZ/FIT Import',
+  'route-file-import': 'GPX/KML/KMZ Route Import',
   'fit-files-import': 'FIT Files Import',
   'offline-maps-support': 'Offline Maps Support',
   'apple-health-import': 'Apple Health Import',

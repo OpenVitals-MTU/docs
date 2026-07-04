@@ -133,6 +133,6 @@ These removals preserve the local app's internet-free boundary.
 
 ## File And Route Intents
 
-OpenVitals can receive GPX, KML, KMZ, and FIT files through Android open/share intents so imported activities can be reviewed and saved to Health Connect. It can also import PMTiles and Mapsforge map packs from Settings for offline activity maps.
+OpenVitals can receive GPX, KML, KMZ, and FIT files through Android open/share intents so imported activities can be reviewed and saved to Health Connect. FIT files can also be selected from Settings, Data Importers. PMTiles and Mapsforge map packs are imported from Settings for offline activity maps.
 
 The app uses a local file provider to export route files, such as GPX or KMZ, to other apps.

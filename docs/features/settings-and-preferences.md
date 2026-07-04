@@ -39,9 +39,9 @@ Health Connect settings show sync state, permission categories, missing access, 
 
 OpenVitals asks for read permissions for dashboard and detail views. Write permissions are requested only when a user enters, imports, records, edits, or deletes data that needs them.
 
-## Data Import And Sensors
+## Data Importers And Sensors
 
-Settings provide entry points for Apple Health import, offline map pack import, and Bluetooth LE sensor management.
+Settings provide Data Importers for Apple Health export import and FIT activity/course/workout import, plus entry points for offline map pack import and Bluetooth LE sensor management.
 
 ## Diagnostics And App Information
 

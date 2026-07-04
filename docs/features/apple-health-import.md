@@ -10,7 +10,7 @@ OpenVitals can import supported records from Apple Health exports and write them
 
 ## Input Files
 
-The import starts from Settings and accepts supported Apple Health `export.xml` or `export.zip` files. Large exports run as user-started background work so the import can continue after leaving the Settings screen.
+The import starts from Settings, Data Importers, and accepts supported Apple Health `export.xml` or `export.zip` files. Large exports run as user-started background work so the import can continue after leaving the Settings screen.
 
 ## Import Flow
 

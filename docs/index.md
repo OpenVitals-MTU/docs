@@ -74,7 +74,7 @@ It is for people who want a clear daily dashboard, focused metric detail screens
 <div markdown="1">
 ### Log, Import & Record
 
-[Manual entries](features/manual-entry-metrics.md), [drink logging](features/beverage-logging-and-caffeine.md), [GPS and repetition activity recording](features/activity-recording.md), [Bluetooth LE sensors](features/ble-sensors.md), [route/FIT imports](features/route-file-import.md), [offline maps](features/offline-maps-support.md), and [Apple Health imports](features/apple-health-import.md).
+[Manual entries](features/manual-entry-metrics.md), [drink logging](features/beverage-logging-and-caffeine.md), [GPS and repetition activity recording](features/activity-recording.md), [Bluetooth LE sensors](features/ble-sensors.md), [route imports](features/route-file-import.md), [FIT imports](features/fit-files-import.md), [offline maps](features/offline-maps-support.md), and [Apple Health imports](features/apple-health-import.md).
 </div>
 
 </div>
