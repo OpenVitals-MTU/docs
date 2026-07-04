@@ -8,5 +8,5 @@ These pages document user-facing behavior that cuts across several feature areas
 - [Permissions](permissions.md): Health Connect, Android runtime, access-mode, and file-intent permission reference.
 - [Privacy](privacy.md): local-first data handling, sensitive data boundaries, and Health Connect ownership.
 - [FAQ](faq.md): common support answers about uploads, permissions, old data, editing, routes, sensors, and notifications.
-- [Screenshots](screenshots.md): image inventory for app-facing documentation.
+- [Screenshots](../screenshots.md): image inventory for app-facing documentation.
 - [Support](../support.md): support, diagnostics, funding, and issue-reporting entry points.

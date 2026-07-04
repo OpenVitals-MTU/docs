@@ -11,7 +11,7 @@ It is for people who want a clear daily dashboard, focused metric detail screens
 
 <div class="home-visual" markdown="1">
 ![OpenVitals dashboard](assets/images/dashboard.png){ .home-screenshot }
-![OpenVitals sleep detail](assets/images/sleep.png){ .home-screenshot .home-screenshot-secondary }
+![OpenVitals Daily Readiness detail](assets/images/daily-readiness.png){ .home-screenshot .home-screenshot-secondary }
 </div>
 
 ## Find What You Need
@@ -33,7 +33,7 @@ It is for people who want a clear daily dashboard, focused metric detail screens
 - [Feature overview](features/index.md)
 - [Dashboard and widgets](features/health-connect-metrics-dashboard.md)
 - [Metric detail customization](features/metric-detail-customization.md)
-- [Screenshots](app/screenshots.md)
+- [Screenshots](screenshots.md)
 </div>
 
 <div markdown="1">

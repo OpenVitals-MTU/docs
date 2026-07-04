@@ -72,6 +72,7 @@ export default async function RootLayout({ children }) {
           pageMap={await getPageMap()}
           docsRepositoryBase="https://codeberg.org/OpenVitals/docs/src/branch/main/docs"
           editLink="Edit this page"
+          feedback={{ link: 'https://codeberg.org/OpenVitals/docs/issues/new' }}
           footer={footer}
         >
           {children}

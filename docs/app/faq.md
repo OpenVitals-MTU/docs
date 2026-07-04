@@ -14,7 +14,7 @@ Users do not need to grant everything. The dashboard can work with partial permi
 
 ## Why Is Cycle Tracking Separate?
 
-Cycle data is sensitive. OpenVitals requests cycle permissions as their own Health Connect category in onboarding and Settings, so those records are shown only after the user grants that category.
+Cycle data is sensitive. OpenVitals requests cycle permissions as their own Health Connect category in onboarding and Health Connect settings, so those records are shown only after the user grants that category.
 
 ## Why Can I Not See Old Data?
 
