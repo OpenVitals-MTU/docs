@@ -2,11 +2,11 @@
 
 These pages document user-facing behavior that cuts across several feature areas.
 
-- [Install](install.md): install channels, Android requirements, and Health Connect setup.
-- [Getting started](getting-started.md): first-run setup, common workflows, and what to check when data is missing.
-- [Health Connect](health-connect.md): read and write coverage, historical access, route approval, and platform notes.
-- [Permissions](permissions.md): Health Connect, Android runtime, access-mode, and file-intent permission reference.
-- [Privacy](privacy.md): local-first data handling, sensitive data boundaries, and Health Connect ownership.
-- [FAQ](faq.md): common support answers about uploads, permissions, old data, editing, routes, sensors, and notifications.
-- [Screenshots](../screenshots.md): image inventory for app-facing documentation.
-- [Support](../support.md): support, diagnostics, funding, and issue-reporting entry points.
+- [Install](/app/install): install channels, Android requirements, and Health Connect setup.
+- [Getting started](/app/getting-started): first-run setup, common workflows, and what to check when data is missing.
+- [Health Connect](/app/health-connect): read and write coverage, historical access, route approval, and platform notes.
+- [Permissions](/app/permissions): Health Connect, Android runtime, access-mode, and file-intent permission reference.
+- [Privacy](/app/privacy): local-first data handling, sensitive data boundaries, and Health Connect ownership.
+- [FAQ](/app/faq): common support answers about uploads, permissions, old data, editing, routes, sensors, and notifications.
+- [Screenshots](/screenshots): image inventory for app-facing documentation.
+- [Support](/support): support, diagnostics, funding, and issue-reporting entry points.
