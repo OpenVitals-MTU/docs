@@ -12,7 +12,7 @@ Settings centralize app preferences, Health Connect access, imports, sensors, me
 
 Users can configure:
 
-- Language.
+- Language, with an in-app picker for system default, English, Spanish, German, Italian, and Estonian.
 - Unit system.
 - Theme mode, including system, light, dark, and AMOLED.
 
