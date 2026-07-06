@@ -4,6 +4,29 @@ This page summarizes the English release notes for the local Android app.
 
 For full localized notes, see the Android app repository changelog.
 
+## 1.8.0 - 2026-07-06
+
+- Add Estonian and an in-app language picker so the interface can be switched independently of the system language.
+- Refine starting activities and the sleep graph in the weekly and monthly views.
+- Improve Body Energy and fix a file permission issue affecting imports.
+- Fix the quick-beverage home-screen widget and dashboard refreshing, and harden the XML importer against malformed data.
+- Polish the design system across the app.
+
+## 1.7.7 - 2026-07-05
+
+- Add Body Energy explainability, breaking down which factors drive your daily score over time with a dedicated timeline chart.
+- Clean up and harden the Apple Health importer with clearer category handling, geo-distance helpers, and more consistent activity/route/workout conversions.
+- Improve the quick-beverage home-screen widget with better drink ordering and configuration handling.
+- Refresh docs for the Apple Health import and privacy/support/diagnostics pages.
+
+## 1.7.6 - 2026-07-04
+
+- Add a configurable quick beverage home-screen widget so saved containers can log hydration, caffeine, and nutrition faster.
+- Improve beverage entry with tap-to-save containers, better daily-goal context, custom amount and category handling, and persisted nutrition defaults.
+- Upgrade activity import with richer FIT activity/course/workout parsing, route-less FIT support, imported calories, duration and title inference, and clearer import errors.
+- Split Heart and Vitals into clearer metric destinations, add a blood-pressure vitals view, and streamline Settings and navigation flows.
+- Refresh docs, README screenshots, and Play Store screenshots, including the reorganized app guide, feature guide, how-to pages, and offline maps notes.
+
 ## 1.7.5 - 2026-07-03
 
 - Add a dedicated Caffeine detail flow with active-caffeine modeling, source and time-of-day insights, bedtime guidance, dashboard support, and configurable sensitivity and limits.
