@@ -4,6 +4,14 @@ This page summarizes the English release notes for the local Android app.
 
 For full localized notes, see the Android app repository changelog.
 
+## 1.9.0 - 2026-07-09
+
+- Make Apple Health imports resumable with checkpointed parsing, staged write batches, and better recovery after interruptions.
+- Move GPX, KML, KMZ, and FIT imports into Settings, Data Importers, and add bulk GPX/KML/KMZ import for saving multiple route files directly.
+- Add Activities filtering by activity type and aggregate activity-type statistics for distance, duration, calories, heart rate, pace, and sessions.
+- Improve period navigation with rolling day, week, month, and year ranges and clearer localized titles.
+- Fix mindfulness availability handling, polish weight entry behavior, and add Weblate translation validation plus stronger language-picker coverage.
+
 ## 1.8.0 - 2026-07-06
 
 - Add Estonian and an in-app language picker so the interface can be switched independently of the system language.

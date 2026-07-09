@@ -6,13 +6,13 @@
 > **Navigation:** `Screen.Settings` and settings subsection routes; sections in `SettingsSection`.
 > **Related:** [Feature map](feature-map.md), [Permissions](../app/permissions.md), [Metric detail customization](metric-detail-customization.md).
 
-Settings centralize app preferences, Health Connect access, imports, sensors, metric preferences, and diagnostics.
+Settings centralize app preferences, Health Connect access, imports, sensors, goals, reminders, and diagnostics.
 
 ## Display
 
 Users can configure:
 
-- Language, with an in-app picker for system default, English, Spanish, German, Italian, and Estonian.
+- Language.
 - Unit system.
 - Theme mode, including system, light, dark, and AMOLED.
 
@@ -22,10 +22,12 @@ Display preferences affect app presentation only. They do not rewrite Health Con
 
 Metric-specific settings include:
 
-- Activity week mode, such as Monday-to-Sunday or rolling last 7 days.
+- Rolling dates mode, such as calendar week/month/year or rolling 7/30/365-day windows.
 - Favorite or latest activity defaults used by activity entry and recording setup.
-- Nutrition settings, including calorie data mode and caffeine sensitivity, daily limit, and bedtime guidance.
-- Recovery settings, including sleep range mode and Body Energy calibration.
+- Calorie data mode, including optional OpenVitals total-calorie calculation when Health Connect totals are missing.
+- Sleep range mode, including rolling 24 hours, noon boundary, and evening boundary.
+- Caffeine sensitivity, daily limit, and bedtime guidance.
+- Body Energy calibration.
 
 ## Goals And Reminders
 
@@ -35,13 +37,13 @@ Goals and reminders are local app preferences. They help shape guidance and noti
 
 ## Health Connect
 
-Health Connect settings show sync state, permission categories, missing access, app lock, and actions for requesting or opening Health Connect permission management.
+Health Connect settings show permission categories, missing access, and actions for requesting or opening Health Connect permission management.
 
 OpenVitals asks for read permissions for dashboard and detail views. Write permissions are requested only when a user enters, imports, records, edits, or deletes data that needs them.
 
 ## Data Importers And Sensors
 
-Settings provide Data Importers for Apple Health export import and FIT activity/course/workout import, plus entry points for offline map pack import and Bluetooth LE sensor management.
+Settings provide Data Importers for Apple Health export import, single or bulk GPX/KML/KMZ route import, and FIT activity/course/workout import, plus entry points for offline map pack import and Bluetooth LE sensor management. Apple Health exports are analyzed first so the user can choose detected categories before anything is written to Health Connect. GPX/KML/KMZ bulk import writes selected route files directly after route import permissions are granted. Import results can be copied or downloaded as a full text report with summary, selected categories, logs, diagnostics, and failure details.
 
 ## Diagnostics And App Information
 
