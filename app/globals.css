@@ -64,10 +64,12 @@
   color: #ffffff;
 }
 
-.liberapay-widget {
+.liberapay-badge {
+  display: inline-block;
   margin-top: 1rem;
+  line-height: 0;
 }
 
-.liberapay-widget iframe {
-  color-scheme: light;
+.liberapay-badge img {
+  display: block;
 }
