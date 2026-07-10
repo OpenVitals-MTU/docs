@@ -53,6 +53,10 @@ npm run build
 
 ## Translation Notes
 
-The Android app currently supports English, Spanish, German, and Italian language preferences.
+The Android app currently supports English, Spanish, German, Italian, and Estonian language preferences.
+
+Translate OpenVitals on Codeberg Translate:
+
+[translate.codeberg.org/projects/openvitals/android-app](https://translate.codeberg.org/projects/openvitals/android-app/)
 
 When changing user-facing app copy, keep translations in sync or call out the missing translation work clearly in the issue or pull request.
