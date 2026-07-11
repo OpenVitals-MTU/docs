@@ -4,6 +4,17 @@ This page summarizes the English release notes for the local Android app.
 
 For full localized notes, see the Android app repository changelog.
 
+OpenVitals was rebuilt on Flutter in 2.0.0. Entries for 1.9.0 and earlier describe the previous Kotlin app.
+
+## 2.0.0 - 2026-07-11
+
+- **Your Health Connect data is not affected by this update.** Health Connect stores it outside OpenVitals, so the rewrite cannot touch it: steps, sleep, workouts, heart rate, hydration, and every other record stay exactly as they are.
+- **Two app settings reset:** the dashboard tile order, and the beverage picked in the quick-beverage home-screen widget. Set them again after updating. A one-time migration carries the rest across automatically — goals, units, theme, the caffeine profile, the body and heart-rate profile, reminders, custom drinks, paired Bluetooth LE sensors, activity marker notes, offline map packs, and your logged beverages.
+- Rebuild OpenVitals on Flutter. Same app, same features, same Health Connect data — and the foundation for an iOS version later. The package name and signing certificate are unchanged, so it installs as a normal update.
+- Make Apple Health imports much faster on large exports by skipping records in categories you did not select, and show real progress while the export is scanned instead of sitting at 0%.
+- Fix missing heart rate at the start of a recorded activity.
+- Share sanitized diagnostics logs directly from Settings.
+
 ## 1.9.0 - 2026-07-09
 
 - Make Apple Health imports resumable with checkpointed parsing, staged write batches, and better recovery after interruptions.

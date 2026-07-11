@@ -2,8 +2,8 @@
 
 > **Status:** Current implemented behavior.
 > **Audience:** Users and contributors.
-> **Implementation:** `features/onboarding`, `healthconnect`, `features/settings`.
-> **Navigation:** `Screen.Onboarding`, `Screen.SettingsHealthConnect`.
+> **Implementation:** `lib/features/onboarding/`, `lib/health/` (`health_data_source.dart`, `health_permissions.dart`), `lib/ui/components/health_connect_gate.dart`, `lib/features/settings/`.
+> **Navigation:** `/onboarding` (the start destination until onboarding is completed), `/settings/health_connect`.
 > **Related:** [Feature map](feature-map.md), [Permissions](../app/permissions.md), [Health Connect](../app/health-connect.md).
 
 Onboarding prepares OpenVitals for local Health Connect use without requiring an account or cloud sync.
@@ -31,7 +31,7 @@ When Health Connect is not available, the app explains the limitation instead of
 
 Read permissions are used for dashboard widgets, metric detail screens, readiness views, statistics, achievements, and local insights.
 
-Write permissions are requested lazily for explicit write flows such as manual entry, route import, FIT import, Apple Health import, activity recording, edits, and deletes.
+Write permissions are requested lazily for explicit write flows such as manual entry, route import, Apple Health import, activity recording, edits, and deletes.
 
 The dashboard remains read-only even when write permissions are granted.
 

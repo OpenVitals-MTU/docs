@@ -14,7 +14,7 @@ Users do not need to grant everything. The dashboard can work with partial permi
 
 ## Why Is Cycle Tracking Separate?
 
-Cycle data is sensitive. OpenVitals requests cycle permissions as their own Health Connect category in onboarding and Health Connect settings, so those records are shown only after the user grants that category.
+Cycle data is sensitive. OpenVitals requests cycle permissions as their own Health Connect category in onboarding and Settings, so those records are shown only after the user grants that category.
 
 ## Why Can I Not See Old Data?
 
@@ -59,3 +59,7 @@ No. OpenVitals shows wellness context from Health Connect records. Sleep score, 
 OpenVitals does not depend on Google Play Services for core app logic.
 
 Health Connect availability depends on Android version and device setup. Android 14 and newer include Health Connect as part of the system. Android 13 and older normally use the separate Health Connect app.
+
+## What Is The Connected App?
+
+The connected app is a separate app and repository for planned online features such as accounts and sharing. It is separate so the local app can remain internet-free.
