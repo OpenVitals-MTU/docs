@@ -1,3 +1,5 @@
+import type { MetaRecord } from 'nextra'
+
 export default {
   index: 'App Guide',
   install: 'Install',
@@ -8,4 +10,4 @@ export default {
   permissions: 'Permissions',
   privacy: 'Privacy',
   support: 'Support Guide'
-}
+} satisfies MetaRecord

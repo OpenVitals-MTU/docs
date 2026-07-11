@@ -24,6 +24,7 @@ npm run dev
 ## Build
 
 ```bash
+npm run typecheck
 npm run build
 ```
 

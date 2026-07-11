@@ -13,7 +13,8 @@
     "build": "next build --webpack",
     "postbuild": "pagefind --site .next/server/app --output-path public/_pagefind",
     "postinstall": "node scripts/patch-nextra-theme-docs.mjs",
-    "start": "HOSTNAME=0.0.0.0 node .next/standalone/server.js"
+    "start": "HOSTNAME=0.0.0.0 node .next/standalone/server.js",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "mdast-util-from-markdown": "2.0.3",
@@ -25,6 +26,10 @@
     "sharp": "0.35.3"
   },
   "devDependencies": {
-    "pagefind": "1.5.2"
+    "@types/node": "22.15.30",
+    "@types/react": "19.0.12",
+    "@types/react-dom": "19.0.4",
+    "pagefind": "1.5.2",
+    "typescript": "5.8.3"
   }
 }

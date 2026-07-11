@@ -7,6 +7,7 @@ node_modules/
 out/
 public/_pagefind/
 npm-debug.log*
+*.tsbuildinfo
 .env*.local
 
 .DS_Store

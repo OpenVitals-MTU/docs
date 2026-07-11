@@ -1,3 +1,5 @@
+import type { MetaRecord } from 'nextra'
+
 export default {
   index: {
     title: 'Home',
@@ -34,4 +36,4 @@ export default {
   '404': {
     display: 'hidden'
   }
-}
+} satisfies MetaRecord
