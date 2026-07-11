@@ -6,9 +6,19 @@
   margin: 1.5rem auto 2rem;
 }
 
-.home-screenshot {
+.home-visual p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+}
+
+.home-screenshot,
+.home-visual img {
   display: block;
-  max-width: min(100%, 260px);
+  width: min(100%, 260px);
   height: auto;
   margin: 0;
   border: 1px solid var(--md-default-fg-color--lightest);
@@ -16,7 +26,8 @@
   box-shadow: var(--md-shadow-z2);
 }
 
-.home-screenshot-secondary {
+.home-screenshot-secondary,
+.home-visual img:nth-of-type(2) {
   display: none;
 }
 
@@ -75,9 +86,10 @@
   font-size: 0.8rem;
 }
 
-.app-screenshot {
-  width: 100%;
-  max-width: 300px;
+.app-screenshot,
+.screenshot-grid img {
+  display: block;
+  width: min(100%, 300px);
   height: auto;
   margin: 0 auto;
   border: 1px solid var(--md-default-fg-color--lightest);
@@ -86,7 +98,8 @@
 }
 
 @media screen and (min-width: 48rem) {
-  .home-screenshot-secondary {
+  .home-screenshot-secondary,
+  .home-visual img:nth-of-type(2) {
     display: block;
   }
 }
