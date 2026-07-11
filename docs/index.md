@@ -86,10 +86,10 @@ The local OpenVitals app does not ship app-level internet permission. It reads s
 ## Support And Code
 
 [Support OpenVitals](support.md){ .md-button .md-button--primary }
-[Translate OpenVitals](https://translate.codeberg.org/projects/openvitals/android-app/){ .md-button }
+[Translate OpenVitals](https://translate.codeberg.org/projects/openvitals/mobile-app/){ .md-button }
 [Changelog](releases/changelog.md){ .md-button }
 [Build From Source](developers/build.md){ .md-button }
 
-- Android app: [codeberg.org/OpenVitals/android-app](https://codeberg.org/OpenVitals/android-app)
+- Android app: [codeberg.org/OpenVitals/mobile-app](https://codeberg.org/OpenVitals/mobile-app)
 - Documentation: [codeberg.org/OpenVitals/docs](https://codeberg.org/OpenVitals/docs)
-- Translations: [translate.codeberg.org/projects/openvitals/android-app](https://translate.codeberg.org/projects/openvitals/android-app/)
+- Translations: [translate.codeberg.org/projects/openvitals/mobile-app](https://translate.codeberg.org/projects/openvitals/mobile-app/)

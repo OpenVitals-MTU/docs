@@ -58,7 +58,7 @@ These import reports are intentionally not sanitized. They are explicit user exp
 
 ## Local Smoke Test
 
-**There is no local smoke test in the Flutter app.** The retired Kotlin app had a desktop-JVM Gradle smoke test that could run the importer against a real `export.zip` (`-PappleHealthExport=...`) without building or installing the app. It has no Flutter equivalent, and the gap is tracked in the app repository's [development notes](https://codeberg.org/OpenVitals/android-app/src/branch/main/docs/engineering/development.md#known-gaps).
+**There is no local smoke test in the Flutter app.** The retired Kotlin app had a desktop-JVM Gradle smoke test that could run the importer against a real `export.zip` (`-PappleHealthExport=...`) without building or installing the app. It has no Flutter equivalent, and the gap is tracked in the app repository's [development notes](https://codeberg.org/OpenVitals/mobile-app/src/branch/main/docs/engineering/development.md#known-gaps).
 
 What does cover the importer today is unit tests over synthetic exports in `test/features/imports/applehealth/` — parser, converter, progress, staging, checkpointing, notification and error formatting. Nothing exercises a real multi-gigabyte export off-device.
 
