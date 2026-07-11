@@ -1,6 +1,6 @@
 # Privacy
 
-OpenVitals is designed as a local-first Android app.
+OpenVitals is designed as a local-first app. The local Android app is intentionally separate from any connected app work.
 
 The local app:
 
@@ -18,7 +18,9 @@ Local app preferences may include onboarding state, acknowledged permission prom
 
 Health Connect is the source of truth. OpenVitals reads Health Connect records to show dashboard summaries, detail screens, readiness, statistics, achievements, and insights.
 
-Manual entries are saved back to Health Connect only when the user chooses to save them. Supported Apple Health export records and FIT imports are written to Health Connect only after the user starts an import from Settings, Data Importers, reviews supported details where needed, and saves. OpenVitals-created records can be edited later; records created by other apps remain read-only.
+Manual entries are saved back to Health Connect only when the user chooses to save them. Supported Apple Health export records are written to Health Connect only when the user imports an export file from Settings. OpenVitals-created records can be edited later; records created by other apps remain read-only.
+
+Apple Health exports are analyzed locally before the user chooses which categories to import. Import reports are generated locally when the user runs an import and chooses to copy or download the report. These troubleshooting reports intentionally include full importer logs, selected categories, diagnostics, and exception details, so users should review them before sharing outside their device.
 
 ## Sensitive Data
 
