@@ -1,3 +1,5 @@
+import type { MetaRecord } from 'nextra'
+
 export default {
   index: 'Feature Overview',
   '---dashboard-app': {
@@ -48,4 +50,4 @@ export default {
   },
   'privacy-support-diagnostics': 'Privacy, Support, And Diagnostics',
   'feature-map': 'Feature Map'
-}
+} satisfies MetaRecord

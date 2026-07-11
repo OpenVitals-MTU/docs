@@ -1,3 +1,5 @@
+import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
 import { Footer, Layout, Navbar } from 'nextra-theme-docs'
 import { Head } from 'nextra/components'
 import { getPageMap } from 'nextra/page-map'
@@ -28,7 +30,7 @@ function CodebergIcon() {
   )
 }
 
-export const metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL('https://openvitals.health'),
   title: {
     default: 'OpenVitals',
@@ -62,7 +64,7 @@ const footer = (
   </Footer>
 )
 
-export default async function RootLayout({ children }) {
+export default async function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" dir="ltr" suppressHydrationWarning>
       <Head color={{ hue: 175, saturation: 55, lightness: 35 }} />
