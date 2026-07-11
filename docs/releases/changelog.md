@@ -6,6 +6,14 @@ For full localized notes, see the Android app repository changelog.
 
 OpenVitals was rebuilt on Flutter in 2.0.1. Entries for 1.9.0 and earlier describe the previous Kotlin app. (2.0.0 was prepared but never published, so 2.0.1 carries everything since 1.9.0.)
 
+## 2.0.2 - 2026-07-12
+
+- **A walk or run recorded by a watch now shows its steps, distance, calories and elevation.** A watch writes an activity as a session carrying little more than a duration, and puts those numbers in *separate* Health Connect records covering the same window — so the activity's page reported "Not available" for figures the watch had in fact recorded, directly above a chart of that same activity's step cadence and splits that added up to a distance the page refused to show. A device that records speed but no distance at all, such as a treadmill, now gets a distance derived from its speed, by the same arithmetic the splits already used.
+- **Speed and cadence recorded on a ride or run are charted again**, and the metrics list no longer advertises figures the activity was never going to have — "Wheelchair pushes" and "Floors climbed" on a bike ride, permanently "Not available". A metric now appears when it has a value, or when its absence is worth reporting for that kind of activity; a value that was actually recorded is never hidden.
+- Fix the large empty gap above and below the recording dashboard, which in outdoor mode's black background read as a broken screen.
+- Fix the crash when importing an offline map pack or a large Apple Health export. The file picker read the whole file into memory before the import began, so a 205 MB pack ran out of memory before any import code ran.
+- Fix adding a home-screen widget: the metric widget opened the beverage picker (and vice versa), the picker could crash after a selection, and the widget was sometimes never created at all.
+
 ## 2.0.1 - 2026-07-11
 
 - **Your Health Connect data is not affected by this update.** Health Connect stores it outside OpenVitals, so the rewrite cannot touch it: steps, sleep, workouts, heart rate, hydration, and every other record stay exactly as they are.
