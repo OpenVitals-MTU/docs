@@ -9,9 +9,18 @@ It is for people who want a clear daily dashboard, focused metric detail screens
 [Features](features/index.md){ .md-button }
 [Support](support.md){ .md-button }
 
-<div class="home-visual" markdown="1">
-![OpenVitals dashboard](assets/images/dashboard.png){ .home-screenshot }
-![OpenVitals Daily Readiness detail](assets/images/daily-readiness.png){ .home-screenshot .home-screenshot-secondary }
+<div class="screenshot-grid" markdown="1">
+
+<figure markdown="1">
+![OpenVitals dashboard](assets/images/dashboard.png){ .app-screenshot }
+<figcaption>Dashboard</figcaption>
+</figure>
+
+<figure markdown="1">
+![OpenVitals Daily Readiness detail](assets/images/daily-readiness.png){ .app-screenshot }
+<figcaption>Daily Readiness</figcaption>
+</figure>
+
 </div>
 
 ## Find What You Need
