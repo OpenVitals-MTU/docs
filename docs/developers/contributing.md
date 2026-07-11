@@ -19,7 +19,7 @@ Include:
 
 Use the Android app repository for app bugs:
 
-[codeberg.org/OpenVitals/android-app/issues](https://codeberg.org/OpenVitals/android-app/issues)
+[codeberg.org/OpenVitals/mobile-app/issues](https://codeberg.org/OpenVitals/mobile-app/issues)
 
 Use the documentation repository for documentation or website issues:
 
@@ -66,7 +66,7 @@ npm run build
 
 Translate OpenVitals on Codeberg Translate:
 
-[translate.codeberg.org/projects/openvitals/android-app](https://translate.codeberg.org/projects/openvitals/android-app/)
+[translate.codeberg.org/projects/openvitals/mobile-app](https://translate.codeberg.org/projects/openvitals/mobile-app/)
 
 ### Where The Strings Live
 

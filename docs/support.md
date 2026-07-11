@@ -40,7 +40,7 @@ If you need help using the app, start with the user docs below. If OpenVitals is
 
 You can support OpenVitals by translating the Android app into your language on Codeberg Translate:
 
-[Translate OpenVitals](https://translate.codeberg.org/projects/openvitals/android-app/){ .md-button .md-button--primary }
+[Translate OpenVitals](https://translate.codeberg.org/projects/openvitals/mobile-app/){ .md-button .md-button--primary }
 
 Translations help make the local-first health dashboard usable for more people without changing the app's privacy model.
 

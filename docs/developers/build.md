@@ -25,8 +25,8 @@ OpenVitals is a Flutter app (Riverpod, freezed, go_router, drift). It was rebuil
 ### Build And Run
 
 ```bash
-git clone https://codeberg.org/OpenVitals/android-app.git
-cd android-app
+git clone https://codeberg.org/OpenVitals/mobile-app.git
+cd mobile-app
 flutter pub get
 flutter run
 ```

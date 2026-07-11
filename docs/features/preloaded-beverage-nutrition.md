@@ -53,7 +53,7 @@ multiple branded items in that family.
 ## Catalog Mapping Implications
 
 - The runtime beverage catalog is drift-backed: the `beverages` table in
-  [`lib/data/local/open_vitals_database.dart`](https://codeberg.org/OpenVitals/android-app/src/branch/main/lib/data/local/open_vitals_database.dart),
+  [`lib/data/local/open_vitals_database.dart`](https://codeberg.org/OpenVitals/mobile-app/src/branch/main/lib/data/local/open_vitals_database.dart),
   accessed through `BeverageStore` (`lib/data/local/beverage/beverage_store.dart`).
   It is the app's **only** database table.
   `CaffeineHealthDrinkCatalog` (`lib/domain/insights/caffeine_health_drink_catalog.dart`)
