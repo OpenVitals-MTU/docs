@@ -4,16 +4,19 @@ This page summarizes the English release notes for the local Android app.
 
 For full localized notes, see the Android app repository changelog.
 
-OpenVitals was rebuilt on Flutter in 2.0.0. Entries for 1.9.0 and earlier describe the previous Kotlin app.
+OpenVitals was rebuilt on Flutter in 2.0.1. Entries for 1.9.0 and earlier describe the previous Kotlin app. (2.0.0 was prepared but never published, so 2.0.1 carries everything since 1.9.0.)
 
-## 2.0.0 - 2026-07-11
+## 2.0.1 - 2026-07-11
 
 - **Your Health Connect data is not affected by this update.** Health Connect stores it outside OpenVitals, so the rewrite cannot touch it: steps, sleep, workouts, heart rate, hydration, and every other record stay exactly as they are.
 - **Two app settings reset:** the dashboard tile order, and the beverage picked in the quick-beverage home-screen widget. Set them again after updating. A one-time migration carries the rest across automatically — goals, units, theme, the caffeine profile, the body and heart-rate profile, reminders, custom drinks, paired Bluetooth LE sensors, activity marker notes, offline map packs, and your logged beverages.
 - Rebuild OpenVitals on Flutter. Same app, same features, same Health Connect data — and the foundation for an iOS version later. The package name and signing certificate are unchanged, so it installs as a normal update.
+- **Activity splits.** Any activity with a distance is broken into segments — 1 km by default, configurable in Settings — showing pace, average heart rate, elevation, and how each segment compares to the activity's own average. Laps recorded by a watch are shown exactly as recorded; an activity with no per-time distance data is split evenly and labelled as an estimate rather than presented as a measurement.
 - Make Apple Health imports much faster on large exports by skipping records in categories you did not select, and show real progress while the export is scanned instead of sitting at 0%.
 - Fix missing heart rate at the start of a recorded activity.
+- Fix the dashboard showing the default daily goals instead of yours, the beverage breakdown showing the app's package name instead of drink names, the missing beverage list in the Day view, and the metric carousel refusing to swipe after a tile was moved between pages.
 - Share sanitized diagnostics logs directly from Settings.
+- **Reminders may now arrive a few minutes later than the time you set.** Google restricts exact alarms to alarm-clock and calendar apps, so hydration and mindfulness reminders are delivered within a short window instead of on the dot.
 
 ## 1.9.0 - 2026-07-09
 
