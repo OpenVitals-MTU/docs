@@ -6,6 +6,19 @@ For full localized notes, see the Android app repository changelog.
 
 OpenVitals was rebuilt on Flutter in 2.0.1. Entries for 1.9.0 and earlier describe the previous Kotlin app. (2.0.0 was prepared but never published, so 2.0.1 carries everything since 1.9.0.)
 
+## 2.0.4 - 2026-07-12
+
+The app's insides were rebuilt this release, and the rebuild is what found the bugs. Moving every calculation out of the screens that were doing it mid-draw put a lot of arithmetic side by side for the first time — and several numbers, it turned out, disagreed with each other.
+
+- **The sleep card called your watch's recordings "hand-typed", and never noticed the ones that really were.** Health Connect labels how a record was made — actively recorded, automatically recorded, typed in by a person — and the data-confidence card was checking that label against the wrong value. It warned you about manual entries whenever your watch had recorded the night properly, and a night you genuinely did type in was never counted at all.
+- **The hydration goal bar filled up if you logged a single day.** It measured the average of the days you *logged* against your goal — so a week in which you logged Monday, hit your target and never opened the app again showed a completely full bar, with "1 of 1 days met" above it. Log nothing and you cannot fall short of anything. It now counts the days you met your goal against the days that have actually happened, and stops at today.
+- **A day's heart rate could print an average outside its own low and high.** The average came from Health Connect's summary of the day while the low and the high came from the individual readings — two different sets of numbers printed as one. All three now come from the readings.
+- **The skin-temperature card went blank while its own chart carried on drawing.** A reading that arrives without a temperature difference emptied the card while the chart underneath it plotted the readings that had one.
+- **Respiratory rate showed two different averages on one screen**, and said neither which was which: the average of your days under the chart, the average of every reading on the card below it.
+- **An Apple Health import that failed on permissions offered no way to fix it.** The "grant permission" button could never appear, because a permission failure was never reported as one.
+- **Screens could spin forever after a failed permission check** — on the dashboard, in onboarding, and while saving an activity, the error was thrown where nothing was listening.
+- **The app was rebuilt on Flutter's app-architecture guidelines.** Every screen now works out what to show once, when its data loads, rather than recalculating charts, totals and statistics on every redraw while you scroll. It is invisible if it went well, which is the point — and it is the groundwork for iOS.
+
 ## 2.0.3 - 2026-07-12
 
 - **An activity could show no heart rate at all, and its splits fell back to estimates.** Health Connect stores heart rate, speed and cadence as *series* records — one record holding many timestamped samples — and filters them by the boundary of the record, never by the times of the samples inside it. A device may group a whole day of beats into a single record, and a 36-minute workout sitting inside one was therefore invisible: the read succeeded and returned nothing, so the activity reported "Not available" for a heart rate it had recorded the entire time. The same read backs the speed samples, so the 1 km splits quietly dropped to being estimated from the average on exactly the same activities.
