@@ -6,6 +6,15 @@ For full localized notes, see the Android app repository changelog.
 
 OpenVitals was rebuilt on Flutter in 2.0.1. Entries for 1.9.0 and earlier describe the previous Kotlin app. (2.0.0 was prepared but never published, so 2.0.1 carries everything since 1.9.0.)
 
+## 2.0.3 - 2026-07-12
+
+- **An activity could show no heart rate at all, and its splits fell back to estimates.** Health Connect stores heart rate, speed and cadence as *series* records — one record holding many timestamped samples — and filters them by the boundary of the record, never by the times of the samples inside it. A device may group a whole day of beats into a single record, and a 36-minute workout sitting inside one was therefore invisible: the read succeeded and returned nothing, so the activity reported "Not available" for a heart rate it had recorded the entire time. The same read backs the speed samples, so the 1 km splits quietly dropped to being estimated from the average on exactly the same activities.
+- **The sleep graphs were blank.** The night's stage timeline and the "share of time in bed" bars drew their coloured bands with zero height — beside durations and percentages that were correct all along.
+- **The weekly activities view lost the strip showing which days you trained.** It is back.
+- **Beverages logged from a home-screen widget were silently dropped.** The release build strips code it cannot see being used, and the widget's buttons are found by reflection at the moment you tap them — so the tap did nothing and the drink was never recorded.
+- **A strength session was cut into distance splits.** A phone left on a bench picks up a couple of hundred metres of GPS drift, and a lifting session was sliced into "1.0 km" and "181 m" laps at a 30:29 min/km pace. Whether an activity has splits is now a question about the kind of activity, not about whether a distance happens to exist for it.
+- **Focus mode now fills the screen.** It was rendering under an app bar whose Back arrow did exactly what focus mode's own exit button — and the system back gesture — already do. The height it was taking now goes to the metrics.
+
 ## 2.0.2 - 2026-07-12
 
 - **A walk or run recorded by a watch now shows its steps, distance, calories and elevation.** A watch writes an activity as a session carrying little more than a duration, and puts those numbers in *separate* Health Connect records covering the same window — so the activity's page reported "Not available" for figures the watch had in fact recorded, directly above a chart of that same activity's step cadence and splits that added up to a distance the page refused to show. A device that records speed but no distance at all, such as a treadmill, now gets a distance derived from its speed, by the same arithmetic the splits already used.
