@@ -6,6 +6,19 @@ For full localized notes, see the Android app repository changelog.
 
 OpenVitals was rebuilt on Flutter in 2.0.1. Entries for 1.9.0 and earlier describe the previous Kotlin app. (2.0.0 was prepared but never published, so 2.0.1 carries everything since 1.9.0.)
 
+## 2.1.0 - 2026-07-13
+
+This release is about the activities the app was throwing away. A treadmill run, a trainer ride, a strength session — anything recorded without GPS — was refused at the door as a broken file. It was not broken. It had no route, and the app had quietly decided those were the same thing.
+
+- **Import a whole folder of FIT files.** Pick the folder; every FIT file inside it is imported, including the ones in the sub-folders where a watch buries them. A file that will not read fails on its own and the rest of the folder carries on.
+- **TCX files are now read** — the format Strava and Garmin actually export an indoor activity as, and one the app could not open at all. It is XML, so it used to fall through to the GPX reader, which found no track and blamed the file.
+- **Indoor activities could not be imported.** A FIT file records *total* calories and has no active-calorie field, so the app filled the blank with an estimate — and stood that estimate next to the number the file had actually measured. A treadmill run arrived as 226 estimated active calories against its own recorded 208 total, and Health Connect refuses a record whose total is below its active. A guess was allowed to contradict a measurement. It is now estimate both or estimate neither.
+- **An indoor bike ride imported as a run.** The app decided what an activity was by mashing the sport, the name and the *file name* into one string and testing "run" before "cycling" — so `Indoor_CyclingiSmoothRun.fit` was read as a run, and a 27 km ride was saved as one. The file's own sport is now asked first, and on its own. A stationary bike is also an activity type of its own at last, so a trainer ride is no longer saved as an outdoor one.
+- **A GPX with no locations in it was refused.** Real exporters write indoor sessions as track points carrying a time, a heart rate and no coordinates at all — 1,931 of them for a strength session, in one of the files this was fixed against. The session was in the file the whole time: the timestamps give the start, the end and the duration, and the extensions give the heart rate.
+- **A GPX with a heart rate in it lost the heart rate**, and imported as a bare line on a map.
+- **Activities show an elevation profile** — where you climbed, not just how much. Health Connect stores one total for a session, so it can tell you that you climbed 240 m and never where; the profile is drawn from the route's own altitudes.
+- **A speed graph appears even when the device recorded no speed**, which is most watches. It is rebuilt from the splits, which knew each segment's distance and duration all along, and drawn as a step — one flat run per split, because that is the resolution those numbers really have.
+
 ## 2.0.4 - 2026-07-12
 
 The app's insides were rebuilt this release, and the rebuild is what found the bugs. Moving every calculation out of the screens that were doing it mid-draw put a lot of arithmetic side by side for the first time — and several numbers, it turned out, disagreed with each other.
