@@ -6,6 +6,83 @@ For full localized notes, see the Android app repository changelog.
 
 OpenVitals was rebuilt on Flutter in 2.0.1. Entries for 1.9.0 and earlier describe the previous Kotlin app. (2.0.0 was prepared but never published, so 2.0.1 carries everything since 1.9.0.)
 
+## 2.2.8 - 2026-07-20
+
+This release adds heart-rate recovery, rebuilds hydration and mindfulness reminders so they survive an app update rather than only a reboot, and ties the numbers on screen to the research behind them. It also fixes a Calories screen that could hang and a 30-day calendar that only drew part of the month.
+
+- **Heart-rate recovery.** A guided test measures how quickly your heart rate falls in the minute after exertion. Recovery also appears on a workout, and is tracked over weeks and months, read from the samples Health Connect already holds. It is measured only from a deliberate test now, so a heart rate that rose after exercise is no longer misreported as a recovery.
+- **Reminders that survive an app update.** Hydration and mindfulness reminders were rebuilt from the ground up so they keep firing after every update, not just after a reboot. Hydration nudges now anchor to your last drink — the countdown resets each time you log one, and is skipped if you drank recently — and fire on the exact minute when you allow exact alarms.
+- **Every number shows its science.** The sleep, daily-readiness, body-energy, cardio-load and caffeine screens carry tappable links to the research behind their calculations. The sleep goal also counts only the time you were actually asleep, so awake time inside a sleep session no longer counts toward it.
+- **Tap a day in the month calendar to open it.** On any metric's month view, tapping a day drops you straight into that day's detail. You can also read the time off the sleep hypnogram by scrubbing across it, and it steps aside when a night is only partly staged instead of drawing a misleading graph.
+- **The Calories Day view could hang on its loading spinner forever** on some phones; it no longer does. The "Last 30 days" calendar now shows all thirty days across a month boundary instead of only the part that fell in one calendar month, and a past 30-day window is titled by its dates rather than a single month it mostly is not in.
+- **The sleep score and sleep efficiency detail screens are reachable again**, and the sleep day view no longer draws the hypnogram over its own labels, drops stats that did not belong there, and calls the duration "time in bed".
+- **Recording fixes.** A workout could fail to save because it never asked to write its own heart rate; a session could end before its last sample; and your own edits now show immediately, writing through the daily cache instead of waiting for the next sync.
+- Spanish, German, Estonian and Italian are fully translated.
+
+## 2.2.7 - 2026-07-17
+
+A maintenance release that brings back editing and deleting your own entries, makes large Apple Health imports dramatically faster with a working report at the end, and fixes the sleep chart, the workout rest bell and the hydration widget.
+
+- **Editing and deleting the entries you logged in the app works again.** Swipe a hydration, nutrition, caffeine or mindfulness entry to delete it, tap the pencil to edit a hydration or mindfulness entry, and edit or delete an activity from its detail screen. Only entries OpenVitals wrote are editable; records from other apps stay read-only. These were lost when the app moved to Flutter.
+- **Large Apple Health imports are dramatically faster.** The per-batch duplicate check is bounded to the batch's own time window instead of scanning your whole history on every batch, which grew slower and slower as the import went on. The report you can copy or save when it finishes works again too: a big export's report reaches tens of megabytes, which the previous store could not hold, so it is now written to a file.
+- **The workout rest-timer bell ducks your music or podcast for the chime** instead of stopping it, then restores it to full volume.
+- **Logging a drink from the 1x1 home-screen widget clears an active hydration reminder**, the same as logging it inside the app.
+- **The sleep chart no longer looks broken.** The day view no longer draws its stage graph over its own lane labels at larger system font sizes, and a day that includes a nap keeps the same rounded bars as every other day in the month view.
+
+## 2.2.6 - 2026-07-17
+
+The largest release since the Flutter rebuild. Large Apple Health exports import without running out of memory, Garmin FIT files import from a folder, and the long-range overviews are much faster.
+
+- **Importing a large Apple Health export no longer runs out of memory.** The export is now read a piece at a time instead of loaded whole, so a multi-gigabyte file that used to crash a minute or two into the analysis now imports. Re-importing the same export no longer creates duplicate entries either — the identifier each record is matched on is stable again, so records you already imported are recognised instead of written twice.
+- **Body Energy.** A new screen that scores how much energy your body signals support today, from recovery-side inputs — sleep, heart-rate variability, resting heart rate, physiological stress, temperature, hydration, nutrition and mindfulness — on a 0-100 scale, and calibrates to how you say you feel.
+- **Garmin FIT files import from a folder.** Point the importer at a Garmin export and it reads sleep, heart-rate variability, resting heart rate and basal metabolic rate. Files it cannot map are reported as skipped rather than failing the whole import.
+- **The Year and other long-range overviews are much faster.** They keep a local cache of daily summaries and update only what changed since the last sync, instead of re-reading a year of records every time you open them.
+- **Sleep is more accurate.** Daytime naps are separated from the night, and overlapping sessions recorded by more than one source — a watch and a phone logging the same night — are de-duplicated instead of double-counted.
+- **Charts pinch to zoom on every range**, and the zoom keeps working while you scroll the page.
+
+## 2.2.5 - 2026-07-14
+
+The download now says which phone it is for.
+
+- **The APKs on the releases page are named after the architecture they are for.** 2.2.4 split the download in two, one per architecture, but named them after an internal version code, which tells you nothing about which one your phone wants. They are now clearly labelled `arm64-v8a` and `armeabi-v7a`. Take the arm64-v8a one unless you know your phone is an older 32-bit device; F-Droid and the Play Store still pick for you. The app inside each APK is byte-for-byte what 2.2.4 shipped.
+
+## 2.2.4 - 2026-07-14
+
+Half the download, and none of it for a phone you do not have.
+
+- **The APK no longer carries libraries for architectures your phone cannot run.** Every download held both builds of the app — the 64-bit one and the 32-bit one — so whichever phone you have, half of what you downloaded was for somebody else's. It also held a third set of libraries, for x86_64, that could never have run at all. There is now one APK per architecture, containing only its own, and the download falls from 60 MB to 34. The releases page offers two APKs: nearly every phone made in the last decade wants the arm64-v8a one, and armeabi-v7a is there for older 32-bit devices. F-Droid and the Play Store pick the right one on their own.
+
+## 2.2.3 - 2026-07-13
+
+The last of the Google out of the build.
+
+- **Google's dependency blob is no longer stamped into the APK.** Android's build tools quietly attach a block to every APK they sign: a list of every library the app was built from, encrypted with a Google key so that only the Play Store can read it. It survived the removal of Google Play Services because it is not a dependency at all — it is added at the moment of signing, after everything else is done. It is gone from the APK now. The app bundle uploaded to Play keeps it, because that is the one place it is actually read.
+
+## 2.2.2 - 2026-07-13
+
+The second half of what 2.2.1 started. 2.2.1 took Google's proprietary code out of the app so that F-Droid could build it; this one makes the build reproducible, which is what F-Droid needs in order to ship it.
+
+- **The app now builds bit-for-bit identically on someone else's computer.** F-Droid does not take our word for what is in the APK: it builds the app from source on its own servers and compares the result, byte by byte, against the release published here, and only distributes the copy we signed if the two match. Everything already matched except twenty bytes in one library: a build-id, a hash the linker stamps in that silently records the paths of the machine that did the build. It is no longer stamped, so the app you download is provably the one the source produces.
+
+## 2.2.1 - 2026-07-13
+
+A packaging release, and a short one. OpenVitals no longer contains a line of Google proprietary code, which is what it takes for F-Droid to build it.
+
+- **Google Play Services are gone from the app.** The location plugin depended on Google's proprietary location library, and the app never used it. Route recording has always asked Android's own location manager for satellite fixes directly, because Google's fused provider quietly mixes in network and wifi positions that are not the GPS readings a recorded route is actually made of. So the library sat in every build being nothing but a dependency, and it was the one thing standing between OpenVitals and F-Droid, whose scanner refuses to build an app that carries it. Nothing about recording changes.
+
+## 2.2.0 - 2026-07-13
+
+This release is about the charts. Every one of them was a picture you could look at and not ask anything of: you could see that the line went up somewhere in the afternoon, and no way to ask when, or how much. The numbers were in the data and never on the screen. They answer now.
+
+- **Drag a chart to read it.** A crosshair follows your finger, a ring marks the sample, and a tooltip gives the value and the time it was taken. It snaps to a reading that was actually measured, never to a point the app invented between two of them — the curve between two readings is an interpolation, and a tooltip may only report a number that was really recorded.
+- **The caffeine curve has a scale at last.** It drew the decay of caffeine in a body with no axes and no way to tell when any of it happened. It now reads milligrams down the side and midnight to midnight along the bottom, with a dashed line for the level to be under by bedtime, and a tick under each drink, so every rise sits above the drink that caused it.
+- **Charts draw themselves in** — the line left to right, the bars up out of the axis, the ring round to its value. It is not decoration: it is the chart telling you which way to read it. If you have asked your phone to reduce motion, they are simply there, fully drawn.
+- **Charts load into a chart-shaped skeleton instead of a spinner**, so the page no longer jumps when the data arrives. And an empty chart now looks like an empty chart, with an icon and a sentence, instead of a stray line of grey text.
+- **New chart colours.** Eight of the seventeen metric accents were too faint to see against the background — gold scored 1.59:1 where 3:1 is the floor for a graphical object you are meant to see. Every accent clears it now, and keeps the hue it has always had: steps are still green, water is still blue, the heart is still rose.
+- **Body Energy could draw a score above 100**, or below the lowest reading of the day, on a score defined as 0 to 100. The curve can no longer leave the range of the data it was drawn from, and it gained the 0-100 scale it never had.
+- An axis could label two different heights with the same number, and a chart could fill the area under a line that was not there. Both fixed.
+- German, Estonian and Italian said route import took GPX/KML/KMZ, while the app has read TCX since 2.1.0 — the one file type an indoor athlete would look for was the one those languages said it could not read. German, Spanish, Estonian and Italian are now complete.
+
 ## 2.1.0 - 2026-07-13
 
 This release is about the activities the app was throwing away. A treadmill run, a trainer ride, a strength session — anything recorded without GPS — was refused at the door as a broken file. It was not broken. It had no route, and the app had quietly decided those were the same thing.
