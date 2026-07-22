@@ -3,7 +3,7 @@
 > **Status:** Current implemented behavior.
 > **Audience:** Users and contributors.
 > **Implementation:** `lib/features/settings/`, `lib/data/prefs/preferences_repository.dart`, `lib/state/app_providers.dart`.
-> **Navigation:** `/settings` plus one pushed route per `SettingsSection` (`lib/features/settings/settings_section.dart`): `/settings/display`, `/activities`, `/sensors`, `/nutrition`, `/recovery`, `/data_import`, `/health_connect`, and `/debug_diagnostics` in diagnostics builds only.
+> **Navigation:** `/settings` plus one pushed route per `SettingsSection` (`lib/features/settings/settings_section.dart`): `/settings/display`, `/activities`, `/sensors`, `/watches`, `/nutrition`, `/recovery`, `/data_import`, `/health_connect`, and `/debug_diagnostics` in diagnostics builds only.
 > **Related:** [Feature map](feature-map.md), [Permissions](../app/permissions.md), [Metric detail customization](metric-detail-customization.md).
 
 Settings centralize app preferences, Health Connect access, imports, sensors, goals, reminders, and diagnostics.
@@ -41,9 +41,11 @@ Health Connect settings show permission categories, missing access, and actions 
 
 OpenVitals asks for read permissions for dashboard and detail views. Write permissions are requested only when a user enters, imports, records, edits, or deletes data that needs them.
 
-## Data Importers And Sensors
+## Data Importers, Sensors, And Watches
 
-Settings provide Data Importers for Apple Health export import and FIT activity/course/workout import, plus entry points for offline map pack import and Bluetooth LE sensor management. Apple Health exports are analyzed first so the user can choose detected categories before anything is written to Health Connect. Import results can be copied or downloaded as a full text report with summary, selected categories, logs, diagnostics, and failure details.
+Settings provide Data Importers for Apple Health export import and FIT activity/course/workout import, plus entry points for offline map pack import, Bluetooth LE sensor management, and watch pairing.
+
+**Sensors & devices** manages Bluetooth LE sensors that stream while an activity is recorded. **Watches** is separate: it pairs a Garmin watch, syncs what the watch already recorded, and reaches the watch's own alarms and settings — see [Garmin watch sync](garmin-watch-sync.md). Apple Health exports are analyzed first so the user can choose detected categories before anything is written to Health Connect. Import results can be copied or downloaded as a full text report with summary, selected categories, logs, diagnostics, and failure details.
 
 ## Diagnostics And App Information
 
