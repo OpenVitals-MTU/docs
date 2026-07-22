@@ -73,3 +73,18 @@
 .liberapay-badge img {
   display: block;
 }
+
+/*
+  App screenshots inside documentation pages.
+
+  These are phone captures at 1440x3120. Left to fill the content column they
+  render about 1700px tall, so a single illustration pushes the paragraph it
+  illustrates a full screen down the page. Capped to roughly a phone's width on
+  screen, which is all a screenshot needs to be readable beside the text.
+*/
+main p img,
+main figure img {
+  max-width: min(100%, 260px);
+  height: auto;
+  border-radius: 10px;
+}
