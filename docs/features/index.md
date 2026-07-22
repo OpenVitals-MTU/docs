@@ -36,6 +36,7 @@ Use the [feature map](/features/feature-map) when you need the route/widget/pack
 - [Beverage logging and caffeine](/features/beverage-logging-and-caffeine): drink logging with hydration, caffeine, presets, custom catalog choices, and selected nutrition defaults.
 - [Recording of activity](/features/activity-recording): GPS and repetition-oriented activity recording before saving to Health Connect.
 - [Activity and training plans](/features/activity-training-plans): planned workouts, activity setup defaults, favorite activities, repetitions, sets, and review flows.
+- [Garmin watch sync](/features/garmin-watch-sync): pair a Garmin watch and copy what it recorded over Bluetooth, plus its alarms and on-watch settings.
 - [Bluetooth LE sensors](/features/ble-sensors): supported heart-rate, cadence, power, and footpod sensors during activity recording.
 - [GPX/KML/KMZ route import](/features/route-file-import): route file import for review before saving.
 - [FIT files import](/features/fit-files-import): Settings Data Importers support for FIT activity, course, and workout files.

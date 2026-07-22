@@ -38,6 +38,7 @@ export default {
   'activity-recording': 'Recording Of Activity',
   'activity-training-plans': 'Activity And Training Plans',
   'ble-sensors': 'Bluetooth LE Sensors',
+  'garmin-watch-sync': 'Garmin Watch Sync',
   'route-file-import': 'GPX/KML/KMZ Route Import',
   'fit-files-import': 'FIT Files Import',
   'offline-maps-support': 'Offline Maps Support',
