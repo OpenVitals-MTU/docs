@@ -12,6 +12,8 @@ There is no Garmin account, no Garmin Connect app, and no server in between. The
 
 Alarms and the watch's other settings can also be read and changed from the phone.
 
+![The Watches section, with a paired vívoactive 5](../assets/images/garmin-watches.png)
+
 ## Pairing A Watch
 
 **Settings › Watches › Pair a watch** scans for nearby watches. Android then shows its own pairing dialog, followed by a companion-device dialog asking to let OpenVitals access the watch.
@@ -21,6 +23,8 @@ Declining the companion dialog is supported. The watch still pairs and still syn
 Watches using Garmin's older single-link Bluetooth transport are not supported. OpenVitals detects the transport while pairing and says so rather than pairing something it cannot read.
 
 ## Syncing
+
+![A paired watch, showing Data, Sync, Alarms and Find](../assets/images/garmin-watch-device.png)
 
 Sync is on demand, from the watch's device view or from its tile on the summary screen. There is no background sync — every sync is one the user asked for.
 
@@ -40,6 +44,8 @@ Garmin also records measures Health Connect has no record type for. These are ke
 - The watch's own verdict on a night: sleep score, awakenings, time awake, sleep pressure, and sleep need.
 - Health Snapshot samples, when a snapshot has been recorded on the watch.
 
+![The Watch data screen, showing stress, Body Battery, intensity minutes and Sleep Coach](../assets/images/garmin-watch-data.png)
+
 Body Battery from the watch also informs the app's own [Body Energy](body-energy.md) calibration.
 
 ## Repeat Syncs
@@ -51,6 +57,10 @@ A file is marked as synced only after its import succeeded, so a run interrupted
 ## Alarms And On-Watch Settings
 
 Alarms can be switched on and off, retimed, relabelled, added, and deleted, and every change applies to the watch itself. The watch's own settings menus — clocks, notifications, sensors, music, system — can also be browsed and changed.
+
+![The alarm list read from the watch](../assets/images/garmin-watch-alarms.png)
+
+![The watch's own settings tree](../assets/images/garmin-watch-settings.png)
 
 None of these menus are defined by OpenVitals. The watch sends its own menu, already translated into the language the watch is set to, and the app renders what arrives. A screen OpenVitals has never seen still works, and nothing needs updating when the watch's firmware changes.
 

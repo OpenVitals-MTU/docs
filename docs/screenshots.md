@@ -14,6 +14,8 @@ These screenshots show the current summary-first app navigation, setup, settings
 | `docs/assets/images/activity-detail.png` | Activity detail view. |
 | `docs/assets/images/activity-recording.png` | Activity recording controls. |
 | `docs/assets/images/beverage-entry.png` | Beverage and caffeine entry. |
+| `docs/assets/images/garmin-watch-device.png` | A paired Garmin watch and its actions. |
+| `docs/assets/images/garmin-watch-data.png` | Watch measures Health Connect has no type for. |
 
 ## Preview
 
