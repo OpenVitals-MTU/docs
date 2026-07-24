@@ -6,6 +6,37 @@ For full localized notes, see the Android app repository changelog.
 
 OpenVitals was rebuilt on Flutter in 2.0.1. Entries for 1.9.0 and earlier describe the previous Kotlin app. (2.0.0 was prepared but never published, so 2.0.1 carries everything since 1.9.0.)
 
+## 2.3.2 - 2026-07-25
+
+A small release for the activity screen: the offline route map stops freezing and crashing, PMTiles packs actually draw their map, and the route export from the pre-Flutter app is back.
+
+- **Export a workout's route again.** The route card on an activity got its buttons back from the pre-Flutter app: open the route in a map app, save it as GPX, or save it as KMZ. Files are named after the activity and its start time, and the save goes through the system save dialog so you pick where it lands.
+- **Offline maps no longer freeze the activity screen - or crash the app.** With a Mapsforge pack active, scrolling to the map could hold the whole screen for seconds while tiles were prepared, and past five seconds Android kills the app as unresponsive. Tiles are now read and prepared in the background, so the screen stays smooth while the map draws in.
+- **PMTiles packs draw their base map again.** An imported .pmtiles pack rendered nothing but the plain background behind the route; the vector base map now appears as it should.
+
+## 2.3.1 - 2026-07-24
+
+A polish release about honesty at the edges: the day boundary, the year view, and the hours your tracker spends off your wrist. Widgets stop freezing overnight, mornings show last night's vitals instead of "No data", Body Energy keeps living while the watch charges, and a Garmin Edge can now be a live sensor and a sync device at once.
+
+- **A Garmin Edge can be two things at once.** A bike computer now broadcasts as a live sensor during a recording - heart rate, speed, cadence, power, the way a strap does - while still syncing its recorded rides afterwards. WearOS smartwatches are also recognised as their own device type, with a Health Connect sources card in diagnostics.
+- **Widgets stop freezing overnight and ask for what they need.** The refresh alarm survives Android's battery saving, placing a widget offers the "Alarms & reminders" permission that keeps refreshes on schedule (declining keeps the widget), and widgets refresh the moment a watch sync or an Apple Health import lands new data.
+- **Body Energy keeps living while the tracker is off.** Once the day has shown any data, baseline metabolism keeps draining through the gaps, and a walk recorded by the phone's own step counter drains too. Untracked days hold steady rather than sliding to zero.
+- **Mornings show last night.** HRV, resting heart rate, respiratory rate, SpO2 and skin temperature read from your night window, so the dashboard has your overnight values at breakfast instead of "No data" until the first daytime sample.
+- **Caffeine and streak fixes.** The bedtime projection describes the night ahead, the dashboard tile shows the caffeine active right now with today's intake beneath it, goal streaks survive midnight until the day genuinely fails, and a drink just before midnight still anchors the hydration reminder schedule.
+- **The Calories year view tells the truth.** No more doubled and missing days around the clock changes, no phantom kilocalories in empty years, no piling up reads until the screen hangs when paging quickly through years.
+- **Garmin sleep stages sit where they happened,** intensity minutes count the whole week toward the weekly goal, and every top-level screen survives the largest text size.
+
+## 2.3.0 - 2026-07-22
+
+The biggest release so far. OpenVitals can now read a Garmin watch directly over Bluetooth - no Garmin account, no Connect app - and copy your health records to another phone the same way. Body Energy gets a plot on your home screen, sleep gets a night window you set yourself, and the Calories year view that used to take half a minute now opens straight away.
+
+- **Garmin watch sync.** Pair a Garmin watch and copy what it recorded straight off the wrist over Bluetooth. Sleep, heart rate, HRV, VO2 max, SpO2, respiration, steps, distance and workouts go to Health Connect; the measures Health Connect has no place for - stress, Body Battery, intensity minutes, training readiness, recovery time and training load - are kept in the app and shown on a Watch data screen. Nothing goes through Garmin's servers, and the app still has no internet permission.
+- **Your watch's alarms and settings, from your phone.** Switch alarms on and off, retime, rename, add and delete them, and browse the watch's own settings menus - all read live from the watch, in the language the watch is set to. There is also a Find button to make the watch alert when you have mislaid it.
+- **Sync with another phone.** Copy Health Connect records to a nearby phone over Bluetooth, with no account and no internet. All 41 record types are supported, the two phones pair with a code you confirm on both, and a report tells you exactly what moved.
+- **Body Energy on your home screen.** The Body Energy widget draws the day's curve beside the score. Sleep also gets a night window you set yourself, replacing the fixed range modes.
+- **Much faster everywhere.** The Calories year view opens immediately instead of taking up to half a minute, the dashboard reads its metrics concurrently, the charts stop repainting every frame, and a recording no longer writes every sensor event to disk as it arrives.
+- **Fixes.** A partly-staged night draws whole and merged nights open their detail; a day's steps are no longer doubled by syncing twice; reminders survive a long absence; reading the log and importing a route file no longer freeze the app; floors, elevation and wheelchair pushes land in the right period; and widgets show fresh data after the background isolate is reused.
+
 ## 2.2.8 - 2026-07-20
 
 This release adds heart-rate recovery, rebuilds hydration and mindfulness reminders so they survive an app update rather than only a reboot, and ties the numbers on screen to the research behind them. It also fixes a Calories screen that could hang and a 30-day calendar that only drew part of the month.
