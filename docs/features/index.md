@@ -20,7 +20,7 @@ Use the [feature map](/features/feature-map) when you need the route/widget/pack
 - [Activity metrics](/features/activity-metrics): steps, distance, calories, active calories, floors, elevation, wheelchair pushes, workouts, and cardio-load context.
 - [Sleep tracking](/features/sleep-tracking): sleep period overview and sleep-session detail flow.
 - [Sleep score and recovery](/features/sleep-score-and-recovery): sleep score, sleep efficiency, recovery details, and confidence.
-- [Daily readiness](/features/daily-readiness): Body Energy, Training Readiness, HRV status, stress context, and adaptive guidance.
+- [Daily readiness](/features/daily-readiness): the readiness card inside the Body Energy view, with Training Readiness, HRV status, stress context, and adaptive guidance.
 - [Body Energy](/features/body-energy): selected-day energy timeline, calibration, confidence, dashboard support, and widgets.
 - [Heart and vitals](/features/heart-and-vitals): heart rate, resting heart rate, HRV, blood pressure, SpO2, VO2 max, respiratory rate, body temperature, blood glucose, skin temperature, and Today Vitals.
 - [Body metrics](/features/body-metrics): weight, height, BMI, body fat, lean mass, BMR, bone mass, body water mass, and FFMI context.
