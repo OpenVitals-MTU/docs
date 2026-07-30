@@ -14,6 +14,10 @@ OpenVitals treats Health Connect as the source of truth. The dashboard reads gra
 - Recovery, intake, and body areas such as sleep, heart, HRV, body composition, vitals, beverages, hydration, caffeine, nutrition, mindfulness, and optional cycle data.
 - Data source labels, empty states, permission states, and confidence context where they help explain why a number is present or missing.
 
+## Tile Order
+
+The dashboard is editable: tiles can be reordered by drag, hidden, and added back from a tray. On top of the saved order, tiles with no data for the selected day sink below the ones with data. They stay visible so the metric is discoverable, but the metrics actually being measured lead without manual reordering. A tile that is still loading holds its place, and edit mode always shows the true saved order.
+
 ## Steps
 
 Steps are the clearest Health Connect dashboard example. When the steps read permission is granted, OpenVitals can show the current day summary, longer period charts, goal progress, daily totals, best day, active days, previous-period comparison, and personal baseline context.
