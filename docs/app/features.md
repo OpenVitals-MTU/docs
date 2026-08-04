@@ -5,7 +5,7 @@ The current feature guide is split into task-focused pages so users do not have 
 - [Feature overview](../features/index.md): grouped map of current app behavior.
 - [Dashboard and app experience](../features/health-connect-metrics-dashboard.md): summary widgets, dashboard customization, onboarding, settings, and home widgets.
 - [Health metrics](../features/activity-metrics.md): activity, sleep, readiness, Body Energy, heart, vitals, body, nutrition, hydration, mindfulness, cycle tracking, and statistics.
-- [Logging, import, and recording](../features/manual-entry-metrics.md): manual entry, beverages, activity recording, route imports, FIT imports, offline maps, Apple Health import, Bluetooth LE sensors, Garmin watch sync, and reminders.
+- [Logging, import, and recording](../features/manual-entry-metrics.md): manual entry, beverages, activity recording, route imports, FIT imports, offline maps, Apple Health import, Bluetooth LE sensors, smartwatches via Health Connect, and reminders.
 - [Feature map](../features/feature-map.md): documentation, route, widget, and implementation mapping for contributors.
 
 The navigation tabs expose these same groups directly.
