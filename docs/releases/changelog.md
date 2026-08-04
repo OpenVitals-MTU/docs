@@ -41,6 +41,8 @@ A polish release about honesty at the edges: the day boundary, the year view, an
 
 ## 2.3.0 - 2026-07-22
 
+> **Note:** The direct watch connectivity described below (watch pairing, sync, alarms, and on-watch settings) has since been removed from OpenVitals. Watches now sync into Health Connect through Gadgetbridge or the vendor's app — see [Smartwatches](../features/smartwatches.md). Bluetooth LE sensors and phone-to-phone sync remain.
+
 The biggest release so far. OpenVitals can now read a Garmin watch directly over Bluetooth - no Garmin account, no Connect app - and copy your health records to another phone the same way. Body Energy gets a plot on your home screen, sleep gets a night window you set yourself, and the Calories year view that used to take half a minute now opens straight away.
 
 - **Garmin watch sync.** Pair a Garmin watch and copy what it recorded straight off the wrist over Bluetooth. Sleep, heart rate, HRV, VO2 max, SpO2, respiration, steps, distance and workouts go to Health Connect; the measures Health Connect has no place for - stress, Body Battery, intensity minutes, training readiness, recovery time and training load - are kept in the app and shown on a Watch data screen. Nothing goes through Garmin's servers, and the app still has no internet permission.

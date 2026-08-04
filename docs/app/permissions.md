@@ -111,7 +111,7 @@ Declared for explicit save, edit/delete, recording, and supported import workflo
 - `android.permission.ACCESS_COARSE_LOCATION`: declared with location access for Android permission compatibility.
 - `android.permission.ACTIVITY_RECOGNITION`: used where Android requires activity-recognition access for recorded activity workflows.
 - `android.permission.BLUETOOTH_SCAN`: used to find paired Bluetooth LE sensors for experimental activity recording.
-- `android.permission.BLUETOOTH_CONNECT`: used to connect to paired Bluetooth LE sensors for experimental activity recording, and to a paired Garmin watch when syncing what it recorded.
+- `android.permission.BLUETOOTH_CONNECT`: used to connect to paired Bluetooth LE sensors for experimental activity recording.
 - `android.permission.FOREGROUND_SERVICE`: used for foreground activity recording and user-started import work.
 - `android.permission.FOREGROUND_SERVICE_DATA_SYNC`: marks long-running Apple Health imports as user-started data sync work.
 - `android.permission.FOREGROUND_SERVICE_LOCATION`: marks the recording service as location-based.
@@ -120,16 +120,6 @@ Declared for explicit save, edit/delete, recording, and supported import workflo
 - `android.permission.HIGH_SAMPLING_RATE_SENSORS`: supports higher-rate sensor access for activity recording on devices that expose it.
 - `android.permission.POST_NOTIFICATIONS`: used for activity recording, Apple Health import progress, and reminder notifications.
 - `android.permission.RECEIVE_BOOT_COMPLETED`: used to reschedule reminders after reboot or app update.
-
-## Companion Device Permissions
-
-Used only for [Garmin watch sync](../features/garmin-watch-sync.md). These are install-time grants with no runtime prompt of their own — the consent is the system **"Allow OpenVitals to access your watch?"** dialog shown while pairing. Declining that dialog is supported: the watch still pairs and still syncs, without the background priority described below.
-
-- `android.permission.REQUEST_COMPANION_RUN_IN_BACKGROUND`: lets Android keep the app's process alive while the watch is nearby, so a file sync that runs for minutes is not interrupted.
-- `android.permission.REQUEST_OBSERVE_COMPANION_DEVICE_PRESENCE`: lets Android tell the app when the watch comes into range, which is what triggers the priority above.
-- `android.software.companion_device_setup`: a feature declaration rather than a permission, and marked not required. Without it Android refuses the association outright; marking it optional keeps the app installable on devices with no companion support, where watch pairing falls back to a plain Bluetooth bond that syncs normally.
-
-`REQUEST_COMPANION_USE_DATA_IN_BACKGROUND` is deliberately not declared: it governs background network use, and this app has no network permission at all.
 
 ## Removed Network Permissions
 

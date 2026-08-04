@@ -40,6 +40,14 @@ OpenVitals needs precise location to record route-backed activities. Without it,
 
 OpenVitals uses nearby-device Bluetooth permissions to connect to paired Bluetooth LE sensors during experimental activity recording. This does not add internet access.
 
+## Can OpenVitals Connect To My Smartwatch?
+
+No, and that is deliberate. OpenVitals does not pair with watches, sync them, forward notifications, or manage watch settings.
+
+Instead, sync the watch with [Gadgetbridge](https://gadgetbridge.org) or your vendor's app so its data lands in Health Connect. OpenVitals reads everything from there — steps, heart rate, sleep, HRV, workouts — and shows which app each record came from. See [Smartwatches](../features/smartwatches.md).
+
+Bluetooth LE sensors are different: heart-rate straps and cycling cadence/power sensors still stream live into an activity recording. See [Bluetooth LE sensors](../features/ble-sensors.md).
+
 ## Why Does OpenVitals Need Notification Permission?
 
 Notification permission is used for:
