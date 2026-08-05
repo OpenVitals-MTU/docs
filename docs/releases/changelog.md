@@ -6,6 +6,28 @@ For full localized notes, see the Android app repository changelog.
 
 OpenVitals was rebuilt on Flutter in 2.0.1. Entries for 1.9.0 and earlier describe the previous Kotlin app. (2.0.0 was prepared but never published, so 2.0.1 carries everything since 1.9.0.)
 
+## 2.6.0 - 2026-08-05
+
+This release is about the two conversations your health data has outside the app: with your doctor, and with you. A PDF report you can hand across a desk, menstrual cycle tracking that lives entirely in Health Connect, and blood-pressure logging that captures what clinicians actually ask about a reading.
+
+- **Menstrual cycle tracking.** Log period flow, spotting, sexual activity, ovulation tests, cervical mucus and basal body temperature - one category at a time, each its own Health Connect record. Period days derive from your flow entries, and cycle statistics predict the next period; when cycles vary too much for an honest prediction, the app says so. Cycle data stays a separately granted permission category and is stored only in Health Connect.
+- **Health report export (PDF).** Pick metrics, detail level and range, and OpenVitals builds a PDF on the device to share or save - charts, statistics and tables per metric, and clinical sections where the data has more to say: blood pressure with separate systolic/diastolic statistics and meal-context averages, glucose by relation to meal with fasting first, workouts by activity type with the full session list, and sleep with bedtime/wake-up averages and the stage mix. The report states its own gaps in print.
+- **Richer blood-pressure logging.** Optional dropdowns for when the reading was taken, body position and cuff location, plus a collapsible guide with the standard home-measurement protocol.
+- **Distance backfill from steps.** Opt-in under Activities: your stride length fills daily distance only for days that have steps and no distance from any source; derived records are marked and removed if you turn it off.
+- **Portuguese added,** and Spanish, Italian, Estonian and German are complete again at 100%.
+- **The dashboard keeps tiles with recent history.** A tile only sinks when its metric has no data today and none recently - Sleep no longer drops before tonight - and a "Sort empty tiles last" toggle makes it a choice.
+- **Fixes:** year-long heart-rate reads are chunked so they cannot come back empty; duplicated blood-pressure records count once in the report; cycle screens allow screenshots; the base unit option is named "System" everywhere.
+
+## 2.5.0 - 2026-08-04
+
+OpenVitals is native Kotlin again. Every feature the 2.x line added has been rebuilt on the Android-native app; your data and settings from the previous version are imported automatically the first time you open it.
+
+- **Smartwatches sync through Health Connect.** OpenVitals does not pair with watches: Gadgetbridge or your vendor's app syncs the watch into Health Connect and OpenVitals reads everything there - steps, heart rate, HRV, sleep and workouts - with the original source shown on each record. Bluetooth sensors are unaffected and still stream live into recordings.
+- **Sync health data with another phone over Bluetooth.** Both phones stay offline - no account, no internet at any point - and records keep their original source across the transfer.
+- **Import health data from CSV files** through a guided wizard that maps your own columns.
+- **Units that follow your device.** The unit setting defaults to Android's measurement-system preference, and every quantity can override it on its own.
+- **Sturdier reminders,** quick-add from the notification, GPS-free recording, a guided heart-rate recovery test, TCX and indoor-workout import, more accurate elevation, and a long list of fixes - see the app repository changelog for the full notes.
+
 ## 2.4.0 - 2026-07-28
 
 Onboarding is rebuilt from the ground up, the dashboard stops nagging about permissions, and the whole app gets a quiet visual tune-up: consistently outlined icons and Material 3 text spacing.
