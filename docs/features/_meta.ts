@@ -43,6 +43,7 @@ export default {
   'fit-files-import': 'FIT Files Import',
   'offline-maps-support': 'Offline Maps Support',
   'apple-health-import': 'Apple Health Import',
+  'health-report-export': 'Health Report Export',
   'preloaded-beverage-nutrition': 'Preloaded Beverage Nutrition Reference',
   reminders: 'Reminders',
   '---privacy-developers': {
