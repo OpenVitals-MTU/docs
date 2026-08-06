@@ -42,6 +42,7 @@ export default {
   'route-file-import': 'GPX/KML/KMZ Route Import',
   'fit-files-import': 'FIT Files Import',
   'offline-maps-support': 'Offline Maps Support',
+  'comaps-navigation-context': 'CoMaps Navigation Context',
   'apple-health-import': 'Apple Health Import',
   'health-report-export': 'Health Report Export',
   'preloaded-beverage-nutrition': 'Preloaded Beverage Nutrition Reference',
