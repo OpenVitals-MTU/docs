@@ -6,6 +6,14 @@ For full localized notes, see the Android app repository changelog.
 
 OpenVitals was rebuilt on Flutter in 2.0.1. Entries for 1.9.0 and earlier describe the previous Kotlin app. (2.0.0 was prepared but never published, so 2.0.1 carries everything since 1.9.0.)
 
+## 2.6.1 - 2026-08-06
+
+This release puts a navigator next to the recorder: with a CoMaps build that shares its navigation, a GPS recording shows the guidance you are actually following while OpenVitals keeps recording. CoMaps plans and navigates; OpenVitals reads and records.
+
+- **Live CoMaps navigation while recording.** The next turn floats over the live map, the planned route is drawn point-for-point on the offline map with turn arrows and a destination flag, and the location dot becomes a compass arrow that points where the phone points. With the integration on, Start becomes a doorway - set the route up in CoMaps or dismiss the guidance card, then start. Guidance shown during the ride can be kept with the saved activity - on this device only, never in Health Connect. Off by default under Settings > Activity recording.
+- **One launcher icon.** The release build ships the artwork the debug build had; debug keeps the shape and differs only in colour.
+- **Fixes:** with 3-button system navigation the bar no longer covers the bottom of screens; heart and vitals tiles open their own metric screens instead of a shared overview; the swipe-to-delete red no longer shows through entry rows at rest; one reload shows one indicator, and dashboard widgets replay their animations only when a reload actually brought new data.
+
 ## 2.6.0 - 2026-08-05
 
 This release is about the two conversations your health data has outside the app: with your doctor, and with you. A PDF report you can hand across a desk, menstrual cycle tracking that lives entirely in Health Connect, and blood-pressure logging that captures what clinicians actually ask about a reading.

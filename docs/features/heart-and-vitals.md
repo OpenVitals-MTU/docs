@@ -3,7 +3,7 @@
 > **Status:** Current implemented behavior. One parametric screen serves all ten metrics.
 > **Audience:** Users and contributors.
 > **Implementation:** `lib/features/heart/`, `lib/features/vitals/`, `lib/features/manualentry/vitals_measurement_entry_screen.dart`, `lib/data/repository/contract/heart_repository.dart` + `vitals_repository.dart`, `lib/domain/usecase/load_heart_period_use_case.dart`.
-> **Navigation:** `/heart_vitals` (overview); `/metric/:metricId` for all ten heart/vitals ids; `/manual_entry/vitals/:vitalsMeasurementType` (+ `/edit/:vitalsEntryId`).
+> **Navigation:** `/metric/:metricId` for all ten heart/vitals ids; `/manual_entry/vitals/:vitalsMeasurementType` (+ `/edit/:vitalsEntryId`).
 > **Related:** [Feature map](feature-map.md), [Manual entry of metrics](manual-entry-metrics.md), [Statistics](statistics.md).
 
 Heart and vitals are related but distinct feature areas, and the split is in the data layer, not the screen layer.
@@ -49,8 +49,8 @@ OpenVitals-created vitals entries can be edited or deleted when the app has writ
 
 ## Today Vitals
 
-The vitals overview groups related metrics into heart, cardiovascular, and respiratory/body-temperature sections. It uses the same period shell as other metric details and links into focused metric screens.
+Each heart and vitals dashboard tile opens its own focused metric screen directly - tapping Blood pressure opens the blood pressure detail, not an intermediate overview.
 
 ## Data Boundaries
 
-Heart-rate and vitals records are read through feature-facing repository/use-case APIs rather than a global browser. Manual vitals entry is `lib/features/manualentry/vitals_measurement_entry_screen.dart` (there is no `manualentry/vitals/` subdirectory). Dashboard heart and vitals tiles open the `/heart_vitals` overview, which links on into the per-metric `/metric/:metricId` routes.
+Heart-rate and vitals records are read through feature-facing repository/use-case APIs rather than a global browser. Manual vitals entry is `lib/features/manualentry/vitals_measurement_entry_screen.dart` (there is no `manualentry/vitals/` subdirectory). Dashboard heart and vitals tiles open the per-metric `/metric/:metricId` routes directly.
