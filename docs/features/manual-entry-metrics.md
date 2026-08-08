@@ -21,7 +21,8 @@ OpenVitals supports explicit logging for:
 - Activity sessions, optionally with routes, distance, elevation, calories, repetitions, title, and notes.
 - Mindfulness sessions through a timer or manual duration.
 - Body measurements such as weight, height, and body fat.
-- Vitals such as blood pressure, SpO2, respiratory rate, and body temperature.
+- Vitals such as blood pressure, SpO2, respiratory rate, body temperature, and heart rate variability (HRV).
+- Every vitals form offers date and time pickers when adding as well as when editing, defaulting to now - a reading can be logged after the fact under the moment it was taken.
 
 ## Permission Handling
 

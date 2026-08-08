@@ -6,6 +6,14 @@ For full localized notes, see the Android app repository changelog.
 
 OpenVitals was rebuilt on Flutter in 2.0.1. Entries for 1.9.0 and earlier describe the previous Kotlin app. (2.0.0 was prepared but never published, so 2.0.1 carries everything since 1.9.0.)
 
+## 2.6.2 - 2026-08-08
+
+This release lets a reading into the app that no wearable took: HRV can now be logged by hand, and every hand-logged vitals reading can carry the moment it was actually taken.
+
+- **Log HRV manually.** Heart rate variability joins the Log screen: enter an RMSSD value in ms and it is written to Health Connect, feeding the dashboard tile, the HRV screen, and baselines like any watch reading. Your own entries can be edited and deleted from the HRV day view; the tile can be removed in the Log screen's edit mode.
+- **Pick the time on new entries.** Every vitals entry form - blood pressure, SpO2, respiratory rate, body temperature, HRV - now offers date and time pickers when adding, not only when editing. A reading taken this morning can be logged tonight under its real clock; the pickers default to now.
+- **Fixes:** switching days on the dashboard answers instantly - the date flips at once, tiles show a loading state instead of the previous day's numbers, and the rings sweep in exactly once with the right values; the small weekly cardio tile no longer says "Loading" forever next to the cardio ring; returning from a metric screen keeps the widget page and scroll position; the hydration day graph no longer ends in a dot - dots mark entries only; a sleep window set within one day (such as 00:00 to 12:00) files each night on its own date.
+
 ## 2.6.1 - 2026-08-06
 
 This release puts a navigator next to the recorder: with a CoMaps build that shares its navigation, a GPS recording shows the guidance you are actually following while OpenVitals keeps recording. CoMaps plans and navigates; OpenVitals reads and records.
