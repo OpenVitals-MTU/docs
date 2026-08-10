@@ -36,6 +36,12 @@ If you need help using the app, start with the user docs below. If OpenVitals is
 
 </div>
 
+## Leave A Google Play Review
+
+A positive review on Google Play is one of the simplest ways to help. It makes OpenVitals easier for other people to find and trust, without changing anything about the app's privacy model.
+
+[Review OpenVitals on Google Play](https://play.google.com/store/apps/details?id=tech.mmarca.openvitals){ .md-button .md-button--primary }
+
 ## Translate The App
 
 You can support OpenVitals by translating the Android app into your language on Codeberg Translate:
@@ -52,6 +58,7 @@ OpenVitals is free and open source. Contributions through Liberapay fund the ong
 
 ## What Support Helps With
 
+- Making the app easier to discover through honest Google Play reviews.
 - Keeping up with Health Connect and Android platform changes.
 - Testing real-world health metric flows across devices and providers.
 - Improving translations, documentation, screenshots, and release notes.
