@@ -6,10 +6,19 @@ OpenVitals is maintained as a privacy-first local health app.
 
 Support and contributions help with:
 
+- Making OpenVitals easier to discover through positive Google Play reviews.
 - Keeping up with Health Connect and Android platform changes.
 - Testing real-world health metric flows across devices and Health Connect providers.
 - Improving documentation, screenshots, release notes, and translations.
 - Maintaining the local app's no-account, no-cloud, no-analytics, and no-ads boundary.
+
+## Leave A Google Play Review
+
+If the app is useful to you, a short positive review on Google Play helps other people find it:
+
+[Review OpenVitals on Google Play](https://play.google.com/store/apps/details?id=tech.mmarca.openvitals)
+
+For more ways to help, including translations and funding, see [Support OpenVitals](../support.md).
 
 ## Where Support Belongs
 
