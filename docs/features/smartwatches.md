@@ -1,30 +1,41 @@
 # Smartwatches
 
-> **Status:** Current behavior.
+> **Status:** Current behavior. Garmin support is experimental.
 > **Audience:** Users.
 > **Related:** [Bluetooth LE sensors](ble-sensors.md), [Health Connect](../app/health-connect.md), [Feature map](feature-map.md).
 
-OpenVitals deliberately does not link to smartwatches. There is no watch pairing, no watch sync, no watch settings, and no notification forwarding in the app.
+OpenVitals supports wrist devices in two very different ways, depending on the make.
 
-Instead, OpenVitals reads everything from Health Connect, and the app that already knows your watch does the syncing:
+**Garmin watches** are read directly, over Garmin's own Bluetooth protocol. There is no vendor account and no network step; the app declares no internet permission at all. Pairing, sync, and the features below are all handled inside OpenVitals.
+
+**Everything else** syncs through Health Connect: the app that already knows the watch does the syncing, and OpenVitals reads the result.
 
 - **[Gadgetbridge](https://gadgetbridge.org)** — a free, open-source companion app that supports many watch brands and can sync what the watch records into Health Connect, with no vendor account.
 - **Your vendor's own app** — if it writes to Health Connect, that works too.
 
-Once the watch's data lands in Health Connect, OpenVitals picks all of it up: steps, heart rate, resting heart rate, HRV, sleep sessions and stages, SpO2, VO2 max, respiratory rate, workouts with their routes, and everything else in the app's [read coverage](../app/health-connect.md). Nothing needs configuring inside OpenVitals beyond the usual Health Connect read permissions.
+Once a watch's data lands in Health Connect - whichever way it got there - OpenVitals picks all of it up: steps, heart rate, resting heart rate, HRV, sleep sessions and stages, SpO2, VO2 max, respiratory rate, workouts with their routes, and everything else in the app's [read coverage](../app/health-connect.md).
 
-## Why No Direct Watch Link
+## Garmin Support
 
-Speaking each brand's watch protocol is a project of its own, and one that projects like Gadgetbridge already do well across many brands at once. OpenVitals stays focused on reading, showing, and understanding the data, and leaves device connectivity to the apps built for it.
+Verified against a single recent Garmin model; watches on Garmin's older single-link transport are not supported. The app asks each watch what it can do rather than assuming.
+
+- **Sync.** The watch hands over the activity, sleep, and wellness files it recorded; OpenVitals imports them to Health Connect, keeps watch-only measurements (stress, Body Battery, training readiness and friends) in its own local storage, and tells the watch to archive what was copied. Every sync is user-initiated; a dashboard watch tile shows the last-synced watch with its battery and a sync button.
+- **Stay connected.** An optional per-watch mode holds the Bluetooth link open whenever the watch is in range, the way the vendor's app behaves. With it on, live heart rate and steps can stream to the dashboard.
+- **Notifications.** Phone notifications can be forwarded to the wrist, with a per-app blocklist, reply and actions from the watch, and dismissal that clears the phone too. Off by default, behind Android's own notification access.
+- **Weather.** The watch's weather glance is answered from a weather app on the phone that broadcasts the Gadgetbridge generic-weather format (Breezy Weather is the tested one). OpenVitals never contacts a weather service.
+- **Calendar.** The watch's calendar glance can show the phone's upcoming events. Off by default behind its own permission; events go to the watch over Bluetooth and nowhere else.
+- **Find, both ways.** The phone can make the watch alert, and the watch's find-my-phone rings the phone even when silenced.
+- **GPS ephemeris.** A satellite prediction file imported by hand is served to the watch on request, for cold GPS fixes in seconds instead of minutes. Nothing is downloaded.
+- **Watch settings.** The watch's own settings tree and alarms are rendered live from the watch and can be changed from the phone.
 
 ## Data Attribution
 
-OpenVitals shows which app wrote each record, so data synced through Gadgetbridge or a vendor app keeps its original source visible rather than appearing to come from nowhere.
+OpenVitals shows which app wrote each record, so data synced directly, through Gadgetbridge, or through a vendor app keeps its original source visible rather than appearing to come from nowhere.
 
-Local derived views such as [Body Energy](body-energy.md) and [Daily Readiness](daily-readiness.md) are computed on device from Health Connect data, whatever wrote it — a watch synced through Gadgetbridge feeds them the same way any other source does.
+Local derived views such as [Body Energy](body-energy.md) and [Daily Readiness](daily-readiness.md) are computed on device from Health Connect data, whatever wrote it — a watch synced through Gadgetbridge feeds them the same way a directly-synced Garmin does.
 
 ## Not The Same As BLE Sensors
 
-[Bluetooth LE sensors](ble-sensors.md) — heart-rate straps, cycling cadence and power sensors, footpods — are different and remain fully supported. They stream live values into an activity recording as it happens. A watch, by contrast, records on its own and syncs afterwards through its companion app.
+[Bluetooth LE sensors](ble-sensors.md) — heart-rate straps, cycling cadence and power sensors, footpods — stream live values into an activity recording as it happens, and remain fully supported. A watch records on its own and syncs afterwards. The path chosen at pairing decides the role: a device added through the sensors flow is a live sensor, one added through Settings, Watches is a watch — even when it is physically the same smartwatch.
 
 Phone-to-phone sync — copying Health Connect records to a nearby phone over Bluetooth — is also unaffected and remains supported.
