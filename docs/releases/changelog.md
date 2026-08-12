@@ -6,6 +6,18 @@ For full localized notes, see the Android app repository changelog.
 
 OpenVitals was rebuilt on Flutter in 2.0.1. Entries for 1.9.0 and earlier describe the previous Kotlin app. (2.0.0 was prepared but never published, so 2.0.1 carries everything since 1.9.0.)
 
+## 2.6.3 - 2026-08-12
+
+This release is about the watch feeling paired, not just synced: a Garmin watch can now stay connected whenever it is in range, and that held link carries live readings, weather, your calendar, find-my-phone, and GPS ephemeris - all without the app gaining any internet access.
+
+- **Your Garmin watch can stay connected.** A new Stay connected switch keeps the Bluetooth link open whenever the watch is in range, the way the vendor's app does. With it on, an optional Live readings switch streams the watch's current heart rate and step count - shown live on the watch screen and the dashboard. Both are off by default.
+- **A watch tile on the dashboard.** The most recently synced watch, with its battery, last sync time, and a sync button. While live readings stream, the tile shows the current heart rate and steps instead.
+- **Weather, calendar, and find-my-phone on the watch.** The weather glance is answered from a weather app on the phone (Breezy Weather is the tested one). The calendar glance can show the phone's upcoming events, off by default behind its own permission. And the watch's find-my-phone rings the phone, even when silenced.
+- **Faster GPS fixes.** Import a satellite prediction (ephemeris) file and the phone hands it over when the watch asks, turning a minutes-long cold GPS fix into seconds. Nothing is downloaded.
+- **Grant all permissions at once.** The first onboarding screen gets a Grant all button that requests every category in one dialog.
+- **Sleep score rebuilt on sleep-science pillars.** Duration, quality, and overnight HRV recovery are scored using published sleep guidance, with age and night HRV feeding the score, recovery, and the dashboard.
+- **Fixes:** cardio load and intensity minutes read workout heart rate instead of falling back to movement; body tiles open their own metric screens directly; the syncing banner is no longer clipped; a smartwatch added through the sensors flow stays a plain sensor; diagnostics exports include raw process logs.
+
 ## 2.6.2 - 2026-08-08
 
 This release lets a reading into the app that no wearable took: HRV can now be logged by hand, and every hand-logged vitals reading can carry the moment it was actually taken.
