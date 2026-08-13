@@ -29,6 +29,18 @@ Repetition-oriented flows support activities such as strength training, push-ups
 
 Depending on the activity and available sensors, OpenVitals can show repetition counts, set details, rest timing, heart-rate context, and review data before saving.
 
+## Guided Heart-Rate Recovery Test
+
+With a connected Bluetooth LE heart-rate sensor, a timed recording can run as a guided heart-rate recovery test:
+
+1. Warm up, for a configurable time that defaults to three minutes.
+2. Go hard, until an optional target heart rate is reached or the effort is ended by hand.
+3. Stop, and stay still while the app measures how quickly the heart rate falls.
+
+Each phase change is announced with a bell, a spoken cue, and a vibration. The cues are part of the protocol, so they are not optional.
+
+The moment the effort stopped is saved to Health Connect as a rest segment running to the end of the session, which is how the measurement is found again later. That mark is not kept in the crash-recovery draft: the heart-rate samples exist only in memory, so a recording restored after a crash comes back as an ordinary one rather than claiming a measurement with no data behind it.
+
 ## Sensor Support
 
 OpenVitals has experimental Bluetooth LE support for paired heart-rate, cycling cadence, cycling power, and footpod devices during recording. Bluetooth and notification permissions are requested only where Android requires them.
