@@ -35,4 +35,4 @@ Source-of-truth anchors:
 
 - `Screen.Metric` is a generic route, but the rendered detail screen is feature-owned and selected by `DashboardWidgetId`.
 - Manual entry routes write explicit user-entered records to Health Connect. Dashboard and metric detail routes are read-oriented unless they open an explicit add/edit flow.
-- Proposal pages live under [Proposals](../proposals/README.md) so current feature docs stay focused on implemented behavior.
+- Proposal pages live in the app repository so these feature docs stay focused on implemented behavior.
