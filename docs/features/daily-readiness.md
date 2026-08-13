@@ -2,8 +2,8 @@
 
 > **Status:** Current implemented behavior.
 > **Audience:** Users and contributors.
-> **Implementation:** `lib/features/readiness/` (the card and the stress and training-readiness detail screens), `lib/features/bodyenergy/` (the host screen), `lib/domain/insights/` (`daily_readiness.dart`, `stress_tracking.dart`, `body_energy_timeline.dart`).
-> **Navigation:** lives inside the Body Energy view at `/daily_readiness/body_energy/:bodyEnergyDate`; details at `/daily_readiness/training_readiness/:trainingReadinessDate` and `/daily_readiness/stress/:stressDate`.
+> **Implementation:** `features/readiness`, `features/bodyenergy`, `domain/insights`.
+> **Navigation:** `Screen.DailyReadiness`, `Screen.BodyEnergyDetails`, `Screen.TrainingReadinessDetails`, `Screen.StressDetails`.
 > **Related:** [Feature map](feature-map.md), [Body Energy](body-energy.md), [Sleep score and recovery](sleep-score-and-recovery.md).
 
 Daily Readiness is a local wellness view that summarizes how ready the user may be for the day based on available Health Connect signals.

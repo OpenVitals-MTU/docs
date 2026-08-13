@@ -41,7 +41,7 @@ OpenVitals is a Kotlin/Jetpack Compose app (Hilt, Room, Health Connect). See [Bu
    ./gradlew verifyCi
    ```
 
-4. Re-run `dart run build_runner build --delete-conflicting-outputs` after changing a freezed model, a drift table, or a Riverpod generator annotation. Generated code is committed and CI does not regenerate it.
+4. Kotlin annotation processing (Hilt, Room) runs as part of the Gradle build; there is no separate code-generation step to run by hand.
 5. Keep the local app internet-free.
 6. Keep Health Connect writes inside explicit Add entry or edit-entry workflows.
 7. Add tests when changing shared behavior, permissions, period selection, formatting, or Health Connect query logic.

@@ -4,7 +4,7 @@ This page summarizes the English release notes for the local Android app.
 
 For full localized notes, see the Android app repository changelog.
 
-OpenVitals was rebuilt on Flutter in 2.0.1. Entries for 1.9.0 and earlier describe the previous Kotlin app. (2.0.0 was prepared but never published, so 2.0.1 carries everything since 1.9.0.)
+OpenVitals is a Kotlin app. It was rebuilt on Flutter in 2.0.1 and migrated back to Kotlin in 2.5.0, so entries between those two releases describe the Flutter implementation, and everything before and after describes the Kotlin one. (2.0.0 was prepared but never published, so 2.0.1 carries everything since 1.9.0.)
 
 ## 2.6.3 - 2026-08-12
 
