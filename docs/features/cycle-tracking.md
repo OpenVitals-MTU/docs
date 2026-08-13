@@ -2,8 +2,8 @@
 
 > **Status:** Current implemented behavior.
 > **Audience:** Users and contributors.
-> **Implementation:** `features/cycle/`, `features/manualentry/cycle/`, `data/repository/CycleRepository.kt`, `healthconnect/CycleHealthReader.kt` (Kotlin app).
-> **Navigation:** the Cycle dashboard tile and metric screen; logging via the Log action on the cycle screen.
+> **Implementation:** `features/cycle`, `data/repository/CycleRepository.kt`.
+> **Navigation:** `Screen.Metric`, widget `CYCLE`, Health Connect permission category.
 > **Related:** [Feature map](feature-map.md), [Onboarding and permissions](onboarding-and-permissions.md), [Privacy](../app/privacy.md).
 
 Cycle tracking reads and writes Health Connect cycle records. Health Connect is the only database: OpenVitals stores no cycle data of its own, and cycle permissions remain an explicit, separately granted category you can skip entirely.

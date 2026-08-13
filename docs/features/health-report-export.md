@@ -2,8 +2,8 @@
 
 > **Status:** Current implemented behavior.
 > **Audience:** Users and contributors.
-> **Implementation:** `features/reports/`, `data/repository/report/`, `domain/report/` (Kotlin app).
-> **Navigation:** Settings, Import & export, Health report.
+> **Implementation:** `features/reports`, `data/repository/report`, `domain/report`.
+> **Navigation:** `Screen.SettingsDataImport`, then `Screen.SettingsReportExport`.
 > **Related:** [Feature map](feature-map.md), [Settings and preferences](settings-and-preferences.md), [Heart and vitals](heart-and-vitals.md).
 
 Health report export builds a PDF of your health data straight from Health Connect: pick the metrics, a detail level, and how far back to go, and OpenVitals produces a document you can hand to a doctor or keep for your records. The report is generated entirely on the device with the platform's own PDF engine - nothing leaves the phone unless you share it.

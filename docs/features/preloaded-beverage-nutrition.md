@@ -2,8 +2,8 @@
 
 > **Status:** Current implemented reference data.
 > **Audience:** Users and contributors.
-> **Implementation:** `lib/domain/insights/caffeine_health_drink_catalog.dart` and `beverage_nutrition_defaults.dart` (seed data), `lib/data/local/beverage/beverage_store.dart` (the drift `beverages` table), `lib/features/manualentry/hydration_catalog.dart`, `lib/features/nutrition/`.
-> **Navigation:** beverage logging from `/manual_entry/hydration` and `/manual_entry/hydration/log/:hydrationDrinkId`.
+> **Implementation:** `features/manualentry/hydration`, `features/nutrition`.
+> **Navigation:** beverage logging from hydration entry routes.
 > **Related:** [Feature map](feature-map.md), [Beverage logging and caffeine](beverage-logging-and-caffeine.md), [Nutrition](nutrition.md).
 
 Research date: 2026-07-02
@@ -53,10 +53,9 @@ multiple branded items in that family.
 ## Catalog Mapping Implications
 
 - The runtime beverage catalog is drift-backed: the `beverages` table in
-  [`lib/data/local/open_vitals_database.dart`](https://codeberg.org/OpenVitals/mobile-app/src/branch/main/lib/data/local/open_vitals_database.dart),
-  accessed through `BeverageStore` (`lib/data/local/beverage/beverage_store.dart`).
+  the app's Room database, accessed through `BeverageStore` (`data/local/beverage`).
   It is the app's **only** database table.
-  `CaffeineHealthDrinkCatalog` (`lib/domain/insights/caffeine_health_drink_catalog.dart`)
+  `CaffeineHealthDrinkCatalog` (`domain/insights`)
   is seed and matching metadata only, while user edits/deletes/category moves persist
   in that table.
 - OpenVitals should keep Health Connect as the source of truth for logged nutrient
