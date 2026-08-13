@@ -36,6 +36,21 @@ Body metrics follow the canonical period-detail pattern:
 
 Manual body entry is `lib/features/manualentry/body_measurement_entry_screen.dart` (there is no `manualentry/body/` subdirectory) and writes explicit user-entered records to Health Connect. The dashboard and body detail screens remain read-oriented.
 
+## Charts Over A Period
+
+Week, month and year draw a trend line over a scale fitted to your values; only
+Day uses the intraday chart.
+
+Month and year used to show a calendar of coloured dots, one per day, shaded by
+how big that day's number was. That works for something that can be zero and can
+be huge, like steps. It does not work for weight, which spends its life inside a
+narrow band: forty dots of near-identical colour answered "did you weigh
+yourself on the 14th" while hiding the thing you opened the screen to see, which
+is which way the line is going.
+
+The scale is fitted to your readings rather than starting at zero, because a
+kilogram of drift is invisible on an axis that begins at nothing.
+
 ## Data Boundaries
 
 The body feature reads through `BodyRepository` (contract in `lib/data/repository/contract/`, implementation in `impl/`), with state in `BodyMetricNotifier`. Unlike the other metric families there is no parametric per-metric screen: every body id renders the one `BodyScreen`, which shows the composition metrics inline. New body metric work should keep feature-specific formatting, cards, charts, and rows in `lib/features/body/`; shared components should only move out when another feature really reuses them.

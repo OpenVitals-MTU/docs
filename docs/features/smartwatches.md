@@ -28,6 +28,25 @@ Verified against a single recent Garmin model; watches on Garmin's older single-
 - **GPS ephemeris.** A satellite prediction file imported by hand is served to the watch on request, for cold GPS fixes in seconds instead of minutes. Nothing is downloaded.
 - **Watch settings.** The watch's own settings tree and alarms are rendered live from the watch and can be changed from the phone.
 
+### Steps, distance and calories from the watch
+
+The watch reports these three as running daily totals, so a synced file says
+where the counter stood, not what happened. OpenVitals differences them against
+what it already imported, which is what lets your step history show *when* you
+walked instead of drawing the day as one straight ramp from midnight.
+
+Two things are worth knowing:
+
+- **A gap between the live step count and the day's total is normal.** The live
+  reading is the number on your wrist right now; the minutes since the watch
+  last closed a monitoring file have not been handed over yet. They arrive on
+  the next sync.
+- **Records are written so they never overlap.** This matters more than it
+  sounds: Health Connect discards the overlapping span when it adds records up,
+  so two step records sharing a single minute report *less* between them than
+  either one claims. A day once read 889 steps while its own records summed to
+  1,007.
+
 ## Data Attribution
 
 OpenVitals shows which app wrote each record, so data synced directly, through Gadgetbridge, or through a vendor app keeps its original source visible rather than appearing to come from nowhere.
