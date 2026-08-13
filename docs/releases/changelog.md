@@ -6,6 +6,15 @@ For full localized notes, see the Android app repository changelog.
 
 OpenVitals is a Kotlin app. It was rebuilt on Flutter in 2.0.1 and migrated back to Kotlin in 2.5.0, so entries between those two releases describe the Flutter implementation, and everything before and after describes the Kotlin one. (2.0.0 was prepared but never published, so 2.0.1 carries everything since 1.9.0.)
 
+## 2.6.4 - 2026-08-13
+
+This release is about numbers that were technically correct and told you nothing: a battery that charged a broken night like a perfect one, a month of weight drawn as near-identical coloured dots, a nutrition total nobody eats by, and a step count short of what the watch had actually recorded.
+
+- **Body Energy tells a good night from a bad one.** Overnight charge now reflects how well you slept - sleep efficiency, time spent awake, and the deep and REM share of the night - and not only how long you were in bed. Two eight-hour nights of very different quality used to land within a few points of each other; they now sit about fifteen apart. An ordinary night charges exactly what it did before, the effect is capped so no single night can undo hours you actually slept, and a sleep source that records no stages is left alone.
+- **Weight is a line, not a calendar.** Week, month and year now draw body measurements as a trend line on a scale fitted to your values, instead of a calendar of coloured dots. A calendar shades a day by how big its number is, which says nothing about a weight that lives inside a two-kilo band.
+- **Nutrition shows what you eat in a day, not in a month.** Over a week, month or year each nutrient tile leads with the daily average and keeps the period total underneath. A new Nutrition setting chooses whether the average divides by the days you logged food or by every day of the period.
+- **Fixes:** Garmin step counts no longer come up short - overlapping step records were being partly discarded, so a day could read 889 steps when the watch had recorded 1,007; an entry list keeps how far you expanded it after you swipe an entry away; maximum heart rate is no longer invented from a quiet fortnight, and an estimated figure now says it is estimated; the cardio load target no longer reports impossible percentages; and chart date labels no longer arrive cut in half.
+
 ## 2.6.3 - 2026-08-12
 
 This release is about the watch feeling paired, not just synced: a Garmin watch can now stay connected whenever it is in range, and that held link carries live readings, weather, your calendar, find-my-phone, and GPS ephemeris - all without the app gaining any internet access.
