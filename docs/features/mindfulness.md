@@ -35,7 +35,7 @@ OpenVitals-created mindfulness sessions can be edited or deleted when ownership 
 
 ## Entry And Reminders
 
-Manual mindfulness entry lives under `features/manualentry/mindfulness` and can save timed or manually entered sessions to Health Connect. Mindfulness reminders are local notifications controlled by app preferences and notification permission.
+Manual mindfulness entry lives under `features/manualentry/mindfulness` and can save timed or manually entered sessions to Health Connect. Both the timer and the manual form can attach a note, stored in Health Connect with the session; the session list keeps notes behind a tap, and editing a session can change or clear its note. Mindfulness reminders are local notifications controlled by app preferences and notification permission.
 
 ## Related Features
 

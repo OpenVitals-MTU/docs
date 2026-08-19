@@ -17,7 +17,9 @@ It is reached from Settings, Sync with another phone, which opens its own wizard
 3. **Choose how far back.** The last 30 days, the last 6 months, the last year, or everything. The last year is the default.
 4. **Choose what to sync.** The picker lists data categories such as activity, workouts, heart, sleep, body measurements, vitals, nutrition, hydration, mindfulness, and cycle tracking. A category appears only when this phone can both read and write at least one of its record types, and everything supported is selected by default.
 5. **Sync.** Progress shows the current phase and live sent, received, and written counts.
-6. **Read the report.** The report shows how many records were merged, how many were already present, and a per-record-type breakdown of what arrived. It can be copied or shared as text.
+6. **Read the report.** The report shows how many records were merged, how many were already present, and a per-record-type breakdown of what arrived. It can be copied or shared as text. A failed sync gets the same treatment: the screen shows why the session aborted and how far it got, with the same copy and share buttons, and the last report is offered again when the wizard is reopened.
+
+Records are streamed from Health Connect in pages rather than loaded all at once, so a library holding years of dense data - a bike computer's worth of heart rate samples - syncs within the memory of a small phone.
 
 Both phones choose their own range and their own categories. The exchange uses the record types both phones support.
 
