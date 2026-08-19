@@ -6,6 +6,18 @@ For full localized notes, see the Android app repository changelog.
 
 OpenVitals is a Kotlin app. It was rebuilt on Flutter in 2.0.1 and migrated back to Kotlin in 2.5.0, so entries between those two releases describe the Flutter implementation, and everything before and after describes the Kotlin one. (2.0.0 was prepared but never published, so 2.0.1 carries everything since 1.9.0.)
 
+## 2.6.5 - 2026-08-19
+
+This release is about the app doing its job without being watched: a Garmin watch can now sync itself on a schedule, phone-to-phone sync handles years of data and explains its failures, and a night slept in two goes stops booking the time out of bed as time awake.
+
+- **The watch syncs itself.** A new Automatic sync setting syncs a Garmin watch on its own every 30 minutes, hour, or two hours - off by default and chosen per watch. Runs are quiet: a watch out of range at 3am is not an error, and the last sync time is what says the schedule is working. Android picks the exact moment, so the battery-optimization exemption offered during pairing is what keeps overnight runs on time.
+- **The app speaks Czech.** A full translation, offered by the in-app language picker.
+- **Notes on mindfulness sessions.** The timer and the manual entry form take a note, stored in Health Connect with the session. The list keeps notes behind a tap, and editing a session can change or clear its note.
+- **Beers in the beverage catalogue.** Beer, lager, pilsner, stout, and alcohol-free beer, with nutrition filled in and honest hydration credit - an alcoholic beer counts less than its volume.
+- **Sync with another phone handles years of data and slow links.** The transfer now streams instead of loading the whole library into memory, batches are capped by size on the wire so sample-heavy records cross a slow Bluetooth link before the other side gives up, and a Health Connect rate-limit pause no longer kills the session. When a sync does fail, the screen says why and how far it got, with the report ready to copy or share - and a transfer that lost records on the way no longer claims it completed.
+- **Time out of bed is no longer time awake.** A night slept in two goes counted the get-up as awake - a 90-minute get-up read as 1h38m awake - dragging down sleep efficiency and the sleep score. The gap is now its own out-of-bed segment in both sleep charts, in a colour no sleep stage uses.
+- **Fixes:** the mindfulness year heatmap shows the whole last twelve months instead of stopping at the calendar year; and mindfulness entries recorded by the old app no longer show the word "null" as a note.
+
 ## 2.6.4 - 2026-08-13
 
 This release is about numbers that were technically correct and told you nothing: a battery that charged a broken night like a perfect one, a month of weight drawn as near-identical coloured dots, a nutrition total nobody eats by, and a step count short of what the watch had actually recorded.
