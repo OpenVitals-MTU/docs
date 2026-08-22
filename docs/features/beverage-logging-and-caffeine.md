@@ -30,6 +30,10 @@ Caffeine-aware drinks can write caffeine nutrition values and feed the caffeine 
 - Daily limit and sensitivity settings.
 - Bedtime guidance.
 
+### Drinking Over A Period
+
+The Log drink dialog asks how long a caffeinated drink took - at once, 15 or 30 minutes, or 1, 2, or 3 hours - and stores it as the end time of the Health Connect nutrition record. The caffeine model spreads a dose across the record's interval, so a coffee nursed over two hours is absorbed across those two hours instead of arriving all at once at the first sip. "At once" keeps the previous behavior, and the drink sheet shows the duration a record carries.
+
 ## Nutrition Defaults
 
 Selected beverages can include nutrition defaults that map to supported Health Connect nutrition fields. Health Connect remains the source of truth after the entry is saved.

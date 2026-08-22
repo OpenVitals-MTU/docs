@@ -6,6 +6,17 @@ For full localized notes, see the Android app repository changelog.
 
 OpenVitals is a Kotlin app. It was rebuilt on Flutter in 2.0.1 and migrated back to Kotlin in 2.5.0, so entries between those two releases describe the Flutter implementation, and everything before and after describes the Kotlin one. (2.0.0 was prepared but never published, so 2.0.1 carries everything since 1.9.0.)
 
+## 2.6.6 - 2026-08-22
+
+This release is about the watch earning its place without a recording running: CoMaps guidance now reaches a Garmin watch on its own switch, a newly paired watch keeps the link its features depend on, a caffeinated drink can be logged over the time it took, and the app speaks French.
+
+- **CoMaps guidance reaches the watch on its own.** The next turn, the distance to it and the street appear on a Garmin watch whenever CoMaps is navigating, as a notification that updates in place. It has its own per-watch switch and is now separate from the activity recording integration: either one alone works, both together show in both places. Starting a GPS recording just to get directions on your wrist is no longer the price of admission.
+- **A drink can be logged over the time it took.** The Log drink dialog asks how long a caffeinated drink took - at once, 15 or 30 minutes, 1, 2 or 3 hours - and stores it as the nutrition record's end time. Every drink used to be a one-second record, so a coffee nursed over two hours spiked at the first sip; it now spreads across those hours.
+- **The app speaks French.** A full translation, offered by the in-app language picker.
+- **New watches stay connected.** Stay connected is now on by default - on a newly paired watch, and on an existing one whose switch was never touched. Weather, find-my-phone, live heart rate and steps, a recording handed over the moment it ends, and guidance on the wrist all need the link, and a watch with none of it working gave no hint that one switch was the reason. It costs battery on both sides, and turning it off is remembered.
+- **Fixes:** an activity synced from a Garmin watch now keeps the title given on the wrist; and a multi-hour ride no longer fails to import - its GPS route could exceed the size Health Connect accepts for one record, and took the whole sync down with it.
+
+
 ## 2.6.5 - 2026-08-19
 
 This release is about the app doing its job without being watched: a Garmin watch can now sync itself on a schedule, phone-to-phone sync handles years of data and explains its failures, and a night slept in two goes stops booking the time out of bed as time awake.

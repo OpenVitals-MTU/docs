@@ -1,8 +1,13 @@
 # CoMaps Navigation Context
 
-While recording a GPS activity, OpenVitals can show the turn-by-turn guidance CoMaps is giving at that moment: the next street, the distance to the turn, route progress, and the planned route drawn under the recorded track. CoMaps plans and navigates; OpenVitals records. The integration reads what CoMaps is already doing and cannot start, stop, or steer a route.
+OpenVitals can show the turn-by-turn guidance CoMaps is giving at that moment: the next street, the distance to the turn, route progress, and the planned route drawn under the recorded track. CoMaps plans and navigates; OpenVitals only reads what CoMaps is already doing, and cannot start, stop, or steer a route.
 
-The integration is off by default and switched on in Settings > Activity recording. It needs a CoMaps build that shares navigation data, and is guarded by CoMaps' own runtime permission.
+There are two independent places that guidance can appear, each with its own switch:
+
+- **In an activity recording** - the turn strip, the route on the offline map, and the dashboard tile described below. Off by default, switched on in Settings > Activity recording.
+- **On a Garmin watch** - the next turn sent to the wrist as a notification that updates in place. Off by default, switched on per watch on its device screen. See [Smartwatches](smartwatches.md).
+
+Neither one requires the other. Guidance on the watch alone reaches the watch without a recording running, the recording integration alone shows in the recording, and both on shows in both places. Either way it needs a CoMaps build that shares navigation data, and is guarded by CoMaps' own runtime permission - each surface requests that permission for itself.
 
 ## What Appears While Recording
 
