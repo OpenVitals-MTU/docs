@@ -27,7 +27,7 @@ Imported offline maps can be used for:
 - Saved activity route previews.
 - Imported route previews before saving.
 
-The map view can recenter on the route or current recording position when available.
+The map view rotates under two fingers in both renderers; a compass appears whenever the map is off north and resets it. While recording, the camera keeps the live fix centred: panning hands control to the user, and the recenter button hands it back. Outside a recording, recenter fits the route.
 
 ## Local Storage
 
