@@ -30,6 +30,7 @@ Depending on the metric, OpenVitals can show:
 - Previous-period comparison.
 - Personal baseline.
 - Goal progress and streaks.
+- Goal balance: how far ahead of or behind the goal the period is, counting every elapsed day, with the per-day figure each remaining day needs to average for the period to land on goal.
 
 ## Charts And Entries
 

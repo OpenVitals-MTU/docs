@@ -6,6 +6,17 @@ For full localized notes, see the Android app repository changelog.
 
 OpenVitals is a Kotlin app. It was rebuilt on Flutter in 2.0.1 and migrated back to Kotlin in 2.5.0, so entries between those two releases describe the Flutter implementation, and everything before and after describes the Kotlin one. (2.0.0 was prepared but never published, so 2.0.1 carries everything since 1.9.0.)
 
+## 2.7.0 - 2026-08-26
+
+This release is about the app answering questions it used to leave to the user: the daily goal card says how far ahead or behind a week is and what each remaining day needs, offline maps rotate and follow the recording, the summary opens at once and fills tile by tile, a Garmin sync no longer tells the watch to drop data it never received, and the app speaks Simplified Chinese.
+
+- **Goal balance and per-day catch-up.** The daily goal card on the activity screens now says how far ahead or behind the week is - not just how many days hit the goal - and what each remaining day needs to average for it to land on goal, today included. The statistics grid gets a Goal balance tile. Days with nothing logged count as zero, and the sign stays in your favour whichever way the goal points.
+- **Maps rotate and follow the recording.** Both offline renderers take two-finger rotation, with a compass to reset north whenever the map is off it. While recording, the camera keeps the live fix centred; panning hands control to you, and the recenter button hands it back.
+- **The summary opens at once.** The dashboard no longer waits on a batch of Health Connect reads before drawing anything - it renders with every tile loading and fills each one as its own read lands. A throttled Health Connect shows a fallback and says how long to wait instead of holding a spinner for minutes.
+- **The app speaks Simplified Chinese.** A full translation, offered by the in-app language picker.
+- **The recording screen leads with its tabs,** CoMaps guidance lives on the map tab, and Start asks before starting without a route instead of refusing with a toast. The sleep day view drops the averages of a single night and the key-metric cards that restated the chart.
+- **Fixes:** a Garmin sync never tells the watch to drop a file it did not download, which was costing a day and a half of heart rate and steps; the recording screen's app bar - title, dashboard editor, outdoor toggle - is back, and focus and outdoor mode reach the whole screen; the bottom bar is pure black under AMOLED; and large Apple Health exports no longer run out of memory.
+
 ## 2.6.6 - 2026-08-22
 
 This release is about the watch earning its place without a recording running: CoMaps guidance now reaches a Garmin watch on its own switch, a newly paired watch keeps the link its features depend on, a caffeinated drink can be logged over the time it took, and the app speaks French.
