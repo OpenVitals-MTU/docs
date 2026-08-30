@@ -6,6 +6,17 @@ For full localized notes, see the Android app repository changelog.
 
 OpenVitals is a Kotlin app. It was rebuilt on Flutter in 2.0.1 and migrated back to Kotlin in 2.5.0, so entries between those two releases describe the Flutter implementation, and everything before and after describes the Kotlin one. (2.0.0 was prepared but never published, so 2.0.1 carries everything since 1.9.0.)
 
+## 2.7.1 - 2026-08-30
+
+This release is about training with a plan. Build a routine once - blocks of exercises with reps or seconds, rests, and rounds - and start it as a guided run: the phone counts push-ups and squats with its proximity sensor where it can, timed steps and rests count down on a ring and move on by themselves, and every step is spoken and shown in the notification. Plans live in Health Connect, so one made in another app can be started too. Any workout can now be exported without its route as TCX, FIT or CSV, every language the picker offers is complete, and a nap from a Garmin watch finally counts as sleep.
+
+- **Workout plans.** Build a routine once - blocks of exercises with a reps or seconds goal, rests, and rounds - and start it from the activity screen as a guided run: Step 2 of 6, reps counted against the goal, timed steps and rests counting down on a ring that empties clockwise, a spoken cue at every step, and the same progress in the notification. Plans live in Health Connect as planned exercise sessions, grouped as today, upcoming and past; one made in another app can be started or copied to today, a logged workout can be saved as a plan, and a saved workout keeps a link to the plan it came from.
+- **Reps counted by the phone in a plan.** A plan step finds the same recognizer the single-exercise recording uses: push-ups and squats on the proximity sensor, pull-ups, rope skipping and trampoline jumping on the accelerometer. Squats are new to the proximity sensor, in plans and on their own, and a step named "Pushups", "push ups" or by the exercise's name in the phone's language counts as well as "Push-ups" does.
+- **Workouts export without their route.** Every workout detail screen carries an Export workout card: type, times, duration, distance, calories and heart rate as TCX, FIT or CSV, with the GPS route deliberately left out - for sessions that never had one too.
+- **Every language is complete.** Czech, Spanish, French, German, Italian, Estonian, Portuguese and Simplified Chinese are fully translated, workout plans and exercise names included.
+- **Naps count as sleep.** A nap synced from a Garmin watch arrived with no stages and read as "nothing recorded"; it is recorded as light sleep now, as Gadgetbridge does. On the night's timeline the out-of-bed stretch takes a dusty rose in the Awake family instead of a brown, and Share of time in bed gets an Out of bed row.
+- **Fixes:** a night Mi Fitness stores as overlapping records no longer shows 13h on the detail screen for 8h of stages; the rest countdown beeps for five seconds rather than three; the plan controls no longer wrap their labels mid-word.
+
 ## 2.7.0 - 2026-08-26
 
 This release is about the app answering questions it used to leave to the user: the daily goal card says how far ahead or behind a week is and what each remaining day needs, offline maps rotate and follow the recording, the summary opens at once and fills tile by tile, a Garmin sync no longer tells the watch to drop data it never received, and the app speaks Simplified Chinese.
