@@ -6,6 +6,15 @@ For full localized notes, see the Android app repository changelog.
 
 OpenVitals is a Kotlin app. It was rebuilt on Flutter in 2.0.1 and migrated back to Kotlin in 2.5.0, so entries between those two releases describe the Flutter implementation, and everything before and after describes the Kotlin one. (2.0.0 was prepared but never published, so 2.0.1 carries everything since 1.9.0.)
 
+## 2.7.2 - 2026-09-02
+
+This release fixes the day's heart numbers: averages now weight each reading by how long it held, so a 50-minute run no longer outvotes the other 23 hours and a day that truly averaged 79 bpm no longer prints as 115. Steps can now be imported from CSV files with an optional end-time column, the quick beverage widget logs again, and a workout plan made on this phone keeps its Edit and Delete entries.
+
+- **A workout no longer skews the day's heart rate.** Averages now weight each reading by how long it held, not by how often the device wrote: a watch records a workout about once a second but the rest of the day about once a minute, so a 50-minute run outvoted the other 23 hours and a day that averaged 79 bpm printed as 115. Heart rate, HRV, respiratory rate, SpO2, the sleep score's overnight HRV and the stress score all use the corrected averages.
+- **Steps in the CSV importer.** Steps join the metrics a CSV can bring in. Map an optional "End date and time" column and each row spans from its start to that end; a row without one counts as one minute. A row whose end cannot be read rejects only its steps - the other columns still import - and re-importing the same file replaces rather than duplicates.
+- **The quick beverage widget logs again.** Tapping the 1x1 widget or the 2x1's Add button had silently stopped logging in 2.7.0 and 2.7.1.
+- **Fixes:** a workout plan created on this phone keeps its Edit and Delete entries even when device sync relabels its source; the dashboard no longer shifts down while a sync runs; updated Czech, Spanish, French, Portuguese and Simplified Chinese translations, and Finnish and Polish have begun on Codeberg Translate.
+
 ## 2.7.1 - 2026-08-30
 
 This release is about training with a plan. Build a routine once - blocks of exercises with reps or seconds, rests, and rounds - and start it as a guided run: the phone counts push-ups and squats with its proximity sensor where it can, timed steps and rests count down on a ring and move on by themselves, and every step is spoken and shown in the notification. Plans live in Health Connect, so one made in another app can be started too. Any workout can now be exported without its route as TCX, FIT or CSV, every language the picker offers is complete, and a nap from a Garmin watch finally counts as sleep.

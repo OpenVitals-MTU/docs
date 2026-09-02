@@ -6,7 +6,7 @@
 > **Navigation:** `Screen.SettingsDataImport`, then `Screen.SettingsCsvImport`.
 > **Related:** [Feature map](feature-map.md), [Settings and preferences](settings-and-preferences.md), [Body metrics](body-metrics.md), [Apple Health import](apple-health-import.md).
 
-CSV import brings body measurements and vitals from a plain CSV file into Health Connect. It is meant for exports that have no importer of their own, such as a smart scale's weight and body-composition history, a temperature log, or a glucose export.
+CSV import brings body measurements, vitals and steps from a plain CSV file into Health Connect. It is meant for exports that have no importer of their own, such as a smart scale's weight and body-composition history, a temperature log, a glucose export, or a pedometer's step history.
 
 There are no vendor presets. The user says what each column means, which is why a file OpenVitals has never seen still imports.
 
@@ -15,7 +15,7 @@ There are no vendor presets. The user says what each column means, which is why 
 CSV import lives in Settings, Data Importers, CSV Importer, and opens its own five-step screen.
 
 1. **Choose a file.** The file picker accepts CSV and plain-text documents. Only the head of the file is read at this point, so a large export opens immediately and nothing is written yet.
-2. **Map the columns.** OpenVitals shows the detected column separator, a "first row contains column names" switch, a short preview table, the date and time settings, and one row per column. Each column is set to not imported, date and time, or a supported measurement. A measurement column also picks what its numbers are.
+2. **Map the columns.** OpenVitals shows the detected column separator, a "first row contains column names" switch, a short preview table, the date and time settings, and one row per column. Each column is set to not imported, date and time, an optional end date and time, or a supported measurement. A measurement column also picks what its numbers are.
 3. **Confirm.** The confirm step shows the date range the file covers and the value range each measurement will actually be written with, so a mis-mapped column is visible before anything lands. Missing Health Connect write permissions are requested here.
 4. **Import.** Progress shows the current row with running written, already-present, and rejected counts. The import can be cancelled; what was already written is kept.
 5. **Read the result.** The result step shows the totals, groups every rejection by reason, and can copy or save the full report.
@@ -44,12 +44,16 @@ Heart and vitals:
 - Blood glucose.
 - VO2 max.
 
-Every supported measurement is a single value at a single instant, because that is the shape the column mapping expresses: one row, one timestamp, one number per column.
+Activity:
+
+- Steps.
+
+Most supported measurements are a single value at a single instant, because that is the shape the column mapping expresses: one row, one timestamp, one number per column. Steps is the one interval metric: each row spans from its date and time to the optional "End date and time" column. When there is no end - the column is unmapped, the cell is blank, or the row is truncated before it - the row counts as one minute. An end that cannot be read, or that is not after the start, rejects only that row's steps; the instant measurements beside it still import.
 
 ## What Is Not Supported
 
 - **Blood pressure is deliberately unsupported.** Systolic and diastolic have to become one Health Connect record, which needs a two-columns-to-one-record rule the mapping model does not have.
-- **Interval records are not supported.** Steps, sleep, and workouts need a start and an end, and often sub-records, so they are out of scope for the current mapping model.
+- **Interval records beyond steps are not supported.** Sleep and workouts need stages or sub-records as well as a start and an end, so they are out of scope for the current mapping model. Steps is the exception, carried by the single optional "End date and time" column.
 
 ## Units Come From The File
 
@@ -83,7 +87,7 @@ Every column starts as not imported, so a column is only ever included on purpos
 
 The first column whose sampled values all parse as a date is pre-selected as the timestamp column. Measurements are never guessed from header text; the date guess is safe only because it is checked against the data.
 
-The step will not continue until the mapping is valid. It reports a missing or duplicated timestamp column, no measurement columns at all, two columns mapped to the same measurement, a body-fat mass column with no weight column to derive from, and a date format that matches none of the sampled rows.
+The step will not continue until the mapping is valid. It reports a missing or duplicated timestamp column, a duplicated end date and time column, no measurement columns at all, two columns mapped to the same measurement, a body-fat mass column with no weight column to derive from, and a date format that matches none of the sampled rows.
 
 ## What Gets Rejected
 
@@ -94,7 +98,7 @@ The step will not continue until the mapping is valid. It reports a missing or d
 
 ## Re-Importing And Duplicates
 
-An imported record is identified by its measurement type and its instant, deliberately not by its value. Health Connect replaces a record when an incoming one carries the same identifier, so:
+An imported record is identified by its measurement type and its instant, deliberately not by its value. A steps row uses its start instant, like every other metric, so a re-import with a corrected end replaces the record. Health Connect replaces a record when an incoming one carries the same identifier, so:
 
 - Re-importing an unchanged file changes nothing and reports those rows as already present.
 - Re-importing a file with a corrected value replaces the old record instead of leaving two measurements at the same instant.
