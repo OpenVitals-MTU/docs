@@ -22,6 +22,8 @@ The detail view reads as a story for the selected day: the battery first (the sc
 
 Body Energy supports calibration during onboarding and in Recovery settings. Calibration helps the local estimate better fit the user, and can be reset when needed.
 
+Recovery settings also carry a Start over card for the three metrics OpenVitals works out itself and keeps outside Health Connect: Body Energy, Recovery and Expenditure. Behind a confirmation it wipes their history, the tuning learned from the watch, the baselines and the expenditure cache, then rebuilds them from Health Connect as a fresh install would. Health Connect data, the body profile, heart zones and goals are kept.
+
 ## How The Battery Moves
 
 The score is a running balance rather than a daily reset: a day opens where the

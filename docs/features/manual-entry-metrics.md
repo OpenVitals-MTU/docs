@@ -26,7 +26,7 @@ OpenVitals supports explicit logging for:
 
 ## Permission Handling
 
-Write permissions can be granted during onboarding or requested when an entry flow needs them. The dashboard remains read-only even if write permissions have already been granted.
+The Log screen opens with any or no write access. Each entry form checks only the write permissions its own metric needs; when they are missing it shows a "Some permissions are missing" callout whose Grant button asks Health Connect for exactly those. Write permissions can also be granted from the "Manual entry write access" card in Settings. The dashboard remains read-only even if write permissions have already been granted.
 
 ## External Records
 
