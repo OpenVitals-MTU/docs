@@ -30,7 +30,7 @@ Widgets read from Health Connect-backed repositories and local derived calculati
 
 ## Refresh Behavior
 
-Widgets refresh from the same app-local data paths used by the dashboard and detail screens. If permissions are missing, data is unavailable, or Health Connect cannot be reached, widgets show a limited state instead of inventing values.
+Widgets refresh from the same app-local data paths used by the dashboard and detail screens. While at least one widget is placed, a background job re-reads Health Connect and redraws every widget every 30 minutes; the widgets also redraw when the dashboard finishes loading today. If permissions are missing, data is unavailable, or Health Connect cannot be reached, widgets show a limited state instead of inventing values.
 
 ## Privacy
 

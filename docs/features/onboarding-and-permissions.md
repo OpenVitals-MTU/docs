@@ -31,7 +31,7 @@ When Health Connect is not available, the app explains the limitation instead of
 
 Read permissions are used for dashboard widgets, metric detail screens, readiness views, statistics, achievements, and local insights.
 
-Write permissions are requested lazily for explicit write flows such as manual entry, route import, Apple Health import, activity recording, edits, and deletes.
+Onboarding needs only the Activity and Sleep read permissions to continue; every write can be declined in the Health Connect dialog. Write permissions are requested lazily for explicit write flows such as manual entry, route import, Apple Health import, activity recording, edits, and deletes, and each manual entry form asks only for its own metric's writes.
 
 The dashboard remains read-only even when write permissions are granted.
 

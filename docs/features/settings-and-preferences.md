@@ -28,6 +28,7 @@ Metric-specific settings include:
 - Sleep range mode, including rolling 24 hours, noon boundary, and evening boundary.
 - Caffeine sensitivity, daily limit, and bedtime guidance.
 - Body Energy calibration.
+- A Start over card that wipes and rebuilds the Body Energy, Recovery and Expenditure history OpenVitals worked out itself, see [Body Energy](body-energy.md).
 
 ## Goals And Reminders
 
