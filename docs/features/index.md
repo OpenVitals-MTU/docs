@@ -42,6 +42,7 @@ Use the [feature map](/features/feature-map) when you need the route/widget/pack
 - [GPX/KML/KMZ route import](/features/route-file-import): route file import for review before saving.
 - [FIT files import](/features/fit-files-import): Settings Data Importers support for FIT activity, course, and workout files.
 - [Offline maps support](/features/offline-maps-support): PMTiles or Mapsforge packs for local activity maps.
+- [Elevation correction](/features/elevation-correction): imported routes take their altitude from SRTM tiles stored on the phone, for watches with a drifting barometer.
 - [CSV import](/features/csv-import): body measurements, vitals and steps from any CSV, with the columns mapped by hand — a smart scale's history, a temperature log, a glucose export, a step history.
 - [Sync with another phone](/features/device-sync): copy Health Connect records straight to a nearby phone over Bluetooth, with no account and no server.
 - [Apple Health import](/features/apple-health-import): supported Apple Health export records written into Health Connect.

@@ -43,6 +43,7 @@ export default {
   'route-file-import': 'GPX/KML/KMZ Route Import',
   'fit-files-import': 'FIT Files Import',
   'offline-maps-support': 'Offline Maps Support',
+  'elevation-correction': 'Elevation Correction',
   'comaps-navigation-context': 'CoMaps Navigation Context',
   'apple-health-import': 'Apple Health Import',
   'csv-import': 'CSV Import',
