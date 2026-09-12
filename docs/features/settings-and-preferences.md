@@ -15,6 +15,7 @@ Users can configure:
 - Language.
 - Unit system.
 - Theme mode, including system, light, dark, and AMOLED.
+- Home widget refresh interval: 15, 30, 60 or 120 minutes.
 
 Display preferences affect app presentation only. They do not rewrite Health Connect records.
 
