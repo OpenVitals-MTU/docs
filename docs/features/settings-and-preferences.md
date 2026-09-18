@@ -28,6 +28,7 @@ Metric-specific settings include:
 - Calorie data mode, including optional OpenVitals total-calorie calculation when Health Connect totals are missing.
 - Sleep range mode, including rolling 24 hours, noon boundary, and evening boundary.
 - Caffeine sensitivity, daily limit, and bedtime guidance.
+- Blood pressure guideline: ACC/AHA 2017, ESH 2023, ESC 2024 or ISH 2020, see [Heart and vitals](heart-and-vitals.md).
 - Body Energy calibration.
 - A Start over card that wipes and rebuilds the Body Energy, Recovery and Expenditure history OpenVitals worked out itself, see [Body Energy](body-energy.md).
 
