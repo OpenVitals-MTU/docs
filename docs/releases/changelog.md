@@ -6,6 +6,14 @@ For full localized notes, see the Android app repository changelog.
 
 OpenVitals is a Kotlin app. It was rebuilt on Flutter in 2.0.1 and migrated back to Kotlin in 2.5.0, so entries between those two releases describe the Flutter implementation, and everything before and after describes the Kotlin one. (2.0.0 was prepared but never published, so 2.0.1 carries everything since 1.9.0.)
 
+## 2.9.1 - 2026-09-19
+
+This release puts the phone's music on a Garmin watch: the watch shows what is playing, and its buttons play, pause, skip, seek and change the volume. Older Garmin watches with no settings tree, such as the first Instinct, get alarms from a list kept on the phone. "Send a point" reaches more watches, the drink dialog no longer hides nutrients, and the new watch texts are translated in every offered language.
+
+- **Music controls on a Garmin watch.** "Music controls on watch", on the watch's device screen, puts the phone's player on the watch's music controls. The watch shows the player, track, artist, album and position; from the wrist you can play, pause, skip, seek and change the volume. Off by default, and it needs "Stay connected". Android shows the phone's players only to an app with notification access, so switching it on without that grant shows a disclosure first; the grant alone forwards no notifications. Track details go only to the watch over Bluetooth and are never stored. Confirmed on a vivoactive 5.
+- **Alarms for older Garmin watches.** A watch with no settings tree, such as the first Instinct, had no Alarms action at all. It now opens a list kept on the phone: up to ten alarms, each with a time, repeat days, sound or vibration, backlight and one of the watch's preset labels. Edits save on the phone; nothing reaches the watch until you tap "Send to watch", and a send replaces every alarm on the watch. Alarms set on the watch do not show in the list. Not yet confirmed on a watch.
+- **Fixes:** "Send a point" is now offered to watches that store points through Garmin's Explore sync, which were told that no paired watch can store points; the drink dialog sizes to the window, so nutrients no longer hide below a cut-off body, a bottom fade shows when more sits below, and hydration impact is a dropdown like Category; Spanish updates contributed by gallegonovato on Codeberg Translate, and the new watch strings are translated in every offered language.
+
 ## 2.9.0 - 2026-09-18
 
 This release lets you choose the guideline that names your blood pressure readings - ACC/AHA, ESH, ESC or ISH - and send a point from the phone to a Garmin watch's saved locations. Elevation correction now covers activities recorded on the phone, Garmin watches show ringing calls, older ones such as the original Instinct receive notifications, Russian joins the language picker with every language back at 100%, and a round of fixes removes the freezes behind "app isn't responding".
