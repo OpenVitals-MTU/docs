@@ -13,11 +13,12 @@ It is reached from Settings, Sync with another phone, which opens its own wizard
 ## The Wizard
 
 1. **Choose a role.** One phone makes itself discoverable and becomes the host. The other looks for a phone and becomes the guest.
-2. **Pair.** The host shows a six-digit pairing code and waits. The guest scans, picks the host from the list of nearby phones, and types the code. Already-paired phones appear in the list before the scan finishes.
+2. **Pair.** The host makes itself discoverable and waits. The guest scans and picks the host from the list of nearby phones. Already-paired phones appear in the list before the scan finishes.
 3. **Choose how far back.** The last 30 days, the last 6 months, the last year, or everything. The last year is the default.
 4. **Choose what to sync.** The picker lists data categories such as activity, workouts, heart, sleep, body measurements, vitals, nutrition, hydration, mindfulness, and cycle tracking. A category appears only when this phone can both read and write at least one of its record types, and everything supported is selected by default.
-5. **Sync.** Progress shows the current phase and live sent, received, and written counts.
-6. **Read the report.** The report shows how many records were merged, how many were already present, and a per-record-type breakdown of what arrived. It can be copied or shared as text. A failed sync gets the same treatment: the screen shows why the session aborted and how far it got, with the same copy and share buttons, and the last report is offered again when the wizard is reopened.
+5. **Compare the codes.** Once both users have pressed Start, both phones show a six-digit code. Each user says whether they match. Nothing is exchanged before both did, and "They do not match" ends the session with nothing sent. The first phone to press Start waits up to ten minutes for the other user.
+6. **Sync.** Progress shows the current phase and live sent, received, and written counts.
+7. **Read the report.** The report shows how many records were merged, how many were already present, and a per-record-type breakdown of what arrived. It can be copied or shared as text. A failed sync gets the same treatment: the screen shows why the session aborted and how far it got, with the same copy and share buttons, and the last report is offered again when the wizard is reopened.
 
 Records are streamed from Health Connect in pages rather than loaded all at once, so a library holding years of dense data - a bike computer's worth of heart rate samples - syncs within the memory of a small phone.
 
@@ -39,7 +40,7 @@ The host phone must be made discoverable, which Android asks about with its own 
 
 ## What The Pairing Code Protects
 
-Confidentiality and tamper resistance come from the Bluetooth bond that Android establishes. The six-digit code is a mutual confirmation between the two phones in front of the two users: both derive a session key from it and prove they know it before any health data moves. A wrong code, or the right code typed at the wrong phone, ends the session before anything is exchanged.
+The two phones agree a fresh session key over the Bluetooth link: the host commits to a key, the guest sends its own, and only then does the host reveal. Both phones derive the same six digits from that exchange and show them, so the code is compared by the two users, never typed. Someone in the middle holds a different key with each phone and the codes differ; the commitment stops a search for a key that gives the same code. Every frame after the key exchange is sealed, so a changed, replayed, dropped or reordered frame ends the session. Both phones need 2.10.0 or later; an older version is refused at the handshake.
 
 ## Re-Syncing Does Not Duplicate
 
