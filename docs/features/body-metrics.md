@@ -23,6 +23,15 @@ Body metric detail screens currently cover:
 
 BMI and FFMI-style context are derived from available measurements. Derived values should explain missing prerequisites instead of pretending the calculation is complete.
 
+## Basal Metabolic Rate Estimate
+
+Off by default. Settings, Body profile has a "Basal metabolic rate" switch. On, OpenVitals estimates the resting daily burn with Mifflin-St Jeor from the profile's sex, birth year, weight and height, and writes one basal metabolic rate record per day to Health Connect.
+
+- It covers the last 90 days. Each day uses the weight measured on or before it, falling back to the declared profile weight, so an old day is not rewritten with today's weight.
+- A day that already has a rate from any other source, a watch import or a CSV row included, is left alone, and a rate that arrives later evicts the estimate for that day.
+- Switching off removes every estimate; nothing else is ever deleted.
+- The card names which profile inputs are still missing; until they are all there nothing is written. The Sex field in the body profile exists only for this formula.
+
 ## Detail Pattern
 
 Body metrics follow the canonical period-detail pattern:

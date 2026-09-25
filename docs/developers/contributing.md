@@ -87,4 +87,4 @@ Hosting a language and shipping it are two different things:
 - A language is **hosted** in Codeberg Translate from **0%**, so translators have somewhere to put their work.
 - A language is **shipped** — offered in the in-app language picker and matched against the device locale — only once it is **above 70%** translated and someone adds the corresponding app-language constant. Crossing 70% is a notice from CI, never a build failure.
 
-Shipped app languages today are English, Czech, Spanish, German, Italian, Estonian, and Portuguese.
+Shipped app languages today are English, Czech, Spanish, French, Galician, German, Italian, Japanese, Estonian, Finnish, Polish, Portuguese, Russian, and Simplified Chinese, all at 100%.

@@ -17,6 +17,7 @@ Weight is a core manual metric flow. The user enters a value and saves it to Hea
 OpenVitals supports explicit logging for:
 
 - Beverages/hydration, including drink/container choices, custom amounts, caffeine-aware presets, and selected nutrition defaults.
+- Foods from a catalog you build yourself, each portion saved as one nutrition record, see [Food logging](food-logging.md).
 - Carbohydrate totals as Health Connect nutrition records.
 - Activity sessions, optionally with routes, distance, elevation, calories, repetitions, title, and notes.
 - Mindfulness sessions through a timer or manual duration.

@@ -36,6 +36,7 @@ export default {
   },
   'manual-entry-metrics': 'Manual Entry Of Metrics',
   'beverage-logging-and-caffeine': 'Beverage Logging And Caffeine',
+  'food-logging': 'Food Logging',
   'activity-recording': 'Recording Of Activity',
   'activity-training-plans': 'Activity And Training Plans',
   'ble-sensors': 'Bluetooth LE Sensors',
