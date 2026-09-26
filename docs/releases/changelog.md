@@ -6,6 +6,13 @@ For full localized notes, see the Android app repository changelog.
 
 OpenVitals is a Kotlin app. It was rebuilt on Flutter in 2.0.1 and migrated back to Kotlin in 2.5.0, so entries between those two releases describe the Flutter implementation, and everything before and after describes the Kotlin one. (2.0.0 was prepared but never published, so 2.0.1 carries everything since 1.9.0.)
 
+## 2.10.1 - 2026-09-26
+
+This release puts a goal ring on each day of the Month view, so one look at the month shows which days reached the goal and how close the others came. It also stops the dashboard from shuffling its tiles on every refresh when "Sort empty tiles last" is on.
+
+- **A goal ring on each day of the month.** In a metric's Month view, each day has a thin ring around its number. It fills clockwise from the top with the day's share of the daily goal: 7,500 steps against a 10,000 goal fills three quarters, and a day on or past the goal is full. Steps, distance, calories, active calories, floors, elevation, wheelchair pushes, workouts, hydration, mindfulness and sleep each use their own daily goal. Days with no data and future days get no ring, and nutrition has none yet. Based on a contribution by Teccheck.
+- **Fixes:** with "Sort empty tiles last" on, the dashboard no longer shuffles its tiles on every refresh and then shuffles them back: a tile that is still loading keeps its place and moves only once its own data arrives; the Health Connect library (1.2.0-alpha06) and the other libraries the app is built on are updated; Spanish updates contributed by gallegonovato on Codeberg Translate.
+
 ## 2.10.0 - 2026-09-25
 
 This release adds food logging: a catalog of your own foods with their nutrients, logged by portion as Health Connect nutrition records. Settings can estimate your basal metabolic rate and save it to Health Connect, off by default. Every chart speaks to a screen reader, Finnish and Polish join the language picker with every language complete, and phone-to-phone sync shows the code on both phones and seals every frame. A long list of fixes lands from an audit of the app: editing a workout no longer deletes its heart rate, power, cadence and speed, heart rate averages agree across the app, Bluetooth sensors reconnect after a reboot or a drop, and a finished recording survives until it is saved.
