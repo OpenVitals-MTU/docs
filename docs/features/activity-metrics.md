@@ -32,6 +32,7 @@ Activity metric screens follow the shared period-detail model:
 - Calendar selection.
 - Pull to refresh.
 - Period charts and selected-day entry views where available.
+- In the month view, a goal ring on each day, filled by the day's share of the daily goal and full on or past it. Workouts, hydration, mindfulness, and sleep show it too; nutrition does not yet.
 - Statistics, comparisons, baselines, confidence, and source context.
 - Reorderable metric detail sections.
 
