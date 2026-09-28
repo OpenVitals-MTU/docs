@@ -6,6 +6,15 @@ For full localized notes, see the Android app repository changelog.
 
 OpenVitals is a Kotlin app. It was rebuilt on Flutter in 2.0.1 and migrated back to Kotlin in 2.5.0, so entries between those two releases describe the Flutter implementation, and everything before and after describes the Kotlin one. (2.0.0 was prepared but never published, so 2.0.1 carries everything since 1.9.0.)
 
+## 2.11.1 - 2026-09-28
+
+This release makes OpenVitals read right in every language. The steps ring on the dashboard no longer says "steps" in English, heart rate shows the unit each language uses, counts of days, nights and tests agree with the number, and the health disclaimer matches the English again in Czech, Polish, Russian and Estonian. The Google Play listing now speaks all 14 app languages, with a new description and eight screenshots in each.
+
+- **Your language, everywhere.** The steps ring on the dashboard read "steps of 8,000" in English in every language; it now uses your language. Heart rate shows your language's own unit where it has one, such as lpm in Spanish, ppm in Galician and tep/min in Czech.
+- **Counts that agree with the number.** Days, nights and tests take the right form for the count in every language: "1 day", not "1 days".
+- **Google Play in every app language.** The store listing now has a description and eight screenshots in all 14 languages the app speaks.
+- **Fixes:** the health disclaimer in Czech, Polish, Russian and Estonian matches the English again; Czech says "tep/min" throughout, which also fits the heart rate chart axis.
+
 ## 2.11.0 - 2026-09-28
 
 This release rebuilds cycle tracking around a day log: bleeding, pain, mood, energy, symptoms, notes and tests for one day, logged one thing at a time and saved together, with next-period ranges built from your own history, cycle reminders, a home-screen widget, a cycle section in the health report and a journal backup. It adds a contraceptive pill scheme with a daily reminder and a Taken mark, brings Day, Week, Month and Year to the caffeine screen, and fixes sections that drew their cards on top of each other. Health Connect keeps every record it has a type for; what it cannot hold stays on the phone.
