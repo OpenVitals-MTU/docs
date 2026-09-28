@@ -15,8 +15,13 @@ OpenVitals provides Android home screen widgets for quick health summaries and f
 - Today Vitals.
 - Configurable metric summary widgets.
 - Quick beverage logging widgets.
+- Cycle.
 
 Metric widgets are configured when the widget is added. They show selected OpenVitals dashboard metrics without turning the launcher widget into a second dashboard screen.
+
+## Cycle Widget
+
+The cycle widget starts concealed. Revealed, it shows the recorded cycle day, the estimated range of the next period, and whether today is logged. It never shows notes, symptoms, mood, or energy, and it redraws after midnight. Tapping it opens the Log chooser for today. See [Cycle tracking](cycle-tracking.md).
 
 ## Quick Beverage Logging
 

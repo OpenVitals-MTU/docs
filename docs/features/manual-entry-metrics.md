@@ -6,7 +6,7 @@
 > **Navigation:** `Screen.ManualEntry` and manual entry routes; widgets in `ManualEntryWidgetId`.
 > **Related:** [Feature map](feature-map.md), [Permissions](../app/permissions.md), [Beverage logging and caffeine](beverage-logging-and-caffeine.md).
 
-Manual entry flows let the user write explicit records to Health Connect. OpenVitals does not keep a separate health database for these records.
+Manual entry flows let the user write explicit records to Health Connect. OpenVitals does not keep a separate health database for these records. The one exception is the cycle day log: what Health Connect has no record type for, such as pain, mood, energy, symptoms, and notes, stays in a journal on the phone, see [Cycle tracking](cycle-tracking.md).
 
 ## Weight
 
@@ -23,6 +23,7 @@ OpenVitals supports explicit logging for:
 - Mindfulness sessions through a timer or manual duration.
 - Body measurements such as weight, height, and body fat.
 - Vitals such as blood pressure, SpO2, respiratory rate, body temperature, and heart rate variability (HRV).
+- Cycle observations through a chooser: bleeding, how you feel, a pregnancy test, an ovulation test, sexual activity, basal body temperature, and cervical mucus, one at a time, saved as one day log.
 - Every vitals form offers date and time pickers when adding as well as when editing, defaulting to now - a reading can be logged after the fact under the moment it was taken.
 
 ## Permission Handling

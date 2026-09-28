@@ -30,6 +30,10 @@ Caffeine-aware drinks can write caffeine nutrition values and feed the caffeine 
 - Daily limit and sensitivity settings.
 - Bedtime guidance.
 
+### Day, Week, Month And Year
+
+The caffeine screen uses the same period model as the other metrics: a range picker, a period to step through, a date picker, and sections you can reorder. It opens on Day and remembers the last range. Day shows active caffeine or a past day's total, the day's curve with the threshold and each drink, and that night's bedtime level. Week, month, and year show the period summary, daily totals, the daily and bedtime impact card with the safe-night calendar, and statistics with a previous-period comparison. Drinks older than the seven-day lookback do not count toward a level.
+
 ### Drinking Over A Period
 
 The Log drink dialog asks how long a caffeinated drink took - at once, 15 or 30 minutes, or 1, 2, or 3 hours - and stores it as the end time of the Health Connect nutrition record. The caffeine model spreads a dose across the record's interval, so a coffee nursed over two hours is absorbed across those two hours instead of arriving all at once at the first sip. "At once" keeps the previous behavior, and the drink sheet shows the duration a record carries.
