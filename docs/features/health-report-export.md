@@ -23,6 +23,7 @@ Every metric gets a chart (bars for totals, a min-max banded trend line for aver
 - **Blood glucose:** averages by relation to meal, fasting first. Continuous-monitor volumes fall back to the daily chart.
 - **Workouts:** totals per activity type and the full session list.
 - **Sleep:** average bedtime and wake-up, the deep/REM/light/awake stage mix, and one row per night.
+- **Cycle tracking:** the cycle-day chart, length statistics over completed cycles, a table per cycle, bleeding and pain counts, symptom counts on and off bleeding days, the notes, and a disclaimer. The cycles come from Health Connect; the subjective fields come from the day log kept on the phone.
 - **Body metrics** show their change over the range; **body temperature** lists every reading.
 
 ## Honest About What Is Missing

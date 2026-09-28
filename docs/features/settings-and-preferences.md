@@ -36,9 +36,13 @@ Metric-specific settings include:
 
 ## Goals And Reminders
 
-Settings expose local goals and reminders for supported metric families, including hydration and mindfulness reminders.
+Settings expose local goals and reminders for supported metric families, including hydration, mindfulness, and cycle reminders.
 
 Goals and reminders are local app preferences. They help shape guidance and notifications but do not create Health Connect health records by themselves.
+
+## Cycle
+
+Settings > Cycle holds the tracking contexts (PMS, PMDD, endometriosis, PCOS, perimenopause, thyroid), the age band taken from the body profile's birth year, the three cycle reminders, the contraceptive pill scheme with its daily reminder, a JSON backup of the day-log journal, and a Delete cycle journal action. All of it is local; nothing here is written to Health Connect. See [Cycle tracking](cycle-tracking.md).
 
 ## Health Connect
 
