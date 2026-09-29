@@ -4,7 +4,7 @@
 > **Audience:** Users and contributors.
 > **Implementation:** `features/medical`, `features/imports/medical`, `domain/medical`, `domain/usecase/ImportMedicalRecordsUseCase.kt`, `domain/usecase/ExportMedicalRecordsUseCase.kt`, `domain/usecase/SaveManualMedicalRecordUseCase.kt`, `healthconnect/MedicalRecords*`, `data/repository/MedicalRecordsRepositoryImpl.kt`.
 > **Navigation:** `Screen.MedicalRecords`, `Screen.MedicalRecordCategory`, `Screen.MedicalRecordDetail`, `Screen.MedicalSources`, `Screen.MedicalRecordEntry`, `Screen.SettingsMedicalImport`; widget `MEDICAL_RECORDS`.
-> **Related:** [Feature map](feature-map.md), [Apple Health import](apple-health-import.md), [Permissions](../app/permissions.md), [Health Connect](../app/health-connect.md), [Privacy](../app/privacy.md).
+> **Related:** [Feature map](feature-map.md), [Apple Health import](apple-health-import.md), [Permissions](../app/permissions.md), [Health Connect](../app/health-connect.md), [Health report export](health-report-export.md), [Privacy](../app/privacy.md).
 
 Medical records shows, imports, adds and exports the medical records Health Connect holds: vaccines, allergies, lab results and more. Health Connect stores them in the FHIR format, the standard health systems exchange records in. Everything happens on the phone.
 
@@ -91,6 +91,10 @@ A record typed in here can be edited from its detail screen. Fields the form doe
 The export keeps each record's source, name and FHIR version, so importing it on another phone restores the same sources and ids. Importing it on the same phone updates the records and adds none.
 
 A shared file is kept in the app's cache until the next export replaces it.
+
+## In the health report
+
+The health report builder in Settings has a **Medical records** option. The section lists every allergy, condition and medication with its recorded status, and the vaccines and lab results dated in the report's range, labs with their value and the flag the lab set. It asks for no permission and names what access kept out. See [Health report export](health-report-export.md).
 
 ## Added by OpenVitals
 
