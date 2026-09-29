@@ -32,6 +32,15 @@ OpenVitals writes to Health Connect only from explicit entry, recording, edit/de
 
 Large Apple Health imports run as explicit user-started background work with progress notifications while records are scanned and written.
 
+## Medical Records
+
+Where Health Connect offers medical records, OpenVitals reads and writes them in the FHIR format:
+
+- Read: vaccines, allergies, conditions, medications, lab results, procedures, visits, vital signs, pregnancy, social history, personal details, and practitioner details. Each category has its own permission.
+- Write: records the user imports from a FHIR file or an Apple Health export. OpenVitals deletes only the records and sources it wrote, when the user asks.
+
+Medical records need Android 14 or newer, with a Health Connect module that supports them. Android 13 and older never get them. OpenVitals asks for these permissions only inside its Medical records area, never together with other permissions. See [Medical records](/features/medical-records).
+
 ## History And Background Access
 
 Health Connect may limit how much historical data an app can read unless Health history access is granted.
@@ -50,3 +59,4 @@ OpenVitals can import GPX/KML/KMZ route files from activity entries, import FIT 
 - Android 13 and older normally need the separate Health Connect app.
 - Work profiles do not support Health Connect.
 - Mindfulness support depends on the installed Health Connect provider version.
+- Medical records need Android 14 or newer and a Health Connect module that supports them.
