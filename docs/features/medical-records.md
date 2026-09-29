@@ -82,7 +82,7 @@ Every kind also takes a note and, for a user who has one, a code with its code s
 
 Records typed in go to one source, "Entered in OpenVitals". Each one points at the owner's own Patient record, which the first entry writes. Its name and birth date come from a Patient record OpenVitals can read. When there is none, the first entry asks for a name once, and a birth date if the user wants.
 
-A record typed in here can be edited from its detail screen. Fields the form does not show are kept.
+A record typed in here can be edited from its detail screen. Fields the form does not show are kept. Each save records its time in the record, so phone-to-phone sync can tell which edit is newer.
 
 ## Exporting
 
@@ -103,6 +103,16 @@ When the switch on the Confirm step is on, OpenVitals keeps the imported file on
 Kept files stay in the app's private storage. They are not backed up, and they are deleted when the app is uninstalled. The same file kept twice is one copy. A file can hold more than the records taken from it, such as names, identifiers and notes.
 
 The **Saved documents** row on the records home lists each file with its date, size and record count, and the space they use. A file can be opened in a viewer app on the phone, saved elsewhere, shared, or deleted. A record that came from a kept file has an **Open original document** action. Deleting a file does not delete its records, and deleting records does not delete the file. Saved documents do not travel with phone-to-phone sync.
+
+## Phone-to-phone sync
+
+[Sync with another phone](device-sync.md) offers a **Medical records** category when this phone may write medical records and read at least one category. The sync wizard never asks for medical permissions: this area does, the first time it opens.
+
+- Medical records always sync in full, whatever range is chosen.
+- Each record keeps its source. The receiving phone files it into its own source for the same origin and runs the import checks. A source another app keeps there is left alone.
+- An unchanged record counts as already present. When the two phones hold different versions of a record, the one with the later edit time wins. A version with no edit time never replaces another.
+- Patient records go first. When they name someone other than the people on the receiving phone, or more than one person, that phone keeps none of the medical records from the sync, and the report says why. Export and import them to move them anyway: the import checks the person with you.
+- Saved documents stay on their phone.
 
 ## Added by OpenVitals
 
