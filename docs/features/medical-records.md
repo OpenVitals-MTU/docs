@@ -2,8 +2,8 @@
 
 > **Status:** Current implemented behavior.
 > **Audience:** Users and contributors.
-> **Implementation:** `features/medical`, `features/imports/medical`, `domain/medical`, `domain/usecase/ImportMedicalRecordsUseCase.kt`, `domain/usecase/ExportMedicalRecordsUseCase.kt`, `domain/usecase/SaveManualMedicalRecordUseCase.kt`, `healthconnect/MedicalRecords*`, `data/repository/MedicalRecordsRepositoryImpl.kt`.
-> **Navigation:** `Screen.MedicalRecords`, `Screen.MedicalRecordCategory`, `Screen.MedicalRecordDetail`, `Screen.MedicalSources`, `Screen.MedicalRecordEntry`, `Screen.SettingsMedicalImport`; widget `MEDICAL_RECORDS`.
+> **Implementation:** `features/medical`, `features/imports/medical`, `domain/medical`, `domain/usecase/ImportMedicalRecordsUseCase.kt`, `domain/usecase/ExportMedicalRecordsUseCase.kt`, `domain/usecase/SaveManualMedicalRecordUseCase.kt`, `healthconnect/MedicalRecords*`, `data/repository/MedicalRecordsRepositoryImpl.kt`, `data/repository/MedicalDocumentsRepositoryImpl.kt`, `data/local/medical`.
+> **Navigation:** `Screen.MedicalRecords`, `Screen.MedicalRecordCategory`, `Screen.MedicalRecordDetail`, `Screen.MedicalSources`, `Screen.MedicalDocuments`, `Screen.MedicalRecordEntry`, `Screen.SettingsMedicalImport`; widget `MEDICAL_RECORDS`.
 > **Related:** [Feature map](feature-map.md), [Apple Health import](apple-health-import.md), [Permissions](../app/permissions.md), [Health Connect](../app/health-connect.md), [Health report export](health-report-export.md), [Privacy](../app/privacy.md).
 
 Medical records shows, imports, adds and exports the medical records Health Connect holds: vaccines, allergies, lab results and more. Health Connect stores them in the FHIR format, the standard health systems exchange records in. Everything happens on the phone.
@@ -55,7 +55,7 @@ The import wizard is reached from Settings, Import & export, and from the record
 
 1. **Pick.** Write access is asked for first, because matching the sources already in Health Connect needs it.
 2. **Review.** Records are grouped by where they came from. Each group shows its counts per category, the types Health Connect does not store, and records that would be refused. Nothing is written yet.
-3. **Confirm.** Each group goes to one Health Connect source. A group from a source OpenVitals made before adds to it, so importing the same file again updates the same records. A new source can be renamed.
+3. **Confirm.** Each group goes to one Health Connect source. A group from a source OpenVitals made before adds to it, so importing the same file again updates the same records. A new source can be renamed. A switch keeps a copy of the file on the phone; it is off on every import. See [Saved documents](#saved-documents).
 4. **Import.** Records are written in batches. A refused record is reported with Health Connect's reason, and the rest are written.
 5. **Result.** Counts of added, updated, skipped and refused records, and a report that can be copied or saved. The report includes record content, so the screen says to review it before sharing.
 
@@ -96,10 +96,18 @@ A shared file is kept in the app's cache until the next export replaces it.
 
 The health report builder in Settings has a **Medical records** option. The section lists every allergy, condition and medication with its recorded status, and the vaccines and lab results dated in the report's range, labs with their value and the flag the lab set. It asks for no permission and names what access kept out. See [Health report export](health-report-export.md).
 
+## Saved documents
+
+When the switch on the Confirm step is on, OpenVitals keeps the imported file once the import has written records. The step shows the file's size and the space saved documents already use. For an Apple Health export, only the clinical records files are kept, packed as one zip. A file that gave no records is not kept.
+
+Kept files stay in the app's private storage. They are not backed up, and they are deleted when the app is uninstalled. The same file kept twice is one copy. A file can hold more than the records taken from it, such as names, identifiers and notes.
+
+The **Saved documents** row on the records home lists each file with its date, size and record count, and the space they use. A file can be opened in a viewer app on the phone, saved elsewhere, shared, or deleted. A record that came from a kept file has an **Open original document** action. Deleting a file does not delete its records, and deleting records does not delete the file. Saved documents do not travel with phone-to-phone sync.
+
 ## Added by OpenVitals
 
 This screen lists the sources OpenVitals added, each with its record count, FHIR version and address. Deleting a source removes it and all its records from Health Connect, after a confirmation that says how many records go with it. OpenVitals can delete only the records and sources it added.
 
 ## Privacy
 
-Records stay in Health Connect. OpenVitals keeps no copy, and the only value it stores is that its first permission request has happened. A file leaves the phone only when the user saves or shares it. See [Privacy](../app/privacy.md).
+Records stay in Health Connect. OpenVitals keeps no copy of them, and the only value it stores about them is that its first permission request has happened. A file you choose to keep from an import is the one thing OpenVitals stores itself. A file leaves the phone only when the user saves or shares it. See [Privacy](../app/privacy.md).
