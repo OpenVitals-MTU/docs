@@ -2,11 +2,11 @@
 
 > **Status:** Current implemented behavior.
 > **Audience:** Users and contributors.
-> **Implementation:** `features/medical`, `features/imports/medical`, `domain/medical`, `domain/usecase/ImportMedicalRecordsUseCase.kt`, `domain/usecase/ExportMedicalRecordsUseCase.kt`, `healthconnect/MedicalRecords*`, `data/repository/MedicalRecordsRepositoryImpl.kt`.
-> **Navigation:** `Screen.MedicalRecords`, `Screen.MedicalRecordCategory`, `Screen.MedicalRecordDetail`, `Screen.MedicalSources`, `Screen.SettingsMedicalImport`; widget `MEDICAL_RECORDS`.
+> **Implementation:** `features/medical`, `features/imports/medical`, `domain/medical`, `domain/usecase/ImportMedicalRecordsUseCase.kt`, `domain/usecase/ExportMedicalRecordsUseCase.kt`, `domain/usecase/SaveManualMedicalRecordUseCase.kt`, `healthconnect/MedicalRecords*`, `data/repository/MedicalRecordsRepositoryImpl.kt`.
+> **Navigation:** `Screen.MedicalRecords`, `Screen.MedicalRecordCategory`, `Screen.MedicalRecordDetail`, `Screen.MedicalSources`, `Screen.MedicalRecordEntry`, `Screen.SettingsMedicalImport`; widget `MEDICAL_RECORDS`.
 > **Related:** [Feature map](feature-map.md), [Apple Health import](apple-health-import.md), [Permissions](../app/permissions.md), [Health Connect](../app/health-connect.md), [Privacy](../app/privacy.md).
 
-Medical records shows, imports and exports the medical records Health Connect holds: vaccines, allergies, lab results and more. Health Connect stores them in the FHIR format, the standard health systems exchange records in. Everything happens on the phone.
+Medical records shows, imports, adds and exports the medical records Health Connect holds: vaccines, allergies, lab results and more. Health Connect stores them in the FHIR format, the standard health systems exchange records in. Everything happens on the phone.
 
 Records are shown as they were received. OpenVitals does not interpret them.
 
@@ -31,7 +31,7 @@ Each row shows how many records the category holds. A category whose read permis
 
 When permissions are missing, a callout at the top asks for them. Health Connect stops asking for a permission after the user refuses it twice, and closes any request that includes it. The callout leaves those permissions out. When nothing is left to ask, it opens Health Connect's settings instead, where access can still be turned on.
 
-The home also has **Import FHIR file** and **Export all**, and an **Added by OpenVitals** row when OpenVitals has added records.
+The home also has **Import FHIR file**, **Export all**, a **+** to add a record by hand, and an **Added by OpenVitals** row when OpenVitals has added records.
 
 ## A category
 
@@ -68,6 +68,21 @@ The importer also repairs common problems in real files. It gives records withou
 ### Apple Health clinical records
 
 When an Apple Health export holds clinical records, the Apple Health card in Settings says how many and opens the same wizard on the same file. Each provider gets its own source, and a provider with records in two FHIR versions gets one source per version. Records in FHIR DSTU2, the version older iPhones used, are left out before anything is written, and the review says why.
+
+## Adding a record by hand
+
+The **+** button on the records home adds a vaccine, an allergy, a medication or a condition. The vaccines, allergies, medications and conditions lists have their own **+** for that kind.
+
+- **Vaccine:** the name, completed or not done, the date given, and a lot number.
+- **Allergy:** the substance, active, inactive or resolved, when it began, the reaction, and how serious it is.
+- **Medication:** the name, active, completed, stopped or on hold, since when, and the dosage.
+- **Condition:** the name, active, in remission, resolved or inactive, and when it began.
+
+Every kind also takes a note and, for a user who has one, a code with its code system, such as a CVX code printed on a vaccine card. Names are free text. Nothing is looked up and no code list ships with the app.
+
+Records typed in go to one source, "Entered in OpenVitals". Each one points at the owner's own Patient record, which the first entry writes. Its name and birth date come from a Patient record OpenVitals can read. When there is none, the first entry asks for a name once, and a birth date if the user wants.
+
+A record typed in here can be edited from its detail screen. Fields the form does not show are kept.
 
 ## Exporting
 
