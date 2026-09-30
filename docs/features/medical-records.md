@@ -75,7 +75,7 @@ The zip from terviseportaal.ee holds each document twice: as XML and as a PDF. T
 
 - Visits, diagnoses, prescriptions, lab results, vaccinations, dental work, radiology and pathology become records. Each clinic gets its own source.
 - A referral gives only its diagnoses, marked provisional, with the referral's title as a note. The referring doctor had not confirmed them, and they may repeat a later diagnosis. Health Connect has no record for the request itself; the answer to it is imported with its results.
-- Declarations of intent and authorisations are left out, and the review lists them.
+- Declarations of intent and authorisations hold no health record, so none is made, and the review lists them. With the keep switch on, their PDFs are kept anyway, with no record linked.
 - The patient record keeps name, sex and birth date. The national ID code, the address and the phone are left out.
 - The keep switch keeps each document's PDF with that document's records, so "Open original document" on a record opens its visit's PDF. Text that is not in a record, such as the anamnesis, stays in the PDF.
 - Importing the same zip again updates the same records.
@@ -109,7 +109,7 @@ The health report builder in Settings has a **Medical records** option. The sect
 
 ## Saved documents
 
-When the switch on the Confirm step is on, OpenVitals keeps the imported file once the import has written records. The step shows the file's size and the space saved documents already use. For an Apple Health export, only the clinical records files are kept, packed as one zip. A file that gave no records is not kept.
+When the switch on the Confirm step is on, OpenVitals keeps the imported file once the import has written records. The step shows the file's size and the space saved documents already use. For an Apple Health export, only the clinical records files are kept, packed as one zip. A file that gave no records is not kept, except the declarations and authorisations in an Estonian portal export.
 
 Kept files stay in the app's private storage. They are not backed up, and they are deleted when the app is uninstalled. The same file kept twice is one copy. A file can hold more than the records taken from it, such as names, identifiers and notes.
 
