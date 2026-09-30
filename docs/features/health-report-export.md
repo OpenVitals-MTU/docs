@@ -11,7 +11,7 @@ Health report export builds a PDF of your health data straight from Health Conne
 ## Building a Report
 
 1. **Pick metrics.** All exportable metrics your Health Connect provider supports are listed, grouped by section.
-2. **Pick detail and range.** Daily, weekly, or monthly buckets; a preset lookback (30, 90, 180, or 365 days) or a custom start and end date.
+2. **Pick detail and range.** Daily, weekly, or monthly buckets; a preset lookback (30, 90, 180, or 365 days) or a custom start and end date. Where Health Connect offers medical records, a **Medical records** option sits under the metrics; Select all never ticks it, and a report can hold medical records alone.
 3. **Build.** Progress shows the metric being read, and the build can be cancelled. A metric that fails or times out costs its own section, never the report.
 4. **Share or save.** The finished PDF can be shared to any app or saved through the system file picker.
 
@@ -25,7 +25,8 @@ Every metric gets a chart (bars for totals, a min-max banded trend line for aver
 - **Sleep:** average bedtime and wake-up, the deep/REM/light/awake stage mix, and one row per night.
 - **Cycle tracking:** the cycle-day chart, length statistics over completed cycles, a table per cycle, bleeding and pain counts, symptom counts on and off bleeding days, the notes, and a disclaimer. The cycles come from Health Connect; the subjective fields come from the day log kept on the phone.
 - **Body metrics** show their change over the range; **body temperature** lists every reading.
+- **Medical records**, when chosen, come last: every allergy, condition and medication with its recorded status, and the vaccines and lab results dated in the range, labs with their value and the flag the lab set. Records are shown as received. See [Medical records](medical-records.md).
 
 ## Honest About What Is Missing
 
-The report says so, in print, when something could not be included: metrics without read permission, a range truncated by the missing history permission, a cancelled build, or a metric whose read failed.
+The report says so, in print, when something could not be included: metrics without read permission, a range truncated by the missing history permission, a cancelled build, or a metric whose read failed. The medical section asks for no permission; it uses the medical access already given and names the categories it could not fully read.
