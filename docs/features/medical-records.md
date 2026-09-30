@@ -51,7 +51,7 @@ A record OpenVitals added can be deleted, after a confirmation. A record another
 
 ## Importing
 
-The import wizard is reached from Settings, Import & export, and from the records home. It reads a FHIR file: one resource, a Bundle, or NDJSON with one resource per line. It also reads an Apple Health export zip, taking the clinical records from it. Files over 8 MB are refused.
+The import wizard is reached from Settings, Import & export, and from the records home. It reads a FHIR file: one resource, a Bundle, or NDJSON with one resource per line. It also reads an Apple Health export zip, taking the clinical records from it, and the zip the Estonian health portal hands out. Files over 8 MB are refused.
 
 1. **Pick.** Write access is asked for first, because matching the sources already in Health Connect needs it.
 2. **Review.** Records are grouped by where they came from. Each group shows its counts per category, the types Health Connect does not store, and records that would be refused. Nothing is written yet.
@@ -68,6 +68,16 @@ The importer also repairs common problems in real files. It gives records withou
 ### Apple Health clinical records
 
 When an Apple Health export holds clinical records, the Apple Health card in Settings says how many and opens the same wizard on the same file. Each provider gets its own source, and a provider with records in two FHIR versions gets one source per version. Records in FHIR DSTU2, the version older iPhones used, are left out before anything is written, and the review says why.
+
+### Estonian health portal
+
+The zip from terviseportaal.ee holds each document twice: as XML and as a PDF. The wizard reads the XML.
+
+- Visits, diagnoses, prescriptions, lab results, vaccinations, dental work, radiology and pathology become records. Each clinic gets its own source.
+- Referrals are left out, because their diagnoses are provisional and the answer to them is imported. Declarations of intent and authorisations are left out too. The review lists both.
+- The patient record keeps name, sex and birth date. The national ID code, the address and the phone are left out.
+- The keep switch keeps each document's PDF with that document's records, so "Open original document" on a record opens its visit's PDF. Text that is not in a record, such as the anamnesis, stays in the PDF.
+- Importing the same zip again updates the same records.
 
 ## Adding a record by hand
 
