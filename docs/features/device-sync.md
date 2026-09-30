@@ -6,7 +6,7 @@
 > **Navigation:** `Screen.SettingsDeviceSync`; settings section `DEVICE_SYNC`.
 > **Related:** [Feature map](feature-map.md), [Settings and preferences](settings-and-preferences.md), [Permissions](../app/permissions.md), [Privacy](../app/privacy.md).
 
-Sync with another phone copies Health Connect records directly between two nearby Android phones over Bluetooth. There is no account, no server, and no network step.
+Sync with another phone copies Health Connect records, medical records among them, directly between two nearby Android phones over Bluetooth. There is no account, no server, and no network step.
 
 It is reached from Settings, Sync with another phone, which opens its own wizard.
 
@@ -15,7 +15,7 @@ It is reached from Settings, Sync with another phone, which opens its own wizard
 1. **Choose a role.** One phone makes itself discoverable and becomes the host. The other looks for a phone and becomes the guest.
 2. **Pair.** The host makes itself discoverable and waits. The guest scans and picks the host from the list of nearby phones. Already-paired phones appear in the list before the scan finishes.
 3. **Choose how far back.** The last 30 days, the last 6 months, the last year, or everything. The last year is the default.
-4. **Choose what to sync.** The picker lists data categories such as activity, workouts, heart, sleep, body measurements, vitals, nutrition, hydration, mindfulness, and cycle tracking. A category appears only when this phone can both read and write at least one of its record types, and everything supported is selected by default. Cycle tracking also carries the day-log journal, the excluded cycles, the contexts and age band, the pill scheme, and the taken days: a day edited on both phones keeps the later edit, taken days merge, and reminder settings stay on their phone.
+4. **Choose what to sync.** The picker lists data categories such as activity, workouts, heart, sleep, body measurements, vitals, nutrition, hydration, mindfulness, cycle tracking, and medical records. A category appears only when this phone can both read and write at least one of its record types, and everything supported is selected by default. Medical records ignore the range, and the picker says so. Cycle tracking also carries the day-log journal, the excluded cycles, the contexts and age band, the pill scheme, and the taken days: a day edited on both phones keeps the later edit, taken days merge, and reminder settings stay on their phone.
 5. **Compare the codes.** Once both users have pressed Start, both phones show a six-digit code. Each user says whether they match. Nothing is exchanged before both did, and "They do not match" ends the session with nothing sent. The first phone to press Start waits up to ten minutes for the other user.
 6. **Sync.** Progress shows the current phase and live sent, received, and written counts.
 7. **Read the report.** The report shows how many records were merged, how many were already present, and a per-record-type breakdown of what arrived. It can be copied or shared as text. A failed sync gets the same treatment: the screen shows why the session aborted and how far it got, with the same copy and share buttons, and the last report is offered again when the wizard is reopened.
@@ -52,6 +52,19 @@ Each record is identified by a fingerprint computed from its own content: the re
 
 Running the same sync twice therefore writes nothing new, and the two phones converge.
 
+## Medical Records
+
+The medical records category carries the FHIR records in Health Connect. It appears when this phone may write medical records and read at least one medical category. Sync never asks for these permissions: the Medical records area asks the first time it opens.
+
+- Medical records always sync in full, whatever range is chosen. A vaccination history cut at one year is not useful.
+- Each record travels as it would in a FHIR export, with its source's address, name, and FHIR version. The receiving phone files it into its own source for the same origin, making one when needed, and runs the import checks. A source another app keeps on the receiving phone is left alone, as in an import.
+- A record is identified by its source, type, id, and content. An unchanged record counts as already present. When the phones hold two versions of one record, the one with the later edit time (`meta.lastUpdated`) wins, and a version without one never replaces the other. Records typed in OpenVitals carry that time.
+- Patient records go first. When they name someone other than the people on the receiving phone, or more than one person, that phone keeps none of the medical records from this sync, and the report says why. To move them anyway, export them on one phone and import them on the other, where the import checks the person with the user.
+- Saved documents stay on their phone.
+- The report's medical line counts records added, already here, skipped, and not added.
+
+See [Medical records](medical-records.md).
+
 ## While The Sync Runs
 
 A quiet ongoing notification, "Syncing with another phone", asks the user to keep both phones nearby. It exists so Android does not kill the app while the user is looking at something else.
@@ -60,7 +73,7 @@ The transfer belongs to the wizard screen: switching to another app is fine, but
 
 ## Permissions
 
-Sync asks for nearby-device Bluetooth permissions, and for location on Android versions before 12 where classic Bluetooth discovery requires it. It then asks for the Health Connect read and write permissions for the record types it can exchange, and finally, on the host, for Android's discoverable window.
+Sync asks for nearby-device Bluetooth permissions, and for location on Android versions before 12 where classic Bluetooth discovery requires it. It then asks for the Health Connect read and write permissions for the record types it can exchange, and finally, on the host, for Android's discoverable window. It never asks for medical permissions.
 
 ## Privacy
 

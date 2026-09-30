@@ -29,6 +29,7 @@ export default {
   hydration: 'Hydration',
   mindfulness: 'Mindfulness',
   'cycle-tracking': 'Cycle Tracking',
+  'medical-records': 'Medical Records',
   statistics: 'Statistics',
   '---log-import-record': {
     type: 'separator',
