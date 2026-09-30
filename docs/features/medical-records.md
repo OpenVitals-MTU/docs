@@ -51,7 +51,7 @@ A record OpenVitals added can be deleted, after a confirmation. A record another
 
 ## Importing
 
-The import wizard is reached from Settings, Import & export, and from the records home. It reads a FHIR file: one resource, a Bundle, or NDJSON with one resource per line. It also reads an Apple Health export zip, taking the clinical records from it, the zip the Estonian health portal hands out, and SMART Health Cards. Files over 8 MB are refused, except card photos and PDFs, up to 32 MB.
+The import wizard is reached from Settings, Import & export, and from the records home. It reads a FHIR file: one resource, a Bundle, or NDJSON with one resource per line. It also reads a CDA document (XML), an Apple Health export zip, taking the clinical records from it, the zip the Estonian health portal hands out, and SMART Health Cards. Files over 8 MB are refused, except card photos and PDFs, up to 32 MB.
 
 1. **Pick.** Write access is asked for first, because matching the sources already in Health Connect needs it.
 2. **Review.** Records are grouped by where they came from. Each group shows its counts per category, the types Health Connect does not store, and records that would be refused. Nothing is written yet.
@@ -68,6 +68,18 @@ The importer also repairs common problems in real files. It gives records withou
 ### Apple Health clinical records
 
 When an Apple Health export holds clinical records, the Apple Health card in Settings says how many and opens the same wizard on the same file. Each provider gets its own source, and a provider with records in two FHIR versions gets one source per version. Records in FHIR DSTU2, the version older iPhones used, are left out before anything is written, and the review says why.
+
+### CDA documents
+
+Many patient portals hand out the record as one XML file in the CDA format (C-CDA), often under "download my record". The wizard reads it, alone or in a zip.
+
+- Problems, allergies, medications, vaccinations, lab results, vital signs, social history, procedures and visits become records. Other sections, and the written text of every section, stay in the file.
+- The organisation that holds the document becomes the source. When the file names none, you name the source.
+- An entry that records an absence, such as "no known allergies", makes no record.
+- The patient record keeps name, sex and birth date. Identifiers, address and phone are left out.
+- A time written without a time zone keeps only its date.
+- A document written by an app or a device, not by a person, gives no vital signs: those are the app's own measurements.
+- The keep switch keeps the XML file.
 
 ### SMART Health Cards
 
