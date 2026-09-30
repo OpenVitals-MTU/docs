@@ -74,7 +74,8 @@ When an Apple Health export holds clinical records, the Apple Health card in Set
 The zip from terviseportaal.ee holds each document twice: as XML and as a PDF. The wizard reads the XML.
 
 - Visits, diagnoses, prescriptions, lab results, vaccinations, dental work, radiology and pathology become records. Each clinic gets its own source.
-- Referrals are left out, because their diagnoses are provisional and the answer to them is imported. Declarations of intent and authorisations are left out too. The review lists both.
+- A referral gives only its diagnoses, marked provisional, with the referral's title as a note. The referring doctor had not confirmed them, and they may repeat a later diagnosis. Health Connect has no record for the request itself; the answer to it is imported with its results.
+- Declarations of intent and authorisations are left out, and the review lists them.
 - The patient record keeps name, sex and birth date. The national ID code, the address and the phone are left out.
 - The keep switch keeps each document's PDF with that document's records, so "Open original document" on a record opens its visit's PDF. Text that is not in a record, such as the anamnesis, stays in the PDF.
 - Importing the same zip again updates the same records.
