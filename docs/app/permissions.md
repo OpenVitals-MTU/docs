@@ -130,6 +130,7 @@ They are asked for in one request, only inside the medical records area, and nev
 - `android.permission.ACCESS_FINE_LOCATION`: required for reliable GPS activity recording.
 - `android.permission.ACCESS_COARSE_LOCATION`: declared with location access for Android permission compatibility.
 - `android.permission.ACTIVITY_RECOGNITION`: used where Android requires activity-recognition access for recorded activity workflows.
+- `android.permission.CAMERA`: used only to scan the QR code of a SMART Health Card in the medical records import. Requested when the user taps Scan a QR code. Each frame is read on the device and dropped; none is saved or sent. A photo of the code can be picked instead.
 - `android.permission.BLUETOOTH_SCAN`: used to find paired Bluetooth LE sensors for experimental activity recording.
 - `android.permission.BLUETOOTH_CONNECT`: used to connect to paired Bluetooth LE sensors for experimental activity recording.
 - `android.permission.FOREGROUND_SERVICE`: used for foreground activity recording and user-started import work.

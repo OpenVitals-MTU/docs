@@ -28,6 +28,7 @@ On Android 14 and newer, where Health Connect offers medical records, OpenVitals
 
 - OpenVitals asks for medical permissions only inside its Medical records area, never together with other permissions. Each category has its own permission.
 - Records are shown as Health Connect holds them. OpenVitals does not interpret them.
+- You can scan a health card's QR code with the camera. OpenVitals asks for the camera only when you tap Scan, reads each picture on the device, and keeps none.
 - Imports read a file you pick on the device. Exports are files created on the device, and leave it only if you save or share them. The import report includes record content, so review it before you share it.
 - When you import a file, you can choose to keep a copy in the app's private storage. The choice starts off every time. Kept copies are not backed up.
 - Sync with another phone copies all your medical records when you select that category on both phones. Kept copies stay on the phone.

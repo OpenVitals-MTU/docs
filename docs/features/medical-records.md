@@ -67,7 +67,7 @@ The importer also repairs common problems in real files. It gives records withou
 
 ### Apple Health clinical records
 
-When an Apple Health export holds clinical records, the Apple Health card in Settings says how many and opens the same wizard on the same file. Each provider gets its own source, and a provider with records in two FHIR versions gets one source per version. Records in FHIR DSTU2, the version older iPhones used, are left out before anything is written, and the review says why.
+When an Apple Health export holds clinical records, the Apple Health card in Settings says how many and opens the same wizard on the same file. Each provider gets its own source, and a provider with records in two FHIR versions gets one source per version. Records in FHIR DSTU2, the version older iPhones used, are converted to the version Health Connect stores, and each says so on its detail screen. A record of a type that cannot be converted is left out, and the review says why.
 
 ### CDA documents
 
@@ -83,12 +83,13 @@ Many patient portals hand out the record as one XML file in the CDA format (C-CD
 
 ### SMART Health Cards
 
-The wizard also reads SMART Health Cards, the QR codes on many vaccination and lab result cards. Pick a photo or screenshot of the QR code, a PDF that shows it, a `.smart-health-card` file, or a text file with the code's `shc:/` text.
+The wizard also reads SMART Health Cards, the QR codes on many vaccination and lab result cards. Scan the QR code with the camera, or pick a photo or screenshot of it, a PDF that shows it, a `.smart-health-card` file, or a text file with the code's `shc:/` text.
 
 - Every card in the file is read, including a card split over several QR codes. A card with a part missing is listed in the review and left out.
 - Each issuer gets its own source.
 - A card is signed, but checking the signature needs the issuer's keys from the internet, and OpenVitals has no internet access. The review says so, every record from a card is tagged as not verified, and its detail screen says so too.
-- The keep switch keeps the picked file: the photo, the PDF, or the card file.
+- **Scan a QR code** opens the camera. OpenVitals asks for the camera only then. It reads each picture on the phone and keeps none. A card split over several codes is scanned one code after the other.
+- The keep switch keeps the picked file: the photo, the PDF, or the card file. For a scanned card it keeps the code's text.
 - A PDF without a card, and a photo or scan of a paper document, are not read yet.
 
 ### Estonian health portal
