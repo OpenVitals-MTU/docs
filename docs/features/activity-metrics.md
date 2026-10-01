@@ -22,6 +22,14 @@ Activity metric detail screens currently cover:
 
 The workout/session area also covers activity lists, activity detail, route preview/export, heart-rate charts for workouts, activity summaries, and cardio-load context.
 
+## Workout Distance
+
+A workout's distance is the sum of the Health Connect distance records inside the session. When there are none, the route's length fills in.
+
+Some apps save a GPS route but a distance estimated from steps, which can be half the real one. The **Distance from GPS routes** setting under Activities, off by default, makes a workout with a route take the route's length instead. Pace, speed, splits, the activity statistics, exports and the PDF report follow it. Workouts without a route keep their recorded distance.
+
+Routes written by other apps are readable only with the Exercise routes permission, which you grant in Health Connect's own settings.
+
 ## Detail Pattern
 
 Activity metric screens follow the shared period-detail model:

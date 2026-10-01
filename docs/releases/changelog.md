@@ -8,10 +8,11 @@ OpenVitals is a Kotlin app. It was rebuilt on Flutter in 2.0.1 and migrated back
 
 ## 2.11.2 - 2026-10-01
 
-This release is for riders with Bluetooth bike sensors. A ride on a stationary bike, or with GPS off, now shows cadence, speed and distance as you go, and a wheel speed sensor measures the distance that is saved with the workout. Once the sensor reports, its distance and top speed are used instead of GPS. Outlined buttons across the app also draw their border now.
+This release is about getting a workout's distance right. A ride on a stationary bike, or with GPS off, now shows cadence, speed and distance from Bluetooth bike sensors, and a wheel speed sensor measures the distance that is saved with the workout. A new setting, off by default, takes a workout's distance from its GPS route, for apps that save a route but estimate the distance from steps. Outlined buttons across the app also draw their border now.
 
 - **Bike sensors without GPS.** A ride on a stationary bike, or a ride with GPS off, now shows cadence, speed, distance, average speed and max speed from your Bluetooth bike sensors. Before, these fields were hidden.
 - **Distance from the wheel sensor.** A wheel speed sensor now counts distance from wheel turns while you record. Pauses do not count, and a sensor that reconnects neither loses nor doubles the distance. Once the sensor reports, its distance and top speed are used instead of the GPS ones on the recording screen, the notification, voice announcements and the saved workout; GPS still draws the route. A ride without a route fills the review form with the sensor distance.
+- **Distance from GPS routes.** A new setting in Settings, Activities, off by default: a workout with a GPS route takes its distance from the route instead of the distance records, and pace and speed follow. It helps when an app saves a route but estimates the distance from steps. Workouts without a route keep their recorded distance; routes from other apps need the Exercise routes permission in Health Connect.
 - **Fixes:** outlined buttons draw their border; before, they looked like plain text.
 
 ## 2.11.1 - 2026-09-28
