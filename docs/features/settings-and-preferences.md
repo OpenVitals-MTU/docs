@@ -25,6 +25,7 @@ Metric-specific settings include:
 
 - Activity week mode, such as Monday-to-Sunday or rolling last 7 days.
 - Favorite or latest activity defaults used by activity entry and recording setup.
+- Distance from GPS routes, off by default: a workout with a route takes the route's length as its distance. See [Activity metrics](activity-metrics.md#workout-distance).
 - Calorie data mode, including optional OpenVitals total-calorie calculation when Health Connect totals are missing.
 - Sleep range mode, including rolling 24 hours, noon boundary, and evening boundary.
 - Caffeine sensitivity, daily limit, and bedtime guidance.
