@@ -6,6 +6,14 @@ For full localized notes, see the Android app repository changelog.
 
 OpenVitals is a Kotlin app. It was rebuilt on Flutter in 2.0.1 and migrated back to Kotlin in 2.5.0, so entries between those two releases describe the Flutter implementation, and everything before and after describes the Kotlin one. (2.0.0 was prepared but never published, so 2.0.1 carries everything since 1.9.0.)
 
+## 2.11.2 - 2026-10-01
+
+This release is for riders with Bluetooth bike sensors. A ride on a stationary bike, or with GPS off, now shows cadence, speed and distance as you go, and a wheel speed sensor measures the distance that is saved with the workout. Once the sensor reports, its distance and top speed are used instead of GPS. Outlined buttons across the app also draw their border now.
+
+- **Bike sensors without GPS.** A ride on a stationary bike, or a ride with GPS off, now shows cadence, speed, distance, average speed and max speed from your Bluetooth bike sensors. Before, these fields were hidden.
+- **Distance from the wheel sensor.** A wheel speed sensor now counts distance from wheel turns while you record. Pauses do not count, and a sensor that reconnects neither loses nor doubles the distance. Once the sensor reports, its distance and top speed are used instead of the GPS ones on the recording screen, the notification, voice announcements and the saved workout; GPS still draws the route. A ride without a route fills the review form with the sensor distance.
+- **Fixes:** outlined buttons draw their border; before, they looked like plain text.
+
 ## 2.11.1 - 2026-09-28
 
 This release makes OpenVitals read right in every language. The steps ring on the dashboard no longer says "steps" in English, heart rate shows the unit each language uses, counts of days, nights and tests agree with the number, and the health disclaimer matches the English again in Czech, Polish, Russian and Estonian. The Google Play listing now speaks all 14 app languages, with a new description and eight screenshots in each.
