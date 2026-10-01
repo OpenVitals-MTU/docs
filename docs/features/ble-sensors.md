@@ -16,6 +16,7 @@ Supported sensor families can include:
 
 - Heart rate.
 - Cycling cadence.
+- Cycling speed and distance, from a wheel speed sensor.
 - Cycling power.
 - Footpod-style movement data.
 
@@ -24,6 +25,18 @@ Sensor availability depends on the device, Android permissions, and the Bluetoot
 ## Where Sensors Are Used
 
 BLE sensors are used during activity recording and repetition-oriented training when compatible data is available. Heart-rate sensors can enrich GPS recordings, strength training, and repetition training summaries.
+
+### Bike Sensors
+
+Any ride, including one on a stationary bike or with GPS off, can show cadence, speed, distance, average speed, average moving speed, and max speed from bike sensors.
+
+A wheel speed sensor measures distance from wheel turns:
+
+- Only turns made while recording count, so pauses are left out.
+- A sensor that reconnects neither loses nor doubles the distance.
+- The distance survives the system closing the app during a ride.
+
+Once the sensor reports, its distance and top speed are used instead of the GPS ones: on the recording screen, in the notification, in voice announcements, and in the saved workout. GPS still draws the route. A ride without a route fills the review form with the sensor distance.
 
 ## Sensor Settings
 

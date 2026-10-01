@@ -43,4 +43,4 @@ The moment the effort stopped is saved to Health Connect as a rest segment runni
 
 ## Sensor Support
 
-OpenVitals has experimental Bluetooth LE support for paired heart-rate, cycling cadence, cycling power, and footpod devices during recording. Bluetooth and notification permissions are requested only where Android requires them.
+OpenVitals has experimental Bluetooth LE support for paired heart-rate, cycling cadence, cycling speed, cycling power, and footpod devices during recording. A wheel speed sensor gives a ride its distance without GPS; see [Bike sensors](ble-sensors.md#bike-sensors). Bluetooth and notification permissions are requested only where Android requires them.
