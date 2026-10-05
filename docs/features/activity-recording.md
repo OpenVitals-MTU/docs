@@ -23,6 +23,16 @@ The recording flow supports:
 - Offline route maps when map packs have been imported.
 - Post-activity speed and cadence charts when compatible samples are available.
 
+## Elevation Gain
+
+GPS altitude is noisy, and adding up every small rise between points inflates elevation gain badly. OpenVitals smooths the route and requires a real change before it counts, so the gain matches the climbing that actually happened.
+
+How big a change has to be depends on how sure the phone is of each fix. Indoors, under trees, or beside tall buildings the altitude can be tens of meters off while the position still looks usable, so a point needs a change at least as large as its own altitude error, and a fix less certain than 20 m does not count towards the climb at all. Routes without altitude accuracy, such as imported GPX files, keep the fixed threshold.
+
+The barometer is preferred when the phone has one. A reading outside the range of real air pressure, or one implying a jump of more than 50 m between two readings, is treated as a sensor fault and adds nothing.
+
+The climb shown for each split, on the recording screen and in a saved activity's splits, comes from the same filtered route, so the splits add up to the total. A climb is counted a few seconds after it happens, so a split boundary in the middle of a climb can move a few meters of it into the next split.
+
 ## Repetition Activity
 
 Repetition-oriented flows support activities such as strength training, push-ups, pull-ups, rope skipping, treadmill steps, and similar workouts where counts, sets, or repetition stats matter more than a GPS route.

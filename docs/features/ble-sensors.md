@@ -38,6 +38,8 @@ A wheel speed sensor measures distance from wheel turns:
 
 Once the sensor reports, its distance and top speed are used instead of the GPS ones: on the recording screen, in the notification, in voice announcements, and in the saved workout. GPS still draws the route. A ride without a route fills the review form with the sensor distance.
 
+Distance comes from the wheel circumference set for the sensor in Settings, Sensors & devices. It defaults to 2100 mm and accepts any whole number from 500 to 3000 mm, so a sensor can be calibrated for a small or a large wheel.
+
 ## Sensor Settings
 
 Settings can show saved sensor devices, connection status, and battery information when available.
