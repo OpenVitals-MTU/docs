@@ -3,8 +3,8 @@
 > **Status:** Current implemented behavior.
 > **Audience:** Users and contributors.
 > **Implementation:** `features/nutrition`, `features/manualentry/nutrition`, `data/repository/NutritionRepository.kt`.
-> **Navigation:** `Screen.Nutrition`, `Screen.CarbsEntry`, `Screen.Metric`; widgets `CALORIES_IN`, `PROTEIN`, `CARBS`, `FAT`.
-> **Related:** [Feature map](feature-map.md), [Manual entry of metrics](manual-entry-metrics.md), [Preloaded beverage nutrition reference](preloaded-beverage-nutrition.md).
+> **Navigation:** `Screen.Nutrition`, `Screen.NutritionEntry`, `Screen.FoodEntry`, `Screen.Metric`; widgets `CALORIES_IN`, `PROTEIN`, `CARBS`, `FAT`; entry widgets `FOOD`, `NUTRITION`.
+> **Related:** [Feature map](feature-map.md), [Manual entry of metrics](manual-entry-metrics.md), [Food logging](food-logging.md), [Preloaded beverage nutrition reference](preloaded-beverage-nutrition.md).
 
 The nutrition feature owns period-based nutrition detail screens for intake metrics read from Health Connect.
 
@@ -31,7 +31,14 @@ Nutrition metrics follow the canonical period-detail pattern:
 - Period charts, selected-day breakdowns, entries, statistics, comparisons, confidence, and source labels.
 - Reorderable detail sections.
 
-Nutrition records remain in Health Connect. OpenVitals writes nutrition records through explicit entry flows such as carbohydrate entry and beverage logging; the nutrition detail screens remain read-oriented.
+Nutrition records remain in Health Connect. OpenVitals writes nutrition records through explicit entry flows: food logging, the nutrition entry form and beverage logging.
+
+The entry list on the nutrition screens (reached from the Calories in, Protein, Carbs and Fat widgets) lets you act on what OpenVitals wrote:
+
+- Every OpenVitals entry swipes to delete. Records from other apps are read-only.
+- An entry typed in the nutrition form has an edit button that opens the form with its values and time. Saving replaces the entry in place. Older carbs-only entries edit the same way.
+- A drink has an edit button that opens the drink: its nutrients follow the drink's volume, so they are not edited apart from it.
+- A logged food portion can only be deleted, so the food catalog stays the one place its nutrients are set.
 
 ## Daily Averages Over A Period
 
@@ -58,6 +65,7 @@ thirteen days, not thirty-one.
 
 ## Related Features
 
-- [`manual-entry-metrics.md`](manual-entry-metrics.md): carbohydrate entry.
+- [`manual-entry-metrics.md`](manual-entry-metrics.md): the nutrition entry form.
+- [`food-logging.md`](food-logging.md): foods from your own catalog.
 - [`beverage-logging-and-caffeine.md`](beverage-logging-and-caffeine.md): beverage nutrition defaults.
 - [`preloaded-beverage-nutrition.md`](preloaded-beverage-nutrition.md): preset beverage reference data.
