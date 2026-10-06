@@ -33,27 +33,27 @@ npm run build
 This repository is expected to live at:
 
 ```text
-ssh://git@codeberg.org/OpenVitals/docs.git
+https://github.com/OpenVitals-MTU/docs
 ```
 
 If a local checkout still points to the previous repository slug, update it with:
 
 ```bash
-git remote set-url origin ssh://git@codeberg.org/OpenVitals/docs.git
+git remote set-url origin https://github.com/OpenVitals-MTU/docs
 ```
 
 ## Fly.io
 
-The Woodpecker pipeline builds the Nextra site and deploys the container to Fly.io app `openvitals-docs`.
+The GitHub Actions workflow (`.github/workflows/test.yml`) builds the Nextra site and, on a push to `main`, deploys the container to Fly.io app `openvitals-docs`.
 
 One-time setup:
 
 ```bash
 fly apps create openvitals-docs --yes
-fly tokens create deploy -a openvitals-docs -x 8760h -n woodpecker-openvitals-docs
+fly tokens create deploy -a openvitals-docs -x 8760h -n github-actions-openvitals-docs
 ```
 
-Store the full token in Woodpecker as `FLY_API_TOKEN`.
+Store the full token as the repository Actions secret `FLY_API_TOKEN`.
 
 Add Fly certificates for `openvitals.health` and `www.openvitals.health`, then point DNS to the records shown by Fly:
 

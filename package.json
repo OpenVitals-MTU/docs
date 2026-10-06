@@ -6,7 +6,7 @@
   "homepage": "https://openvitals.health/",
   "repository": {
     "type": "git",
-    "url": "ssh://git@codeberg.org/OpenVitals/docs.git"
+    "url": "https://github.com/OpenVitals-MTU/docs.git"
   },
   "scripts": {
     "dev": "next dev --webpack",
