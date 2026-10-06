@@ -5,7 +5,7 @@ Nextra documentation site for OpenVitals.
 Repository:
 
 ```text
-https://codeberg.org/OpenVitals/docs
+https://github.com/OpenVitals-MTU/docs
 ```
 
 Expected website URL:

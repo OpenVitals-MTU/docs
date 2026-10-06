@@ -7,29 +7,6 @@ import 'nextra-theme-docs/style.css'
 import './globals.css'
 import logo from '../docs/assets/images/openvitals-logo.png'
 
-function CodebergIcon() {
-  return (
-    <svg
-      aria-label="Project repository on Codeberg"
-      height="24"
-      role="img"
-      viewBox="0 0 24 24"
-      width="24"
-    >
-      <circle cx="12" cy="12" fill="#2185d0" r="10" />
-      <path
-        d="M4.9 15.9 10.8 7.7a1.5 1.5 0 0 1 2.4 0l5.9 8.2A10 10 0 0 1 4.9 15.9Z"
-        fill="#ffffff"
-      />
-      <path
-        d="m12 7.2 7.1 8.7A10 10 0 0 1 12 22Z"
-        fill="#71c2ff"
-        opacity="0.58"
-      />
-    </svg>
-  )
-}
-
 export const metadata: Metadata = {
   metadataBase: new URL('https://openvitals.health'),
   title: {
@@ -53,8 +30,7 @@ const navbar = (
         <b>OpenVitals</b>
       </span>
     }
-    projectIcon={<CodebergIcon />}
-    projectLink="https://codeberg.org/OpenVitals/docs"
+    projectLink="https://github.com/OpenVitals-MTU/docs"
   />
 )
 
@@ -72,9 +48,9 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
         <Layout
           navbar={navbar}
           pageMap={await getPageMap()}
-          docsRepositoryBase="https://codeberg.org/OpenVitals/docs/src/branch/main/docs"
+          docsRepositoryBase="https://github.com/OpenVitals-MTU/docs/blob/main/docs"
           editLink="Edit this page"
-          feedback={{ link: 'https://codeberg.org/OpenVitals/docs/issues/new' }}
+          feedback={{ link: 'https://github.com/OpenVitals-MTU/docs/issues/new' }}
           footer={footer}
         >
           {children}
