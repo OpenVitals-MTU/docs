@@ -8,10 +8,10 @@ Repository:
 https://github.com/OpenVitals-MTU/docs
 ```
 
-Expected website URL:
+Website URL:
 
 ```text
-https://openvitals.health/
+https://docs.openvitals.health/
 ```
 
 ## Local Preview
@@ -55,11 +55,10 @@ fly tokens create deploy -a openvitals-docs -x 8760h -n github-actions-openvital
 
 Store the full token as the repository Actions secret `FLY_API_TOKEN`.
 
-Add Fly certificates for `openvitals.health` and `www.openvitals.health`, then point DNS to the records shown by Fly:
+Add a Fly certificate for `docs.openvitals.health`, then point DNS to the records shown by Fly. The apex `openvitals.health` belongs to the landing page's Fly app, not this one.
 
 ```bash
-fly certs add openvitals.health -a openvitals-docs
-fly certs add www.openvitals.health -a openvitals-docs
+fly certs add docs.openvitals.health -a openvitals-docs
 ```
 
 ## License
