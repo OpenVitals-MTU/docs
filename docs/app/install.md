@@ -7,6 +7,7 @@ OpenVitals is an Android app that uses Health Connect as the source of truth for
 | Channel | Use When |
 | --- | --- |
 | Google Play | You want the normal Android install and update path. |
+| F-Droid | You want updates from the F-Droid store, which builds the app from source. |
 | GitHub releases | You want signed APKs published by the project. |
 | Source build | You want to inspect or build the app from this repository. |
 
