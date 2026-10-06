@@ -61,3 +61,7 @@ Add Fly certificates for `openvitals.health` and `www.openvitals.health`, then p
 fly certs add openvitals.health -a openvitals-docs
 fly certs add www.openvitals.health -a openvitals-docs
 ```
+
+## License
+
+The OpenVitals documentation site is licensed under the [`GNU Affero General Public License v3.0 or later`](LICENSE).
