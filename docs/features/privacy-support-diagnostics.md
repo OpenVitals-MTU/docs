@@ -33,7 +33,7 @@ Apple Health import reports are explicit user downloads and intentionally includ
 
 ## Support Links
 
-Settings and project metadata can point users toward support and community resources such as Zulip, Codeberg, or donation links.
+Settings and project metadata can point users toward support and community resources such as Zulip, GitHub, or donation links.
 
 ## Health Disclaimer
 

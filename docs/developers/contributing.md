@@ -19,11 +19,11 @@ Include:
 
 Use the Android app repository for app bugs:
 
-[codeberg.org/OpenVitals/mobile-app/issues](https://codeberg.org/OpenVitals/mobile-app/issues)
+[github.com/OpenVitals-MTU/android-app/issues](https://github.com/OpenVitals-MTU/android-app/issues)
 
 Use the documentation repository for documentation or website issues:
 
-[codeberg.org/OpenVitals/docs/issues](https://codeberg.org/OpenVitals/docs/issues)
+[github.com/OpenVitals-MTU/docs/issues](https://github.com/OpenVitals-MTU/docs/issues)
 
 For contributor discussion, join the OpenVitals Zulip:
 
@@ -54,7 +54,7 @@ OpenVitals is a Kotlin/Jetpack Compose app (Hilt, Room, Health Connect). See [Bu
 4. Run `npm run build` before opening a pull request.
 
 ```bash
-git clone https://codeberg.org/OpenVitals/docs.git
+git clone https://github.com/OpenVitals-MTU/docs.git
 cd docs
 npm install
 npm run build
