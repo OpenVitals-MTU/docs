@@ -1,6 +1,6 @@
 # Smartwatches
 
-> **Status:** Current behavior. Garmin support is experimental.
+> **Status:** Current behavior. Garmin support is experimental; the Wear OS app is in development.
 > **Audience:** Users.
 > **Related:** [Bluetooth LE sensors](ble-sensors.md), [Health Connect](../app/health-connect.md), [Feature map](feature-map.md).
 
@@ -51,6 +51,12 @@ Two things are worth knowing:
   so two step records sharing a single minute report *less* between them than
   either one claims. A day once read 889 steps while its own records summed to
   1,007.
+
+## Wear OS
+
+A paired Wear OS watch can be added under Settings, Watches, like a Garmin. It is recognised by its name or by the OpenVitals app installed on it, not by its Bluetooth class alone, so a Garmin, Fitbit or Huawei watch does not end up here. Its screen has a **Wear OS App Status** card: whether the watch is paired with this phone, and whether the OpenVitals Wear OS app on it answers over Bluetooth, with a **Validate Wear OS App** button to check again.
+
+The OpenVitals Wear OS app itself is still in development and is not yet published. Until it is, the watch's recorded data reaches OpenVitals the way every non-Garmin watch's does: through Health Connect, written by the vendor's app.
 
 ## Data Attribution
 
