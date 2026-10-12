@@ -1,12 +1,14 @@
 # Smartwatches
 
-> **Status:** Current behavior. Garmin support is experimental; the Wear OS app is in development.
+> **Status:** Current behavior. Garmin support is experimental. The Wear OS app syncs heart rate and an estimated night of sleep, is meant for testers, and is installed by hand.
 > **Audience:** Users.
-> **Related:** [Bluetooth LE sensors](ble-sensors.md), [Health Connect](../app/health-connect.md), [Feature map](feature-map.md).
+> **Related:** [Bluetooth LE sensors](ble-sensors.md), [Health Connect](../app/health-connect.md), [Install the Wear OS app](../how-to/wear-os-sideload.md), [Feature map](feature-map.md).
 
-OpenVitals supports wrist devices in two very different ways, depending on the make.
+OpenVitals supports wrist devices in different ways, depending on the make.
 
 **Garmin watches** are read directly, over Garmin's own Bluetooth protocol. There is no vendor account and no network step; the app declares no internet permission at all. Pairing, sync, and the features below are all handled inside OpenVitals.
+
+**Wear OS watches** can run the OpenVitals Wear OS app, which records heart rate and what a sleep estimate needs; OpenVitals on the phone copies it over Bluetooth, again with no vendor account. The watch app is for testers for now and is installed from a computer. See [Wear OS](#wear-os) below.
 
 **Everything else** syncs through Health Connect: the app that already knows the watch does the syncing, and OpenVitals reads the result.
 
@@ -52,11 +54,62 @@ Two things are worth knowing:
   either one claims. A day once read 889 steps while its own records summed to
   1,007.
 
+### Pulse Ox, HRV, thresholds and scores
+
+A sync also reads the Pulse Ox readings and the five-minute HRV values a watch records, and writes them to Health Connect, where the SpO2 and HRV screens pick them up.
+
+Health Connect has no place for the rest, so they show on the watch's **Watch data** screen:
+
+- Under Training: functional threshold power, lactate threshold (in watts, with the heart rate it was reached at), hill score (with its strength and endurance parts), and endurance score.
+- Under Last night: the night's restless moments.
+
+A watch that does not record one of these sends nothing for it, and its row does not appear.
+
+### If the watch will not connect or sync
+
+For watches that had trouble connecting or syncing, first reported on a Fenix 6, the link now does what Gadgetbridge does:
+
+- It writes to the watch the way the watch asks to be written to.
+- When Android reports a Bluetooth error while connecting, it waits a moment and dials again, up to three attempts in all. A watch that does not answer at all is not redialled: it is out of range.
+- A whole sync may run for up to 30 minutes instead of 3, enough for a first sync of a watch holding months of activities.
+- It completes the handshake with watches that never send their configuration.
+
+The watch's screen also has a **Large Bluetooth packets** switch, on by default and set per watch. Larger packets make a sync much faster; turn the switch off if the watch keeps dropping the link or a sync never gets going.
+
 ## Wear OS
 
-A paired Wear OS watch can be added under Settings, Watches, like a Garmin. It is recognised by its name or by the OpenVitals app installed on it, not by its Bluetooth class alone, so a Garmin, Fitbit or Huawei watch does not end up here. Its screen has a **Wear OS App Status** card: whether the watch is paired with this phone, and whether the OpenVitals Wear OS app on it answers over Bluetooth, with a **Validate Wear OS App** button to check again.
+A paired Wear OS watch can be added under Settings, Watches, like a Garmin. It is recognised by its name or by the OpenVitals app installed on it, not by its Bluetooth class alone, so a Garmin, Fitbit or Huawei watch does not end up here.
 
-The OpenVitals Wear OS app itself is still in development and is not yet published. Until it is, the watch's recorded data reaches OpenVitals the way every non-Garmin watch's does: through Health Connect, written by the vendor's app.
+The OpenVitals Wear OS app is for testers. It is not on any store yet and is installed over adb from a computer, as [Install the Wear OS app](../how-to/wear-os-sideload.md) describes. It needs Wear OS 3 or later. No vendor app is needed on the phone once the watch is paired; a watch that can only be set up with the vendor's app, such as a Galaxy Watch8, needs it once, and it can be uninstalled afterwards.
+
+### Wear OS App Status
+
+The watch's screen has a **Wear OS App Status** card: whether the watch is paired with this phone, and whether the OpenVitals app on it answers over Bluetooth, with a **Validate Wear OS App** button to check again. When something is wrong, the card says what:
+
+- Bluetooth is off on this phone.
+- The watch is no longer paired with this phone.
+- The watch is waiting for you to allow this phone.
+- The watch refused this phone because its key does not match, or this phone is blocked on the watch.
+- The app on the watch is older or newer than the one on the phone, and one of them needs an update.
+
+The first time a phone connects, the watch asks whether to allow it, naming the phone, with **Allow** and **Block**. Open OpenVitals on the watch and tap Allow. A blocked phone can be unblocked, and a refused one forgotten, from the OpenVitals app on the watch.
+
+### Watch Sync
+
+The watch app records your heart rate on its own, with the screen off and the app closed, keeping one sample every ten seconds. It also records, minute by minute, what a sleep estimate needs: movement, the arm's angle, heart rate, and whether the watch was on the wrist or on the charger. It keeps a week of both. On first launch it asks for heart rate access, then for access in the background; without them the watch app says "Heart rate access is off".
+
+On the phone, the watch's screen has a **Watch Sync** card. Tapping **Sync watch**:
+
+- Copies the heart rate recorded since the last sync into Health Connect, so it shows on the heart screens like any other source. A sync that stops part-way keeps what arrived and continues from there next time.
+- Estimates each night from the recorded minutes and writes one sleep session per night, with estimated stages. A night that already has a sleep session from another app, or one entered by hand, is left alone: those win over an estimate. A night with fewer than three hours of wear is not written, so a watch left on the table or the charger produces nothing.
+
+The card then says how many heart rate samples and nights of sleep the sync brought, or "Nothing new on the watch". A sync is refused while an activity is being recorded.
+
+**Turn on bedtime mode at night.** A sleeping watch wakes only every few minutes while the arm is still, so without bedtime mode most minutes arrive empty and the phone may find no night at all. While bedtime mode is on, and the watch is on the wrist and off the charger, the watch app keeps the watch awake enough to record every minute; the rest of the day it lets the watch sleep. The watch app's screen says which: recording every minute, paused while off the wrist, paused while charging, or a reminder to turn bedtime mode on.
+
+The stages are an estimate, not a sleep lab: read them as when heart rate was low and steady versus high and variable. Checked against 31 nights recorded in a sleep lab, the estimate scored 90% of minutes correctly and placed the night's start within 9 minutes and its end within 13 minutes on average. Naps are not written, and the session's notes say it was estimated by OpenVitals.
+
+Not there yet: automatic sync (a sync runs only when you tap it), steps and other series, live heart rate, and the Garmin extras such as notification forwarding, watch settings and find-my-watch. If the vendor's app is still installed and writes to Health Connect, its data keeps reaching OpenVitals as before.
 
 ## Data Attribution
 
