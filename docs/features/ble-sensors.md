@@ -8,7 +8,7 @@
 
 OpenVitals has experimental Bluetooth LE support for activity recording.
 
-This page covers sensors that stream while you record — a chest strap, a cadence sensor, a power meter. A smartwatch is not a sensor in this sense: it records on its own and syncs afterwards through its companion app, and OpenVitals deliberately does not pair with watches at all. See [Smartwatches](smartwatches.md).
+This page covers sensors that stream while you record — a chest strap, a cadence sensor, a power meter. A smartwatch is not a sensor in this sense: it records on its own and syncs afterwards, either directly with OpenVitals (Garmin, or Wear OS with the OpenVitals watch app) or through its companion app and Health Connect. See [Smartwatches](smartwatches.md).
 
 ## Supported Recording Signals
 
