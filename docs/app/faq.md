@@ -42,9 +42,13 @@ OpenVitals uses nearby-device Bluetooth permissions to connect to paired Bluetoo
 
 ## Can OpenVitals Connect To My Smartwatch?
 
-No, and that is deliberate. OpenVitals does not pair with watches, sync them, forward notifications, or manage watch settings.
+It depends on the watch. See [Smartwatches](../features/smartwatches.md) for the details.
 
-Instead, sync the watch with [Gadgetbridge](https://gadgetbridge.org) or your vendor's app so its data lands in Health Connect. OpenVitals reads everything from there — steps, heart rate, sleep, HRV, workouts — and shows which app each record came from. See [Smartwatches](../features/smartwatches.md).
+- **Garmin:** yes, experimentally. OpenVitals pairs with the watch over Bluetooth, with no Garmin account, and syncs its activities, sleep and wellness data into Health Connect. It can also forward phone notifications, send the weather and change the watch's settings.
+- **Wear OS:** a watch running the OpenVitals Wear OS app syncs its heart rate and one estimated sleep session per night. The watch app is for testers and is installed from a computer; see [Install the Wear OS App](../how-to/wear-os-sideload.md).
+- **Any other watch:** sync it with [Gadgetbridge](https://gadgetbridge.org) or your vendor's app so its data lands in Health Connect. OpenVitals reads everything from there — steps, heart rate, sleep, HRV, workouts — and shows which app each record came from.
+
+Either way, OpenVitals talks to a watch over Bluetooth only and still has no internet permission.
 
 Bluetooth LE sensors are different: heart-rate straps and cycling cadence/power sensors still stream live into an activity recording. See [Bluetooth LE sensors](../features/ble-sensors.md).
 
