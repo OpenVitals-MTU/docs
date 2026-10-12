@@ -31,7 +31,7 @@ Nutrition metrics follow the canonical period-detail pattern:
 - Period charts, selected-day breakdowns, entries, statistics, comparisons, confidence, and source labels.
 - Reorderable detail sections.
 
-Nutrition records remain in Health Connect. OpenVitals writes nutrition records through explicit entry flows: food logging, the nutrition entry form and beverage logging.
+Nutrition records remain in Health Connect. OpenVitals writes nutrition records through explicit entry flows: food logging, the nutrition entry form and beverage logging. The [CSV importer](csv-import.md) can also bring in a spreadsheet of meals, one food entry per row.
 
 The entry list on the nutrition screens (reached from the Calories in, Protein, Carbs and Fat widgets) lets you act on what OpenVitals wrote:
 
@@ -39,6 +39,7 @@ The entry list on the nutrition screens (reached from the Calories in, Protein, 
 - An entry typed in the nutrition form has an edit button that opens the form with its values and time. Saving replaces the entry in place. Older carbs-only entries edit the same way.
 - A drink has an edit button that opens the drink: its nutrients follow the drink's volume, so they are not edited apart from it.
 - A logged food portion can only be deleted, so the food catalog stays the one place its nutrients are set.
+- A food imported from a CSV file can only be deleted too: correct the spreadsheet and import it again, and the entry is replaced.
 
 ## Daily Averages Over A Period
 

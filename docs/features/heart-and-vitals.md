@@ -32,6 +32,16 @@ Vitals metrics:
 - Blood glucose.
 - Skin temperature.
 
+### Skin Temperature
+
+Health Connect stores skin temperature as a variation: how far your skin moved from a baseline the device set, not a temperature you could read off a thermometer. A record may or may not carry that baseline, and it can span hours with a sample every minute. The skin temperature screen reads it that way:
+
+- Every value is a variation in signed degrees, under "Variation from baseline". OpenVitals never adds the baseline back to make up an absolute temperature.
+- Charts are centred on zero, with a dashed zero line. The day view draws the samples through the day instead of one dot at the end of the record.
+- Comparisons are in signed degrees, not a percent of a small number (which used to print things like "-652 % vs previous day"). Your personal baseline keeps the days below zero, and the tile that compares with it is called "Vs usual average".
+- The device's own baseline has a "Baseline" tile: the one the period's records share, or the newest one, marked "From the newest record", when they differ. It says "Not provided by source" when no record has one.
+- A record with no samples reads "No variation recorded"; its baseline is never shown as a reading. The dashboard tile shows the newest record that has a variation.
+
 ## Detail Pattern
 
 Heart and vitals detail screens use the shared metric detail scaffold:

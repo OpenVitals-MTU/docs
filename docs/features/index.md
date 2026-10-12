@@ -24,7 +24,7 @@ Use the [feature map](/features/feature-map) when you need the route/widget/pack
 - [Body Energy](/features/body-energy): selected-day energy timeline, calibration, confidence, dashboard support, and widgets.
 - [Heart rate recovery](/features/heart-rate-recovery): how far your heart rate falls after hard effort, measured from a guided test during recording.
 - [Heart and vitals](/features/heart-and-vitals): heart rate, resting heart rate, HRV, blood pressure, SpO2, VO2 max, respiratory rate, body temperature, blood glucose, skin temperature, and Today Vitals.
-- [Body metrics](/features/body-metrics): weight, height, BMI, body fat, lean mass, BMR, bone mass, body water mass, and FFMI context.
+- [Body metrics](/features/body-metrics): weight, height, BMI, FFMI, body fat, lean mass, BMR, bone mass, and body water mass.
 - [Nutrition](/features/nutrition): calories in, protein, carbohydrates, fat, and selected nutrient totals.
 - [Hydration](/features/hydration): hydration period detail, entry history, goals, and reminder controls.
 - [Mindfulness](/features/mindfulness): mindfulness period detail, session history, goals, reminders, and manual-entry relationship.
@@ -40,12 +40,12 @@ Use the [feature map](/features/feature-map) when you need the route/widget/pack
 - [Recording of activity](/features/activity-recording): GPS and repetition-oriented activity recording before saving to Health Connect.
 - [Activity and training plans](/features/activity-training-plans): planned workouts, activity setup defaults, favorite activities, repetitions, sets, and review flows.
 - [Bluetooth LE sensors](/features/ble-sensors): supported heart-rate, cadence, power, and footpod sensors during activity recording.
-- [Smartwatches](/features/smartwatches): experimental Garmin pairing and sync, with no vendor account and no network step — or keep using Gadgetbridge or a vendor app and let OpenVitals read what they write.
+- [Smartwatches](/features/smartwatches): experimental Garmin pairing and sync, with no vendor account and no network step; heart rate and estimated sleep from the OpenVitals Wear OS app, for testers — or keep using Gadgetbridge or a vendor app and let OpenVitals read what they write.
 - [GPX/KML/KMZ route import](/features/route-file-import): route file import for review before saving.
 - [FIT files import](/features/fit-files-import): Settings Data Importers support for FIT activity, course, and workout files.
 - [Offline maps support](/features/offline-maps-support): PMTiles or Mapsforge packs for local activity maps.
 - [Elevation correction](/features/elevation-correction): imported routes take their altitude from SRTM tiles stored on the phone, for watches with a drifting barometer.
-- [CSV import](/features/csv-import): body measurements, vitals and steps from any CSV, with the columns mapped by hand — a smart scale's history, a temperature log, a glucose export, a step history.
+- [CSV import](/features/csv-import): body measurements, vitals, steps and nutrition from any CSV, with the columns mapped by hand — a smart scale's history, a temperature log, a glucose export, a step history, a spreadsheet of meals.
 - [Sync with another phone](/features/device-sync): copy Health Connect records straight to a nearby phone over Bluetooth, with no account and no server.
 - [Apple Health import](/features/apple-health-import): supported Apple Health export records written into Health Connect.
 - [Preloaded beverage nutrition reference](/features/preloaded-beverage-nutrition): imported caffeine beverage presets, nutrition families, common serving values, and source links.

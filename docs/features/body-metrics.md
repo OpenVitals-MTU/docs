@@ -15,6 +15,7 @@ Body metric detail screens currently cover:
 - Weight.
 - Height.
 - BMI.
+- FFMI.
 - Body fat.
 - Lean mass.
 - Basal metabolic rate.
@@ -22,6 +23,12 @@ Body metric detail screens currently cover:
 - Body water mass.
 
 BMI and FFMI-style context are derived from available measurements. Derived values should explain missing prerequisites instead of pretending the calculation is complete.
+
+## FFMI
+
+Tapping the FFMI tile opens an FFMI screen of its own. FFMI (fat-free mass index) is calculated, not read: the headline is the dashboard tile's value, adjusted FFMI from your latest weight, body fat and height. The FFMI category card for that value sits with the statistics.
+
+The chart, statistics and entries have one reading per body-fat measurement in the period, paired with the weigh-in nearest to it in time, which may sit just across the period's edge. A weigh-in with no body-fat reading adds no point: carrying an old body-fat percentage onto later weights would show fat lost as lean mass lost. Height is the latest on record, as BMI uses it. The readings are calculated, so their rows edit nothing.
 
 ## Basal Metabolic Rate Estimate
 
