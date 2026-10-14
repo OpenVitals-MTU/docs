@@ -1,6 +1,6 @@
 # Smartwatches
 
-> **Status:** Current behavior. Garmin support is experimental. The Wear OS app syncs heart rate and an estimated night of sleep, is meant for testers, and is installed by hand.
+> **Status:** Current behavior. Garmin support is experimental. The Wear OS app syncs heart rate, steps and an estimated night of sleep, is meant for testers, and is installed by hand.
 > **Audience:** Users.
 > **Related:** [Bluetooth LE sensors](ble-sensors.md), [Health Connect](../app/health-connect.md), [Install the Wear OS app](../how-to/wear-os-sideload.md), [Feature map](feature-map.md).
 
@@ -8,7 +8,7 @@ OpenVitals supports wrist devices in different ways, depending on the make.
 
 **Garmin watches** are read directly, over Garmin's own Bluetooth protocol. There is no vendor account and no network step; the app declares no internet permission at all. Pairing, sync, and the features below are all handled inside OpenVitals.
 
-**Wear OS watches** can run the OpenVitals Wear OS app, which records heart rate and what a sleep estimate needs; OpenVitals on the phone copies it over Bluetooth, again with no vendor account. The watch app is for testers for now and is installed from a computer. See [Wear OS](#wear-os) below.
+**Wear OS watches** can run the OpenVitals Wear OS app, which records heart rate, steps minute by minute and what a sleep estimate needs; OpenVitals on the phone copies them over Bluetooth, again with no vendor account. The watch app is for testers for now and is installed from a computer. See [Wear OS](#wear-os) below.
 
 **Everything else** syncs through Health Connect: the app that already knows the watch does the syncing, and OpenVitals reads the result.
 
@@ -96,11 +96,12 @@ The first time a phone connects, the watch asks whether to allow it, naming the 
 
 ### Watch Sync
 
-The watch app records your heart rate on its own, with the screen off and the app closed, keeping one sample every ten seconds. It also records, minute by minute, what a sleep estimate needs: movement, the arm's angle, heart rate, and whether the watch was on the wrist or on the charger. It keeps a week of both. On first launch it asks for heart rate access, then for access in the background; without them the watch app says "Heart rate access is off".
+The watch app records your heart rate on its own, with the screen off and the app closed, keeping one sample every ten seconds. It also records, minute by minute, what a sleep estimate needs: movement, the arm's angle, heart rate, and whether the watch was on the wrist or on the charger. It keeps a week of both. On first launch it asks for heart rate access, then for access in the background; without them the watch app says "Heart rate access is off". Since 2.14.2 it also counts steps with the watch's own step counter, one row per minute, read in the same batch as the heart rate so it adds no wake-ups; this needs the Physical activity permission, asked for on start, and the status card says "Step counting is off" without it, or that the watch has no step counter.
 
 On the phone, the watch's screen has a **Watch Sync** card. Tapping **Sync watch**:
 
 - Copies the heart rate recorded since the last sync into Health Connect, so it shows on the heart screens like any other source. A sync that stops part-way keeps what arrived and continues from there next time.
+- Writes the watch's steps as one Health Connect record per minute, reaching five minutes back because a minute can still grow when late steps arrive. Minutes without watch steps are not written, so the phone's own count fills them. A watch app from before 2.14.2 is not asked for steps and keeps syncing as before.
 - Estimates each night from the recorded minutes and writes one sleep session per night, with estimated stages. A night that already has a sleep session from another app, or one entered by hand, is left alone: those win over an estimate. A night with fewer than three hours of wear is not written, so a watch left on the table or the charger produces nothing.
 
 The card then says how many heart rate samples and nights of sleep the sync brought, or "Nothing new on the watch". A sync is refused while an activity is being recorded.
@@ -109,7 +110,7 @@ The card then says how many heart rate samples and nights of sleep the sync brou
 
 The stages are an estimate, not a sleep lab: read them as when heart rate was low and steady versus high and variable. Checked against 31 nights recorded in a sleep lab, the estimate scored 90% of minutes correctly and placed the night's start within 9 minutes and its end within 13 minutes on average. Naps are not written, and the session's notes say it was estimated by OpenVitals.
 
-Not there yet: automatic sync (a sync runs only when you tap it), steps and other series, live heart rate, and the Garmin extras such as notification forwarding, watch settings and find-my-watch. If the vendor's app is still installed and writes to Health Connect, its data keeps reaching OpenVitals as before.
+Not there yet: series beyond heart rate, steps and sleep, live heart rate, and the Garmin extras such as notification forwarding, watch settings and find-my-watch. If the vendor's app is still installed and writes to Health Connect, its data keeps reaching OpenVitals as before.
 
 ## Data Attribution
 
