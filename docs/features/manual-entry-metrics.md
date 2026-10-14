@@ -23,6 +23,7 @@ OpenVitals supports explicit logging for:
 - Mindfulness sessions through a timer or manual duration.
 - Body measurements such as weight, height, and body fat.
 - Vitals such as blood pressure, SpO2, respiratory rate, body temperature, and heart rate variability (HRV).
+- The pulse a blood pressure monitor shows, as an optional field on the blood pressure form. It is saved as a heart rate record at the time of the reading, so it appears under Heart rate, not under Resting heart rate, and beside the reading in the blood pressure list; editing the reading moves or replaces it, clearing the field removes it, and deleting the reading deletes it too. The first pulse asks for heart rate write access; a reading without a pulse never does.
 - Cycle observations through a chooser: bleeding, how you feel, a pregnancy test, an ovulation test, sexual activity, basal body temperature, and cervical mucus, one at a time, saved as one day log.
 - Every vitals form offers date and time pickers when adding as well as when editing, defaulting to now - a reading can be logged after the fact under the moment it was taken.
 
