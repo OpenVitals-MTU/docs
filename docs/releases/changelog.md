@@ -6,6 +6,16 @@ For full localized notes, see the Android app repository changelog.
 
 OpenVitals is a Kotlin app. It was rebuilt on Flutter in 2.0.1 and migrated back to Kotlin in 2.5.0, so entries between those two releases describe the Flutter implementation, and everything before and after describes the Kotlin one. (2.0.0 was prepared but never published, so 2.0.1 carries everything since 1.9.0.)
 
+## 2.14.1 - 2026-10-14
+
+This release brings a cycle history kept in drip into OpenVitals: the CSV importer recognises drip's export and needs no column mapping. To hold everything drip records, the cycle journal gains the cervix as felt and a desire scale, both in the day log. A very large CSV, such as a heart rate export of a million rows, no longer stops when Health Connect runs out of quota: the import waits and carries on. Wear OS watches can sync on a schedule, and the cardio load on the Activities screens now matches the dashboard's.
+
+- **Cycle history from drip.** The CSV importer under Settings > Import & export recognises a CSV exported by the drip cycle tracker and needs no column mapping: five switches choose what to bring over. Bleeding becomes period flow and spotting in Health Connect, morning temperatures land at their recorded time, cervical mucus comes over as texture and feeling, and sex as protected, unprotected or unknown. Pain and mood become symptoms, mood and energy levels, the cervix, desire and every note go into the cycle journal on the phone. Importing the same export again replaces rather than duplicates.
+- **The cervix and desire in the cycle journal.** The day log gains the cervix as felt, opening, firmness and position, under cervical mucus, and desire as a fourth 1 to 5 scale beside pain, mood and energy. Both travel with the journal backup and the phone-to-phone sync.
+- **Automatic sync for Wear OS watches.** The Automatic sync card shows for a Wear OS watch too; a scheduled run copies the heart rate into Health Connect and writes the night's estimated sleep, as a tap on Sync does.
+- **CSV import waits out Health Connect's quota.** A batch Health Connect refused for quota used to end the import. It now pauses, from 15 seconds up to 5 minutes, with a countdown, and writes the same batch again; only half an hour without an accepted write stops the run. Cancel works during a pause, and the report counts the pauses.
+- **Fixes:** the Activities screens compute cardio load with the body profile, as the dashboard does, so a day no longer shows two loads.
+
 ## 2.14.0 - 2026-10-12
 
 This release opens the CSV importer to nutrition: a spreadsheet with a row per meal becomes food entries in Health Connect, and the health report can now chart every nutrient Health Connect stores, from fibre to selenium. Skin temperature is read as what it is, a variation from your device's baseline, with the day's samples on a chart. Garmin watches that struggled to connect get a sturdier link, and a sync brings Pulse Ox, HRV values, thresholds and scores. The OpenVitals Wear OS app, still installed by hand, now syncs heart rate and an estimated night of sleep, and FFMI has a screen of its own.

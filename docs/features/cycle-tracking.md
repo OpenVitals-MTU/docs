@@ -21,7 +21,7 @@ An estimate is always a range with the history it came from. The app never turns
 
 Health Connect keeps every record it has a type for: menstruation flow and the period intervals derived from it, spotting, ovulation tests, cervical mucus, basal body temperature, and sexual activity.
 
-A journal on the phone keeps what Health Connect has no record type for: a "no bleeding" mark that separates "checked, none" from "not logged", pain, mood and energy on a 1 to 5 scale, symptoms from a fixed catalog in three groups, private notes, a pregnancy test result, temperature disturbance flags, and cervical sensation. Blank always means not recorded, never "no symptoms".
+A journal on the phone keeps what Health Connect has no record type for: a "no bleeding" mark that separates "checked, none" from "not logged", pain, mood, energy and desire on a 1 to 5 scale, symptoms from a fixed catalog in three groups, private notes, a pregnancy test result, temperature disturbance flags, cervical sensation, and the cervix as felt: opening, firmness and position. Blank always means not recorded, never "no symptoms".
 
 ## Logging One Thing At A Time
 
