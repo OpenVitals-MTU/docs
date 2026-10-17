@@ -1,7 +1,6 @@
 import type { MetaRecord } from 'nextra'
 
 export default {
-  index: 'Feature Overview',
   '---dashboard-app': {
     type: 'separator',
     title: 'Dashboard & App'

@@ -1,7 +1,6 @@
 import type { MetaRecord } from 'nextra'
 
 export default {
-  index: 'App Guide',
   install: 'Install',
   'getting-started': 'Getting Started',
   features: 'Feature Inventory',

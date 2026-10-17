@@ -13,10 +13,6 @@ export default {
     title: 'Features',
     type: 'page'
   },
-  screenshots: {
-    title: 'Screenshots',
-    type: 'page'
-  },
   'how-to': {
     title: 'How-to Guides',
     type: 'page'
