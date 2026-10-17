@@ -1,5 +1,5 @@
 import nextra from 'nextra'
-import { remarkMkdocsCompat } from './lib/remark-mkdocs-compat.mjs'
+import { remarkMkdocsCompat } from './lib/remark-mkdocs-compat'
 
 const withNextra = nextra({
   defaultShowCopyCode: true,

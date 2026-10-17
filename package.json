@@ -13,7 +13,7 @@
     "dev": "next dev --webpack",
     "build": "next build --webpack",
     "postbuild": "pagefind --site .next/server/app --output-path out/_pagefind",
-    "postinstall": "node scripts/patch-nextra-theme-docs.mjs",
+    "postinstall": "node scripts/patch-nextra-theme-docs.mts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

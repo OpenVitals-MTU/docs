@@ -1,0 +1,3 @@
+# GitHub leaves a folder named docs/ out of the language bar as documentation; here it
+# holds the site, its _meta.ts files included.
+docs/** -linguist-documentation

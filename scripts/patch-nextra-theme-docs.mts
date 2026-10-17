@@ -1,6 +1,6 @@
 import { readFileSync, writeFileSync } from 'node:fs'
 
-function replaceOnce(file, before, after, description) {
+function replaceOnce(file: URL, before: string, after: string, description: string) {
   const source = readFileSync(file, 'utf8')
 
   if (!source.includes(before)) {
@@ -14,7 +14,12 @@ function replaceOnce(file, before, after, description) {
   writeFileSync(file, source.replace(before, after))
 }
 
-function replaceFirstOf(file, befores, after, description) {
+function replaceFirstOf(
+  file: URL,
+  befores: string[],
+  after: string,
+  description: string
+) {
   const source = readFileSync(file, 'utf8')
 
   if (source.includes(after)) {

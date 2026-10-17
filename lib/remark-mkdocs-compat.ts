@@ -1,9 +1,17 @@
 import { posix, relative, sep } from 'node:path'
+import type { Image, Link, Nodes, Parent, Root, RootContent } from 'mdast'
 import { fromMarkdown } from 'mdast-util-from-markdown'
+
+// The fields of hast properties this plugin sets on a node, through mdast's data.
+type HastData = {
+  hProperties?: {
+    className?: unknown
+  }
+}
 
 const markdownAttributePattern = /\s+markdown=(["'])1\1/g
 const classAttributePattern = /^\{\s*((?:\.[A-Za-z0-9_-]+\s*)+)\}/
-const repoReferenceReplacements = [
+const repoReferenceReplacements: [RegExp, string][] = [
   [/ssh:\/\/git@codeberg\.org\/OpenVitals\/website\.git/g, 'git@github.com:OpenVitals-MTU/docs.git'],
   [/https:\/\/codeberg\.org\/OpenVitals\/website\.git/g, 'https://github.com/OpenVitals-MTU/docs.git'],
   [/https:\/\/codeberg\.org\/OpenVitals\/website/g, 'https://github.com/OpenVitals-MTU/docs'],
@@ -12,7 +20,7 @@ const repoReferenceReplacements = [
 ]
 
 export function remarkMkdocsCompat() {
-  return (tree, file) => {
+  return (tree: Root, file: { path: string }) => {
     transformChildren(tree)
     normalizeMarkdownLinks(tree, pageDirectory(file))
   }
@@ -20,21 +28,29 @@ export function remarkMkdocsCompat() {
 
 // The page's folder below the content root: 'features' for
 // content/features/scales.md, '' for content/index.md.
-function pageDirectory(file) {
+function pageDirectory(file: { path: string }): string {
   return relative(process.cwd(), file.path).split(sep).slice(1, -1).join('/')
 }
 
-function transformChildren(parent) {
-  if (!parent || !Array.isArray(parent.children)) {
+// The plugin splices block content and raw HTML in wherever MkDocs had them, which
+// mdast's per-parent child types do not allow, so children are handled as any node.
+function childrenOf(parent: Parent): RootContent[] {
+  return parent.children as RootContent[]
+}
+
+function transformChildren(parent: Nodes) {
+  if (!('children' in parent)) {
     return
   }
 
-  for (let index = 0; index < parent.children.length; index += 1) {
-    const child = parent.children[index]
+  const children = childrenOf(parent)
+
+  for (let index = 0; index < children.length; index += 1) {
+    const child = children[index]
     const replacement = transformHtmlNode(child)
 
     if (replacement) {
-      parent.children.splice(index, 1, ...replacement)
+      children.splice(index, 1, ...replacement)
       index += replacement.length - 1
       continue
     }
@@ -47,8 +63,8 @@ function transformChildren(parent) {
   normalizeMarkdownImages(parent)
 }
 
-function transformHtmlNode(node) {
-  if (!node || node.type !== 'html' || !node.value.includes('markdown=')) {
+function transformHtmlNode(node: RootContent): RootContent[] | null {
+  if (node.type !== 'html' || !node.value.includes('markdown=')) {
     return null
   }
 
@@ -80,7 +96,11 @@ function transformHtmlNode(node) {
   return null
 }
 
-function wrapParsedMarkdown(tagName, rawAttributes, innerMarkdown) {
+function wrapParsedMarkdown(
+  tagName: string,
+  rawAttributes: string,
+  innerMarkdown: string
+): RootContent[] {
   return [
     {
       type: 'html',
@@ -94,31 +114,29 @@ function wrapParsedMarkdown(tagName, rawAttributes, innerMarkdown) {
   ]
 }
 
-function parseMarkdownFragment(markdown) {
+function parseMarkdownFragment(markdown: string): RootContent[] {
   const fragment = fromMarkdown(markdown)
   transformChildren(fragment)
   return fragment.children
 }
 
-function hasMarkdownAttribute(value) {
+function hasMarkdownAttribute(value: string): boolean {
   return /\smarkdown=(["'])1\1/.test(value)
 }
 
-function stripMarkdownAttribute(value) {
+function stripMarkdownAttribute(value: string): string {
   return value.replace(markdownAttributePattern, '')
 }
 
-function applyInlineAttributes(parent) {
-  if (!Array.isArray(parent.children)) {
-    return
-  }
+function applyInlineAttributes(parent: Parent) {
+  const children = childrenOf(parent)
 
-  for (let index = 0; index < parent.children.length - 1; index += 1) {
-    const child = parent.children[index]
-    const next = parent.children[index + 1]
+  for (let index = 0; index < children.length - 1; index += 1) {
+    const child = children[index]
+    const next = children[index + 1]
 
     if (
-      !['image', 'link'].includes(child.type) ||
+      (child.type !== 'image' && child.type !== 'link') ||
       next?.type !== 'text' ||
       !next.value.startsWith('{')
     ) {
@@ -140,43 +158,37 @@ function applyInlineAttributes(parent) {
 
     next.value = next.value.slice(match[0].length)
     if (!next.value) {
-      parent.children.splice(index + 1, 1)
+      children.splice(index + 1, 1)
     }
   }
 }
 
-function addClassNames(node, classNames) {
-  node.data ||= {}
-  node.data.hProperties ||= {}
+function addClassNames(node: Image | Link, classNames: string[]) {
+  const data = (node.data ||= {}) as HastData
+  data.hProperties ||= {}
 
-  const existing = node.data.hProperties.className
+  const existing = data.hProperties.className
   const current = Array.isArray(existing)
     ? existing
     : typeof existing === 'string'
       ? existing.split(/\s+/).filter(Boolean)
       : []
 
-  node.data.hProperties.className = [...new Set([...current, ...classNames])].join(
-    ' '
-  )
+  data.hProperties.className = [...new Set([...current, ...classNames])].join(' ')
 }
 
-function rewriteRepoReferencesInNode(node) {
-  if (!node) {
-    return
-  }
-
+function rewriteRepoReferencesInNode(node: RootContent) {
   if (
-    ['code', 'html', 'inlineCode', 'text'].includes(node.type) &&
-    typeof node.value === 'string'
+    node.type === 'code' ||
+    node.type === 'html' ||
+    node.type === 'inlineCode' ||
+    node.type === 'text'
   ) {
     node.value = rewriteRepoReferences(node.value)
   }
 
-  if (['definition', 'image', 'link'].includes(node.type)) {
-    if (typeof node.url === 'string') {
-      node.url = rewriteRepoReferences(node.url)
-    }
+  if (node.type === 'definition' || node.type === 'image' || node.type === 'link') {
+    node.url = rewriteRepoReferences(node.url)
 
     if (typeof node.title === 'string') {
       node.title = rewriteRepoReferences(node.title)
@@ -184,36 +196,34 @@ function rewriteRepoReferencesInNode(node) {
   }
 }
 
-function rewriteRepoReferences(value) {
+function rewriteRepoReferences(value: string): string {
   return repoReferenceReplacements.reduce(
     (current, [pattern, replacement]) => current.replace(pattern, replacement),
     value
   )
 }
 
-function normalizeMarkdownLinks(node, pageDir) {
-  if (node.type === 'link' && typeof node.url === 'string') {
+function normalizeMarkdownLinks(node: Nodes, pageDir: string) {
+  if (node.type === 'link') {
     node.url = normalizeMarkdownUrl(rewriteRepoReferences(node.url), pageDir)
   }
 
-  for (const child of node.children ?? []) {
-    normalizeMarkdownLinks(child, pageDir)
+  if ('children' in node) {
+    for (const child of node.children) {
+      normalizeMarkdownLinks(child, pageDir)
+    }
   }
 }
 
-function normalizeMarkdownImages(parent) {
-  if (!Array.isArray(parent.children)) {
-    return
-  }
-
-  for (const child of parent.children) {
-    if (child.type === 'image' && typeof child.url === 'string') {
+function normalizeMarkdownImages(parent: Parent) {
+  for (const child of childrenOf(parent)) {
+    if (child.type === 'image') {
       child.url = normalizeImageUrl(child.url)
     }
   }
 }
 
-function normalizeMarkdownUrl(url, pageDir) {
+function normalizeMarkdownUrl(url: string, pageDir: string): string {
   if (
     url.startsWith('#') ||
     url.startsWith('//') ||
@@ -236,7 +246,7 @@ function normalizeMarkdownUrl(url, pageDir) {
   return `${route}${suffix}`
 }
 
-function normalizeImageUrl(url) {
+function normalizeImageUrl(url: string): string {
   if (
     url.startsWith('#') ||
     url.startsWith('/') ||
