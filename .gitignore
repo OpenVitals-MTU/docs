@@ -5,7 +5,6 @@ __pycache__/
 node_modules/
 .next/
 out/
-public/_pagefind/
 npm-debug.log*
 *.tsbuildinfo
 .env*.local
