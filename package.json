@@ -12,9 +12,8 @@
   "scripts": {
     "dev": "next dev --webpack",
     "build": "next build --webpack",
-    "postbuild": "pagefind --site .next/server/app --output-path public/_pagefind",
+    "postbuild": "pagefind --site .next/server/app --output-path out/_pagefind",
     "postinstall": "node scripts/patch-nextra-theme-docs.mjs",
-    "start": "HOSTNAME=0.0.0.0 node .next/standalone/server.js",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -23,8 +22,7 @@
     "nextra": "4.6.1",
     "nextra-theme-docs": "4.6.1",
     "react": "19.2.7",
-    "react-dom": "19.2.7",
-    "sharp": "0.35.3"
+    "react-dom": "19.2.7"
   },
   "devDependencies": {
     "@types/node": "22.15.30",

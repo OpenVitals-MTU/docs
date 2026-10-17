@@ -28,6 +28,12 @@ npm run typecheck
 npm run build
 ```
 
+The build is a static export: every page is written to `out/` as `<path>/index.html`, with the Pagefind search index in `out/_pagefind`. To preview the exported site rather than the dev server:
+
+```bash
+python3 -m http.server --directory out 3000
+```
+
 ## Repository Rename
 
 This repository is expected to live at:
@@ -42,24 +48,13 @@ If a local checkout still points to the previous repository slug, update it with
 git remote set-url origin https://github.com/OpenVitals-MTU/docs
 ```
 
-## Fly.io
+## GitHub Pages
 
-The GitHub Actions workflow (`.github/workflows/test.yml`) builds the Nextra site and, on a push to `main`, deploys the container to Fly.io app `openvitals-docs`.
+The GitHub Actions workflow (`.github/workflows/test.yml`) builds the Nextra site on every push and pull request and, on a push to `main`, deploys `out/` to GitHub Pages.
 
-One-time setup:
+One-time setup: in the repository's Settings → Pages, set the source to "GitHub Actions" and the custom domain to `docs.openvitals.health`, and turn on "Enforce HTTPS" once the certificate is issued. In DNS, `docs` is a `CNAME` record pointing to `openvitals-mtu.github.io`. The apex `openvitals.health` belongs to the landing page, not this site.
 
-```bash
-fly apps create openvitals-docs --yes
-fly tokens create deploy -a openvitals-docs -x 8760h -n github-actions-openvitals-docs
-```
-
-Store the full token as the repository Actions secret `FLY_API_TOKEN`.
-
-Add a Fly certificate for `docs.openvitals.health`, then point DNS to the records shown by Fly. The apex `openvitals.health` belongs to the landing page's Fly app, not this one.
-
-```bash
-fly certs add docs.openvitals.health -a openvitals-docs
-```
+A section without an index page (`/app/`, `/features/`) has a small redirect page in `public/` that sends old links to its first page, since a static host has no server-side redirects.
 
 ## License
 
