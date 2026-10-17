@@ -41,7 +41,7 @@ The screen is a month calendar over today's cards. The arrows and the date picke
 - The next-period estimate.
 - A sourced tip for the phase, or a cycle fact when the phase cannot be told.
 - Statistics: count, mean and range of recorded cycles, the period's counts, and a data-confidence card.
-- The cycle history as a bar per cycle against a 21 to 35 day reference band, the basal temperature chart with a coverline once a sustained shift is found, and symptom patterns by phase.
+- The cycle history as a bar per cycle against a 21 to 35 day reference band, newest first, twelve at a time with a Load 10 more button, over the whole recorded history, the basal temperature chart with a coverline once a sustained shift is found, and symptom patterns by phase.
 
 ## Estimates
 
