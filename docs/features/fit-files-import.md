@@ -12,6 +12,8 @@ FIT import lives in Settings, Data Importers. It lets users bring supported acti
 
 FIT files commonly come from fitness devices and activity platforms. OpenVitals reads the Garmin FIT File Id type and handles Activity, Course, and Workout files differently: completed activities can provide timing, calories, distance, elevation, and optional GPS samples; courses provide route geometry and optional estimated duration; workouts provide structured workout metadata such as name, sport, and supported timed step duration.
 
+The activity type comes from the file's sport and sub-sport, as Garmin's profile names them. Yoga, pilates, stretching, breathwork, elliptical, stair climbing, pool and open water swimming, the racket and ball sports, hockey, scuba diving, HIIT, martial arts, dancing, rock climbing and ice skating import as themselves instead of a generic workout.
+
 ## Review Before Save
 
 Imported FIT files are not written immediately. The user reviews detected details, adjusts supported fields where needed, and then chooses whether to save the activity to Health Connect.
