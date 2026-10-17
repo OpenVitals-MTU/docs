@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+        with:
+          # The whole history: each page's "Last updated on" is its file's last commit.
+          fetch-depth: 0
       - uses: actions/setup-node@v5
         with:
           node-version: 26
