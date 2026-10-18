@@ -40,6 +40,10 @@ Supported imports cover activity, heart, body, hydration, nutrition, sleep, mind
 
 Unsupported or incompatible records are skipped with diagnostics rather than forcing partial data into the wrong Health Connect type.
 
+A value Health Connect does not accept, such as a basal metabolic rate above 10,000 kcal a day or a systolic blood pressure above 200 mmHg, fails only its own sample, or the logged meal it belongs to: the report counts it as failed with the reason, and the rest of the import carries on. Apple Health stores basal energy as energy over a time span and Health Connect as a rate, so a sample in which an app logged a whole day's basal energy over one hour reads far above that limit.
+
+An import that stops part way keeps a checkpoint after every written batch. Importing the same file again with the same categories picks up from there, and records already written are found by their `clientRecordId` and not written twice.
+
 Clinical records are not part of this import. The analysis counts the export's `ClinicalRecord` entries, and where Health Connect offers medical records, a card under the Apple Health card says how many. It opens the medical records import on the same file, with its own review and patient check. See [Medical records](medical-records.md).
 
 Workout imports include `WorkoutStatistics` totals when available. Walking speed records map to Health Connect speed samples. Apple workout GPX route geometry is written as a Health Connect exercise route when a workout references a route file and the route has at least two valid points.

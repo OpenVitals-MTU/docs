@@ -6,6 +6,12 @@ For full localized notes, see the Android app repository changelog.
 
 OpenVitals is a Kotlin app. It was rebuilt on Flutter in 2.0.1 and migrated back to Kotlin in 2.5.0, so entries between those two releases describe the Flutter implementation, and everything before and after describes the Kotlin one. (2.0.0 was prepared but never published, so 2.0.1 carries everything since 1.9.0.)
 
+## 2.14.5 - 2026-10-18
+
+This release lets a large Apple Health import run to the end. Health Connect refuses some values outright, such as a basal metabolic rate above 10,000 kcal a day, and one such sample anywhere in an export stopped the whole import with an error, however far it had got. That sample is now left out and listed in the import report, and the import carries on.
+
+- **An Apple Health import that stopped on one value.** A single sample Health Connect cannot store, such as a day's basal metabolic rate logged by an app as a one-hour sample (more than 35,000 kcal a day), stopped the whole import with an error. Such a sample is now counted as failed, with the reason in the import report, and the import carries on. The same goes for any other measurement or logged meal outside what Health Connect accepts, and for a systolic blood pressure above 200 mmHg. Importing the same file again with the same categories picks up where the import stopped.
+
 ## 2.14.4 - 2026-10-18
 
 This release makes a workout's FIT export carry the whole workout. The FIT and TCX files held heart rate and the session totals and nothing else, so a ride opened in a FIT viewer showed a heart-rate line. They now carry the speed and cadence the workout screen shows, and a workout with a GPS route can be saved as a FIT with the route in it. Routes imported from a file or synced from a Garmin watch also keep every point instead of being cut to 2,000.
