@@ -6,6 +6,14 @@ For full localized notes, see the Android app repository changelog.
 
 OpenVitals is a Kotlin app. It was rebuilt on Flutter in 2.0.1 and migrated back to Kotlin in 2.5.0, so entries between those two releases describe the Flutter implementation, and everything before and after describes the Kotlin one. (2.0.0 was prepared but never published, so 2.0.1 carries everything since 1.9.0.)
 
+## 2.14.4 - 2026-10-18
+
+This release makes a workout's FIT export carry the whole workout. The FIT and TCX files held heart rate and the session totals and nothing else, so a ride opened in a FIT viewer showed a heart-rate line. They now carry the speed and cadence the workout screen shows, and a workout with a GPS route can be saved as a FIT with the route in it. Routes imported from a file or synced from a Garmin watch also keep every point instead of being cut to 2,000.
+
+- **A FIT file with the GPS route.** A workout with a route can be saved or shared as a FIT that carries the route, the altitude and the distance covered beside heart rate, speed and cadence. The Export workout card groups its formats under "With the GPS route" (GPX, KMZ, FIT) and "Without the GPS route" (TCX, CSV, FIT).
+- **Speed and cadence in the FIT and TCX exports.** The workout export held heart rate and the session totals only, so a ride opened in a FIT viewer showed a heart-rate line and nothing else. FIT and TCX now carry the speed and cadence the workout screen shows, and every FIT marks where the timer starts and stops and the local time of the workout.
+- **Imported routes keep every point.** Route files and Garmin watch activities with more than 2,000 GPS points were cut to 2,000; the map, splits and route analysis now use every point. A route too large for one Health Connect record is still thinned until it fits.
+
 ## 2.14.3 - 2026-10-17
 
 This release brings lab results from providers that still serve the older FHIR DSTU2 format, LabCorp among them, into Health Connect: their records are converted on import, family names included, and the results held inside a diagnostic report are imported instead of being dropped with it. The activity form offers every exercise type Health Connect knows, and a FIT file's yoga, pilates or climbing session keeps its sport. The cycle screen reaches the whole recorded history, and the CSV import counts rows, records and journal days apart.

@@ -36,4 +36,4 @@ When elevation correction is on and imported tiles cover the whole route, the fi
 
 ## Export
 
-Saved route data can also be exported as GPX or KMZ when the activity has route points available.
+Every workout can be exported from the Export workout card on its detail screen. A workout with a GPS route offers two groups: **With the GPS route** has GPX, KMZ, and a FIT that carries the route, altitude and distance beside heart rate, speed and cadence; **Without the GPS route** has TCX, CSV, and a FIT with the session's totals and its heart rate, speed and cadence samples, and no location. A workout without a route offers the second group only.
