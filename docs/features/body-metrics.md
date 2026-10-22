@@ -50,7 +50,7 @@ Body metrics follow the canonical period-detail pattern:
 - Entry lists that allow edit/delete only for OpenVitals-created records.
 - Reorderable metric detail sections.
 
-Manual body entry lives under `features/manualentry/body` and writes explicit user-entered records to Health Connect. The dashboard and body detail screens remain read-oriented.
+Manual body entry lives under `features/manualentry/body` and writes explicit user-entered records to Health Connect. The Body composition form saves a whole weigh-in at one time, weight, body fat, lean mass, body water, bone mass and BMR, see [Manual entry of metrics](manual-entry-metrics.md#body-composition). Each value stays its own record, so the weight, body fat, lean mass, body water, bone mass and BMR screens each edit or delete their own OpenVitals entries. The dashboard and body detail screens remain read-oriented.
 
 ## Charts Over A Period
 

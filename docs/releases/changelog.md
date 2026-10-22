@@ -6,6 +6,17 @@ For full localized notes, see the Android app repository changelog.
 
 OpenVitals is a Kotlin app. It was rebuilt on Flutter in 2.0.1 and migrated back to Kotlin in 2.5.0, so entries between those two releases describe the Flutter implementation, and everything before and after describes the Kotlin one. (2.0.0 was prepared but never published, so 2.0.1 carries everything since 1.9.0.)
 
+## 2.15.0 - 2026-10-23
+
+This release is about typing in what no device sends. A body analysis scale without a connection gets one form for everything it shows, from weight and body fat to body water and bone mass, saved together at one time. Blood glucose and VO2 max get forms of their own, and every kind of medical record Health Connect holds can now be entered by hand, from visits and lab results to prescriptions and vital signs. Medical records are marked as a beta from this release on. A Wear OS watch's steps also become a cadence and an estimate of walking calories.
+
+- **One form for a body analysis scale.** The Weight and Body fat tiles in Add entry are now one Body composition tile: weight, body fat, lean mass, body water, bone mass and BMR, saved together with the same time. Body water can be typed as a percentage of the weight on the same form. Each value can still be edited or deleted alone from the Body screens.
+- **Blood glucose and VO2 max entry.** New Add entry tiles. Blood glucose is typed in mmol/L or mg/dL with its relation to a meal and the sample; VO2 max with how it was measured. Both can be edited and deleted from their detail screens. If you rearranged your tiles, add them from the grid's edit mode.
+- **Every kind of medical record can be typed in:** visits, procedures, lab results, prescriptions, vital signs, social history, pregnancy, doctors and their roles, clinics, places and your personal details, beside vaccines, allergies, medications and conditions. Doctors, clinics, labs and places already entered are offered as you type.
+- **Medical records are a beta.** A one-time notice on the first open says the area is still under development, and asks you to use it with care and review the data you import.
+- **Cadence and walking calories from a Wear OS watch.** Each synced minute of steps is also written as a cadence and, once your weight is known, as an estimate of walking calories. Minutes inside a recorded workout get none. Contributed by Ludwig Ettner.
+- **Fixes:** the medical records import counts each observation where Health Connect files it, a body weight under vital signs, and holds back one Health Connect would refuse; the sleep home-screen widget shows the time asleep, as the dashboard card does; a lab flag sent as a bare H, L, N or A reads as a word.
+
 ## 2.14.5 - 2026-10-18
 
 This release lets a large Apple Health import run to the end. Health Connect refuses some values outright, such as a basal metabolic rate above 10,000 kcal a day, and one such sample anywhere in an export stopped the whole import with an error, however far it had got. That sample is now left out and listed in the import report, and the import carries on.

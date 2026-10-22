@@ -55,7 +55,7 @@ Heart and vitals detail screens use the shared metric detail scaffold:
 - Period charts, statistics, thresholds, comparisons, data confidence, source labels, and entry lists.
 - Reorderable sections.
 
-OpenVitals-created vitals entries can be edited or deleted when the app has write permission and ownership can be verified. External records stay read-only.
+OpenVitals-created vitals entries can be edited or deleted when the app has write permission and ownership can be verified, blood glucose and VO2 max included. External records stay read-only. Blood glucose and VO2 max can be entered from Add entry since 2.15.0, see [Manual entry of metrics](manual-entry-metrics.md).
 
 ## Blood Pressure Categories
 

@@ -1,6 +1,6 @@
 # Smartwatches
 
-> **Status:** Current behavior. Garmin support is experimental. The Wear OS app syncs heart rate, steps and an estimated night of sleep, is meant for testers, and is installed by hand.
+> **Status:** Current behavior. Garmin support is experimental. The Wear OS app syncs heart rate, steps (with cadence and estimated walking calories) and an estimated night of sleep, is meant for testers, and is installed by hand.
 > **Audience:** Users.
 > **Related:** [Bluetooth LE sensors](ble-sensors.md), [Health Connect](../app/health-connect.md), [Install the Wear OS app](../how-to/wear-os-sideload.md), [Feature map](feature-map.md).
 
@@ -102,6 +102,7 @@ On the phone, the watch's screen has a **Watch Sync** card. Tapping **Sync watch
 
 - Copies the heart rate recorded since the last sync into Health Connect, so it shows on the heart screens like any other source. A sync that stops part-way keeps what arrived and continues from there next time.
 - Writes the watch's steps as one Health Connect record per minute, reaching five minutes back because a minute can still grow when late steps arrive. Minutes without watch steps are not written, so the phone's own count fills them. A watch app from before 2.14.2 is not asked for steps and keeps syncing as before.
+- Since 2.15.0, writes each of those minutes as a cadence (steps per minute) too, and, once your weight is known from Health Connect or the body profile, as an estimate of the calories walking cost above rest. The estimate uses the cadence equation of Moore and colleagues (Med Sci Sports Exerc 2021), which holds for level walking: hills and stairs are not counted, so it tends to come in low. A minute inside a workout Health Connect holds, a run or a ride, gets no estimate, so a recorded walk's calories are not counted twice. A run no app recorded is not recognised, though: its minutes are estimated as fast walking. An estimate, once written, stays: a weight entered later, or a workout saved after the sync, does not change it. Without a weight, or without Health Connect access to write cadence or active calories or to read workouts, the card says what is missing and offers the access, and the rest of the sync goes on; minutes synced before then stay without an estimate. An automatic sync with the app closed and no background access to Health Connect cannot see other apps' weights and workouts, so it writes no estimate.
 - Estimates each night from the recorded minutes and writes one sleep session per night, with estimated stages. A night that already has a sleep session from another app, or one entered by hand, is left alone: those win over an estimate. A night with fewer than three hours of wear is not written, so a watch left on the table or the charger produces nothing.
 
 The card then says how many heart rate samples and nights of sleep the sync brought, or "Nothing new on the watch". A sync is refused while an activity is being recorded.
