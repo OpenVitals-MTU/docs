@@ -6,6 +6,13 @@ For full localized notes, see the Android app repository changelog.
 
 OpenVitals is a Kotlin app. It was rebuilt on Flutter in 2.0.1 and migrated back to Kotlin in 2.5.0, so entries between those two releases describe the Flutter implementation, and everything before and after describes the Kotlin one. (2.0.0 was prepared but never published, so 2.0.1 carries everything since 1.9.0.)
 
+## 2.15.1 - 2026-10-23
+
+This release lets the medical records import open a zip of FHIR files, the kind CommonHealth exports, and makes a file that cannot be imported explain why. The new report names each file and what was found in it, never the records themselves, so it can be shared to get a problem fixed without sharing your medical data.
+
+- **A zip of FHIR files can be imported.** The medical records import now reads a zip of FHIR JSON files, as CommonHealth exports, whatever its folders. A file in it that is not FHIR is left out and named in the report, and the rest are imported.
+- **A report when a file cannot be imported.** The import screen offers a report to copy or save: what stopped the import, and what the file holds, each file with its size, its kind, and for JSON its shape and record types. It holds none of the records' content. When nothing in a file can be added, the review offers the report of what was held back.
+
 ## 2.15.0 - 2026-10-23
 
 This release is about typing in what no device sends. A body analysis scale without a connection gets one form for everything it shows, from weight and body fat to body water and bone mass, saved together at one time. Blood glucose and VO2 max get forms of their own, and every kind of medical record Health Connect holds can now be entered by hand, from visits and lab results to prescriptions and vital signs. Medical records are marked as a beta from this release on. A Wear OS watch's steps also become a cadence and an estimate of walking calories.
