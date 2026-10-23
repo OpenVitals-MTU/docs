@@ -34,3 +34,5 @@ Developer setup and verification notes belong in [Build from source](../develope
 ## Privacy Boundary
 
 Support workflows should not require automatic health data upload. Diagnostics and crash report drafts should remain explicit user actions.
+
+GitHub issues are public. Please don't paste health data there: values, the dates of your records, names, medical records, screenshots that show your data, the names of your export files, or device addresses. The import and sync reports the app copies hold counts and reasons only, so they can be pasted. A diagnostics log has addresses, identifiers and dates masked but still shows what you did in the app; send it by email from Settings → Report an issue instead.

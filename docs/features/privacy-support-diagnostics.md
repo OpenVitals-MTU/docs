@@ -27,9 +27,11 @@ The app does not need app-level internet access for normal health features. Offl
 
 ## Diagnostics
 
-Diagnostics surfaces help users and maintainers understand local issues without sending health data automatically. They can include app version information, debug build separation, import reports, logs, and crash-report email drafts.
+Diagnostics surfaces help users and maintainers understand local issues without sending health data automatically. They can include app version information, debug build separation, import reports, logs, and crash-report email drafts. Each holds structure, not data: counts, record types, reasons, and error text with numbers, dates, addresses and identifiers masked. Nothing in them is a record's value or time, a name, or a file name.
 
-Apple Health import reports are explicit user downloads and intentionally include the full importer summary, logs, grouped diagnostics, worker logs, and full exception stacks on failure; the raw per-record diagnostic log is capped per source (see [Apple Health import](apple-health-import.md#reports-and-diagnostics)) so a large repeated import cannot make the report unbounded, but grouped diagnostic counts stay complete. They are not the same as sanitized debug diagnostics logs and should be shared only when the user is comfortable sharing the included export-derived details.
+Apple Health import reports are explicit user downloads with the importer summary, logs, grouped diagnostics, worker logs, and on failure the masked exception stack; the per-record diagnostic log is capped per source (see [Apple Health import](apple-health-import.md#reports-and-diagnostics)) so a large repeated import cannot make the report unbounded, but grouped diagnostic counts stay complete.
+
+The crash and Report an issue email drafts carry no log. After a crash the app keeps one report with the masked error, attaches it for seven days at most, and deletes it once it has gone into an email, a copy or a file. Diagnostics builds (debug and nightly) can also save or share the app's log from Settings → Debug diagnostics: every line is kept, with addresses, identifiers, file locations, dates and error details masked. Copied reports are marked sensitive, so Android keeps them out of the copy preview.
 
 ## Support Links
 

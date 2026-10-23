@@ -13,7 +13,7 @@ Include:
 - Which permissions were granted.
 - Which screen or workflow failed.
 - Whether the data exists in Health Connect.
-- Screenshots or logs when they help explain the issue.
+- Screenshots or logs when they help explain the issue, without your health data: issues are public. Use made-up data for screenshots, paste the reports the app copies (they hold counts and reasons only), and send a diagnostics log by email from Settings → Report an issue rather than posting it.
 
 ## Where To Report Issues
 
